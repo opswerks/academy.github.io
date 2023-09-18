@@ -1,0 +1,715 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+        <link rel="next" href="../practice-exercise-2/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.3.1">
+    
+    
+      
+        <title>Practice Exercise 1 - OpsWerks Academy</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.046329b4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../style.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#practice-exercise-introduction-to-processes-and-process-attributes" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="OpsWerks Academy" class="md-header__button md-logo" aria-label="OpsWerks Academy" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OpsWerks Academy
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Practice Exercise 1
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  Linux Fundamentals
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="OpsWerks Academy" class="md-nav__button md-logo" aria-label="OpsWerks Academy" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    OpsWerks Academy
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Linux Fundamentals
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Linux Fundamentals
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_1" checked>
+        
+          <label class="md-nav__link" for="__nav_1_1" id="__nav_1_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Chapter 1: Processes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            Chapter 1: Processes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Practice Exercise 1
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Practice Exercise 1
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objectives" class="md-nav__link">
+    Objectives
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scenario" class="md-nav__link">
+    Scenario
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tasks" class="md-nav__link">
+    Tasks
+  </a>
+  
+    <nav class="md-nav" aria-label="Tasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#task-1-viewing-running-processes" class="md-nav__link">
+    Task 1: Viewing Running Processes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-2-identifying-parent-and-child-processes" class="md-nav__link">
+    Task 2: Identifying Parent and Child Processes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-3-viewing-detailed-process-information" class="md-nav__link">
+    Task 3: Viewing Detailed Process Information
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-4-monitoring-process-resource-usage" class="md-nav__link">
+    Task 4: Monitoring Process Resource Usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-5-sending-signals-to-processes" class="md-nav__link">
+    Task 5: Sending Signals to Processes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-6-background-and-foreground-processes" class="md-nav__link">
+    Task 6: Background and Foreground Processes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-7-managing-process-priorities" class="md-nav__link">
+    Task 7: Managing Process Priorities
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../practice-exercise-2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practice Exercise 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../practice-exercise-3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practice Exercise 3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../practice-exercise-4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practice Exercise 4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objectives" class="md-nav__link">
+    Objectives
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scenario" class="md-nav__link">
+    Scenario
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tasks" class="md-nav__link">
+    Tasks
+  </a>
+  
+    <nav class="md-nav" aria-label="Tasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#task-1-viewing-running-processes" class="md-nav__link">
+    Task 1: Viewing Running Processes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-2-identifying-parent-and-child-processes" class="md-nav__link">
+    Task 2: Identifying Parent and Child Processes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-3-viewing-detailed-process-information" class="md-nav__link">
+    Task 3: Viewing Detailed Process Information
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-4-monitoring-process-resource-usage" class="md-nav__link">
+    Task 4: Monitoring Process Resource Usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-5-sending-signals-to-processes" class="md-nav__link">
+    Task 5: Sending Signals to Processes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-6-background-and-foreground-processes" class="md-nav__link">
+    Task 6: Background and Foreground Processes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-7-managing-process-priorities" class="md-nav__link">
+    Task 7: Managing Process Priorities
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="practice-exercise-introduction-to-processes-and-process-attributes">Practice Exercise: Introduction to Processes and Process Attributes</h1>
+<h2 id="objectives">Objectives</h2>
+<ul>
+<li>Understand the concept of processes in Linux.</li>
+<li>Learn how to manage processes using various Linux commands.</li>
+<li>Gain hands-on experience with process attributes and resource monitoring.</li>
+</ul>
+<h2 id="scenario">Scenario</h2>
+<p>As a Linux enthusiast, it's essential to comprehend the fundamentals of processes and how to interact with them effectively. This lab exercise will guide you through understanding, managing, and monitoring processes on a Linux system.</p>
+<h2 id="tasks">Tasks</h2>
+<h3 id="task-1-viewing-running-processes">Task 1: Viewing Running Processes</h3>
+<ul>
+<li>Open a terminal on your Linux system.</li>
+<li>Use the <code>ps</code> command to display a list of currently running processes.</li>
+<li>Pay attention to the columns that show the process ID (PID), the name or command associated with each process, and the status.</li>
+<li>Look for the process with the PID of 1 and take note of the process.(e.g. <code>/sbin/launchd</code>)</li>
+</ul>
+<h3 id="task-2-identifying-parent-and-child-processes">Task 2: Identifying Parent and Child Processes</h3>
+<ul>
+<li>Identify a process from the list generated in Task 1 and note its PID.</li>
+<li>Use the <code>pgrep</code> command to find child processes associated with the selected process.</li>
+<li>Verify that the child processes have a different PID but the same parent PID as the selected process.</li>
+<li>Can you share what command you ran?</li>
+</ul>
+<h3 id="task-3-viewing-detailed-process-information">Task 3: Viewing Detailed Process Information</h3>
+<ul>
+<li>Choose a process from the list generated in Task 1 and note its PID.</li>
+<li>Use the <code>ps</code> command with the <code>-p</code> option followed by the PID (e.g., <code>ps -p 12345</code>) to display detailed information about that specific process.</li>
+<li>Observe the various attributes, including the process status, CPU and memory usage, and more. Take note that you will need to add another parameter and value to show the resource usage</li>
+</ul>
+<h3 id="task-4-monitoring-process-resource-usage">Task 4: Monitoring Process Resource Usage</h3>
+<ul>
+<li>Use the <code>top</code> command to open the real-time system monitoring tool.</li>
+<li>Observe the list of processes, their resource usage (CPU and memory), and the overall system statistics.</li>
+<li>Pay attention to the dynamic updating of data and the interactive features of the <code>top</code> command.</li>
+</ul>
+<h3 id="task-5-sending-signals-to-processes">Task 5: Sending Signals to Processes</h3>
+<ul>
+<li>Identify a process from the list generated in Task 1 and note its PID.</li>
+<li>Use the <code>kill</code> command to send a termination signal (SIGTERM) to the selected process (e.g., <code>kill -15 &lt;PID&gt;</code>).</li>
+<li>Confirm that the process has been terminated.</li>
+<li>Say run <code>sleep 3600&amp;</code> and then kill it afterwards</li>
+</ul>
+<h3 id="task-6-background-and-foreground-processes">Task 6: Background and Foreground Processes</h3>
+<ul>
+<li>Launch a simple command in the foreground (e.g., <code>ping www.google.com</code>) that continuously runs in the terminal.</li>
+<li>Suspend the foreground process by pressing <code>Ctrl + Z</code>.</li>
+<li>Use the <code>bg</code> command to send the suspended process to the background.</li>
+<li>Verify that the process is running in the background using the <code>jobs</code> command.</li>
+<li>Can you run a command that will kill the ping job</li>
+</ul>
+<h3 id="task-7-managing-process-priorities">Task 7: Managing Process Priorities</h3>
+<ul>
+<li>Use the <code>nice</code> command to launch a new process with a different priority level (e.g., <code>nice -n 10 command</code>).</li>
+<li>Observe how the process priority affects its resource allocation.</li>
+<li>Experiment with different priority levels to see their impact.</li>
+<li>Can you give at least one way to look for the niceness value of a process?</li>
+</ul>
+<hr />
+<h2 id="conclusion">Conclusion</h2>
+<p>This lab exercise has provided you with practical experience in understanding and working with processes in a Linux environment. You've learned how to view running processes, identify parent and child processes, inspect process attributes, monitor resource usage, send signals to processes, manage background and foreground processes, and adjust process priorities. These skills are crucial for effective Linux system administration and troubleshooting.</p>
+
+
+
+  
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.instant.prefetch", "navigation.tabs"], "search": "../../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
+      
+    
+  </body>
+</html>

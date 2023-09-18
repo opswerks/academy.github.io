@@ -1,0 +1,679 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../practice-exercise-1/">
+      
+      
+        <link rel="next" href="../practice-exercise-3/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.3.1">
+    
+    
+      
+        <title>Practice Exercise 2 - OpsWerks Academy</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.046329b4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../style.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#practice-exercise-process-metrics-and-process-control" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="OpsWerks Academy" class="md-header__button md-logo" aria-label="OpsWerks Academy" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OpsWerks Academy
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Practice Exercise 2
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../practice-exercise-1/" class="md-tabs__link">
+          
+  
+  Linux Fundamentals
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="OpsWerks Academy" class="md-nav__button md-logo" aria-label="OpsWerks Academy" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    OpsWerks Academy
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Linux Fundamentals
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Linux Fundamentals
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_1" checked>
+        
+          <label class="md-nav__link" for="__nav_1_1" id="__nav_1_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Chapter 1: Processes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            Chapter 1: Processes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../practice-exercise-1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practice Exercise 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Practice Exercise 2
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Practice Exercise 2
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objectives" class="md-nav__link">
+    Objectives
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scenario" class="md-nav__link">
+    Scenario
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tasks" class="md-nav__link">
+    Tasks
+  </a>
+  
+    <nav class="md-nav" aria-label="Tasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#task-1-monitoring-process-metrics" class="md-nav__link">
+    Task 1: Monitoring Process Metrics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-2-gathering-detailed-process-information" class="md-nav__link">
+    Task 2: Gathering Detailed Process Information
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-3-adjusting-process-priority" class="md-nav__link">
+    Task 3: Adjusting Process Priority
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-4-controlling-process-execution" class="md-nav__link">
+    Task 4: Controlling Process Execution
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-5-sending-signals-to-processes" class="md-nav__link">
+    Task 5: Sending Signals to Processes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../practice-exercise-3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practice Exercise 3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../practice-exercise-4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practice Exercise 4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objectives" class="md-nav__link">
+    Objectives
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scenario" class="md-nav__link">
+    Scenario
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tasks" class="md-nav__link">
+    Tasks
+  </a>
+  
+    <nav class="md-nav" aria-label="Tasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#task-1-monitoring-process-metrics" class="md-nav__link">
+    Task 1: Monitoring Process Metrics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-2-gathering-detailed-process-information" class="md-nav__link">
+    Task 2: Gathering Detailed Process Information
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-3-adjusting-process-priority" class="md-nav__link">
+    Task 3: Adjusting Process Priority
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-4-controlling-process-execution" class="md-nav__link">
+    Task 4: Controlling Process Execution
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-5-sending-signals-to-processes" class="md-nav__link">
+    Task 5: Sending Signals to Processes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="practice-exercise-process-metrics-and-process-control">Practice Exercise: Process Metrics and Process Control</h1>
+<h2 id="objectives">Objectives</h2>
+<ul>
+<li>Explore process metrics and resource utilization.</li>
+<li>Learn how to control processes and their execution.</li>
+<li>Gain practical experience with process management in a Linux environment.</li>
+</ul>
+<h2 id="scenario">Scenario</h2>
+<p>Understanding how processes work and how to manage them efficiently is essential for Linux system administrators. This lab exercise will provide hands-on experience with process metrics, resource monitoring, and process control.</p>
+<h2 id="tasks">Tasks</h2>
+<h3 id="task-1-monitoring-process-metrics">Task 1: Monitoring Process Metrics</h3>
+<ul>
+<li>Open a terminal on your Linux system.</li>
+<li>Use the <code>ps</code> command to display a list of running processes.</li>
+<li>Pay attention to the columns displaying process IDs (PIDs), CPU usage, memory usage, and execution status.</li>
+<li>Identify a process with high CPU or memory usage.</li>
+<li>Run <code>ps</code> with the option to sort the process from the highest CPU usage to the lowest</li>
+<li>Run <code>ps</code> with the option to sort the process from the highest Memory usage to the lowest</li>
+</ul>
+<h3 id="task-2-gathering-detailed-process-information">Task 2: Gathering Detailed Process Information</h3>
+<ul>
+<li>Choose a process from the list generated in Task 1 and note its PID.</li>
+<li>Use the <code>pidstat</code> command followed by the PID to gather detailed statistics about the selected process (e.g., <code>pidstat -p &lt;PID&gt;</code>).</li>
+<li>Observe metrics such as CPU usage, memory usage, and I/O statistics in real-time.</li>
+</ul>
+<h3 id="task-3-adjusting-process-priority">Task 3: Adjusting Process Priority</h3>
+<ul>
+<li>Identify a non-essential process from the list generated in Task 1.</li>
+<li>Use the <code>nice</code> command to adjust the process's priority level (e.g., <code>nice -n 10 command</code>).</li>
+<li>Monitor the process's behavior and resource utilization after changing its priority.</li>
+<li>What is the default niceness?</li>
+<li>Can you use renice to lower the niceness?</li>
+<li>What is the niceness range?</li>
+</ul>
+<h3 id="task-4-controlling-process-execution">Task 4: Controlling Process Execution</h3>
+<ul>
+<li>Launch a sample command that runs indefinitely in the terminal (e.g., <code>while :; do echo "Running..."; sleep 1; done</code>).</li>
+<li>Suspend the running command by pressing <code>Ctrl + Z</code>.</li>
+<li>Use the <code>bg</code> command to send the suspended process to the background.</li>
+<li>Use the <code>jobs</code> command to view background jobs.</li>
+<li>Bring the background process to the foreground using the <code>fg</code> command.</li>
+</ul>
+<h3 id="task-5-sending-signals-to-processes">Task 5: Sending Signals to Processes</h3>
+<ul>
+<li>Identify a process from the task 4 and note its PID.</li>
+<li>Use the <code>kill</code> command to send different signals to the selected process (e.g., <code>kill -9 &lt;PID&gt;</code> to forcefully terminate it).</li>
+<li>Observe the effects of different signals on the process.</li>
+</ul>
+<hr />
+<h2 id="conclusion">Conclusion</h2>
+<p>This lab exercise has provided you with practical experience in working with process metrics, resource utilization, and process control on a Linux system. You've learned how to monitor running processes, gather detailed process information, adjust process priorities, control process execution, and send signals to processes. These skills are valuable for optimizing system performance and managing processes effectively.</p>
+
+
+
+  
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.instant.prefetch", "navigation.tabs"], "search": "../../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
+      
+    
+  </body>
+</html>

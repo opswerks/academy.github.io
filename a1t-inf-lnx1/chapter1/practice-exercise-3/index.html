@@ -1,0 +1,678 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../practice-exercise-2/">
+      
+      
+        <link rel="next" href="../practice-exercise-4/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.3.1">
+    
+    
+      
+        <title>Practice Exercise 3 - OpsWerks Academy</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.046329b4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../style.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#practice-exercise-listing-processes-with-ps-and-top" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="OpsWerks Academy" class="md-header__button md-logo" aria-label="OpsWerks Academy" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OpsWerks Academy
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Practice Exercise 3
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../practice-exercise-1/" class="md-tabs__link">
+          
+  
+  Linux Fundamentals
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="OpsWerks Academy" class="md-nav__button md-logo" aria-label="OpsWerks Academy" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    OpsWerks Academy
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Linux Fundamentals
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Linux Fundamentals
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_1" checked>
+        
+          <label class="md-nav__link" for="__nav_1_1" id="__nav_1_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Chapter 1: Processes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            Chapter 1: Processes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../practice-exercise-1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practice Exercise 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../practice-exercise-2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practice Exercise 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Practice Exercise 3
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Practice Exercise 3
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objectives" class="md-nav__link">
+    Objectives
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scenario" class="md-nav__link">
+    Scenario
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tasks" class="md-nav__link">
+    Tasks
+  </a>
+  
+    <nav class="md-nav" aria-label="Tasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#task-1-using-ps-to-list-processes" class="md-nav__link">
+    Task 1: Using ps to List Processes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-2-viewing-process-hierarchy" class="md-nav__link">
+    Task 2: Viewing Process Hierarchy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-3-monitoring-processes-with-top" class="md-nav__link">
+    Task 3: Monitoring Processes with top
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-4-sorting-and-filtering-processes-in-top" class="md-nav__link">
+    Task 4: Sorting and Filtering Processes in top
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-5-sending-signals-to-processes" class="md-nav__link">
+    Task 5: Sending Signals to Processes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../practice-exercise-4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practice Exercise 4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objectives" class="md-nav__link">
+    Objectives
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scenario" class="md-nav__link">
+    Scenario
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tasks" class="md-nav__link">
+    Tasks
+  </a>
+  
+    <nav class="md-nav" aria-label="Tasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#task-1-using-ps-to-list-processes" class="md-nav__link">
+    Task 1: Using ps to List Processes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-2-viewing-process-hierarchy" class="md-nav__link">
+    Task 2: Viewing Process Hierarchy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-3-monitoring-processes-with-top" class="md-nav__link">
+    Task 3: Monitoring Processes with top
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-4-sorting-and-filtering-processes-in-top" class="md-nav__link">
+    Task 4: Sorting and Filtering Processes in top
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-5-sending-signals-to-processes" class="md-nav__link">
+    Task 5: Sending Signals to Processes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="practice-exercise-listing-processes-with-ps-and-top">Practice Exercise: Listing Processes with <code>ps</code> and <code>top</code></h1>
+<h2 id="objectives">Objectives</h2>
+<ul>
+<li>Learn how to list and monitor running processes using <code>ps</code> and <code>top</code> commands.</li>
+<li>Gain practical experience in process management on a Linux system.</li>
+</ul>
+<h2 id="scenario">Scenario</h2>
+<p>Understanding how to list and monitor processes is crucial for Linux system administrators. In this lab exercise, you will explore the <code>ps</code> and <code>top</code> commands, which provide insights into the processes running on a Linux system.</p>
+<h2 id="tasks">Tasks</h2>
+<h3 id="task-1-using-ps-to-list-processes">Task 1: Using <code>ps</code> to List Processes</h3>
+<ul>
+<li>Open a terminal on your Linux system.</li>
+<li>Execute the <code>ps</code> command to list the running processes.</li>
+<li>Observe the default output format, which includes process IDs (PIDs), terminal IDs (TIDs), and process names.</li>
+<li>Explore various options and arguments of the <code>ps</code> command to customize the process listing (e.g., <code>ps aux</code> or <code>ps -ef</code> for a more detailed list).</li>
+<li>What are the three options that ps accepts?</li>
+</ul>
+<h3 id="task-2-viewing-process-hierarchy">Task 2: Viewing Process Hierarchy</h3>
+<ul>
+<li>Use the <code>ps</code> command to display processes in a hierarchical tree structure.</li>
+<li>What is the parameter needed to achieve this?</li>
+<li>Identify the parent-child relationships between processes.</li>
+<li>Note the PPID (Parent Process ID) column to understand which process spawned other processes.</li>
+</ul>
+<h3 id="task-3-monitoring-processes-with-top">Task 3: Monitoring Processes with <code>top</code></h3>
+<ul>
+<li>Launch the <code>top</code> command in your terminal.</li>
+<li>Observe the dynamic real-time display of system statistics and process information.</li>
+<li>Pay attention to CPU usage, memory usage, load averages, and the list of running processes.</li>
+<li>Use the <code>q</code> key to exit <code>top</code> when you're done.</li>
+</ul>
+<h3 id="task-4-sorting-and-filtering-processes-in-top">Task 4: Sorting and Filtering Processes in <code>top</code></h3>
+<ul>
+<li>Start <code>top</code> again.</li>
+<li>Experiment with sorting options by pressing keys like <code>P</code>, <code>M</code>, and <code>T</code>.</li>
+<li>When press <code>P, M, T</code> by what property does it sort the processes respectively?</li>
+<li>Use the <code>o</code> key to apply filters. For example, press <code>o</code> and enter a filter like <code>USER eq &lt;username&gt;</code> to display processes for a specific user.</li>
+<li>Explore other sorting and filtering options available in <code>top</code>.</li>
+<li>Give at least one other sorting options aside from the three provided.</li>
+</ul>
+<h3 id="task-5-sending-signals-to-processes">Task 5: Sending Signals to Processes</h3>
+<ul>
+<li>Identify a process from the <code>ps</code> or <code>top</code> list that you want to interact with.</li>
+<li>Note its PID (Process ID).</li>
+<li>Use the <code>kill</code> command to send a signal to the selected process (e.g., <code>kill -TERM &lt;PID&gt;</code> to gracefully terminate it).</li>
+<li>Observe how the process responds to different signals.</li>
+</ul>
+<hr />
+<h2 id="conclusion">Conclusion</h2>
+<p>This lab exercise has provided you with practical experience in listing and monitoring processes using the <code>ps</code> and <code>top</code> commands on a Linux system. You've learned how to customize process listings, view process hierarchies, monitor system statistics, sort and filter processes, and send signals to control processes. These skills are essential for system administrators to efficiently manage processes and troubleshoot system performance.</p>
+
+
+
+  
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.instant.prefetch", "navigation.tabs"], "search": "../../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
+      
+    
+  </body>
+</html>
