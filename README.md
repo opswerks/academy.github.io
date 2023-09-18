@@ -1,2 +1,2 @@
-# opswerks.academy.github.io
+# academy.github.io
 GitHub Pages for anything Academy related
