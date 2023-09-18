@@ -1,0 +1,797 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.3.1">
+    
+    
+      
+        <title>Practice Exercise 1 - Academy</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.046329b4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../style.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#lab-exercise-introduction-to-processes-and-process-attributes" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Academy" class="md-header__button md-logo" aria-label="Academy" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Academy
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Practice Exercise 1
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  Linux Fundamentals
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Academy" class="md-nav__button md-logo" aria-label="Academy" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Academy
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Linux Fundamentals
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Linux Fundamentals
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_1" checked>
+        
+          <label class="md-nav__link" for="__nav_1_1" id="__nav_1_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Chapter 1
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            Chapter 1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Practice Exercise 1
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Practice Exercise 1
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objectives" class="md-nav__link">
+    Objectives:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scenario" class="md-nav__link">
+    Scenario:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tasks" class="md-nav__link">
+    Tasks:
+  </a>
+  
+    <nav class="md-nav" aria-label="Tasks:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#task-1-viewing-running-processes" class="md-nav__link">
+    Task 1: Viewing Running Processes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-2-identifying-parent-and-child-processes" class="md-nav__link">
+    Task 2: Identifying Parent and Child Processes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-3-viewing-detailed-process-information" class="md-nav__link">
+    Task 3: Viewing Detailed Process Information
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-4-monitoring-process-resource-usage" class="md-nav__link">
+    Task 4: Monitoring Process Resource Usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-5-sending-signals-to-processes" class="md-nav__link">
+    Task 5: Sending Signals to Processes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-6-background-and-foreground-processes" class="md-nav__link">
+    Task 6: Background and Foreground Processes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-7-managing-process-priorities" class="md-nav__link">
+    Task 7: Managing Process Priorities
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion:
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objectives" class="md-nav__link">
+    Objectives:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scenario" class="md-nav__link">
+    Scenario:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tasks" class="md-nav__link">
+    Tasks:
+  </a>
+  
+    <nav class="md-nav" aria-label="Tasks:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#task-1-viewing-running-processes" class="md-nav__link">
+    Task 1: Viewing Running Processes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-2-identifying-parent-and-child-processes" class="md-nav__link">
+    Task 2: Identifying Parent and Child Processes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-3-viewing-detailed-process-information" class="md-nav__link">
+    Task 3: Viewing Detailed Process Information
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-4-monitoring-process-resource-usage" class="md-nav__link">
+    Task 4: Monitoring Process Resource Usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-5-sending-signals-to-processes" class="md-nav__link">
+    Task 5: Sending Signals to Processes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-6-background-and-foreground-processes" class="md-nav__link">
+    Task 6: Background and Foreground Processes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-7-managing-process-priorities" class="md-nav__link">
+    Task 7: Managing Process Priorities
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion:
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="lab-exercise-introduction-to-processes-and-process-attributes">Lab Exercise: Introduction to Processes and Process Attributes</h1>
+<h2 id="objectives">Objectives:</h2>
+<ul>
+<li>Understand the concept of processes in Linux.</li>
+<li>Learn how to manage processes using various Linux commands.</li>
+<li>Gain hands-on experience with process attributes and resource monitoring.</li>
+</ul>
+<h2 id="scenario">Scenario:</h2>
+<p>As a Linux enthusiast, it's essential to comprehend the fundamentals of processes and how to interact with them effectively. This lab exercise will guide you through understanding, managing, and monitoring processes on a Linux system.</p>
+<h2 id="tasks">Tasks:</h2>
+<h3 id="task-1-viewing-running-processes">Task 1: Viewing Running Processes</h3>
+<ul>
+<li>Open a terminal on your Linux system.</li>
+<li>Use the <code>ps</code> command to display a list of currently running processes.</li>
+<li>Pay attention to the columns that show the process ID (PID), the name or command associated with each process, and the status.</li>
+<li>Look for the process with the PID of 1 and take note of the process.(e.g. <code>/sbin/launchd</code>)</li>
+</ul>
+<h3 id="task-2-identifying-parent-and-child-processes">Task 2: Identifying Parent and Child Processes</h3>
+<ul>
+<li>Identify a process from the list generated in Task 1 and note its PID.</li>
+<li>Use the <code>pgrep</code> command to find child processes associated with the selected process.</li>
+<li>Verify that the child processes have a different PID but the same parent PID as the selected process.</li>
+<li>Can you share what command you ran?</li>
+</ul>
+<h3 id="task-3-viewing-detailed-process-information">Task 3: Viewing Detailed Process Information</h3>
+<ul>
+<li>Choose a process from the list generated in Task 1 and note its PID.</li>
+<li>Use the <code>ps</code> command with the <code>-p</code> option followed by the PID (e.g., <code>ps -p 12345</code>) to display detailed information about that specific process.</li>
+<li>Observe the various attributes, including the process status, CPU and memory usage, and more. Take note that you will need to add another parameter and value to show the resource usage</li>
+</ul>
+<h3 id="task-4-monitoring-process-resource-usage">Task 4: Monitoring Process Resource Usage</h3>
+<ul>
+<li>Use the <code>top</code> command to open the real-time system monitoring tool.</li>
+<li>Observe the list of processes, their resource usage (CPU and memory), and the overall system statistics.</li>
+<li>Pay attention to the dynamic updating of data and the interactive features of the <code>top</code> command.</li>
+</ul>
+<h3 id="task-5-sending-signals-to-processes">Task 5: Sending Signals to Processes</h3>
+<ul>
+<li>Identify a process from the list generated in Task 1 and note its PID.</li>
+<li>Use the <code>kill</code> command to send a termination signal (SIGTERM) to the selected process (e.g., <code>kill -15 &lt;PID&gt;</code>).</li>
+<li>Confirm that the process has been terminated.</li>
+<li>Say run <code>sleep 3600&amp;</code> and then kill it afterwards</li>
+</ul>
+<h3 id="task-6-background-and-foreground-processes">Task 6: Background and Foreground Processes</h3>
+<ul>
+<li>Launch a simple command in the foreground (e.g., <code>ping www.google.com</code>) that continuously runs in the terminal.</li>
+<li>Suspend the foreground process by pressing <code>Ctrl + Z</code>.</li>
+<li>Use the <code>bg</code> command to send the suspended process to the background.</li>
+<li>Verify that the process is running in the background using the <code>jobs</code> command.</li>
+<li>Can you run a command that will kill the ping job</li>
+<li></li>
+</ul>
+<h3 id="task-7-managing-process-priorities">Task 7: Managing Process Priorities</h3>
+<ul>
+<li>Use the <code>nice</code> command to launch a new process with a different priority level (e.g., <code>nice -n 10 command</code>).</li>
+<li>Observe how the process priority affects its resource allocation.</li>
+<li>Experiment with different priority levels to see their impact.</li>
+<li>Can you give at least one way to look for the niceness value of a process?</li>
+</ul>
+<hr />
+<h2 id="conclusion">Conclusion:</h2>
+<p>This lab exercise has provided you with practical experience in understanding and working with processes in a Linux environment. You've learned how to view running processes, identify parent and child processes, inspect process attributes, monitor resource usage, send signals to processes, manage background and foreground processes, and adjust process priorities. These skills are crucial for effective Linux system administration and troubleshooting.</p>
+<h1 id="lab-exercise-process-metrics-and-process-control">Lab Exercise: Process Metrics and Process Control</h1>
+<h2 id="objectives_1">Objectives:</h2>
+<ul>
+<li>Explore process metrics and resource utilization.</li>
+<li>Learn how to control processes and their execution.</li>
+<li>Gain practical experience with process management in a Linux environment.</li>
+</ul>
+<h2 id="scenario_1">Scenario:</h2>
+<p>Understanding how processes work and how to manage them efficiently is essential for Linux system administrators. This lab exercise will provide hands-on experience with process metrics, resource monitoring, and process control.</p>
+<h2 id="tasks_1">Tasks:</h2>
+<h3 id="task-1-monitoring-process-metrics">Task 1: Monitoring Process Metrics</h3>
+<ul>
+<li>Open a terminal on your Linux system.</li>
+<li>Use the <code>ps</code> command to display a list of running processes.</li>
+<li>Pay attention to the columns displaying process IDs (PIDs), CPU usage, memory usage, and execution status.</li>
+<li>Identify a process with high CPU or memory usage.</li>
+<li>Run <code>ps</code> with the option to sort the process from the highest CPU usage to the lowest</li>
+<li>Run <code>ps</code> with the option to sort the process from the highest Memory usage to the lowest</li>
+</ul>
+<h3 id="task-2-gathering-detailed-process-information">Task 2: Gathering Detailed Process Information</h3>
+<ul>
+<li>Choose a process from the list generated in Task 1 and note its PID.</li>
+<li>Use the <code>pidstat</code> command followed by the PID to gather detailed statistics about the selected process (e.g., <code>pidstat -p &lt;PID&gt;</code>).</li>
+<li>Observe metrics such as CPU usage, memory usage, and I/O statistics in real-time.</li>
+</ul>
+<h3 id="task-3-adjusting-process-priority">Task 3: Adjusting Process Priority</h3>
+<ul>
+<li>Identify a non-essential process from the list generated in Task 1.</li>
+<li>Use the <code>nice</code> command to adjust the process's priority level (e.g., <code>nice -n 10 command</code>).</li>
+<li>Monitor the process's behavior and resource utilization after changing its priority.</li>
+<li>What is the default niceness?</li>
+<li>Can you use renice to lower the niceness?</li>
+<li>What is the niceness range?</li>
+</ul>
+<h3 id="task-4-controlling-process-execution">Task 4: Controlling Process Execution</h3>
+<ul>
+<li>Launch a sample command that runs indefinitely in the terminal (e.g., <code>while :; do echo "Running..."; sleep 1; done</code>).</li>
+<li>Suspend the running command by pressing <code>Ctrl + Z</code>.</li>
+<li>Use the <code>bg</code> command to send the suspended process to the background.</li>
+<li>Use the <code>jobs</code> command to view background jobs.</li>
+<li>Bring the background process to the foreground using the <code>fg</code> command.</li>
+</ul>
+<h3 id="task-5-sending-signals-to-processes_1">Task 5: Sending Signals to Processes</h3>
+<ul>
+<li>Identify a process from the task 4 and note its PID.</li>
+<li>Use the <code>kill</code> command to send different signals to the selected process (e.g., <code>kill -9 &lt;PID&gt;</code> to forcefully terminate it).</li>
+<li>Observe the effects of different signals on the process.</li>
+</ul>
+<hr />
+<h2 id="conclusion_1">Conclusion:</h2>
+<p>This lab exercise has provided you with practical experience in working with process metrics, resource utilization, and process control on a Linux system. You've learned how to monitor running processes, gather detailed process information, adjust process priorities, control process execution, and send signals to processes. These skills are valuable for optimizing system performance and managing processes effectively.</p>
+<h1 id="lab-exercise-listing-processes-with-ps-and-top">Lab Exercise: Listing Processes with <code>ps</code> and <code>top</code></h1>
+<h2 id="objectives_2">Objectives:</h2>
+<ul>
+<li>Learn how to list and monitor running processes using <code>ps</code> and <code>top</code> commands.</li>
+<li>Gain practical experience in process management on a Linux system.</li>
+</ul>
+<h2 id="scenario_2">Scenario:</h2>
+<p>Understanding how to list and monitor processes is crucial for Linux system administrators. In this lab exercise, you will explore the <code>ps</code> and <code>top</code> commands, which provide insights into the processes running on a Linux system.</p>
+<h2 id="tasks_2">Tasks:</h2>
+<h3 id="task-1-using-ps-to-list-processes">Task 1: Using <code>ps</code> to List Processes</h3>
+<ul>
+<li>Open a terminal on your Linux system.</li>
+<li>Execute the <code>ps</code> command to list the running processes.</li>
+<li>Observe the default output format, which includes process IDs (PIDs), terminal IDs (TIDs), and process names.</li>
+<li>Explore various options and arguments of the <code>ps</code> command to customize the process listing (e.g., <code>ps aux</code> or <code>ps -ef</code> for a more detailed list).</li>
+<li>What are the three options that ps accepts?</li>
+</ul>
+<h3 id="task-2-viewing-process-hierarchy">Task 2: Viewing Process Hierarchy</h3>
+<ul>
+<li>Use the <code>ps</code> command to display processes in a hierarchical tree structure.</li>
+<li>What is the parameter needed to achieve this?</li>
+<li>Identify the parent-child relationships between processes.</li>
+<li>Note the PPID (Parent Process ID) column to understand which process spawned other processes.</li>
+</ul>
+<h3 id="task-3-monitoring-processes-with-top">Task 3: Monitoring Processes with <code>top</code></h3>
+<ul>
+<li>Launch the <code>top</code> command in your terminal.</li>
+<li>Observe the dynamic real-time display of system statistics and process information.</li>
+<li>Pay attention to CPU usage, memory usage, load averages, and the list of running processes.</li>
+<li>Use the <code>q</code> key to exit <code>top</code> when you're done.</li>
+</ul>
+<h3 id="task-4-sorting-and-filtering-processes-in-top">Task 4: Sorting and Filtering Processes in <code>top</code></h3>
+<ul>
+<li>Start <code>top</code> again.</li>
+<li>Experiment with sorting options by pressing keys like <code>P</code>, <code>M</code>, and <code>T</code>.</li>
+<li>When press <code>P, M, T</code> by what property does it sort the processes respectively?</li>
+<li>Use the <code>o</code> key to apply filters. For example, press <code>o</code> and enter a filter like <code>USER eq &lt;username&gt;</code> to display processes for a specific user.</li>
+<li>Explore other sorting and filtering options available in <code>top</code>.</li>
+<li>Give at least one other sorting options aside from the three provided.</li>
+</ul>
+<h3 id="task-5-sending-signals-to-processes_2">Task 5: Sending Signals to Processes</h3>
+<ul>
+<li>Identify a process from the <code>ps</code> or <code>top</code> list that you want to interact with.</li>
+<li>Note its PID (Process ID).</li>
+<li>Use the <code>kill</code> command to send a signal to the selected process (e.g., <code>kill -TERM &lt;PID&gt;</code> to gracefully terminate it).</li>
+<li>Observe how the process responds to different signals.</li>
+</ul>
+<hr />
+<h2 id="conclusion_2">Conclusion:</h2>
+<p>This lab exercise has provided you with practical experience in listing and monitoring processes using the <code>ps</code> and <code>top</code> commands on a Linux system. You've learned how to customize process listings, view process hierarchies, monitor system statistics, sort and filter processes, and send signals to control processes. These skills are essential for system administrators to efficiently manage processes and troubleshoot system performance.</p>
+<h1 id="lab-exercise-starting-processes-in-the-future">Lab Exercise: Starting Processes in the Future</h1>
+<h2 id="objectives_3">Objectives:</h2>
+<ul>
+<li>Learn how to schedule and start processes at a later time using <code>at</code> and <code>cron</code>.</li>
+<li>Gain practical experience in automating tasks on a Linux system.</li>
+</ul>
+<h2 id="scenario_3">Scenario:</h2>
+<p>Automation is a key aspect of Linux system administration. In this lab exercise, you will explore two tools, <code>at</code> and <code>cron</code>, which allow you to schedule and start processes at specific times or on a recurring basis. These tools are valuable for automating routine tasks and managing system processes.</p>
+<h2 id="tasks_3">Tasks:</h2>
+<h3 id="task-1-using-at-to-schedule-a-one-time-task">Task 1: Using <code>at</code> to Schedule a One-Time Task</h3>
+<ul>
+<li>Open a terminal on your Linux system.</li>
+<li>Execute the <code>at</code> command followed by a specific time when you want a task to run (e.g., <code>at 14:30</code> to run the task at 2:30 PM).</li>
+<li>Say from now + 1 minute</li>
+<li>What is the command for the above condition?</li>
+<li>In the <code>at&gt;</code> prompt, enter a command you want to execute at the specified time (e.g., <code>echo "Hello, world" &gt; ~/hello.txt</code>).</li>
+<li>Press <code>Ctrl+D</code> to schedule the task.</li>
+<li>Verify that the task is scheduled using the <code>atq</code> command.</li>
+<li>Wait for the specified time, and observe the task execution.</li>
+</ul>
+<h3 id="task-2-using-cron-to-schedule-recurring-tasks">Task 2: Using <code>cron</code> to Schedule Recurring Tasks</h3>
+<ul>
+<li>Use the <code>crontab -e</code> command to open your user's crontab file for editing.</li>
+<li>Add a new line to schedule a recurring task (e.g., <code>0 3 * * * /usr/bin/backup-script.sh</code> to run a backup script every day at 3:00 AM).</li>
+<li>Save and exit the crontab file.</li>
+<li>Verify that the new cron job is added by running <code>crontab -l</code>.</li>
+<li>Wait for the scheduled time, and observe the recurring task execution.</li>
+<li>Optionally, you can edit the crontab file to schedule different tasks at specific intervals.</li>
+</ul>
+<h3 id="task-3-managing-cron-jobs">Task 3: Managing Cron Jobs</h3>
+<ul>
+<li>Use the <code>crontab -e</code> command to open your user's crontab file for editing.</li>
+<li>Remove or comment out one of the existing cron jobs.</li>
+<li>Save and exit the crontab file.</li>
+<li>Verify that the removed or commented-out cron job is no longer active by running <code>crontab -l</code>.</li>
+<li>Where are all the crontab config file stored?</li>
+</ul>
+<h3 id="task-4-exploring-at-and-cron-configuration-files">Task 4: Exploring <code>at</code> and <code>cron</code> Configuration Files</h3>
+<ul>
+<li>Explore the <code>/etc/crontab</code> file to see system-wide cron jobs.</li>
+<li>View the contents of the <code>/etc/at.allow</code> and <code>/etc/cron.allow</code> files, if they exist, to understand user access control for <code>at</code> and <code>cron</code>.</li>
+<li>Similarly, explore the <code>/etc/at.deny</code> and <code>/etc/cron.deny</code> files, if they exist, to see denied access rules.</li>
+<li>Understand the format of cron job entries in the <code>/etc/crontab</code> file.</li>
+<li>What does the 5 columns of cron job represents?</li>
+</ul>
+<hr />
+<h2 id="conclusion_3">Conclusion:</h2>
+<p>This lab exercise has provided you with practical experience in scheduling and starting processes in the future using the <code>at</code> and <code>cron</code> tools on a Linux system. You've learned how to schedule one-time tasks with <code>at</code> and recurring tasks with <code>cron</code>. Additionally, you've explored the configuration files and access control mechanisms associated with these tools. Automation through <code>at</code> and <code>cron</code> is essential for efficiently managing system tasks and maintenance.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.instant.prefetch", "navigation.tabs"], "search": "../../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
+      
+    
+  </body>
+</html>
