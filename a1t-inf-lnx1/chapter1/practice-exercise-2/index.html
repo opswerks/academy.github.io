@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../../images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.1">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.3.1">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.72749a73.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.046329b4.min.css">
       
       
 
@@ -1931,7 +1931,7 @@
 <li>Gain practical experience with process management in a Linux environment.</li>
 </ul>
 <h2 id="scenario">Scenario</h2>
-<p>Understanding how processes work and how to manage them efficiently is essential for Linux system administrators. This lab exercise will provide hands-on experience with process metrics, resource monitoring, and process control.</p>
+<p>Understanding how processes work and how to manage them efficiently is essential for Linux system administrators. This practice exercise will provide hands-on experience with process metrics, resource monitoring, and process control.</p>
 <h2 id="tasks">Tasks</h2>
 <h3 id="task-1-monitoring-process-metrics">Task 1: Monitoring Process Metrics</h3>
 <ul>
@@ -1942,21 +1942,71 @@
 <li>Run <code>ps</code> with the option to sort the process from the highest CPU usage to the lowest</li>
 <li>Run <code>ps</code> with the option to sort the process from the highest Memory usage to the lowest</li>
 </ul>
+<pre><code>➜  ~ ps aux --sort=-%cpu
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         616  1.3  4.4 1429108 90400 ?       Ssl  14:36   0:15 /usr/bin/kubelet --bootstrap-kubeconfig=/etc/kubernetes/bootstrap-kubelet.conf --kubeconfig=/etc/kubernetes/kubelet.conf --config=/var/lib/kubelet/config.yaml --container-runtime-endpoint=/var/run/cri-dockerd.sock --pod-infra-container-image=registry.k8s.io/pause:3.9
+root         711  0.5  3.1 1363056 63752 ?       Ssl  14:36   0:06 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+root         910  0.5  1.9 1185632 38928 ?       Ssl  14:36   0:06 /usr/local/bin/cri-dockerd --container-runtime-endpoint fd://
+root         640  0.3  1.8 1113832 36520 ?       Ssl  14:36   0:03 /usr/bin/containerd
+root        2121  0.2  1.3 1244544 28116 ?       Ssl  14:41   0:01 /usr/lib/snapd/snapd
+➜  ~ ps aux --sort=-%mem
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         616  1.3  4.4 1429108 90400 ?       Ssl  14:36   0:17 /usr/bin/kubelet --bootstrap-kubeconfig=/etc/kubernetes/bootstrap-kubelet.conf --kubeconfig=/etc/kubernetes/kubelet.conf --config=/var/lib/kubelet/config.yaml --container-runtime-endpoint=/var/run/cri-dockerd.sock --pod-infra-container-image=registry.k8s.io/pause:3.9
+root         711  0.5  3.1 1363056 62752 ?       Ssl  14:36   0:07 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+root         910  0.5  1.9 1185632 38928 ?       Ssl  14:36   0:06 /usr/local/bin/cri-dockerd --container-runtime-endpoint fd://
+root         640  0.3  1.8 1113832 36520 ?       Ssl  14:36   0:04 /usr/bin/containerd
+root        2121  0.2  1.3 1244544 28008 ?       Ssl  14:41   0:01 /usr/lib/snapd/snapd
+</code></pre>
+<ul>
+<li>Note that the macos implementation of ps doesn't accept the --sort flag</li>
+</ul>
 <h3 id="task-2-gathering-detailed-process-information">Task 2: Gathering Detailed Process Information</h3>
 <ul>
 <li>Choose a process from the list generated in Task 1 and note its PID.</li>
 <li>Use the <code>pidstat</code> command followed by the PID to gather detailed statistics about the selected process (e.g., <code>pidstat -p &lt;PID&gt;</code>).</li>
 <li>Observe metrics such as CPU usage, memory usage, and I/O statistics in real-time.</li>
 </ul>
+<pre><code>➜  ~ pidstat -p 616
+pidstat -p 616
+Linux 5.15.0-83-generic (ubuntu-node-template)  09/14/23    _aarch64_   (1 CPU)
+
+15:00:27      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
+15:00:27        0       616    0.89    0.44    0.00    0.03    1.34     0  kubelet
+</code></pre>
+<ul>
+<li>You might need to install pidstat since it usually isn't installed by default</li>
+<li>To install</li>
+</ul>
+<pre><code># In Debian base
+sudo apt install sysstat
+# In Rhel base
+sudo yum install sysstat
+</code></pre>
 <h3 id="task-3-adjusting-process-priority">Task 3: Adjusting Process Priority</h3>
 <ul>
-<li>Identify a non-essential process from the list generated in Task 1.</li>
 <li>Use the <code>nice</code> command to adjust the process's priority level (e.g., <code>nice -n 10 command</code>).</li>
 <li>Monitor the process's behavior and resource utilization after changing its priority.</li>
-<li>What is the default niceness?</li>
-<li>Can you use renice to lower the niceness?</li>
-<li>What is the niceness range?</li>
+<li>By running the command using the default niceness</li>
 </ul>
+<pre><code>tar -cvzf applications.tar /System/Applications
+</code></pre>
+<ul>
+<li>And by running <code>top</code> in another tab you can see</li>
+</ul>
+<pre><code>PID    COMMAND      %CPU TIME     #TH    #WQ  #PORTS MEM    PURG   CMPRS  PGRP
+23507  bsdtar       98.6 00:16.59 1/1    0    22     6833K+ 0B     544K   23507
+</code></pre>
+<ul>
+<li>By running the command using a user defined niceness</li>
+</ul>
+<pre><code>nice -n 19 tar -cvzf applications.tar /System/Applications
+</code></pre>
+<ul>
+<li>Run the <code>top</code> again and see the difference</li>
+</ul>
+<pre><code>PID    COMMAND      %CPU TIME     #TH    #WQ  #PORTS MEM    PURG   CMPRS  PGRP
+23824  bsdtar       98.6 00:15.80 1/1    0    22     6625K+ 0B     496K   23824
+</code></pre>
 <h3 id="task-4-controlling-process-execution">Task 4: Controlling Process Execution</h3>
 <ul>
 <li>Launch a sample command that runs indefinitely in the terminal (e.g., <code>while :; do echo "Running..."; sleep 1; done</code>).</li>
@@ -1965,15 +2015,29 @@
 <li>Use the <code>jobs</code> command to view background jobs.</li>
 <li>Bring the background process to the foreground using the <code>fg</code> command.</li>
 </ul>
+<pre><code>➜  ~ while :; do echo &quot;Running...&quot;; sleep 1; done
+Running...
+# Press ctrl + z
+^Z[1]  + 24406 suspended  sleep 1
+➜  ~  bg
+[1]  + 24406 continued  sleep 1
+Running...
+# After pressing bg the stdout will be in your terminal
+➜  ~  fg
+[1]  + 24409 running    while :; do; echo &quot;Running...&quot;; sleep 1; done
+</code></pre>
 <h3 id="task-5-sending-signals-to-processes">Task 5: Sending Signals to Processes</h3>
 <ul>
 <li>Identify a process from the task 4 and note its PID.</li>
 <li>Use the <code>kill</code> command to send different signals to the selected process (e.g., <code>kill -9 &lt;PID&gt;</code> to forcefully terminate it).</li>
 <li>Observe the effects of different signals on the process.</li>
 </ul>
+<pre><code>➜  ~ kill -9 24406
+[1]  + 24407 killed     while :; do; echo &quot;Running...&quot;; sleep 1; done
+</code></pre>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
-<p>This lab exercise has provided you with practical experience in working with process metrics, resource utilization, and process control on a Linux system. You've learned how to monitor running processes, gather detailed process information, adjust process priorities, control process execution, and send signals to processes. These skills are valuable for optimizing system performance and managing processes effectively.</p>
+<p>This practice exercise has provided you with practical experience in working with process metrics, resource utilization, and process control on a Linux system. You've learned how to monitor running processes, gather detailed process information, adjust process priorities, control process execution, and send signals to processes. These skills are valuable for optimizing system performance and managing processes effectively.</p>
 
 
 
@@ -2013,10 +2077,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.instant.prefetch"], "search": "../../../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.instant.prefetch"], "search": "../../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.4e0fa4ba.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
       
     
   </body>

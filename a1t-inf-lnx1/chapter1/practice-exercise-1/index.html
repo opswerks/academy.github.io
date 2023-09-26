@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../../images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.1">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.3.1">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.72749a73.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.046329b4.min.css">
       
       
 
@@ -1959,7 +1959,7 @@
 <li>Gain hands-on experience with process attributes and resource monitoring.</li>
 </ul>
 <h2 id="scenario">Scenario</h2>
-<p>As a Linux enthusiast, it's essential to comprehend the fundamentals of processes and how to interact with them effectively. This lab exercise will guide you through understanding, managing, and monitoring processes on a Linux system.</p>
+<p>As a Linux enthusiast, it's essential to comprehend the fundamentals of processes and how to interact with them effectively. This practice exercise will guide you through understanding, managing, and monitoring processes on a Linux system.</p>
 <h2 id="tasks">Tasks</h2>
 <h3 id="task-1-viewing-running-processes">Task 1: Viewing Running Processes</h3>
 <ul>
@@ -1968,6 +1968,9 @@
 <li>Pay attention to the columns that show the process ID (PID), the name or command associated with each process, and the status.</li>
 <li>Look for the process with the PID of 1 and take note of the process.(e.g. <code>/sbin/launchd</code>)</li>
 </ul>
+<pre><code>➜  ~ ps aux
+root                 1   0.1  0.1 408975104  15616   ??  Ss   20Jul23 267:59.47 /sbin/launchd
+</code></pre>
 <h3 id="task-2-identifying-parent-and-child-processes">Task 2: Identifying Parent and Child Processes</h3>
 <ul>
 <li>Identify a process from the list generated in Task 1 and note its PID.</li>
@@ -1975,17 +1978,50 @@
 <li>Verify that the child processes have a different PID but the same parent PID as the selected process.</li>
 <li>Can you share what command you ran?</li>
 </ul>
+<pre><code>➜  ~ pgrep -P 1
+309
+311
+313
+314
+315
+.....
+</code></pre>
 <h3 id="task-3-viewing-detailed-process-information">Task 3: Viewing Detailed Process Information</h3>
 <ul>
-<li>Choose a process from the list generated in Task 1 and note its PID.</li>
+<li>Choose a process from the list generated in Task 2 and note its PID.</li>
 <li>Use the <code>ps</code> command with the <code>-p</code> option followed by the PID (e.g., <code>ps -p 12345</code>) to display detailed information about that specific process.</li>
 <li>Observe the various attributes, including the process status, CPU and memory usage, and more. Take note that you will need to add another parameter and value to show the resource usage</li>
 </ul>
+<pre><code>➜  ~ ps -p 309 -o pid,stat,%cpu,%mem
+  PID STAT  %CPU %MEM
+  309 Ss     0.3  0.1
+</code></pre>
 <h3 id="task-4-monitoring-process-resource-usage">Task 4: Monitoring Process Resource Usage</h3>
 <ul>
 <li>Use the <code>top</code> command to open the real-time system monitoring tool.</li>
 <li>Observe the list of processes, their resource usage (CPU and memory), and the overall system statistics.</li>
 <li>Pay attention to the dynamic updating of data and the interactive features of the <code>top</code> command.</li>
+</ul>
+<pre><code>➜  ~ top
+Processes: 478 total, 7 running, 471 sleeping, 3524 threads            07:39:50
+Load Avg: 2.20, 2.58, 2.45  CPU usage: 7.89% user, 5.50% sys, 86.59% idle
+SharedLibs: 442M resident, 88M data, 27M linkedit.
+MemRegions: 638649 total, 2976M resident, 92M private, 1371M shared.
+PhysMem: 15G used (2288M wired, 7683M compressor), 40M unused.
+VM: 227T vsize, 4184M framework vsize, 149166775(4) swapins, 153284764(0) swapou
+Networks: packets: 105625798/89G in, 68209967/18G out.
+Disks: 149860204/3802G read, 82907440/2972G written.
+
+PID    COMMAND      %CPU TIME     #TH    #WQ  #PORT MEM    PURG   CMPRS  PGRP
+381    WindowServer 43.5 78:26:44 24/1   6    8569  2064M  464K   1405M  381
+0      kernel_task  15.8 91:10:31 575/10 0    0     2912K  0B     0B     0
+54864  iTerm2       9.6  94:03.37 7      4    308   124M   0B     67M-   54864
+399    coreaudiod   9.5  47:59:24 11     4    3641  116M   0B     94M-   399
+9487   QEMULauncher 8.4  00:38.76 11     1    37    1727M  0B     1497M- 9487
+</code></pre>
+<ul>
+<li>Note that top is an interactive command</li>
+<li>Press q to exit</li>
 </ul>
 <h3 id="task-5-sending-signals-to-processes">Task 5: Sending Signals to Processes</h3>
 <ul>
@@ -1994,24 +2030,48 @@
 <li>Confirm that the process has been terminated.</li>
 <li>Say run <code>sleep 3600&amp;</code> and then kill it afterwards</li>
 </ul>
+<pre><code>➜  ~ sleep 3600&amp;
+[1] 9864
+➜  ~ kill -9 9864
+[1]  + 9864 killed     sleep 3600
+</code></pre>
 <h3 id="task-6-background-and-foreground-processes">Task 6: Background and Foreground Processes</h3>
 <ul>
 <li>Launch a simple command in the foreground (e.g., <code>ping www.google.com</code>) that continuously runs in the terminal.</li>
 <li>Suspend the foreground process by pressing <code>Ctrl + Z</code>.</li>
 <li>Use the <code>bg</code> command to send the suspended process to the background.</li>
 <li>Verify that the process is running in the background using the <code>jobs</code> command.</li>
-<li>Can you run a command that will kill the ping job</li>
 </ul>
+<pre><code>➜  ~ ping www.google.com
+PING www.google.com (142.251.220.164): 56 data bytes
+64 bytes from 142.251.220.164: icmp_seq=0 ttl=119 time=25.553 ms
+64 bytes from 142.251.220.164: icmp_seq=1 ttl=119 time=23.553 ms
+^Z
+[1]  + 10142 suspended  ping www.google.com
+➜  ~ bg
+[1]  + 10142 continued  ping www.google.com
+64 bytes from 142.251.220.164: icmp_seq=2 ttl=119 time=22.471 ms
+</code></pre>
+<ul>
+<li>Note that after running <code>bg</code> your stdout will be bombarded by the pings output just continue running the next commands</li>
+</ul>
+<pre><code>➜  ~ jobs
+[1]  + running    ping www.google.com
+➜  ~   kill %1
+[1]  + 10142 terminated  ping www.google.com
+</code></pre>
 <h3 id="task-7-managing-process-priorities">Task 7: Managing Process Priorities</h3>
 <ul>
 <li>Use the <code>nice</code> command to launch a new process with a different priority level (e.g., <code>nice -n 10 command</code>).</li>
 <li>Observe how the process priority affects its resource allocation.</li>
 <li>Experiment with different priority levels to see their impact.</li>
-<li>Can you give at least one way to look for the niceness value of a process?</li>
 </ul>
+<pre><code>➜  ~ nice -n 10 echo Academy!
+Academy!
+</code></pre>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
-<p>This lab exercise has provided you with practical experience in understanding and working with processes in a Linux environment. You've learned how to view running processes, identify parent and child processes, inspect process attributes, monitor resource usage, send signals to processes, manage background and foreground processes, and adjust process priorities. These skills are crucial for effective Linux system administration and troubleshooting.</p>
+<p>This practice exercise has provided you with practical experience in understanding and working with processes in a Linux environment. You've learned how to view running processes, identify parent and child processes, inspect process attributes, monitor resource usage, send signals to processes, manage background and foreground processes, and adjust process priorities. These skills are crucial for effective Linux system administration and troubleshooting.</p>
 
 
 
@@ -2051,10 +2111,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.instant.prefetch"], "search": "../../../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.instant.prefetch"], "search": "../../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.4e0fa4ba.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
       
     
   </body>

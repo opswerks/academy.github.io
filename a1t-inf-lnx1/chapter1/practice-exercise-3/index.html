@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../../images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.1">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.3.1">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.72749a73.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.046329b4.min.css">
       
       
 
@@ -1930,7 +1930,7 @@
 <li>Gain practical experience in process management on a Linux system.</li>
 </ul>
 <h2 id="scenario">Scenario</h2>
-<p>Understanding how to list and monitor processes is crucial for Linux system administrators. In this lab exercise, you will explore the <code>ps</code> and <code>top</code> commands, which provide insights into the processes running on a Linux system.</p>
+<p>Understanding how to list and monitor processes is crucial for Linux system administrators. In this practice exercise, you will explore the <code>ps</code> and <code>top</code> commands, which provide insights into the processes running on a Linux system.</p>
 <h2 id="tasks">Tasks</h2>
 <h3 id="task-1-using-ps-to-list-processes">Task 1: Using <code>ps</code> to List Processes</h3>
 <ul>
@@ -1940,12 +1940,46 @@
 <li>Explore various options and arguments of the <code>ps</code> command to customize the process listing (e.g., <code>ps aux</code> or <code>ps -ef</code> for a more detailed list).</li>
 <li>What are the three options that ps accepts?</li>
 </ul>
+<pre><code>➜  ~ ps
+  PID TTY           TIME CMD
+62299 ttys020    0:05.65 /bin/zsh -il
+85101 ttys025    0:00.15 /bin/zsh -il
+25681 ttys028    0:00.78 /bin/zsh -il
+72798 ttys036    0:01.87 -zsh
+17779 ttys039    0:00.20 ssh jerome@192.168.64.2
+➜  ~ ps aux
+USER               PID  %CPU %MEM      VSZ    RSS   TT  STAT STARTED      TIME COMMAND
+_windowserver      381  30.6  0.8 414543008 138864   ??  Ss   20Jul23 4794:07.22 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer -daemon
+jerometaguba      3442  11.0  0.4 515071504  64160   ??  Ss   Thu02AM   1:38.79 /System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.WebContent.xpc/Contents/MacOS/com.apple.WebKit.WebContent
+jerometaguba     54864   9.6  0.6 410483904  96624   ??  R    24Aug23  98:40.59 /Applications/iTerm 2.app/Contents/MacOS/iTerm2
+➜  ~ ps -ef
+  UID   PID  PPID   C STIME   TTY           TIME CMD
+    0     1     0   0 20Jul23 ??       276:06.29 /sbin/launchd
+    0   309     1   0 20Jul23 ??       120:01.76 /usr/libexec/logd
+</code></pre>
 <h3 id="task-2-viewing-process-hierarchy">Task 2: Viewing Process Hierarchy</h3>
 <ul>
 <li>Use the <code>ps</code> command to display processes in a hierarchical tree structure.</li>
 <li>What is the parameter needed to achieve this?</li>
 <li>Identify the parent-child relationships between processes.</li>
 <li>Note the PPID (Parent Process ID) column to understand which process spawned other processes.</li>
+</ul>
+<pre><code>➜  ~ pstree
+-+= 00001 root /sbin/launchd
+ |--= 00309 root /usr/libexec/logd
+ |--= 00311 root /usr/libexec/UserEventAgent (System)
+ |--= 00313 root /System/Library/PrivateFrameworks/Uninstall.framework/Resources/uninstalld
+ |--= 00314 root /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd
+➜  ~ ps aux --forest
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           2  0.0  0.0      0     0 ?        S    20:08   0:00 [kthreadd]
+root           3  0.0  0.0      0     0 ?        I&lt;   20:08   0:00  \_ [rcu_gp]
+root           4  0.0  0.0      0     0 ?        I&lt;   20:08   0:00  \_ [rcu_par_gp]
+root           5  0.0  0.0      0     0 ?        I&lt;   20:08   0:00  \_ [slub_flushwq]
+root           6  0.0  0.0      0     0 ?        I&lt;   20:08   0:00  \_ [netns]
+</code></pre>
+<ul>
+<li>Note that the <code>--forest</code> will not work on macos implementation of <code>ps</code></li>
 </ul>
 <h3 id="task-3-monitoring-processes-with-top">Task 3: Monitoring Processes with <code>top</code></h3>
 <ul>
@@ -1954,15 +1988,30 @@
 <li>Pay attention to CPU usage, memory usage, load averages, and the list of running processes.</li>
 <li>Use the <code>q</code> key to exit <code>top</code> when you're done.</li>
 </ul>
+<pre><code>➜  ~ top
+Processes: 458 total, 2 running, 456 sleeping, 3461 threads                              16:44:48
+Load Avg: 2.44, 2.58, 2.48  CPU usage: 7.31% user, 5.21% sys, 87.46% idle
+SharedLibs: 386M resident, 79M data, 25M linkedit.
+MemRegions: 633737 total, 2899M resident, 104M private, 1285M shared.
+PhysMem: 15G used (2268M wired, 7567M compressor), 65M unused.
+VM: 218T vsize, 4184M framework vsize, 150288512(0) swapins, 154494124(0) swapouts.
+Networks: packets: 107038449/90G in, 68954341/18G out.
+Disks: 152911419/3856G read, 84165068/3004G written.
+
+PID    COMMAND      %CPU TIME     #TH    #WQ  #PORT MEM    PURG   CMPRS  PGRP  PPID  STATE
+381    WindowServer 38.6 79:57:31 24     6    8985  2052M+ 3088K  1427M- 381   1     sleeping
+0      kernel_task  15.9 92:30:06 581/10 0    0     3920K  0B     0B     0     0     running
+54864  iTerm2       13.9 99:16.73 8      5    316-  149M-  2528K  88M-   54864 1     sleeping
+</code></pre>
 <h3 id="task-4-sorting-and-filtering-processes-in-top">Task 4: Sorting and Filtering Processes in <code>top</code></h3>
 <ul>
 <li>Start <code>top</code> again.</li>
 <li>Experiment with sorting options by pressing keys like <code>P</code>, <code>M</code>, and <code>T</code>.</li>
-<li>When press <code>P, M, T</code> by what property does it sort the processes respectively?</li>
 <li>Use the <code>o</code> key to apply filters. For example, press <code>o</code> and enter a filter like <code>USER eq &lt;username&gt;</code> to display processes for a specific user.</li>
 <li>Explore other sorting and filtering options available in <code>top</code>.</li>
-<li>Give at least one other sorting options aside from the three provided.</li>
 </ul>
+<pre><code>➜  ~ top
+</code></pre>
 <h3 id="task-5-sending-signals-to-processes">Task 5: Sending Signals to Processes</h3>
 <ul>
 <li>Identify a process from the <code>ps</code> or <code>top</code> list that you want to interact with.</li>
@@ -1970,9 +2019,15 @@
 <li>Use the <code>kill</code> command to send a signal to the selected process (e.g., <code>kill -TERM &lt;PID&gt;</code> to gracefully terminate it).</li>
 <li>Observe how the process responds to different signals.</li>
 </ul>
+<pre><code>➜  ~ ps aux | grep sleep
+jerometaguba     28570   0.0  0.0 407962272    432 s044  R+    5:22PM   0:00.00 grep --color=auto --exclude-dir=.bzr --exclude-dir=CVS --exclude-dir=.git --exclude-dir=.hg --exclude-dir=.svn --exclude-dir=.idea --exclude-dir=.tox sleep
+jerometaguba     28504   0.0  0.0 408495760   1104 s044  SN    5:22PM   0:00.00 sleep 3600
+➜  ~ kill -9 28504
+[1]  + 28504 killed     sleep 3600
+</code></pre>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
-<p>This lab exercise has provided you with practical experience in listing and monitoring processes using the <code>ps</code> and <code>top</code> commands on a Linux system. You've learned how to customize process listings, view process hierarchies, monitor system statistics, sort and filter processes, and send signals to control processes. These skills are essential for system administrators to efficiently manage processes and troubleshoot system performance.</p>
+<p>This practice exercise has provided you with practical experience in listing and monitoring processes using the <code>ps</code> and <code>top</code> commands on a Linux system. You've learned how to customize process listings, view process hierarchies, monitor system statistics, sort and filter processes, and send signals to control processes. These skills are essential for system administrators to efficiently manage processes and troubleshoot system performance.</p>
 
 
 
@@ -2012,10 +2067,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.instant.prefetch"], "search": "../../../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.instant.prefetch"], "search": "../../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.4e0fa4ba.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
       
     
   </body>
