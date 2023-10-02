@@ -2284,9 +2284,6 @@ root         910  0.5  1.9 1185632 38928 ?       Ssl  14:36   0:06 /usr/local/bi
 root         640  0.3  1.8 1113832 36520 ?       Ssl  14:36   0:04 /usr/bin/containerd
 root        2121  0.2  1.3 1244544 28008 ?       Ssl  14:41   0:01 /usr/lib/snapd/snapd
 </code></pre>
-<ul>
-<li>Note that the macos implementation of ps doesn't accept the --sort flag</li>
-</ul>
 <h3 id="task-2-gathering-detailed-process-information">Task 2: Gathering Detailed Process Information</h3>
 <ul>
 <li>Choose a process from the list generated in Task 1 and note its PID.</li>
@@ -2302,28 +2299,30 @@ Linux 5.15.0-83-generic (ubuntu-node-template)  09/14/23    _aarch64_   (1 CPU)
 </code></pre>
 <h3 id="task-3-adjusting-process-priority">Task 3: Adjusting Process Priority</h3>
 <ul>
-<li>Use the <code>nice</code> command to adjust the process's priority level (e.g., <code>nice -n 10 command</code>).</li>
+<li>Use the <code>nice</code> command to adjust the process's priority level (e.g., <code>nice -n 19 command</code>).</li>
 <li>Monitor the process's behavior and resource utilization after changing its priority.</li>
 <li>By running the command using the default niceness</li>
 </ul>
-<pre><code>tar -cvzf applications.tar /System/Applications
+<pre><code>tar -cvzf applications.tar /usr/ &gt; /dev/null 2&gt;&amp;1 &amp; 
 </code></pre>
 <ul>
-<li>And by running <code>top</code> in another tab you can see</li>
+<li>And by running <code>top</code> in another tab you can see its niceness <code>NI</code> set to 0</li>
 </ul>
-<pre><code>PID    COMMAND      %CPU TIME     #TH    #WQ  #PORTS MEM    PURG   CMPRS  PGRP
-23507  bsdtar       98.6 00:16.59 1/1    0    22     6833K+ 0B     544K   23507
+<pre><code>    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+  13339 mbay      20   0    3372   1812   1228 R  93.3   0.2   0:25.59 gzip
+  13338 mbay      20   0    7440   3304   2780 S   4.0   0.3   0:01.49 tar
 </code></pre>
 <ul>
 <li>By running the command using a user defined niceness</li>
 </ul>
-<pre><code>nice -n 19 tar -cvzf applications.tar /System/Applications
+<pre><code>nice -n 19 tar -cvzf applications.tar /usr/ &gt; /dev/null 2&gt;&amp;1 &amp; 
 </code></pre>
 <ul>
-<li>Run the <code>top</code> again and see the difference</li>
+<li>Run the <code>top</code> again and see its niceness being changed</li>
 </ul>
-<pre><code>PID    COMMAND      %CPU TIME     #TH    #WQ  #PORTS MEM    PURG   CMPRS  PGRP
-23824  bsdtar       98.6 00:15.80 1/1    0    22     6625K+ 0B     496K   23824
+<pre><code>    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+  13378 mbay      39  19    3372   1824   1240 R  96.7   0.2   0:04.07 gzip
+  13377 mbay      39  19    7148   3004   2788 S   2.0   0.3   0:00.09 tar
 </code></pre>
 <h3 id="task-4-controlling-process-execution">Task 4: Controlling Process Execution</h3>
 <ul>

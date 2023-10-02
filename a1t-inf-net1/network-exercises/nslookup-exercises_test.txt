@@ -1,0 +1,35 @@
+---
+hide:
+- navigation
+  #- toc
+---
+# Practice Exercise: DNS Troubleshooting with Linux nslookup
+
+## Introduction
+This lab is designed to empower future Site Reliability Engineers (SREs) with the skills needed to effectively utilize the nslookup command in CentOS for DNS (Domain Name System) troubleshooting. As an SRE, understanding DNS is vital for diagnosing network issues, identifying DNS server-related problems, and resolving hostname-to-IP address mapping efficiently. This hands-on lab will guide you through various 'nslookup' commands and scenarios to build your DNS troubleshooting expertise.
+
+## Prerequisites
+- A CentOS Linux server (virtual or physical).
+- Basic familiarity with the Linux command line.
+
+## Lab Scenario
+Imagine you're a future SRE tasked with maintaining the reliability and performance of your organization's online services. DNS is a fundamental component of ensuring seamless connectivity. In this lab, you'll use your CentOS Linux server as a client to explore DNS-related tasks, diagnose DNS issues, and learn how to gather critical DNS information. These skills will be invaluable when troubleshooting DNS problems in real-world scenarios.
+
+## Tasks
+
+
+### Task 1. Basic DNS Query:
+- Open the terminal on your CentOS Linux server.
+- Execute nslookup www.example.com. Observe the IP address associated with "www.example.com."
+- Answer: The response should include the IP address associated with www.example.com.
+
+### Task 2. Reverse DNS Lookup:
+- Perform a reverse DNS lookup using nslookup for the IP address of a well-known site, such as nslookup 8.8.8.8.
+- Answer: The response should provide the hostname associated with the IP address 8.8.8.8 (e.g., google-public-dns-a.google.com).
+
+### Task 3. DNS Resolution Order:
+- Investigate the DNS resolution order by querying a non-existent domain like nslookup nonexistingsite.com. Observe the DNS resolver's behavior.
+- Answer: The query should return a "Non-existent domain" response, illustrating the DNS resolution process.
+
+
+
