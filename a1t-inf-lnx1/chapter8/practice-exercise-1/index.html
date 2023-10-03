@@ -2375,19 +2375,19 @@ passwd: password updated successfully
 
 # `/var/log` are where logs are stored
 ➜  ~ ls /var/log/
-alternatives.log       cloud-init-output.log  faillog         syslog.1
-alternatives.log.1     cloud-init.log         fontconfig.log  syslog.2.gz
-alternatives.log.2.gz  containers             installer       syslog.3.gz
-apt                    dist-upgrade           journal         syslog.4.gz
-audit                  dmesg                  kern.log        sysstat
-auth.log               dmesg.0                kern.log.1      ubuntu-advantage-timer.log
-auth.log.1             dmesg.1.gz             kern.log.2.gz   ubuntu-advantage-timer.log.1
-auth.log.2.gz          dmesg.2.gz             kern.log.3.gz   ubuntu-advantage-timer.log.2.gz
-auth.log.3.gz          dmesg.3.gz             kern.log.4.gz   ubuntu-advantage.log
-auth.log.4.gz          dmesg.4.gz             lastlog         unattended-upgrades
-bootstrap.log          dpkg.log               pods            vsftpd.log
-btmp                   dpkg.log.1             private         wtmp
-btmp.1                 dpkg.log.2.gz          syslog
+audit              dnf.log              maillog-20230926   secure-20230926
+boot.log           dnf.rpm.log          maillog-20231003   secure-20231003
+boot.log-20230818  firewalld            messages           spooler
+boot.log-20230821  hawkey.log           messages-20230820  spooler-20230820
+btmp               hawkey.log-20230820  messages-20230827  spooler-20230827
+btmp-20231002      hawkey.log-20230827  messages-20230926  spooler-20230926
+checker            hawkey.log-20230926  messages-20231003  spooler-20231003
+cron               hawkey.log-20231003  private            sssd
+cron-20230820      kdump.log            qemu-ga            tuned
+cron-20230827      lastlog              sa                 wtmp
+cron-20230926      maillog              secure
+cron-20231003      maillog-20230820     secure-20230820
+dnf.librepo.log    maillog-20230827     secure-20230827
 </code></pre>
 <hr />
 <h2 id="conclusion">Conclusion</h2>

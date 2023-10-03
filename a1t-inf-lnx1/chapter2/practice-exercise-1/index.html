@@ -2300,16 +2300,18 @@
 <li>Identify the root filesystem and note down its size, used space, and available space.</li>
 </ul>
 <pre><code>➜  ~ df
-Filesystem                        1K-blocks    Used Available Use% Mounted on
-tmpfs                                201172    1348    199824   1% /run
-/dev/mapper/ubuntu--vg-ubuntu--lv  14830568 9666072   4389328  69% /
-tmpfs                               1005844       0   1005844   0% /dev/shm
-tmpfs                                  5120       0      5120   0% /run/lock
-/dev/vda2                           1992552  254700   1616612  14% /boot
-/dev/vda1                           1098628    5220   1093408   1% /boot/efi
-tmpfs                                201168       4    201164   1% /run/user/1000
-➜  ~ df -h
-/dev/mapper/ubuntu--vg-ubuntu--lv   15G  9.3G  4.2G  69% /
+Filesystem     1K-blocks    Used Available Use% Mounted on
+/dev/root       20568532 5187056  14316552  27% /
+devtmpfs          480788       0    480788   0% /dev
+tmpfs             484544       0    484544   0% /dev/shm
+tmpfs             484544    6768    477776   2% /run
+tmpfs             484544       0    484544   0% /sys/fs/cgroup
+tmpfs              96908       0     96908   0% /run/user/1015
+tmpfs              96908       0     96908   0% /run/user/1001
+
+➜  ~ df -h /
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/root        20G  5.0G   14G  27% /
 </code></pre>
 <h3 id="task-3-creating-and-mounting-a-filesystem">Task 3: Creating and Mounting a Filesystem</h3>
 <ul>
@@ -2325,6 +2327,7 @@ NAME MAJ:MIN RM  SIZE RO TYPE MOUNTPOINTS
 sda    8:0    0   20G  0 disk /
 sdb    8:16   0    1G  0 disk 
 sdc    8:32   0  512M  0 disk
+
 ➜  ~ sudo mkfs.ext4 /dev/sdb
 [sudo] password for mbay:
 mke2fs 1.46.5 (30-Dec-2021)

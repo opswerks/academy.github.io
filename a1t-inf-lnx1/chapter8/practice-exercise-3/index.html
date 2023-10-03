@@ -1335,15 +1335,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#task-2-limiting-hardware-access" class="md-nav__link">
-    Task 2: Limiting Hardware Access
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#task-3-keeping-systems-current" class="md-nav__link">
-    Task 3: Keeping Systems Current
+  <a href="#task-2-keeping-systems-current" class="md-nav__link">
+    Task 2: Keeping Systems Current
   </a>
   
 </li>
@@ -2182,15 +2175,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#task-2-limiting-hardware-access" class="md-nav__link">
-    Task 2: Limiting Hardware Access
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#task-3-keeping-systems-current" class="md-nav__link">
-    Task 3: Keeping Systems Current
+  <a href="#task-2-keeping-systems-current" class="md-nav__link">
+    Task 2: Keeping Systems Current
   </a>
   
 </li>
@@ -2225,14 +2211,11 @@
 <h1 id="practice-exercise-enhancing-local-security-in-linux">Practice Exercise: Enhancing Local Security in Linux</h1>
 <h2 id="objectives">Objectives</h2>
 <ul>
-<li>Learn about important security principles in Linux.</li>
 <li>Explore the use of <code>sudo</code> for command execution with elevated privileges.</li>
-<li>Understand process isolation and its significance in system security.</li>
-<li>Explore methods for limiting hardware access.</li>
 <li>Practice keeping Linux systems up-to-date for improved security.</li>
 </ul>
 <h2 id="scenario">Scenario</h2>
-<p>Security is a top priority in Linux system administration. In this exercise, you will delve into various aspects of local security principles. You will explore how to use <code>sudo</code> for secure command execution, understand the concept of process isolation, implement methods to limit hardware access, and ensure that your Linux systems remain current with the latest security updates.</p>
+<p>Security is a top priority in Linux system administration. In this exercise, you will delve into various aspects of local security principles. You will explore how to use <code>sudo</code> for secure command execution and ensure that your Linux systems remain current with the latest security updates.</p>
 <h2 id="tasks">Tasks</h2>
 <h3 id="task-1-using-sudo-for-controlled-access">Task 1: Using <code>sudo</code> for Controlled Access</h3>
 <ul>
@@ -2285,31 +2268,7 @@ Last login: Wed Sep 27 03:17:33 UTC 2023 on pts/0
 check.sh             node_exporter-1.6.1.linux-amd64.tar.gz         submit.sh
 node_exporter-1.6.1.linux-amd64  splunkforwarder-9.1.0.1-77f73c9edb85-Linux-x86_64.tgz
 </code></pre>
-<h3 id="task-2-limiting-hardware-access">Task 2: Limiting Hardware Access</h3>
-<ul>
-<li>Explore methods to limit hardware access in Linux.</li>
-<li>Discuss the use of access control mechanisms, such as permissions and user groups.</li>
-<li>Explain how hardware devices are represented as files in Linux.</li>
-<li>Provide examples of how to restrict access to hardware devices using permissions.</li>
-</ul>
-<pre><code># Limiting access to the cd/dvd drive
-➜  ~ ls -l /dev/cdrom
-lrwxrwxrwx 1 root root 3 Sep 21 00:30 /dev/cdrom -&gt; sr0
-ls -l /dev/sr0
-brw-rw---- 1 root cdrom 11, 0 Sep 21 00:30 /dev/sr0
-➜  ~ sudo chmod 600 /dev/cdrom
-➜  ~ ls -l /dev/sr0
-brw------- 1 root cdrom 11, 0 Sep 21 00:30 /dev/sr0
-
-# configuring access to lv
-➜  ~ cat /etc/udev/rules.d/ubuntu--vg-ubuntu--lv.rules
-# Written by curtin
-SUBSYSTEM==&quot;block&quot;, ACTION==&quot;add|change&quot;, ENV{DM_NAME}==&quot;ubuntu--vg-ubuntu--lv&quot;, SYMLINK+=&quot;disk/by-dname/ubuntu--vg-ubuntu--lv&quot;
-
-➜  ~ sudo udevadm control --reload-rules
-➜  ~ sudo udevadm trigger
-</code></pre>
-<h3 id="task-3-keeping-systems-current">Task 3: Keeping Systems Current</h3>
+<h3 id="task-2-keeping-systems-current">Task 2: Keeping Systems Current</h3>
 <ul>
 <li>Stress the importance of keeping Linux systems up-to-date with security patches.</li>
 <li>Explain how package managers, such as <code>apt</code> or <code>yum</code>, can be used to update software packages.</li>

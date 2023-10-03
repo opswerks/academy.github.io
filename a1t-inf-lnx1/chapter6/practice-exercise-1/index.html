@@ -2394,45 +2394,50 @@ Address: 2606:2800:220:1:248:1893:25c8:1946
 </ul>
 <pre><code>➜  ~ dig www.example.com
 
-; &lt;&lt;&gt;&gt; DiG 9.18.12-0ubuntu0.22.04.2-Ubuntu &lt;&lt;&gt;&gt; www.example.com
+; &lt;&lt;&gt;&gt; DiG 9.11.36-RedHat-9.11.36-9.el8 &lt;&lt;&gt;&gt; www.example.com
 ;; global options: +cmd
 ;; Got answer:
-;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 49564
-;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 38255
+;; flags: qr rd ra ad; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
 
 ;; OPT PSEUDOSECTION:
-; EDNS: version: 0, flags:; udp: 65494
+; EDNS: version: 0, flags:; udp: 1232
 ;; QUESTION SECTION:
 ;www.example.com.       IN  A
 
 ;; ANSWER SECTION:
-www.example.com.    2400    IN  A   93.184.216.34
+www.example.com.    82031   IN  A   93.184.216.34
 
-;; Query time: 0 msec
-;; SERVER: 127.0.0.53#53(127.0.0.53) (UDP)
-;; WHEN: Tue Sep 19 19:12:14 UTC 2023
+;; Query time: 168 msec
+;; SERVER: 139.162.10.8#53(139.162.10.8)
+;; WHEN: Tue Oct 03 05:57:43 UTC 2023
 ;; MSG SIZE  rcvd: 60
 
 ➜  ~ dig www.google.com
 
-; &lt;&lt;&gt;&gt; DiG 9.18.12-0ubuntu0.22.04.2-Ubuntu &lt;&lt;&gt;&gt; www.google.com
+; &lt;&lt;&gt;&gt; DiG 9.11.36-RedHat-9.11.36-9.el8 &lt;&lt;&gt;&gt; www.google.com
 ;; global options: +cmd
 ;; Got answer:
-;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 4678
-;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 25799
+;; flags: qr rd ra; QUERY: 1, ANSWER: 6, AUTHORITY: 0, ADDITIONAL: 1
 
 ;; OPT PSEUDOSECTION:
-; EDNS: version: 0, flags:; udp: 65494
+; EDNS: version: 0, flags:; udp: 1232
 ;; QUESTION SECTION:
 ;www.google.com.            IN  A
 
 ;; ANSWER SECTION:
-www.google.com.     105 IN  A   142.250.189.228
+www.google.com.     213 IN  A   142.250.4.104
+www.google.com.     213 IN  A   142.250.4.105
+www.google.com.     213 IN  A   142.250.4.103
+www.google.com.     213 IN  A   142.250.4.147
+www.google.com.     213 IN  A   142.250.4.99
+www.google.com.     213 IN  A   142.250.4.106
 
-;; Query time: 395 msec
-;; SERVER: 127.0.0.53#53(127.0.0.53) (UDP)
-;; WHEN: Tue Sep 19 19:12:30 UTC 2023
-;; MSG SIZE  rcvd: 59
+;; Query time: 0 msec
+;; SERVER: 139.162.10.8#53(139.162.10.8)
+;; WHEN: Tue Oct 03 05:58:01 UTC 2023
+;; MSG SIZE  rcvd: 139
 </code></pre>
 <h2 id="conclusion">Conclusion</h2>
 <p>In this lab exercise, you've explored network addresses, DNS resolution, and related commands in Linux. You've learned how to view your system's IP configuration, resolve domain names to IP addresses using <code>nslookup</code>, verify DNS resolution with <code>ping</code>, manually map hostnames to IP addresses in the <code>/etc/hosts</code> file, configure DNS servers, and investigate domain ownership using <code>dig</code>. Understanding these network operations is crucial for effective Linux system administration.</p>
