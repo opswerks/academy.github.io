@@ -1,9 +1,3 @@
-:root {
-  --md-primary-fg-color:        #005F3E;
-  --md-primary-fg-color--light: #005F3E;
-  --md-primary-fg-color--dark:  #005F3E;
-}
-
 [data-md-color-scheme="opswerks"] {
   --md-primary-fg-color:        #005F3E;
   --md-primary-fg-color--light: #005F3E;
