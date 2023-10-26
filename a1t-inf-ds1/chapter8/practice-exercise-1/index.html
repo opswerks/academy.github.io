@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../../images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.3">
     
     
       
@@ -24,10 +24,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.35e1ed30.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.79e020e9.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.356b1318.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a5377069.min.css">
       
       
 
@@ -2538,7 +2538,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../a2t-pe-cnm1/lab/environment.md" class="md-nav__link">
+      <a href="../../../a2t-pe-cnm1/lab/environment/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2614,11 +2614,31 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../a2t-pe-cnm1/chapter3/bonus-exercise/" class="md-nav__link">
+      <a href="../../../a2t-pe-cnm1/chapter3/practice-exercise-2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Practice Exercise 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../a2t-pe-cnm1/chapter3/practice-exercise-3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practice Exercise 3
   </span>
   
 
@@ -2682,7 +2702,7 @@
         
   
   <span class="md-ellipsis">
-    Practice Exercise 3
+    Practice Exercise 4
   </span>
   
 
@@ -2698,11 +2718,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../a2t-pe-cnm1/chapter4/bonus exercise.md" class="md-nav__link">
+      <a href="../../../a2t-pe-cnm1/chapter4/practice-exercise-2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Practice Exercise 4
+    Practice Exercise 5
   </span>
   
 
@@ -2766,7 +2786,7 @@
         
   
   <span class="md-ellipsis">
-    Practice Exercise 5
+    Practice Exercise 6
   </span>
   
 
@@ -2786,7 +2806,27 @@
         
   
   <span class="md-ellipsis">
-    Practice Exercise 6
+    Practice Exercise 7
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../a2t-pe-cnm1/chapter5/practice-exercise-3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practice Exercise 8
   </span>
   
 
@@ -3133,26 +3173,6 @@
 
               
             
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../chapter4/practice-exercise-2/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Practice Exercise 2
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -3208,26 +3228,6 @@
   
   <span class="md-ellipsis">
     Practice Exercise 1
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../chapter5/practice-exercise-2/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Practice Exercise 2
   </span>
   
 
@@ -3775,26 +3775,6 @@
 
               
             
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../chapter12/practice-exercise-2/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Practice Exercise 2
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -3899,27 +3879,9 @@
 <pre><code>source chapter8/bin/activate
 </code></pre>
 <ul>
-<li>Copy the text below and save it as <code>requirements.txt</code> in the current directory</li>
+<li>Download the file below and save it as <code>requirements.txt</code> in the current directory</li>
 </ul>
-<pre><code>blinker==1.6.3
-cffi==1.16.0
-click==8.1.7
-cryptography==41.0.4
-Flask==3.0.0
-Flask-MySQL==1.5.2
-Flask-SQLAlchemy==3.1.1
-greenlet==3.0.0
-importlib-metadata==6.8.0
-itsdangerous==2.1.2
-Jinja2==3.1.2
-MarkupSafe==2.1.3
-mysql-connector==2.2.9
-pycparser==2.21
-PyMySQL==1.1.0
-SQLAlchemy==2.0.22
-typing_extensions==4.8.0
-Werkzeug==3.0.0
-zipp==3.17.0
+<pre><code>a1t-inf-ds-files.acad.opswerks.net/requirements.txt
 </code></pre>
 <ul>
 <li>Run the command to install the dependencies for the modified Flask app</li>
@@ -3927,78 +3889,14 @@ zipp==3.17.0
 <pre><code>pip install -r requirements.txt
 </code></pre>
 <ul>
-<li>Copy, modify and save the code to a file named <code>flask_v2.py</code></li>
+<li>Download the file below and save it as <code>flask_v2.py</code></li>
 </ul>
-<pre><code>from flask import Flask, render_template
-from flaskext.mysql import MySQL
-import threading
-import time
-
-app = Flask(__name__)
-
-# Configure your MySQL connections
-db_configs = [
-    {
-        'user': 'csingh',
-        'password': 'Acad_student-csingh',
-        'db': 'PRACTICE_DB',
-        'host': 'csingh-a1t-inf-ds-db1.acad.opswerks.net' # Replace with your secondary database host
-    },
-    {
-        'user': 'csingh',
-        'password': 'Acad_student-csingh',
-        'db': 'PRACTICE_DB',
-        'host': 'csingh-a1t-inf-ds-db2.acad.opswerks.net'  # Replace with your secondary database host
-    }
-]
-
-# Initialize the MySQL extension
-mysql = MySQL()
-app.config['MYSQL_DATABASE_USER'] = db_configs[0]['user']
-app.config['MYSQL_DATABASE_PASSWORD'] = db_configs[0]['password']
-app.config['MYSQL_DATABASE_DB'] = db_configs[0]['db']
-app.config['MYSQL_DATABASE_HOST'] = db_configs[0]['host']
-mysql.init_app(app)
-
-def toggle_db_config(primary_index, secondary_index):
-    while True:
-        is_primary_up = is_database_up(db_configs[primary_index])
-        if not is_primary_up:
-            primary_index, secondary_index = secondary_index, primary_index  # Toggle between primary and secondary
-            app.config['MYSQL_DATABASE_USER'] = db_configs[primary_index]['user']
-            app.config['MYSQL_DATABASE_PASSWORD'] = db_configs[primary_index]['password']
-            app.config['MYSQL_DATABASE_DB'] = db_configs[primary_index]['db']
-            app.config['MYSQL_DATABASE_HOST'] = db_configs[primary_index]['host']
-            print(f&quot;Switched to {'secondary' if primary_index == 1 else 'primary'} database&quot;)
-        time.sleep(60)  # Check every 60 seconds
-
-def is_database_up(db_config):
-    try:
-        test_conn = mysql.connect()
-        cursor = test_conn.cursor()
-        cursor.execute(&quot;SELECT 1&quot;)  # Check if the database is responsive by executing a simple query
-        cursor.close()
-        test_conn.close()
-        return True
-    except Exception as e:
-        print(f&quot;Database is down: {e}&quot;)
-        return False
-
-@app.route('/')
-def index():
-    cursor = mysql.get_db().cursor()
-    cursor.execute(&quot;SELECT * FROM PRACTICE_TABLE&quot;)
-    data = cursor.fetchall()
-    return render_template('table.html', data=data)
-
-if __name__ == '__main__':
-    # Start a separate thread to check the database status
-    primary_index, secondary_index = 0, 1  # Initial configuration
-    db_checker_thread = threading.Thread(target=toggle_db_config, args=(primary_index, secondary_index))
-    db_checker_thread.daemon = True
-    db_checker_thread.start()
-
-    app.run(host='0.0.0.0', port=5000) #,debug=True
+<pre><code>a1t-inf-ds-files.acad.opswerks.net/flask_v2.py
+</code></pre>
+<ul>
+<li>Set the environment variable <code>DB_USER</code></li>
+</ul>
+<pre><code>export DB_USER=&lt;NAME&gt;
 </code></pre>
 <ul>
 <li>Run your app</li>
@@ -4052,10 +3950,10 @@ if __name__ == '__main__':
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.instant.prefetch"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.instant.prefetch"], "search": "../../../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.aecac24b.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.6eac0284.min.js"></script>
       
     
   </body>
