@@ -3926,7 +3926,7 @@ def hello():
     return 'Hello, and welcome to my second Flask app!'
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=80)
 </code></pre>
 <ul>
 <li>Start the flask app:</li>
@@ -3934,9 +3934,9 @@ if __name__ == '__main__':
 <pre><code>python3 app.py
 </code></pre>
 <ul>
-<li>Ensure that the flask app from <strong>Module 2 - Activity 6</strong>  is also running on <code>web1</code></li>
+<li>Ensure that the flask app from <strong>Module 3 - Activity 6</strong>  is also running on <code>web1</code></li>
 <li>Visit the link <code>&lt;YOUR_NAME&gt;-a1t-inf-ds-lb.acad.opswerks.net</code></li>
-<li>Stop the <code>nginx</code> service on either of the <code>web</code> instances. Y
+<li>Stop the <code>nginx</code> service on either of the <code>web</code> instances.
   You should see the changes reflect when you revisit the <code>lb</code> url as the site would still be up. You will notice which <code>web</code> instance you are redirected to based on the code.</li>
 </ul>
 <h2 id="conclusion">Conclusion</h2>
