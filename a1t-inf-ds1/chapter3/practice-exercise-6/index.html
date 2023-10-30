@@ -3872,6 +3872,7 @@
 <p>Create a simple Flask app</p>
 <h2 id="tasks">Tasks</h2>
 <ul>
+<li>Before doing this stop make sure to stop the <code>nginx</code> service</li>
 <li>On the <code>web1</code> instance, create a directory for your app and navigate into it:</li>
 </ul>
 <pre><code>mkdir my_flask_app
@@ -3909,12 +3910,12 @@ if __name__ == '__main__':
 <ul>
 <li>Start the flask app:</li>
 </ul>
-<pre><code>python3 app.py
+<pre><code>sudo flask_env/bin/python3 app.py
 </code></pre>
 <ul>
 <li>Open a web browser and visit your host <name>.a1t-inf-ds-web1.acad.opswerks.net:5000</li>
 </ul>
-<p><em>Note: Ensure port 5000 is open</em></p>
+<p><em>Note: Ensure port 80 is open</em></p>
 <h2 id="conclusion">Conclusion</h2>
 <p>By following these steps, you have gained hands-on experience in creating a basic Flask web application, which can serve as a foundation for developing more complex web applications. Flask is a versatile and user-friendly web framework that provides a powerful platform for building web services and web-based applications.</p>
 
