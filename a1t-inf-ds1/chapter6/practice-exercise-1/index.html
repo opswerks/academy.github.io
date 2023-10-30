@@ -3893,7 +3893,6 @@
 <h2 id="tasks">Tasks</h2>
 <ul>
 <li>Connect to the <code>web2</code> instance</li>
-<li>Stop the <code>nginx</code> service</li>
 <li>Create a directory for your app and navigate into it:</li>
 </ul>
 <pre><code>mkdir my_flask_app
@@ -3934,10 +3933,11 @@ if __name__ == '__main__':
 <pre><code>python3 app.py
 </code></pre>
 <ul>
-<li>Ensure that the flask app from <strong>Module 3 - Activity 6</strong>  is also running on <code>web1</code></li>
+<li>Ensure that the flask app from <strong>Module 3 - Activity 6</strong>  is also running on <code>web1</code> and that the <code>nginx</code> service is not</li>
 <li>Visit the link <code>&lt;YOUR_NAME&gt;-a1t-inf-ds-lb.acad.opswerks.net</code></li>
-<li>Stop the <code>nginx</code> service on either of the <code>web</code> instances.
-  You should see the changes reflect when you revisit the <code>lb</code> url as the site would still be up. You will notice which <code>web</code> instance you are redirected to based on the code.</li>
+<li>Stop the <code>flask</code> app on either of the <code>web</code> instances.
+  <br>You should see the changes reflect when you revisit the <code>lb</code> url as the site would still be up.</br>
+  You will notice which <code>web</code> instance you are redirected to based on the text displayed.</li>
 </ul>
 <h2 id="conclusion">Conclusion</h2>
 <p>As you continue to explore distributed systems, you should grasp the significance of load balancing in optimizing resource utilization, ensuring high availability, and enhancing user experience. This hands-on activity provides a visual and practical demonstration of load balancing, making it easier to appreciate its role in maintaining the robustness and efficiency of distributed applications.</p>
