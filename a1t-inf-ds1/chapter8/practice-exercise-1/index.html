@@ -3885,10 +3885,12 @@
 <h2 id="objectives">Objectives</h2>
 <p>Run a Flask app that uses Distributed Databases</p>
 <h2 id="scenario">Scenario</h2>
-<p>You need a Flask app on <code>web1</code> that can run using Distributed Databases (<code>db1</code> &amp; <code>db2</code>)
-- <code>&lt;name&gt;-a1t-inf-ds-web1.acad.opswerks.net</code>
-- <code>&lt;name&gt;-a1t-inf-ds-db1.acad.opswerks.net</code>
-- <code>&lt;name&gt;-a1t-inf-ds-db2.acad.opswerks.net</code></p>
+<p>You need a Flask app on <code>web1</code> that can run using Distributed Databases (<code>db1</code> &amp; <code>db2</code>)</p>
+<ul>
+<li><code>&lt;name&gt;-a1t-inf-ds-web1.acad.opswerks.net</code></li>
+<li><code>&lt;name&gt;-a1t-inf-ds-db1.acad.opswerks.net</code></li>
+<li><code>&lt;name&gt;-a1t-inf-ds-db2.acad.opswerks.net</code></li>
+</ul>
 <h2 id="tasks">Tasks</h2>
 <ul>
 <li>On the <code>web1</code> instance, make a directory named <code>ch8</code> and navigate to it</li>
@@ -3932,17 +3934,20 @@
 <pre><code>mysql -u &lt;USERNAME&gt; -p -e &quot;SHOW MASTER STATUS&quot;
 </code></pre>
 <p>Your username is the same as your Linux username and the password is <code>Acad_student-&lt;USERNAME&gt;</code>.
-Take note of the <code>Position</code> from the output
-- On the <code>db2</code> instance run the command:</p>
+Take note of the <code>Position</code> from the output</p>
+<ul>
+<li>On the <code>db2</code> instance run the command:</li>
+</ul>
 <pre><code>mysql -u &lt;USERNAME&gt; -p -e &quot;CHANGE MASTER TO MASTER_HOST='&lt;DB1_HOSTNAME&gt;', MASTER_USER='&lt;YOUR_USERNAME&gt;', MASTER_PASSWORD='&lt;YOUR_PASSWORD&gt;', MASTER_LOG_FILE='mysql-bin.000001', MASTER_LOG_POS=&lt;LOG_POSITION&gt;; START SLAVE;&quot;
-``
-Fill in the command with the proper values, the `MASTER_LOG_POSITION` is taken from the output of `SHOW MASTER STATUS`
-- Run your app
 </code></pre>
-<p>python flask_v2.py
-<code>``
-- Visit your application at</code><YOUR_NAME>-a1t-inf-ds-lb.acad.opswerks.net<code>, your application should display a table
-- Stop the</code>mysqld<code>service on</code>db1<code>instance and revisit your application's website, it should be still running despite</code>db1` being down.</p>
+<p>Fill in the command with the proper values, the <code>MASTER_LOG_POSITION</code> is taken from the output of <code>SHOW MASTER STATUS</code>
+- Run your app</p>
+<pre><code>python flask_v2.py
+</code></pre>
+<ul>
+<li>Visit your application at <code>&lt;YOUR_NAME&gt;-a1t-inf-ds-lb.acad.opswerks.net</code>, your application should display a table</li>
+<li>Stop the <code>mysqld</code> service on <code>db1</code> instance and revisit your application's website, it should be still running despite <code>db1</code> being down.</li>
+</ul>
 <h2 id="conclusion">Conclusion</h2>
 <p>One of the most significant benefits of distributed databases is fault tolerance. To illustrate this, we deliberately stopped the <code>mysqld</code> service on the <code>db1</code> instance. Despite this disruption to a part of the database infrastructure, our application remained functional.</p>
 <p>In the world of distributed systems and databases, understanding fault tolerance, scalability, and consistency is crucial. This activity showcased the power of distributed databases in maintaining service availability, even in challenging situations.</p>
