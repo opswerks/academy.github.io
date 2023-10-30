@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../../chapter4/practice-exercise-1/">
+        <link rel="prev" href="../../chapter4/practice-exercise-2/">
       
       
-        <link rel="next" href="../../chapter6/practice-exercise-1/">
+        <link rel="next" href="../practice-exercise-2/">
       
       
       <link rel="icon" href="../../../images/favicon.png">
@@ -2538,7 +2538,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../a2t-pe-cnm1/lab/environment/" class="md-nav__link">
+      <a href="../../../a2t-pe-cnm1/lab/environment.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2614,31 +2614,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../a2t-pe-cnm1/chapter3/practice-exercise-2/" class="md-nav__link">
+      <a href="../../../a2t-pe-cnm1/chapter3/bonus-exercise/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Practice Exercise 2
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../a2t-pe-cnm1/chapter3/practice-exercise-3/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Practice Exercise 3
   </span>
   
 
@@ -2702,7 +2682,7 @@
         
   
   <span class="md-ellipsis">
-    Practice Exercise 4
+    Practice Exercise 3
   </span>
   
 
@@ -2718,11 +2698,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../a2t-pe-cnm1/chapter4/practice-exercise-2/" class="md-nav__link">
+      <a href="../../../a2t-pe-cnm1/chapter4/bonus-exercise/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Practice Exercise 5
+    Practice Exercise 4
   </span>
   
 
@@ -2786,7 +2766,7 @@
         
   
   <span class="md-ellipsis">
-    Practice Exercise 6
+    Practice Exercise 5
   </span>
   
 
@@ -2806,27 +2786,7 @@
         
   
   <span class="md-ellipsis">
-    Practice Exercise 7
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../a2t-pe-cnm1/chapter5/practice-exercise-3/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Practice Exercise 8
+    Practice Exercise 6
   </span>
   
 
@@ -3173,6 +3133,26 @@
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter4/practice-exercise-2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practice Exercise 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3302,6 +3282,26 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../practice-exercise-2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practice Exercise 2
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -3775,6 +3775,26 @@
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter12/practice-exercise-2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practice Exercise 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3866,27 +3886,21 @@
 <p>In this exercise you will understand how to synchronize system clocks using Chrony.</p>
 <h2 id="prerequisites">Prerequisites</h2>
 <ul>
-<li>Access to Linux-based machine. Follow the steps in <a href="https://academy-lab.opswerks.net/a1t-inf-lnx1/lab/environment/">Lab Environment</a></li>
+<li>Access to Linux-based machine. Follow the steps in <a href="https://academy-lab.opswerks.net/a1t-inf-ds1/chapter2/practice-exercise-1">Lab Environment</a> to access your machine.</li>
 <li>Basic knowledge of Linux command line.</li>
 </ul>
 <h2 id="exercises">Exercises</h2>
 <p>Syncing Clock to NTP</p>
-<ol>
-<li>Connect to your machine via SSH.</li>
-<li>Install Chrony if it's not already installed:</li>
-</ol>
+<p>Step 1. Connect to your machine via SSH.</p>
+<p>Step 2. Install Chrony if it's not already installed:</p>
 <pre><code>sudo yum install chrony
 </code></pre>
-<ol>
-<li>Start and enable the Chrony service:</li>
-</ol>
+<p>Step 3. Start and enable the Chrony service:</p>
 <pre><code>sudo systemctl start chronyd
 sudo systemctl enable chronyd
 </code></pre>
-<ol>
-<li>Edit the Chrony configuration file</li>
-</ol>
-<pre><code>sudo nano /etc/chrony/chrony.conf
+<p>Step 4. Edit the Chrony configuration file</p>
+<pre><code>sudo nano /etc/chrony.conf
 </code></pre>
 <p>Add NTP server sources to the configuration file. For example, add the following lines to use the NTP pool servers:</p>
 <pre><code>server 0.centos.pool.ntp.org iburst
@@ -3894,13 +3908,26 @@ server 1.centos.pool.ntp.org iburst
 server 2.centos.pool.ntp.org iburst
 server 3.centos.pool.ntp.org iburst
 </code></pre>
-<ol>
-<li>Save and close the configuration file.</li>
-<li>Check the status of the Chrony service to verify that it's running:</li>
-</ol>
+<p>Step 5. Save and close the configuration file.</p>
+<p>Step 6. Check the status of the Chrony service to verify that it's running:</p>
 <pre><code>chronyc tracking
 </code></pre>
-<p>Note the "Reference ID" and "Stratum" values.</p>
+<p>This command will display information about the system's clock and how well it is synchronized with the NTP server.
+&nbsp;</p>
+<p>Here's a breakdown of the information provided from the above command:</p>
+<p><strong>Reference ID</strong>: The IP address or hostname of the NTP server to which the system is synchronized.</p>
+<p><strong>Stratum</strong>: The stratum level of the NTP server. Lower numbers indicate servers closer to the reference clock.</p>
+<p><strong>Ref time (UTC)</strong>: The reference time in Coordinated Universal Time (UTC) obtained from the NTP server.</p>
+<p><strong>System time</strong>: The difference between the system's time and the NTP time. In this case, the system is slightly ahead of NTP time.</p>
+<p><strong>Last offset</strong>: The most recent offset between the system time and NTP time.</p>
+<p><strong>RMS offset</strong>: The root mean square (RMS) offset, which is a measure of the time offset's stability.</p>
+<p><strong>Frequency</strong>: The system's clock frequency offset from the reference NTP server.</p>
+<p><strong>Residual freq</strong>: The residual frequency offset after adjusting the clock.</p>
+<p><strong>Skew</strong>: The skew, or rate of change, in the system's clock frequency.</p>
+<p><strong>Root delay</strong>: The round-trip delay to the reference NTP server.</p>
+<p><strong>Root dispersion</strong>: The root dispersion, which represents the maximum error in the reference NTP server's time.</p>
+<p><strong>Update interval</strong>: The interval at which the system synchronizes with the NTP server.</p>
+<p><strong>Leap status</strong>: The leap status, which can be "Normal" or indicate a leap second adjustment.</p>
 <h2 id="conclusion">Conclusion</h2>
 <p>Upon completing these steps, you have successfully synchronized your system with NTP servers using Chrony. This exercise helps reinforce the understanding of time synchronization.</p>
 

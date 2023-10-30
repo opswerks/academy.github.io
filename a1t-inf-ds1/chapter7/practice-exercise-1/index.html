@@ -2538,7 +2538,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../a2t-pe-cnm1/lab/environment/" class="md-nav__link">
+      <a href="../../../a2t-pe-cnm1/lab/environment.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2614,31 +2614,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../a2t-pe-cnm1/chapter3/practice-exercise-2/" class="md-nav__link">
+      <a href="../../../a2t-pe-cnm1/chapter3/bonus-exercise/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Practice Exercise 2
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../a2t-pe-cnm1/chapter3/practice-exercise-3/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Practice Exercise 3
   </span>
   
 
@@ -2702,7 +2682,7 @@
         
   
   <span class="md-ellipsis">
-    Practice Exercise 4
+    Practice Exercise 3
   </span>
   
 
@@ -2718,11 +2698,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../a2t-pe-cnm1/chapter4/practice-exercise-2/" class="md-nav__link">
+      <a href="../../../a2t-pe-cnm1/chapter4/bonus-exercise/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Practice Exercise 5
+    Practice Exercise 4
   </span>
   
 
@@ -2786,7 +2766,7 @@
         
   
   <span class="md-ellipsis">
-    Practice Exercise 6
+    Practice Exercise 5
   </span>
   
 
@@ -2806,27 +2786,7 @@
         
   
   <span class="md-ellipsis">
-    Practice Exercise 7
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../a2t-pe-cnm1/chapter5/practice-exercise-3/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Practice Exercise 8
+    Practice Exercise 6
   </span>
   
 
@@ -3173,6 +3133,26 @@
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter4/practice-exercise-2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practice Exercise 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3228,6 +3208,26 @@
   
   <span class="md-ellipsis">
     Practice Exercise 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter5/practice-exercise-2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practice Exercise 2
   </span>
   
 
@@ -3775,6 +3775,26 @@
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter12/practice-exercise-2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practice Exercise 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3866,91 +3886,75 @@
 <p>To learn basic MySQL commands and perform simple database operations on your machine.</p>
 <h2 id="prerequisites">Prerequisites</h2>
 <ul>
-<li>Access to the <a href="https://academy-lab.opswerks.net/a1t-inf-lnx1/lab/environment/">Lab Environment</a></li>
 <li>A machine with MySQL installed.</li>
 </ul>
 <h2 id="exercise">Exercise</h2>
-<ol>
+<p>Step 1. Access your machine by following the instructions in <a href="https://academy-lab.opswerks.net/a1t-inf-ds1/chapter2/practice-exercise-1">Lab Environment</a>,</p>
+<p>Step 2. Access MySQL</p>
+<ul>
 <li>
-<p>Access your machine by following the instructions in <a href="https://academy-lab.opswerks.net/a1t-inf-lnx1/lab/environment/">Lab Environment</a></p>
+<p>Access MySQL using the MySQL command-line client:</p>
+<p>mysql -u your_mysql_username -p</p>
 </li>
 <li>
-<p>Access MySQL</p>
+<p>You will be prompted to enter your MySQL password.</p>
 </li>
-<li>
-<p>Access MySQL using the MySQL command-line client:
-  <code>mysql -u your_mysql_username -p</code>
- &emsp;  &emsp; You will be prompted to enter your MySQL password.</p>
-</li>
-<li>
-<p>Create a Database </p>
-</li>
-<li>Create a new database named academy_&lt; yourname &gt;_db;:</li>
-</ol>
-<pre><code>CREATE DATABASE academy_&lt; yourname &gt;_db;
+</ul>
+<p>Step 3. Create a Database </p>
+<ul>
+<li>Create a new database named academy_&lt; yourname &gt;_db;:<pre><code>CREATE DATABASE academy_&lt; yourname &gt;_db;
 </code></pre>
-<ol>
-<li>Use the Database</li>
-<li>Switch to the newly created database:</li>
-</ol>
-<p><code>USE academy_&lt; yourname &gt;_db;</code>
-5. Create a Table</p>
+</li>
+</ul>
+<p>Step 4. Use the Database
+-  Switch to the newly created database:</p>
+<pre><code>    USE academy_&lt; yourname &gt;_db;
+</code></pre>
+<p>Step 5. Create a Table</p>
+<ul>
+<li>
 <p>Create a table named "students" with the following columns:</p>
 <ul>
 <li>id (INT, AUTO_INCREMENT, PRIMARY KEY)</li>
 <li>first_name (VARCHAR)</li>
 <li>last_name (VARCHAR)</li>
-<li>age (INT)</li>
-</ul>
-<pre><code>CREATE TABLE students (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    first_name VARCHAR(50),
-    last_name VARCHAR(50),
-    age INT
+<li>age (INT)<pre><code>CREATE TABLE students (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  first_name VARCHAR(50),
+  last_name VARCHAR(50),
+  age INT
 );
 </code></pre>
-<ol>
-<li>
-<p>Insert Data</p>
 </li>
-<li>
-<p>Insert sample data into the "students" table:</p>
+</ul>
 </li>
-</ol>
-<pre><code>INSERT INTO students (first_name, last_name, age)
-VALUES
-    ('John', 'Doe', 25),
-    ('Jane', 'Smith', 22),
-    ('Bob', 'Johnson', 28);
+</ul>
+<p>Step 6. Insert Data
+- Insert sample data into the "students" table:</p>
+<pre><code>    INSERT INTO students (first_name, last_name, age)
+    VALUES
+        ('John', 'Doe', 25),
+        ('Jane', 'Smith', 22),
+        ('Bob', 'Johnson', 28);
 </code></pre>
-<ol>
-<li>Retrieve Data</li>
-</ol>
-<p>&emsp;  &emsp;  Perform the following queries:</p>
-<p>&emsp;  &emsp; &emsp;  &emsp; a. Retrieve all students from the "students" table:</p>
-<pre><code>SELECT * FROM students;
+<p>Step 7. Retrieve Data</p>
+<p><strong>Perform the following queries:</strong></p>
+<p>a. Retrieve all students from the "students" table:</p>
+<pre><code>  SELECT * FROM students;
 </code></pre>
-<p>&emsp;  &emsp; &emsp;  &emsp;  b. Retrieve the students whose age is greater than 25:</p>
-<pre><code>SELECT * FROM students WHERE age &gt; 25;
+<p>b. Retrieve the students whose age is greater than 25:</p>
+<pre><code>  SELECT * FROM students WHERE age &gt; 25;
 </code></pre>
-<ol>
-<li>
-<p>Update Data</p>
-</li>
-<li>
-<p>Update the age of 'Jane Smith' to 23:</p>
-</li>
-</ol>
-<pre><code>UPDATE students
-SET age = 23
-WHERE first_name = 'Jane' AND last_name = 'Smith';
+<p>Step 8. Update Data
+- Update the age of 'Jane Smith' to 23:</p>
+<pre><code>  UPDATE students
+  SET age = 23
+  WHERE first_name = 'Jane' AND last_name = 'Smith';
 </code></pre>
-<ol>
-<li>Delete Data</li>
-<li>Delete the student 'Bob Johnson' from the table:</li>
-</ol>
-<pre><code>DELETE FROM students
-WHERE first_name = 'Bob' AND last_name = 'Johnson';
+<p>Step 9. Delete Data
+- Delete the student 'Bob Johnson' from the table:</p>
+<pre><code>  DELETE FROM students
+  WHERE first_name = 'Bob' AND last_name = 'Johnson';
 </code></pre>
 <h2 id="conclusion">Conclusion</h2>
 <p>This lab exercise will help you get started with MySQL and practice simple database operations.</p>

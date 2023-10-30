@@ -12,6 +12,8 @@
         <link rel="prev" href="../../chapter11/practice-exercise-1/">
       
       
+        <link rel="next" href="../practice-exercise-2/">
+      
       
       <link rel="icon" href="../../../images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.3">
@@ -2536,7 +2538,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../a2t-pe-cnm1/lab/environment/" class="md-nav__link">
+      <a href="../../../a2t-pe-cnm1/lab/environment.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2612,31 +2614,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../a2t-pe-cnm1/chapter3/practice-exercise-2/" class="md-nav__link">
+      <a href="../../../a2t-pe-cnm1/chapter3/bonus-exercise/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Practice Exercise 2
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../a2t-pe-cnm1/chapter3/practice-exercise-3/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Practice Exercise 3
   </span>
   
 
@@ -2700,7 +2682,7 @@
         
   
   <span class="md-ellipsis">
-    Practice Exercise 4
+    Practice Exercise 3
   </span>
   
 
@@ -2716,11 +2698,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../a2t-pe-cnm1/chapter4/practice-exercise-2/" class="md-nav__link">
+      <a href="../../../a2t-pe-cnm1/chapter4/bonus-exercise/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Practice Exercise 5
+    Practice Exercise 4
   </span>
   
 
@@ -2784,7 +2766,7 @@
         
   
   <span class="md-ellipsis">
-    Practice Exercise 6
+    Practice Exercise 5
   </span>
   
 
@@ -2804,27 +2786,7 @@
         
   
   <span class="md-ellipsis">
-    Practice Exercise 7
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../a2t-pe-cnm1/chapter5/practice-exercise-3/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Practice Exercise 8
+    Practice Exercise 6
   </span>
   
 
@@ -3171,6 +3133,26 @@
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter4/practice-exercise-2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practice Exercise 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3226,6 +3208,26 @@
   
   <span class="md-ellipsis">
     Practice Exercise 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter5/practice-exercise-2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practice Exercise 2
   </span>
   
 
@@ -3773,6 +3775,26 @@
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../practice-exercise-2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Practice Exercise 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3864,108 +3886,57 @@
 <p>To monitor and maintain reliability, you should track various local resource metrics that provide insights into the health and performance of individual nodes within the distributed system.</p>
 <h2 id="prerequisites">Prerequisites</h2>
 <ul>
-<li>Connect to your <a href="https://academy-lab.opswerks.net/a1t-inf-lnx1/lab/environment/">Lab Environment</a></li>
+<li>Access your machine by following the instructions in <a href="https://academy-lab.opswerks.net/a1t-inf-lnx1/lab/environment/">Lab Environment</a>.</li>
 </ul>
 <h2 id="exercises">Exercises</h2>
 <p>Here are some important local resource metrics and sample commands to collect and monitor them.</p>
-<ol>
-<li>
-<p>CPU Usage:</p>
-</li>
-<li>
-<p>Metric: Monitor CPU utilization to ensure that nodes have sufficient processing power.</p>
-<ul>
-<li>Sample Command: Use the <code>top</code> command in Linux to view CPU usage:</li>
-</ul>
-<p><code>top</code>
-2. Memory Usage:
-- Metric: Monitor memory usage to prevent out-of-memory issues.
-  - Sample Command: Use <code>free</code> to check free and used memory:</p>
-<p><code>free -h</code></p>
-</li>
-<li>
-<p>Disk Space Usage:</p>
-</li>
-<li>
-<p>Metric: Ensure that nodes have enough disk space for logs and data storage.</p>
-<ul>
-<li>Sample Command: Use <code>df</code> to check disk space:</li>
-</ul>
-<p><code>df -h</code></p>
-</li>
-<li>
-<p>Network Bandwidth::</p>
-</li>
-<li>
-<p>Metric: Monitor network bandwidth to prevent network congestion.</p>
-<ul>
-<li>Sample Command: Use <code>iftop</code> to view network bandwidth usage:</li>
-</ul>
-<p><code>iftop</code></p>
-</li>
-<li>
-<p>I/O Operations:</p>
-</li>
-<li>
-<p>Metric: Monitor read and write operations on disks to prevent I/O bottlenecks.</p>
-<ul>
-<li>Sample Command: Use <code>iostat</code> to view I/O statistics:
-    <code>iostat -d 1</code></li>
-</ul>
-</li>
-<li>
-<p>System Load:</p>
-</li>
-<li>
-<p>Metric: Check system load to ensure that the system is not overloaded.</p>
-<ul>
-<li>Sample Command: Use <code>uptime</code> to check the system load:
-    <code>uptime</code></li>
-</ul>
-</li>
-<li>
-<p>Swap Usage: </p>
-</li>
-<li>
-<p>Metric: Monitor swap space usage to prevent excessive swapping.</p>
-<ul>
-<li>Sample Command: Use <code>swapon -s</code> to view swap usage:
-     <code>swapon -s</code></li>
-</ul>
-</li>
-<li>
-<p>File Descriptor Usage: </p>
-</li>
-<li>
-<p>Metric: Monitor the number of open file descriptors to prevent resource exhaustion.</p>
-<ul>
-<li>Sample Command: Use <code>ulimit -n</code> to check the maximum number of file descriptors:
-    <code>ulimit -n</code></li>
-</ul>
-</li>
-<li>
-<p>Process Monitoring:</p>
-</li>
-<li>
-<p>Metric: Monitor the number of running processes to ensure that the system doesn't run out of available processes.</p>
-<ul>
-<li>Sample Command: Use <code>ps aux</code> to list running processes:
-    <code>ps aux</code></li>
-</ul>
-</li>
-<li>
-<p>Log Analysis:</p>
-</li>
-<li>
-<p>Metric: Regularly review system logs for errors, warnings, and critical events.</p>
-<ul>
-<li>Sample Command: Use <code>cat</code>, <code>tail</code>, or <code>grep</code> to analyze log files. For example:</li>
-</ul>
-<p><code>cat /var/log/syslog
-  tail -n 100 /var/log/application.log
-  grep "ERROR" /var/log/app.log</code></p>
-</li>
-</ol>
+<p>Task 1. CPU Usage:
+-   Metric: Monitor CPU utilization to ensure that nodes have sufficient processing power.
+    - Use the <code>top</code> command in Linux to view CPU usage.</p>
+<pre><code>        top
+</code></pre>
+<p>Task 2. Memory Usage:
+-   Metric: Monitor memory usage to prevent out-of-memory issues.
+    - Use <code>free</code> to check free and used memory:</p>
+<pre><code>        free -h
+</code></pre>
+<p>Task 3. Disk Space Usage:
+-   Metric: Ensure that nodes have enough disk space for logs and data storage.
+    - Use <code>df</code> to check disk space:</p>
+<pre><code>        df -h
+</code></pre>
+<p>Task 4. I/O Operations:
+-   Metric: Monitor read and write operations on disks to prevent I/O bottlenecks.
+    -  Use <code>iostat</code> to view I/O statistics:</p>
+<pre><code>         iostat -d 1
+</code></pre>
+<p>Task 5. System Load:
+-   Metric: Check system load to ensure that the system is not overloaded.
+    -  Use <code>uptime</code> to check the system load:</p>
+<pre><code>        uptime
+</code></pre>
+<p>Task 6. Swap Usage: 
+-   Metric: Monitor swap space usage to prevent excessive swapping.
+    - Use <code>swapon -s</code> to view swap usage:</p>
+<pre><code>        swapon -s
+</code></pre>
+<p>Task 7. File Descriptor Usage: 
+-   Metric: Monitor the number of open file descriptors to prevent resource exhaustion.
+    -  Use <code>ulimit -n</code> to check the maximum number of file descriptors:</p>
+<pre><code>        ulimit -n
+</code></pre>
+<p>Task 8. Process Monitoring:
+-   Metric: Monitor the number of running processes to ensure that the system doesn't run out of available processes.
+    -  Use <code>ps aux</code> to list running processes:</p>
+<pre><code>        ps aux
+</code></pre>
+<p>Task 9. Log Analysis:
+-   Metric: Regularly review system logs for errors, warnings, and critical events.
+    - Use <code>cat</code>, <code>tail</code>, or <code>grep</code> to analyze log files. For example:</p>
+<pre><code>        cat /var/log/syslog
+        tail -n 100 /var/log/application.log
+        grep "ERROR" /var/log/app.log
+</code></pre>
 <h2 id="conclusion">Conclusion</h2>
 <p>By monitoring these local resource metrics, you can proactively identify and address potential issues in your distributed system, helping to maintain its reliability and performance. Additionally, consider using monitoring tools like Prometheus, Grafana, Nagios, or Zabbix for a more comprehensive and automated approach to monitoring and alerting in distributed systems.</p>
 <p>In addition you can implement custom health checks to monitor specific aspects of your application or services.</p>
