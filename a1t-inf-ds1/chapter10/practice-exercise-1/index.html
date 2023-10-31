@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../../images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.7">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.35e1ed30.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.4b4a2bd9.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.356b1318.min.css">
@@ -73,7 +73,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#practice-exercise-1" class="md-skip">
+        <a href="#practice-exercise-testing-a-working-site-hosted-in-a-cdn" class="md-skip">
           Skip to content
         </a>
       
@@ -3638,15 +3638,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#scenario" class="md-nav__link">
-    Scenario
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#tasks" class="md-nav__link">
-    Tasks
+  <a href="#exercises" class="md-nav__link">
+    Exercises
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-1-accessing-the-website" class="md-nav__link">
+    Exercise 1: Accessing the Website
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-2-downloading-a-big-file" class="md-nav__link">
+    Exercise 2: Downloading a Big File
   </a>
   
 </li>
@@ -3866,15 +3880,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#scenario" class="md-nav__link">
-    Scenario
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#tasks" class="md-nav__link">
-    Tasks
+  <a href="#exercises" class="md-nav__link">
+    Exercises
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-1-accessing-the-website" class="md-nav__link">
+    Exercise 1: Accessing the Website
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-2-downloading-a-big-file" class="md-nav__link">
+    Exercise 2: Downloading a Big File
   </a>
   
 </li>
@@ -3901,11 +3929,66 @@
                   
 
 
-<h1 id="practice-exercise-1">Practice Exercise 1:</h1>
+<h1 id="practice-exercise-testing-a-working-site-hosted-in-a-cdn">Practice Exercise: Testing a Working Site hosted in a CDN</h1>
 <h2 id="objectives">Objectives</h2>
-<h2 id="scenario">Scenario</h2>
-<h2 id="tasks">Tasks</h2>
+<p>The objective of this lab exercise is to have interns to understand how CDN works and how it improves site access time by caching important resources.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>You must have a SSH/<em>terminal</em> access to your <strong>web1</strong> instance: <code>&lt;name&gt;-a1t-inf-ds-web1.acad.opswerks.net</code>.</li>
+</ul>
+<h2 id="exercises">Exercises</h2>
+<p>You will be simulating accessing a static website that's hosted in a Content Delivery Network (CDN). We're going to compare accessing the CDN endpoint called the "edge" and the actual actual web servers, which in CDN terms is an "origin".</p>
+<p>In this setup, the two web servers (origin) are situated in the Oregon (US West Coast) and Singapore, having 1 node each. They are controlled infront by a CDN distribution with the hostname <code>ds-edge.opswerks.net</code>.</p>
+<p><img alt="Exercise Setup" src="../../img/ds-chapter10-exercise1-setup.png" /></p>
+<h2 id="exercise-1-accessing-the-website">Exercise 1: Accessing the Website</h2>
+<p><strong>Step 1:</strong> SSH to your <strong>web1</strong> instance <code>&lt;name&gt;-a1t-inf-ds-web1.acad.opswerks.net</code>.
+<strong>Step 2:</strong> Access our static websites in both the Oregon (US West) and Singapore. Let's time the access so you can see how long it takes to load the site.</p>
+<blockquote>
+<p>Hint: You can easily time the execution of a Linux by prepending the <code>time</code> command at the start of the whole command block. </p>
+</blockquote>
+<p>Oregon:</p>
+<pre><code>$ time curl http://ds-bucket-uw2.s3-website-us-west-2.amazonaws.com
+&lt;h1&gt; &lt;p style=&quot;font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif&quot;&gt;Hi! I'm a Website running in Oregon, USA! &lt;/h1&gt;
+&lt;/p&gt;
+real    0m0.130s
+user    0m0.007s
+sys     0m0.000s
+</code></pre>
+<p>Singapore:</p>
+<pre><code>$ time curl http://ds-bucket-sg.s3-website-ap-southeast-1.amazonaws.com
+&lt;h1&gt; &lt;p style=&quot;font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif&quot;&gt;Hi! I'm a Website running in Singapore! &lt;/h1&gt;
+&lt;/p&gt;
+real    0m0.453s
+user    0m0.005s
+sys     0m0.005s
+</code></pre>
+<p>You will see the time it took to process the curl request. Note the loading time for both the US West and Singapore websites.</p>
+<p><strong>Step 3:</strong> Now let's try accessing the website through the hosted CDN distribution endpoint. The endpoint is normally called the "edge". </p>
+<pre><code>time curl https://ds-edge.sandbox.opswerks.net
+&lt;h1&gt; &lt;p style=&quot;font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif&quot;&gt;Hi! I'm a Website running in Oregon, USA! &lt;/h1&gt;
+&lt;/p&gt;
+real    0m0.073s
+user    0m0.038s
+sys     0m0.007s
+</code></pre>
+<p><strong>Step 4:</strong> Take note of the site loading time through the CDN. Also take note of the output of the HTML page. It will say where it's running. On your test, where is it running?</p>
+<p><strong>Step 5:</strong> Try hitting the CDN edge again a couple of times. Did the load time improve? What was the output of the webpage that you got, is it the Oregon (US West) or the Singapore one?</p>
+<h2 id="exercise-2-downloading-a-big-file">Exercise 2: Downloading a Big File</h2>
+<p><strong>Step 6:</strong> Now let's test again by timing the download of a slightly larger file. This is an image worth 8.5MB.</p>
+<p>Oregon:</p>
+<pre><code>time wget http://ds-bucket-uw2.s3-website-us-west-2.amazonaws.com/BigFileSample.png
+</code></pre>
+<p>Singapore:</p>
+<pre><code>time wget http://ds-bucket-sg.s3-website-ap-southeast-1.amazonaws.com/BigFileSample.png
+</code></pre>
+<p><strong>Step 7:</strong> Now, let's try downloading it from the CDN endpoint:</p>
+<pre><code>time wget https://ds-edge.sandbox.opswerks.net/BigFileSample.png
+</code></pre>
+<p><strong>Step 8:</strong> Take note of the time of the initial download. Now, hit the download again multiple times. Take note of the download time.</p>
 <h2 id="conclusion">Conclusion</h2>
+<p>From your testing, you will notice that accessing a website through a CDN endpoint is much faster than accessing the actua web server itself. From your comparison you normally would save <code>50-75%</code> of the time in loading a site through CDNs.</p>
+<p>The common static files are usually offloaded to CDNs so the loading of the actual site is fast and the web and app servers can focus on running the application much better.</p>
+<p>On the internet, there are many bad actors which would hit websites randomly. CDN providers with their massive networks also offer the protection you'd need so you don't need to host the website yourself. In our case, we used <a href="https://aws.amazon.com/cloudfront/">AWS Cloudfront</a> in hosting the CDNs.</p>
 
 
 
