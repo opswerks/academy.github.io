@@ -14,7 +14,7 @@
       
       
       <link rel="icon" href="../../../images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.7">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
     
     
       
@@ -22,7 +22,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.4b4a2bd9.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.35e1ed30.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.356b1318.min.css">
@@ -3904,14 +3904,15 @@
 <p>In this exercise, you will learn how to access Splunk and perform some basic Splunk searches.</p>
 <h2 id="prerequisites">Prerequisites</h2>
 <ul>
-<li>Access your machine by following the instructions in <a href="https://academy-lab.opswerks.net/a1t-inf-lnx1/lab/environment/">Lab Environment</a>.</li>
+<li>Access to Web Browser</li>
+<li>Internet Connection</li>
 </ul>
 <h2 id="exercises">Exercises</h2>
 <p>Steps:</p>
-<p>Step 1. Open a web browser and navigate to the Splunk web interface by entering the IP address of your machine, followed by ":8000" (e.g., http://YOUR_SERVER_IP:8000).</p>
+<p>Step 1. Open a web browser and navigate to the Splunk web interface by entering the <code>ds-splunk-lab.acad.opswerks.net:8000</code></p>
 <p>Step 2. Log in using the following credentials:</p>
-<pre><code>      Username: &lt;yourname&gt;
-      Password: &lt;yourmachinepassword&gt;
+<pre><code>      Username: [first letter of your firstname+lastname]
+      Password: [yourmachinepassword]
 </code></pre>
 <p>Step 3. After logging in, you will be on the Splunk homepage. Explore the Splunk interface and familiarize yourself with the following sections:</p>
 <p><strong>Search &amp; Reporting:</strong> This is where you can perform searches and analyze data.</p>
@@ -3919,15 +3920,17 @@
 <p><strong>Settings:</strong> Configuration and management options.</p>
 <p>Step 4. Searching Data</p>
 <ul>
-<li>In the search bar, run a simple search query (e.g., sourcetype=access_*).</li>
-<li>This query will search for sample data in the "access_*" sourcetype.</li>
+<li>In the search bar, run a simple search query (e.g., index="_audit" sourcetype=audittrail).</li>
+<li>This query will search for sample data in the "audittrail" sourcetype.</li>
 </ul>
 <p>Step 5. Basic Search Queries</p>
 <ul>
 <li>Perform the following basic search queries and understand the results:</li>
-<li>Search for events from a specific source: source="/var/log/auth.log".</li>
-<li>Filter results based on a specific keyword: error.</li>
-<li>Time-based searches: index=main earliest=-24h.</li>
+<li>Search for events from a specific index: <code>index="_internal"</code>.</li>
+<li>Filter results based on a specific keyword: <code>error</code>.</li>
+<li>Time-based searches: <code>index="_introspection"  earliest=-24h</code>.</li>
+<li>Wild Card Search: <code>index="_introspection" sourcetype=splunk_resource_usage source=*resource_usage.log</code>.</li>
+<li>Count Events: <code>index="_introspection" sourcetype=splunk_resource_usage | stats count</code></li>
 </ul>
 <p>Step 6: Saving and Exporting Search Results</p>
 <ol>
