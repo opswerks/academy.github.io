@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="../../chapter3/lab-access/">
+        <link rel="prev" href="../../chapter3/quiz-1/">
       
       
         <link rel="next" href="../quiz-2/">
@@ -2656,7 +2656,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../chapter3/lab-access/" class="md-nav__link">
+      <a href="../../chapter3/lab-access.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2991,11 +2991,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../lab/404/" class="md-nav__link">
+      <a href="../../exam/404/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Quiz Not Yet Available
+    Page Not Found
   </span>
   
 
@@ -4036,7 +4036,7 @@
 <p>In this lab exercise, you will learn how to create Docker images using Dockerfiles and how to start, stop, and modify an application container. </p>
 <h2 id="prerequisites">Prerequisites</h2>
 <ol>
-<li>Access to your instance with Docker installed.Follow the steps in <a href="https://academy-lab.opswerks.net/a2t-pe-cnm1/lab/environment">Lab Environment</a> </li>
+<li>Access to your instance with Docker installed.Follow the steps in <a href="https://academy-lab.opswerks.net/a2t-pe-cnm1/lab/environment">Lab Environment</a> to access your machine.</li>
 <li>Basic familiarity with Linux command line.</li>
 </ol>
 <h4 id="duration-60-minutes">Duration: 60 minutes</h4>
@@ -4074,15 +4074,16 @@ CMD [&quot;python&quot;, &quot;app.py&quot;]
 </code></pre>
 <pre><code>#app.py 
 
-       from flash import Flask
+from flask import Flask
 
-       app = Flask(__name)
-       @app.route(`/`)
-       def hello():
-       return &quot;Hello, World!&quot;
+app = Flask(__name__)
 
-       if __name__ = '__main__:
-       app.run()
+@app.route('/')
+def hello_world():
+    return 'Hello, World!'
+
+if __name__ == '__main__':
+    app.run(debug=True)
 
 </code></pre>
 <pre><code>#requirements.txt 
