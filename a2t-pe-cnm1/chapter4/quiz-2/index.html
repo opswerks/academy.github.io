@@ -20,7 +20,7 @@
     
     
       
-        <title>Practice Exercise 4 - OpsWerks Academy</title>
+        <title>Quiz 4 Part 2 - OpsWerks Academy</title>
       
     
     
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Practice Exercise 4
+              Quiz 4 Part 2
             
           </span>
         </div>
@@ -2560,7 +2560,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../lab/environment.md" class="md-nav__link">
+      <a href="../../lab/environment/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2620,7 +2620,7 @@
         
   
   <span class="md-ellipsis">
-    Practice Exercise 1
+    Practice Exercise 1 
   </span>
   
 
@@ -2640,7 +2640,7 @@
         
   
   <span class="md-ellipsis">
-    Practice Exercise 2
+    Quiz 3 Part 2
   </span>
   
 
@@ -2726,7 +2726,7 @@
         
   
   <span class="md-ellipsis">
-    Practice Exercise 3
+    Practice Exercise 2
   </span>
   
 
@@ -2755,7 +2755,7 @@
           
   
   <span class="md-ellipsis">
-    Practice Exercise 4
+    Quiz 4 Part 2
   </span>
   
 
@@ -2766,7 +2766,7 @@
         
   
   <span class="md-ellipsis">
-    Practice Exercise 4
+    Quiz 4 Part 2
   </span>
   
 
@@ -2884,7 +2884,7 @@
         
   
   <span class="md-ellipsis">
-    Practice Exercise 5
+    Practice Exercise 3
   </span>
   
 
@@ -2904,7 +2904,7 @@
         
   
   <span class="md-ellipsis">
-    Practice Exercise 6
+    Practice Exercise 4
   </span>
   
 
@@ -2969,6 +2969,26 @@
   
   <span class="md-ellipsis">
     Final Exam
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exam/404.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quiz Not Yet Available
   </span>
   
 
@@ -4002,17 +4022,20 @@
 <p>Use what you’ve learned so far in this module about building and managing containers.</p>
 <h2 id="prerequisites">Prerequisites</h2>
 <ul>
-<li>Access to your instance with Docker installed.Follow the steps in <a href="https://academy-lab.opswerks.net/a1t-inf-lnx1/lab/environment/">Lab Environment</a> </li>
+<li>Access to your instance with Docker installed.Follow the steps in <a href="https://academy-lab.opswerks.net/a2t-pe-cnm1/lab/environment">Lab Environment</a> </li>
 <li>Basic familiarity with Linux command line.</li>
 <li>Sudo access</li>
 </ul>
 <h4 id="duration-60-minutes">Duration: 60 minutes</h4>
 <h2 id="tasks">Tasks</h2>
-<p><strong>Task 1: Initial Setup</strong>
-- Create a new directory name <code>nginx-lab2</code> and inside the folder create a Dockerfile</p>
+<p><strong>Task 1: Initial Setup</strong></p>
+<ul>
+<li>Create a new directory name <code>nginx-lab2</code> and inside the folder create a Dockerfile</li>
+</ul>
 <p><strong>Task 2: Edit Dockerfile and add the following configuration</strong></p>
 <p>&emsp; 2.1. Instruct Docker to create an image based on another image</p>
-<p><code>FROM UBUNTU</code></p>
+<pre><code>  FROM ubuntu
+</code></pre>
 <p>&emsp; 2.2.  Install Nginx package from the official page using <code>apt</code></p>
 <pre><code>RUN apt-get -y update &amp;&amp; apt-get -y install nginx
 </code></pre>
