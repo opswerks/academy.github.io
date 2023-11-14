@@ -73,7 +73,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#uhhh" class="md-skip">
+        <a href="#quiz-4-part-2" class="md-skip">
           Skip to content
         </a>
       
@@ -2751,6 +2751,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Quiz 4 Part 2
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -2760,6 +2771,59 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objective" class="md-nav__link">
+    Objective
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+    <nav class="md-nav" aria-label="Prerequisites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#duration-60-minutes" class="md-nav__link">
+    Duration: 60 minutes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tasks" class="md-nav__link">
+    Tasks
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -4461,6 +4525,48 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objective" class="md-nav__link">
+    Objective
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+    <nav class="md-nav" aria-label="Prerequisites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#duration-60-minutes" class="md-nav__link">
+    Duration: 60 minutes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tasks" class="md-nav__link">
+    Tasks
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -4474,9 +4580,63 @@
                   
 
 
-<h1 id="uhhh">Uhhh...</h1>
-<p>Page is not yet available...
-I don't think you should be here...yet 😏 spend more time to review and do hands-on practices for now. We'll open this one soon!</p>
+<h1 id="quiz-4-part-2">Quiz 4: Part 2</h1>
+<h2 id="objective">Objective</h2>
+<p>Use what you’ve learned so far in this module about building and managing containers.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>Access to your instance with Docker installed.Follow the steps in <a href="https://academy-lab.opswerks.net/a2t-pe-cnm1/lab/environment">Lab Environment</a> to access your machine.</li>
+<li>Basic familiarity with Linux command line.</li>
+<li>Sudo access</li>
+</ul>
+<h4 id="duration-60-minutes">Duration: 60 minutes</h4>
+<h2 id="tasks">Tasks</h2>
+<p><strong>Task 1: Initial Setup</strong></p>
+<ul>
+<li>Create a new directory name <code>nginx-lab2</code> and inside the folder create a Dockerfile</li>
+</ul>
+<p><strong>Task 2: Edit Dockerfile and add the following configuration</strong></p>
+<p>&emsp; 2.1. Instruct Docker to create an image based on another image</p>
+<pre><code>FROM ubuntu
+</code></pre>
+<p>&emsp; 2.2.  Install Nginx package from the official page using <code>apt</code></p>
+<pre><code>RUN apt-get -y update &amp;&amp; apt-get -y install nginx
+</code></pre>
+<p>&emsp; 2.3.  Create your own default configuration file</p>
+<pre><code>server { listen 80 default_server;
+    listen [::]:80 default_server;
+
+    root /usr/share/nginx/html;
+    index index.html index.htm;
+
+    server_name _;
+    location / {
+        try_files $uri $uri/ =404;
+    }
+}
+</code></pre>
+<p>&emsp; 2.4. Add entry in the Dockerfile for copying our configuration file</p>
+<pre><code>COPY default /etc/nginx/sites-available/default
+</code></pre>
+<p>&emsp; 2.5. Expose the port on which we’ll access our server</p>
+<pre><code>EXPOSE 8090/tcp
+</code></pre>
+<p>&emsp; 2.6. Run Nginx whenever Docker images launches</p>
+<pre><code>CMD [&quot;/usr/sbin/nginx&quot;, &quot;-g&quot;, &quot;daemon off;&quot;]
+
+</code></pre>
+<p><strong>Task 3: Build the image</strong></p>
+<ul>
+<li>Using the Dockerfile on task 2, build the image and use image tag <code>nginx-web</code>.</li>
+</ul>
+<p><strong>Task 4: Once the image is built successfully, take it for a test run.</strong></p>
+<ul>
+<li>Run the image <code>nginx-web</code> in detached mode and name it as <code>nginx-acads2</code>. Use port 8090 and expose it on both container and server.</li>
+</ul>
+<p><strong>Task 5: Access the application using your browser</strong></p>
+<ul>
+<li>Fire up your favorite browser and check your newly-built server using port 8090.</li>
+</ul>
 
 
 
