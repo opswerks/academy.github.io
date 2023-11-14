@@ -4671,38 +4671,10 @@
 </li>
 </ol>
 <p>Note: You can run also <code>telnet</code> to check network issue.</p>
-<p><strong>Task 3. Container Cleanup</strong></p>
-<p>Scenario: There are several stopped or dangling containers on the system, and you need to clean up the environment.</p>
-<ol>
-<li>
-<p>List all containers</p>
-<pre><code>    docker ps -a
-</code></pre>
-</li>
-<li>
-<p>Remove Stopped Containers </p>
-<pre><code>    docker container prune
-</code></pre>
-</li>
-<li>
-<p>List Images</p>
-<pre><code>    docker images
-</code></pre>
-</li>
-<li>
-<p>Remove Unused Images</p>
-<pre><code>    docker image prune
-</code></pre>
-</li>
-</ol>
-<p>Note: </p>
-<p>The prune command helps you clean up your system by removing images that are not associated with any containers.    </p>
-<p>Keep in mind that this command only removes images that are not currently in use by any containers. If an image is associated with a running or stopped container, it won't be removed.</p>
-<p>Again, be cautious when using these commands, as they will remove images and containers, and the data associated with them will be lost. Always double-check before running prune commands to avoid accidental data loss.</p>
-<p><strong>Task 4. Image Pulling Problem</strong></p>
+<p><strong>Task 3. Image Pulling Problem</strong></p>
 <p>a. Pull a Docker image that does not exist on the server by using a non-existent image name.</p>
 <p>b. Analyze the error message.</p>
-<p><strong>Task 5. Port Conflict</strong></p>
+<p><strong>Task 4. Port Conflict</strong></p>
 <p>Scenario:    Run a web server container on port 8080 using the following command:</p>
 <pre><code>  docker run -d -p 8080:80 nginx –-name nginx-conflict
 </code></pre>
