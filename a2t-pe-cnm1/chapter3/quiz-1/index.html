@@ -73,7 +73,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#uhhh" class="md-skip">
+        <a href="#quiz-3-part-2" class="md-skip">
           Skip to content
         </a>
       
@@ -2647,6 +2647,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Quiz 3 Part 2
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -2656,6 +2667,59 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objective" class="md-nav__link">
+    Objective
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+    <nav class="md-nav" aria-label="Prerequisites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#duration-60-minutes" class="md-nav__link">
+    Duration: 60 minutes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tasks" class="md-nav__link">
+    Tasks
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -4461,6 +4525,48 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objective" class="md-nav__link">
+    Objective
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+    <nav class="md-nav" aria-label="Prerequisites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#duration-60-minutes" class="md-nav__link">
+    Duration: 60 minutes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tasks" class="md-nav__link">
+    Tasks
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -4474,9 +4580,41 @@
                   
 
 
-<h1 id="uhhh">Uhhh...</h1>
-<p>Page is not yet available...
-I don't think you should be here...yet 😏 spend more time to review and do hands-on practices for now. We'll open this one soon!</p>
+<h1 id="quiz-3-part-2">Quiz 3: Part 2</h1>
+<h2 id="objective">Objective</h2>
+<p>Use what you’ve learned so far in this module and apply some of the basic docker commands based on each task.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>Access to Linux-based machine. Follow the steps in <a href="https://academy-lab.opswerks.net/a2t-pe-cnm1/lab/environment">Lab Environment</a></li>
+<li>Basic knowledge of Linux command line.</li>
+<li>Sudo access</li>
+</ul>
+<h4 id="duration-60-minutes">Duration: 60 minutes</h4>
+<h2 id="tasks">Tasks</h2>
+<p><strong>Task 1: Start docker daemon service</strong></p>
+<ul>
+<li>Docker service is currently stopped in your machines. Start docker service so we can proceed to other tasks.</li>
+</ul>
+<p><strong>Task 2: Check and run the available docker images</strong></p>
+<ul>
+<li>Using the docker image with the name <code>nginx:latest</code> run the container exposing port 8080 on the host to port 80 in the container. Name the container <code>quiz-3-part2</code>.</li>
+<li>You can verify if you did this correctly by accessing it in your browser using your <code>hostname:8080</code></li>
+<li>This should show the default <code>Welcome to nginx!</code> page</li>
+</ul>
+<p><strong>Task 3: Start docker container</strong></p>
+<ul>
+<li>There is a container that is currently stopped. Run the container.</li>
+</ul>
+<p><strong>Hint:</strong> To verify if the container is running correctly, use <code>docker ps</code> command</p>
+<p><strong>Task 4. Stop and delete the running container with the name <code>mysql-acads</code></strong></p>
+<ul>
+<li>There is a container name <code>mysql-acads</code> that is currently running when you started docker service. Stop the container and delete it.</li>
+</ul>
+<p><strong>Task 5: Pull and run images from a public registry</strong></p>
+<ul>
+<li>Using this public registry <code>jgermino/academy-lab-cnm1</code> pull image with name <code>nginx-lab1</code> and run it using port 80. Use <code>lab-exercise-1</code> as the container name.</li>
+</ul>
+<p><strong>Note:</strong> Make sure that it is detached when you run the container.</p>
 
 
 
