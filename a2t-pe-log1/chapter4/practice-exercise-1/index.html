@@ -73,7 +73,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#splunk-practice-exercise-11" class="md-skip">
+        <a href="#splunk-practice-exercise-11-configuring-field-alias" class="md-skip">
           Skip to content
         </a>
       
@@ -4209,6 +4209,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Practice Exercise 1
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -4218,6 +4229,67 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-access-splunk-web" class="md-nav__link">
+    Step 1: Access Splunk Web
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-navigate-to-settings" class="md-nav__link">
+    Step 2: Navigate to Settings
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-configure-field-alias" class="md-nav__link">
+    Step 3: Configure Field Alias
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-apply-field-alias-to-search" class="md-nav__link">
+    Step 4: Apply Field Alias to Search
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -4363,6 +4435,56 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-access-splunk-web" class="md-nav__link">
+    Step 1: Access Splunk Web
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-navigate-to-settings" class="md-nav__link">
+    Step 2: Navigate to Settings
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-configure-field-alias" class="md-nav__link">
+    Step 3: Configure Field Alias
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-apply-field-alias-to-search" class="md-nav__link">
+    Step 4: Apply Field Alias to Search
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -4376,7 +4498,62 @@
                   
 
 
-<h1 id="splunk-practice-exercise-11">Splunk Practice Exercise 11</h1>
+<h1 id="splunk-practice-exercise-11-configuring-field-alias">Splunk Practice Exercise 11: Configuring Field Alias</h1>
+<h2 id="introduction">Introduction</h2>
+<p>This practice exercise focuses on configuring field aliases in Splunk.</p>
+<h2 id="step-1-access-splunk-web">Step 1: Access Splunk Web</h2>
+<ol>
+<li>
+<p>Open your web browser and navigate to Splunk Web:</p>
+<p><code>http://&lt;your server ip&gt;:8000</code></p>
+</li>
+<li>
+<p>Log in using your credentials.</p>
+</li>
+</ol>
+<h2 id="step-2-navigate-to-settings">Step 2: Navigate to Settings</h2>
+<ol>
+<li>In the Splunk Web interface, go to the <strong>Settings</strong> menu.</li>
+</ol>
+<h2 id="step-3-configure-field-alias">Step 3: Configure Field Alias</h2>
+<ol>
+<li>
+<p>Under <strong>Settings</strong>, select <strong>Fields</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Field Aliases</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>New Field Alias</strong>.</p>
+</li>
+<li>
+<p>Enter a name to your liking for the field alias.</p>
+</li>
+<li>
+<p>Apply the alias to <strong>sourcetype</strong> <code>vendor_sales</code>.</p>
+</li>
+<li>
+<p>Set <strong>Field aliases</strong> to be <code>VendorID = vendor_id</code>. This will create a new field <code>vendor_id</code> while still keeping the original name.</p>
+</li>
+<li>
+<p>Click <strong>Save</strong> to create the field alias.</p>
+</li>
+</ol>
+<h2 id="step-4-apply-field-alias-to-search">Step 4: Apply Field Alias to Search</h2>
+<ol>
+<li>
+<p>Go back to the <strong>Search &amp; Reporting</strong> app.</p>
+</li>
+<li>
+<p>Use the field alias in your search queries. For example:</p>
+</li>
+</ol>
+<p>Query:</p>
+<pre><code>index=tutorial | table VendorID, vendor_id
+</code></pre>
+<p>This should output 2 columns with different names but identical values as we just made an alias to the field.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Congratulations! You have successfully completed the practice exercise, configuring a field alias in Splunk. Field aliases are useful for simplifying and standardizing the names of fields in your searches and reports. Continue to explore and experiment with different configuration options to enhance your Splunk skills.</p>
 
 
 

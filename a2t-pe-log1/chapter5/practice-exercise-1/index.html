@@ -73,7 +73,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#splunk-practice-exercise-13" class="md-skip">
+        <a href="#splunk-practice-exercise-13-extracting-fields-using-rex" class="md-skip">
           Skip to content
         </a>
       
@@ -4291,6 +4291,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Practice Exercise 1
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -4300,6 +4311,67 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-access-splunk-web" class="md-nav__link">
+    Step 1: Access Splunk Web
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-navigate-to-search-reporting-app" class="md-nav__link">
+    Step 2: Navigate to Search &amp; Reporting App
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-extract-field-using-rex" class="md-nav__link">
+    Step 3: Extract Field Using rex
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-view-results-in-table-form" class="md-nav__link">
+    Step 4: View results in table form
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -4363,6 +4435,56 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-access-splunk-web" class="md-nav__link">
+    Step 1: Access Splunk Web
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-navigate-to-search-reporting-app" class="md-nav__link">
+    Step 2: Navigate to Search &amp; Reporting App
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-extract-field-using-rex" class="md-nav__link">
+    Step 3: Extract Field Using rex
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-view-results-in-table-form" class="md-nav__link">
+    Step 4: View results in table form
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -4376,7 +4498,52 @@
                   
 
 
-<h1 id="splunk-practice-exercise-13">Splunk Practice Exercise 13</h1>
+<h1 id="splunk-practice-exercise-13-extracting-fields-using-rex">Splunk Practice Exercise 13: Extracting Fields Using <code>rex</code></h1>
+<h2 id="introduction">Introduction</h2>
+<p>This practice exercise focuses on extracting a new field <code>Browser/Version</code> using the <code>rex</code> command in Splunk.</p>
+<h2 id="step-1-access-splunk-web">Step 1: Access Splunk Web</h2>
+<ol>
+<li>
+<p>Open your web browser and navigate to Splunk Web:</p>
+<p><code>http://&lt;your server ip&gt;:8000</code></p>
+</li>
+<li>
+<p>Log in using your credentials.</p>
+</li>
+</ol>
+<h2 id="step-2-navigate-to-search-reporting-app">Step 2: Navigate to Search &amp; Reporting App</h2>
+<ol>
+<li>In the Splunk Web interface, go to the <strong>Search &amp; Reporting</strong> app.</li>
+</ol>
+<h2 id="step-3-extract-field-using-rex">Step 3: Extract Field Using rex</h2>
+<ol>
+<li>
+<p>In the search bar, enter the following search query:</p>
+<p><code>index=tutorial useragent=*
+| rex field=useragent "^(?&lt;BrowserVersion&gt;[^\s]+)"</code></p>
+<p>This will create a new field <code>BrowserVersion</code> that contains the unique browsers amongst the results.</p>
+</li>
+<li>
+<p>Verify the new field creation under <code>INTERESTING FIELDS</code> like below.</p>
+</li>
+</ol>
+<p><img alt="browserversion" src="../browserversion.png" /></p>
+<p>Note: You can select a field by clicking the <strong>All Fields</strong> in the same screeshot above. This is so you can see that <code>useragent</code> in the events output.</p>
+<h2 id="step-4-view-results-in-table-form">Step 4: View results in table form</h2>
+<ol>
+<li>
+<p>In this step we can refer to the newly created field to be piped onto the query. In the search bar, enter the following search query:</p>
+<p><code>index=tutorial useragent=*
+| rex field=useragent "^(?&lt;BrowserVersion&gt;[^\s]+)"
+| stats count by BrowserVersion</code></p>
+</li>
+<li>
+<p>Output should look like the following: </p>
+</li>
+</ol>
+<p><img alt="browsertable" src="../browsertable.png" /></p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Congratulations! You have successfully completed the practice exercise, extracting unique browser/version information from the useragent field in Splunk. This skill is useful for understanding the diversity of browsers and versions in your log data. Continue to explore and experiment with different extraction scenarios to enhance your Splunk skills.</p>
 
 
 

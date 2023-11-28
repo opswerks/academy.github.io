@@ -73,7 +73,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#splunk-practice-exercise-10" class="md-skip">
+        <a href="#splunk-practice-exercise-10-creating-alerts-through-email" class="md-skip">
           Skip to content
         </a>
       
@@ -4147,6 +4147,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Practice Exercise 6
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -4156,6 +4167,74 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-access-splunk-web" class="md-nav__link">
+    Step 1: Access Splunk Web
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-navigate-to-search-reporting-app" class="md-nav__link">
+    Step 2: Navigate to Search &amp; Reporting App
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-construct-the-alert-condition" class="md-nav__link">
+    Step 3: Construct the Alert Condition
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-create-the-alert" class="md-nav__link">
+    Step 4: Create the Alert
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-confirm-alert-creation" class="md-nav__link">
+    Step 5: Confirm Alert Creation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -4363,6 +4442,63 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-access-splunk-web" class="md-nav__link">
+    Step 1: Access Splunk Web
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-navigate-to-search-reporting-app" class="md-nav__link">
+    Step 2: Navigate to Search &amp; Reporting App
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-construct-the-alert-condition" class="md-nav__link">
+    Step 3: Construct the Alert Condition
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-create-the-alert" class="md-nav__link">
+    Step 4: Create the Alert
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-confirm-alert-creation" class="md-nav__link">
+    Step 5: Confirm Alert Creation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -4376,7 +4512,73 @@
                   
 
 
-<h1 id="splunk-practice-exercise-10">Splunk Practice Exercise 10</h1>
+<h1 id="splunk-practice-exercise-10-creating-alerts-through-email">Splunk Practice Exercise 10: Creating Alerts through Email</h1>
+<h2 id="introduction">Introduction</h2>
+<p>This practice exercise focuses on creating an alert for status 4xx and sending an email once every hour.</p>
+<h2 id="step-1-access-splunk-web">Step 1: Access Splunk Web</h2>
+<ol>
+<li>
+<p>Open your web browser and navigate to Splunk Web:</p>
+<p><code>http://&lt;your server ip&gt;:8000</code></p>
+</li>
+<li>
+<p>Log in using your credentials.</p>
+</li>
+</ol>
+<h2 id="step-2-navigate-to-search-reporting-app">Step 2: Navigate to Search &amp; Reporting App</h2>
+<ol>
+<li>In the Splunk Web interface, go to the <strong>Search &amp; Reporting</strong> app.</li>
+</ol>
+<h2 id="step-3-construct-the-alert-condition">Step 3: Construct the Alert Condition</h2>
+<ol>
+<li>In the search bar, enter the following search query to identify status 4xx events:</li>
+</ol>
+<p>Query:</p>
+<pre><code>index=tutorial status=4** earliest=-1h latest=now
+</code></pre>
+<p>This will show 4xx errors for the past hour. You can always change the time value that span above 1h for the sake of it having an output.</p>
+<h2 id="step-4-create-the-alert">Step 4: Create the Alert</h2>
+<ol>
+<li>
+<p>After executing the search query, click on the Save As button.</p>
+</li>
+<li>
+<p>Choose Alert and name it as <code>Hourly 4xx errors - email alert</code>.</p>
+</li>
+<li>
+<p>Alert type - <code>Scheduled</code></p>
+<ul>
+<li>Set it to <code>Run every hour</code></li>
+</ul>
+</li>
+<li>
+<p>Expires in <code>4 hours</code></p>
+</li>
+<li>
+<p>Click <code>Add Actions</code> and choose <code>Send email</code></p>
+</li>
+<li>
+<p>Change the recipient with your email. And customize the subject/message to your liking.</p>
+</li>
+<li>
+<p>Leave everything else in default then save the alert.</p>
+</li>
+</ol>
+<h2 id="step-5-confirm-alert-creation">Step 5: Confirm Alert Creation</h2>
+<ol>
+<li>
+<p>Click <code>View alert</code> or go to the <code>Alerts</code> tab.</p>
+</li>
+<li>
+<p>Alert should look similar to the screenshot.</p>
+<p><img alt="alert-6" src="../alert-6.png" /></p>
+</li>
+<li>
+<p>Alert should check every hour for 4xx errors received for the past hour and will trigger an email alert if there is.</p>
+</li>
+</ol>
+<h2 id="conclusion">Conclusion</h2>
+<p>Congratulations! You have successfully completed the practice exercise, creating an alert for status 4xx and configuring it to send an email once every hour. Continue to explore and experiment with different alert configurations and actions to enhance your Splunk skills.</p>
 
 
 

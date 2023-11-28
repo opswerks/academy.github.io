@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#splunk-practice-exercise-14" class="md-skip">
+        <a href="#splunk-practice-exercise-14-extract-fields-using-rex-ii" class="md-skip">
           Skip to content
         </a>
       
@@ -4309,6 +4309,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Practice Exercise 2
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -4318,6 +4329,60 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-access-splunk-web" class="md-nav__link">
+    Step 1: Access Splunk Web
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-run-the-query" class="md-nav__link">
+    Step 2: Run the Query
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-verify-results-in-table-form" class="md-nav__link">
+    Step 3: Verify results in table form
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -4361,6 +4426,49 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-access-splunk-web" class="md-nav__link">
+    Step 1: Access Splunk Web
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-run-the-query" class="md-nav__link">
+    Step 2: Run the Query
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-verify-results-in-table-form" class="md-nav__link">
+    Step 3: Verify results in table form
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -4374,7 +4482,52 @@
                   
 
 
-<h1 id="splunk-practice-exercise-14">Splunk Practice Exercise 14</h1>
+<h1 id="splunk-practice-exercise-14-extract-fields-using-rex-ii">Splunk Practice Exercise 14: Extract Fields Using <code>rex</code> II</h1>
+<h2 id="introduction">Introduction</h2>
+<p>This practice exercise focuses on extracting the 'other' field from the <code>_raw</code> field using the <code>rex</code> command in Splunk.</p>
+<h2 id="step-1-access-splunk-web">Step 1: Access Splunk Web</h2>
+<ol>
+<li>
+<p>Open your web browser and navigate to Splunk Web:</p>
+<p><code>http://&lt;your server ip&gt;:8000</code></p>
+</li>
+<li>
+<p>Log in using your credentials.</p>
+</li>
+</ol>
+<h2 id="step-2-run-the-query">Step 2: Run the Query</h2>
+<ol>
+<li>
+<p>In the Splunk Web interface, go to the <strong>Search &amp; Reporting</strong> app.</p>
+</li>
+<li>
+<p>Run the following query to extract the 'other' field using <code>_raw</code> and <code>rex</code>:</p>
+<p><code>index=tutorial other=*
+| rex field=_raw "(?&lt;OtherField&gt;\d{3})\s*$"</code></p>
+<p>This query uses the rex command to capture the regex content within double quotes and names the captured content as OtherField. In this case, the <code>other</code> fields is the last 3 string characters of the events, so we'll take advantage of that to extract the field.</p>
+</li>
+<li>
+<p>Verify the new field creation under <code>OtherField</code> like below.</p>
+<p><img alt="otherfield1" src="../otherfield1.png" /></p>
+<p>The values should be identical to that of the original <code>other</code> field.</p>
+<p><img alt="otherfield2" src="../otherfield2.png" /></p>
+</li>
+</ol>
+<h2 id="step-3-verify-results-in-table-form">Step 3: Verify results in table form</h2>
+<ol>
+<li>
+<p>In this step we can refer to the newly created field to be piped onto the query. In the search bar, enter the following search query:</p>
+<p><code>index=tutorial other=*
+| rex field=_raw "(?&lt;OtherField&gt;\d{3})\s*$"
+| stats count by other, OtherField</code></p>
+</li>
+<li>
+<p>Output should have 2 columns with identical values like so: </p>
+<p><img alt="othertable" src="../othertable.png" /></p>
+</li>
+</ol>
+<h2 id="conclusion">Conclusion</h2>
+<p>Congratulations! You have successfully completed the practice exercise, extracting the 'other' field from the _raw field using the rex command in Splunk. This skill is valuable for extracting specific information from the raw event data. Continue to explore and experiment with different extraction scenarios to enhance your Splunk skills.</p>
 
 
 
