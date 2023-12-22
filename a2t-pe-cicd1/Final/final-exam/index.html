@@ -73,7 +73,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#uhhh" class="md-skip">
+        <a href="#final-exam" class="md-skip">
           Skip to content
         </a>
       
@@ -3174,6 +3174,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Final Exam
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -3183,6 +3194,32 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#duration-120-minutes" class="md-nav__link">
+    Duration: 120 minutes
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -5095,6 +5132,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#duration-120-minutes" class="md-nav__link">
+    Duration: 120 minutes
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -5108,9 +5160,57 @@
                   
 
 
-<h1 id="uhhh">Uhhh...</h1>
-<p>Page is not yet available...
-I don't think you should be here...yet 😏 spend more time to review and do hands-on practices for now. We'll open this one soon!</p>
+<h1 id="final-exam">Final Exam</h1>
+<h4 id="duration-120-minutes">Duration: 120 minutes</h4>
+<p><strong><code>Important Notes</code></strong>:</p>
+<ol>
+<li>
+<p>Always take a screenshot and copy the build url.</p>
+</li>
+<li>
+<p>Use this <a href="https://docs.google.com/forms/d/e/1FAIpQLSelZMtksvXBERdXg-zEvsmHN5H_XRsJnbM80IfMGIYjVIRWqQ/viewform?usp=sf_link">form</a> to upload your screenshots and build urls.</p>
+</li>
+</ol>
+<p><strong>Lets begin...</strong></p>
+<p><strong>Part 1.  Declarative CI/CD Pipeline</strong></p>
+<ol>
+<li>
+<p>Set up a code repository:</p>
+<p>Create a simple code repository (e.g., a Hello World application) on GitHub or any other Git hosting service.</p>
+</li>
+<li>
+<p>Create a Declarative Jenkinsfile:</p>
+<p>In the root of your code repository, create a file named "Jenkinsfile" (with no file extension) and define a simple declarative pipeline. The declarative pipeline should include stages for building, testing, and deploying the application.</p>
+</li>
+<li>
+<p>Connect Jenkins to your Git repository:</p>
+<p>Configure Jenkins to connect to your Git repository and set up a webhook to trigger the CI/CD pipeline when changes are pushed to the repository.</p>
+</li>
+<li>
+<p>Run the Declarative Pipeline:</p>
+<p>Push a change to your code repository and observe how Jenkins automatically triggers the declarative pipeline.</p>
+</li>
+</ol>
+<p><strong>Part 2.  Scripted CI/CD Pipeline</strong></p>
+<ol>
+<li>
+<p>Set up a New Jenkins Pipeline:</p>
+<p>Create a new Jenkins pipeline, but this time choose the "Pipeline script" option. This approach is more imperative than declarative.</p>
+</li>
+<li>
+<p>Write an Scipted Pipeline Script:</p>
+<p>In the pipeline script, define the stages, steps, and build process for your application using Groovy DSL. Be sure to include stages for building, testing, and deploying the application.</p>
+</li>
+<li>
+<p>Connect Jenkins to Your Git Repository:</p>
+<p>Configure the new Jenkins pipeline to connect to your Git repository and set up a webhook just like in the declarative approach.</p>
+</li>
+<li>
+<p>Run the Scripted Pipeline:</p>
+<p>Push a change to your code repository and observe how Jenkins triggers the imperative pipeline you created using the script.</p>
+</li>
+</ol>
+<p><strong>GOOD LUCK!</strong></p>
 
 
 
