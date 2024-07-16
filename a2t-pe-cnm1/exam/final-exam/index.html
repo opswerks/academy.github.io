@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#final-exam-containerization-and-microservices" class="md-skip">
+        <a href="#uhhh" class="md-skip">
           Skip to content
         </a>
       
@@ -2959,17 +2959,6 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Final Exam
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -2979,70 +2968,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#part-1-troubleshoot-and-fix-a-non-functioning-docker-service" class="md-nav__link">
-    <span class="md-ellipsis">
-      Part 1. Troubleshoot and fix a non-functioning Docker service
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#part-2-troubleshoot-and-fix-a-non-functioning-docker-service" class="md-nav__link">
-    <span class="md-ellipsis">
-      Part 2. Troubleshoot and fix a non-functioning Docker service
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#part-3-run-a-container-using-the-custom-image" class="md-nav__link">
-    <span class="md-ellipsis">
-      Part 3. Run a Container using the Custom image
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#part-4-edit-container-content-and-create-a-new-docker-image" class="md-nav__link">
-    <span class="md-ellipsis">
-      Part 4. Edit container content and Create a new docker image
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#part-5-docker-troubleshooting" class="md-nav__link">
-    <span class="md-ellipsis">
-      Part 5. Docker Troubleshooting
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -3290,7 +3215,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../a2t-pe-cicd1/Final/final-exam/" class="md-nav__link">
+      <a href="../../../a2t-pe-cicd1/exam/final-exam/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5230,59 +5155,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#part-1-troubleshoot-and-fix-a-non-functioning-docker-service" class="md-nav__link">
-    <span class="md-ellipsis">
-      Part 1. Troubleshoot and fix a non-functioning Docker service
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#part-2-troubleshoot-and-fix-a-non-functioning-docker-service" class="md-nav__link">
-    <span class="md-ellipsis">
-      Part 2. Troubleshoot and fix a non-functioning Docker service
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#part-3-run-a-container-using-the-custom-image" class="md-nav__link">
-    <span class="md-ellipsis">
-      Part 3. Run a Container using the Custom image
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#part-4-edit-container-content-and-create-a-new-docker-image" class="md-nav__link">
-    <span class="md-ellipsis">
-      Part 4. Edit container content and Create a new docker image
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#part-5-docker-troubleshooting" class="md-nav__link">
-    <span class="md-ellipsis">
-      Part 5. Docker Troubleshooting
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -5296,84 +5168,8 @@
                   
 
 
-<h1 id="final-exam-containerization-and-microservices">Final Exam: Containerization and Microservices</h1>
-<h3 id="part-1-troubleshoot-and-fix-a-non-functioning-docker-service">Part 1.  Troubleshoot and fix a non-functioning Docker service</h3>
-<ol>
-<li>Check if the docker service is running.</li>
-<li>Run the docker service if not.</li>
-</ol>
-<p><strong>Bonus:</strong> Make Docker daemon automatically runs after boot up</p>
-<h3 id="part-2-troubleshoot-and-fix-a-non-functioning-docker-service">Part 2.  Troubleshoot and fix a non-functioning Docker service</h3>
-<ol>
-<li>
-<p>Create a directory <code>academy-cnm1</code> for your Docker project.</p>
-</li>
-<li>
-<p>Create a simple nginx app with the following requirements</p>
-<p>a. Image used must be Ubuntu</p>
-<p>b.Expose to port 6000</p>
-<p>c. Nginx must run whenever Docker images launches</p>
-<p>d. Nginx sample default configuration file</p>
-<pre><code>server { listen 80 default_server;
-  listen [::]:80 default_server;
-
-  root /usr/share/nginx/html;
-  index index.html index.htm;
-
-  server_name _;
-  location / {
-    try_files $uri $uri/ =404;
-  }
-}
-</code></pre>
-</li>
-<li>
-<p>Build a docker image, give it a name and image tag.</p>
-<p><strong>Image name:</strong> final-cnm1</p>
-<p><strong>Image tag:</strong> final-exam-academy</p>
-</li>
-</ol>
-<h3 id="part-3-run-a-container-using-the-custom-image">Part 3.  Run a Container using the Custom image</h3>
-<ol>
-<li>
-<p>Run a docker container from your custom image <code>final-cnm1</code>, map it to port 6000 and name the container <code>academy-batch5</code></p>
-</li>
-<li>
-<p>Make sure to access the running application in your browser or curl using the port mapping discussed on step 3.1 for verification.</p>
-</li>
-</ol>
-<h3 id="part-4-edit-container-content-and-create-a-new-docker-image">Part 4.  Edit container content and Create a new docker image</h3>
-<ol>
-<li>
-<p>Make changes on the container, the change must be visible when accessed using a browser or curl.</p>
-</li>
-<li>
-<p>Create a docker image from the modified container using the following name and tag</p>
-<p><strong>Image name:</strong> final-cnm1-ver2</p>
-<p><strong>Image tag:</strong> final-exam-academy-ver2</p>
-</li>
-<li>
-<p>Run a docker container using the newer version. Map it to port 6090 and name the container <code>academy-batch5-ver2</code></p>
-</li>
-</ol>
-<h3 id="part-5-docker-troubleshooting">Part 5.  Docker Troubleshooting</h3>
-<ol>
-<li>
-<p>There is a folder name <code>finals-flask-app</code> in the root directory</p>
-</li>
-<li>
-<p>Using the following configuration inside the folder build an image and  name it <code>flask-app</code></p>
-<p>Port 5000 must be used for both container and host</p>
-</li>
-<li>
-<p>You will notice that the container will encounter an error</p>
-<p>a. Solve the issue. The container name <code>flask-app</code> must be running before the end of the exam.</p>
-</li>
-<li>
-<p>To verify, use curl or your browser to check.</p>
-<p><strong>GOOD LUCK!</strong></p>
-</li>
-</ol>
+<h1 id="uhhh">Uhhh...</h1>
+<p>I don't think you should be here...yet 😏 spend more time to review and do hands-on practices for now. We'll open this one soon!</p>
 
 
 
