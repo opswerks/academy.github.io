@@ -1,0 +1,84 @@
+---
+hide:
+  - navigation
+  #- toc
+---
+# Final Exam: Containerization and Microservices
+
+### Part 1.  Troubleshoot and fix a non-functioning Docker service
+
+ 1. Check if the docker service is running.
+ 2.  Run the docker service if not.
+
+**Bonus:** Make Docker daemon automatically runs after boot up
+
+### Part 2.  Troubleshoot and fix a non-functioning Docker service
+
+1. Create a directory `academy-cnm1` for your Docker project.
+
+2. Create a simple nginx app with the following requirements
+
+    a. Image used must be Ubuntu
+
+    b.Expose to port 6000
+
+    c. Nginx must run whenever Docker images launches
+
+    d. Nginx sample default configuration file
+
+        server { listen 80 default_server;
+          listen [::]:80 default_server;
+
+          root /usr/share/nginx/html;
+          index index.html index.htm;
+
+          server_name _;
+          location / {
+            try_files $uri $uri/ =404;
+          }
+        }
+
+3. Build a docker image, give it a name and image tag.
+
+      **Image name:** final-cnm1
+
+      **Image tag:** final-exam-academy
+
+### Part 3.  Run a Container using the Custom image
+
+1. Run a docker container from your custom image `final-cnm1`, map it to port 6000 and name the container `academy-batch5`
+
+2. Make sure to access the running application in your browser or curl using the port mapping discussed on step 3.1 for verification.
+
+### Part 4.  Edit container content and Create a new docker image
+
+
+1. Make changes on the container, the change must be visible when accessed using a browser or curl.
+
+2. Create a docker image from the modified container using the following name and tag
+
+    **Image name:** final-cnm1-ver2
+
+    **Image tag:** final-exam-academy-ver2
+
+3. Run a docker container using the newer version. Map it to port 6090 and name the container `academy-batch5-ver2`
+
+
+### Part 5.  Docker Troubleshooting
+
+
+1. There is a folder name `finals-flask-app` in the root directory
+
+2. Using the following configuration inside the folder build an image and  name it `flask-app`
+
+    Port 5000 must be used for both container and host
+
+3. You will notice that the container will encounter an error
+
+    a. Solve the issue. The container name `flask-app` must be running before the end of the exam.
+
+4. To verify, use curl or your browser to check.
+
+
+
+    **GOOD LUCK!**
