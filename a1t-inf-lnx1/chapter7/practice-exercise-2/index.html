@@ -5413,9 +5413,8 @@
 <li>Create a Bash script named <code>variables.sh</code>.</li>
 <li>Declare and assign values to different types of variables (string, integer, float).</li>
 <li>Use <code>echo</code> to display the values of these variables.</li>
-<li>Comment your script to explain variable usage.</li>
-</ul>
-<pre><code>#!/bin/bash
+<li>Comment your script to explain variable usage.
+<div class="highlight"><pre><span></span><code>#!/bin/bash
 
 # This script demonstrates the use of variables and arrays in Bash.
 
@@ -5438,25 +5437,23 @@ echo &quot;Salary: $salary&quot;
 
 # Access and display array elements.
 echo &quot;Fruits: ${fruits[0]}, ${fruits[1]}, ${fruits[2]}&quot;
-</code></pre>
-<ul>
-<li>To run the script</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ chmod +x variable.sh
+</code></pre></div></li>
+<li>To run the script
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ chmod +x variable.sh
 [intern@intern-a1t-inf-lnx1 ~]$ ./variable.sh
 Name: John
 Age: 30
 Salary: 45000.50
 Fruits: Apple, Banana, Cherry
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h3 id="task-3-conditional-statements">Task 3: Conditional Statements</h3>
 <ul>
 <li>Create a Bash script named <code>conditional.sh</code>.</li>
 <li>Implement conditional statements (if-else) to perform different actions based on user input.</li>
 <li>Prompt the user for a numeric value and check if it's positive or negative.</li>
-<li>Display appropriate messages for each case.</li>
-</ul>
-<pre><code>#!/bin/bash
+<li>Display appropriate messages for each case.
+<div class="highlight"><pre><span></span><code>#!/bin/bash
 
 # This script demonstrates the use of conditional statements in Bash.
 
@@ -5471,12 +5468,9 @@ elif [ $number -lt 0 ]; then
 else
   echo &quot;The number is zero.&quot;
 fi
-
-</code></pre>
-<ul>
-<li>Test your script with various inputs.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ chmod +x conditional.sh
+</code></pre></div></li>
+<li>Test your script with various inputs.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ chmod +x conditional.sh
 [intern@intern-a1t-inf-lnx1 ~]$ ./conditional.sh
 Enter a number: 1
 The number is positive.
@@ -5486,15 +5480,15 @@ The number is negative.
 [intern@intern-a1t-inf-lnx1 ~]$ ./conditional.sh
 Enter a number: 0
 The number is zero.
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h3 id="task-4-loops-and-iteration">Task 4: Loops and Iteration</h3>
 <ul>
 <li>Create a Bash script named <code>loop.sh</code>.</li>
 <li>Use a <code>for</code> loop to display numbers from 1 to 5.</li>
 <li>Use a <code>while</code> loop to read user input until they enter 'q' to quit.</li>
-<li>Comment your script to explain loop usage.</li>
-</ul>
-<pre><code>#!/bin/bash
+<li>Comment your script to explain loop usage.
+<div class="highlight"><pre><span></span><code>#!/bin/bash
 
 for i in {1..5}; do
     echo &quot;Number: $i&quot;
@@ -5509,11 +5503,9 @@ do
     fi
     echo &quot;You entered: $input&quot;
 done
-</code></pre>
-<ul>
-<li>To run the script</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ chmod +x loop.sh
+</code></pre></div></li>
+<li>To run the script
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ chmod +x loop.sh
 [intern@intern-a1t-inf-lnx1 ~]$ ./loop.sh       
 Number: 1
 Number: 2
@@ -5524,15 +5516,15 @@ asdf
 You entered: asdf
 q
 Quitting the loop.
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h3 id="task-5-functions">Task 5: Functions</h3>
 <ul>
 <li>Create a Bash script named <code>functions.sh</code>.</li>
 <li>Define a function that calculates the square of a number.</li>
 <li>Call this function with different input values.</li>
-<li>Comment your script to explain function usage.</li>
-</ul>
-<pre><code>#!/bin/bash
+<li>Comment your script to explain function usage.
+<div class="highlight"><pre><span></span><code>#!/bin/bash
 
 # This script demonstrates the use of functions in Bash.
 
@@ -5551,16 +5543,15 @@ calculate_square 12
 # You can also use variables to store and pass values to the function.
 num=3
 calculate_square $num
-</code></pre>
-<ul>
-<li>To run and test the script</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ ./functions.sh
+</code></pre></div></li>
+<li>To run and test the script
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ ./functions.sh
 The square of 5 is 25.
 The square of 8 is 64.
 The square of 12 is 144.
 The square of 3 is 9.
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h3 id="task-6-combining-syntax-elements">Task 6: Combining Syntax Elements</h3>
 <ul>
 <li>Create a Bash script named <code>complex_script.sh</code>.</li>
@@ -5570,9 +5561,8 @@ The square of 3 is 9.
 <li>Implement loops for iteration.</li>
 <li>Define and call functions.</li>
 <li>Create a script that calculates the factorial of a number using a loop or a recursive function.</li>
-<li>Test your script with various numbers.</li>
-</ul>
-<pre><code>#!/bin/bash
+<li>Test your script with various numbers.
+<div class="highlight"><pre><span></span><code>#!/bin/bash
 
 # This script demonstrates combining various Bash syntax elements.
 
@@ -5598,11 +5588,9 @@ if [[ $number =~ ^[1-9][0-9]*$ ]]; then
 else
   echo &quot;Invalid input. Please enter a positive integer.&quot;
 fi
-</code></pre>
-<ul>
-<li>To run and test the script</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ chmod +x complex_script.sh
+</code></pre></div></li>
+<li>To run and test the script
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ chmod +x complex_script.sh
 [intern@intern-a1t-inf-lnx1 ~]$ ./complex_script.sh
 Enter a positive integer: 1
 The factorial of 1 is 1.
@@ -5612,7 +5600,8 @@ The factorial of 3 is 6.
 [intern@intern-a1t-inf-lnx1 ~]$ ./complex_script.sh
 Enter a positive integer: 9
 The factorial of 9 is 362880.
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h3 id="task-7-script-execution-and-documentation">Task 7: Script Execution and Documentation</h3>
 <ul>
 <li>Experiment with different ways to execute your Bash scripts:</li>
@@ -5620,19 +5609,17 @@ The factorial of 9 is 362880.
 <li>Add your script to a directory in your <code>PATH</code> and execute it from any location.</li>
 <li>Use a shebang (<code>#!/bin/bash</code>) at the script's beginning and make it executable to run it directly.</li>
 <li>Let's use the <code>complex_script.sh</code> we created earlier.</li>
-<li>And move it to one of our PATH</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ echo $PATH
+<li>And move it to one of our PATH
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ echo $PATH
 /home/intern/.local/bin:/home/intern/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
-</code></pre>
-<ul>
-<li>Let's move it to <code>/usr/local/bin</code></li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ sudo mv complex_script.sh /usr/local/bin
+</code></pre></div></li>
+<li>Let's move it to <code>/usr/local/bin</code>
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ sudo mv complex_script.sh /usr/local/bin
 [intern@intern-a1t-inf-lnx1 ~]$ complex_script.sh
 Enter a positive integer: 1
 The factorial of 1 is 1.
-</code></pre>
+</code></pre></div></li>
+</ul>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
 <p>In this exercise, you've delved into the syntax of Bash scripting, including variables, conditional statements, loops, and functions. You've created more complex scripts that combine these elements. Understanding Bash syntax is essential for creating efficient and powerful scripts to automate tasks in a Linux environment.</p>

@@ -5412,16 +5412,14 @@
 <ul>
 <li>Choose a directory on your system that contains important files you'd like to back up.</li>
 <li>Use the <code>tar</code> command to create a backup of the entire directory and its contents.</li>
-<li>Name the backup file with a <code>.tar</code> extension (e.g., <code>mybackup.tar</code>).</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ tar -cvzf mybackup.tar different_files
+<li>Name the backup file with a <code>.tar</code> extension (e.g., <code>mybackup.tar</code>).
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ tar -cvzf mybackup.tar different_files
 a different_files
 a different_files/file.txt
 a different_files/soft_link
 a different_files/file_dir
 a different_files/cp
-</code></pre>
-<ul>
+</code></pre></div></li>
 <li><code>-c</code> create new archive</li>
 <li><code>-v</code> for verbose</li>
 <li><code>-z</code> for compress with gzip</li>
@@ -5430,54 +5428,49 @@ a different_files/cp
 <h3 id="task-2-verifying-the-backup">Task 2: Verifying the Backup</h3>
 <ul>
 <li>Use the <code>ls</code> or <code>file</code> command to list the contents of the directory where you created the backup.</li>
-<li>Verify that the backup file (<code>mybackup.tar</code>) is present in the directory.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ file mybackup.tar
+<li>Verify that the backup file (<code>mybackup.tar</code>) is present in the directory.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ file mybackup.tar
 mybackup.tar: gzip compressed data, last modified: Mon Sep 18 04:43:40 2023, from Unix, original size modulo 2^32 156672
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h3 id="task-3-compressing-data">Task 3: Compressing Data</h3>
 <ul>
 <li>Use the <code>gzip</code> command to compress the backup file (<code>mybackup.tar</code>).</li>
-<li>Check if a compressed file with a <code>.gz</code> extension (e.g., <code>mybackup.tar.gz</code>) is created.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ gzip mybackup.tar
+<li>Check if a compressed file with a <code>.gz</code> extension (e.g., <code>mybackup.tar.gz</code>) is created.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ gzip mybackup.tar
 [intern@intern-a1t-inf-lnx1 ~]$ file mybackup.tar.gz
 mybackup.tar.gz: gzip compressed data, was &quot;mybackup.tar&quot;, last modified: Mon Sep 18 04:47:23 2023, from Unix, original size modulo 2^32 23112
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h3 id="task-4-decompressing-data">Task 4: Decompressing Data</h3>
 <ul>
 <li>Decompress the compressed backup file (<code>mybackup.tar.gz</code>) using the <code>gunzip</code> command.</li>
-<li>Ensure that you have successfully restored the original backup file (<code>mybackup.tar</code>).</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ gunzip mybackup.tar.gz
+<li>Ensure that you have successfully restored the original backup file (<code>mybackup.tar</code>).
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ gunzip mybackup.tar.gz
 [intern@intern-a1t-inf-lnx1 ~]$ file mybackup.tar
 mybackup.tar: gzip compressed data, last modified: Mon Sep 18 04:47:23 2023, from Unix, original size modulo 2^32 156672
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h3 id="task-5-creating-incremental-backups">Task 5: Creating Incremental Backups</h3>
 <ul>
 <li>Make changes or additions to the files in the original directory.</li>
 <li>Create an incremental backup of only the changed or new files using the <code>tar</code> command.</li>
 <li>Name the incremental backup file with a meaningful name (e.g., <code>incremental_backup.tar.gz</code>).</li>
-<li>For this task let's create a new directory and create multiple files</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ mkdir incremental_backup
+<li>For this task let's create a new directory and create multiple files
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ mkdir incremental_backup
 [intern@intern-a1t-inf-lnx1 ~]$ touch incremental_backup/file{1..3}.txt
 [intern@intern-a1t-inf-lnx1 ~]$ ls incremental_backup
 file1.txt file2.txt file3.txt
-</code></pre>
-<ul>
-<li>Let's create the initial full backup</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ tar -cvzf incremental_backup.tar.gz incremental_backup
+</code></pre></div></li>
+<li>Let's create the initial full backup
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ tar -cvzf incremental_backup.tar.gz incremental_backup
 a incremental_backup
 a incremental_backup/file2.txt
 a incremental_backup/file3.txt
 a incremental_backup/file1.txt
-</code></pre>
-<ul>
-<li>Now let's add a new file to the original directory <code>incremental_backup</code> and make the first incremental backup</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ touch incremental_backup/file4.txt
+</code></pre></div></li>
+<li>Now let's add a new file to the original directory <code>incremental_backup</code> and make the first incremental backup
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ touch incremental_backup/file4.txt
 [intern@intern-a1t-inf-lnx1 ~]$ ls incremental_backup
 file1.txt file2.txt file3.txt file4.txt
 [intern@intern-a1t-inf-lnx1 ~]$ tar -czvf incremental_backup1.tar.gz --listed-incremental=incremental.snar incremental_backup
@@ -5487,39 +5480,33 @@ incremental_backup/file1.txt
 incremental_backup/file2.txt
 incremental_backup/file3.txt
 incremental_backup/file4.txt
-</code></pre>
-<ul>
-<li>Let's add a new file again and create another incremental backup</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ touch incremental_backup/file4.txt
+</code></pre></div></li>
+<li>Let's add a new file again and create another incremental backup
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ touch incremental_backup/file4.txt
 [intern@intern-a1t-inf-lnx1 ~]$ ls incremental_backup
 file1.txt  file2.txt  file3.txt  file4.txt  file5.txt
 [intern@intern-a1t-inf-lnx1 ~]$ tar -czvf incremental_backup2.tar.gz --listed-incremental=incremental.snar incremental_backup
 incremental_backup/
 incremental_backup/file5.txt
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h3 id="task-6-cleaning-up">Task 6: Cleaning Up</h3>
 <ul>
-<li>Delete your original directory and restore</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ rm -r incremental_backup
+<li>Delete your original directory and restore
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ rm -r incremental_backup
 [intern@intern-a1t-inf-lnx1 ~]$ ls incremental_backup
-ls: cannot access 'incremental_backup': No such file or directory
-</code></pre>
-<ul>
-<li>Extract the initial full backup</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ mkdir incremental_backup
+ls: cannot access &#39;incremental_backup&#39;: No such file or directory
+</code></pre></div></li>
+<li>Extract the initial full backup
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ mkdir incremental_backup
 [intern@intern-a1t-inf-lnx1 ~]$ tar -xvzf incremental_backup.tar.gz incremental_backup/
 incremental_backup/
 incremental_backup/file1.txt
 incremental_backup/file3.txt
 incremental_backup/file2.txt
-</code></pre>
-<ul>
-<li>Extract the incremental backup in order</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ tar -xvzf incremental_backup1.tar.gz incremental_backup/
+</code></pre></div></li>
+<li>Extract the incremental backup in order
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ tar -xvzf incremental_backup1.tar.gz incremental_backup/
 incremental_backup/
 incremental_backup/file1.txt
 incremental_backup/file2.txt
@@ -5530,7 +5517,8 @@ incremental_backup/
 incremental_backup/file5.txt
 [intern@intern-a1t-inf-lnx1 ~]$ ls incremental_backup
 file1.txt  file2.txt  file3.txt  file4.txt  file5.txt
-</code></pre>
+</code></pre></div></li>
+</ul>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
 <p>This practice exercise has allowed you to practice creating backups of files and directories, compressing data, and performing basic backup maintenance tasks using Linux commands like <code>tar</code>, <code>gzip</code>, and <code>gunzip</code>. Understanding these concepts is essential for safeguarding your data and efficiently managing storage on a Linux system.</p>

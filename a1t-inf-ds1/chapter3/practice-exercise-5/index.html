@@ -5265,22 +5265,18 @@
 <p>To run a simple webserver using nginx</p>
 <h2 id="tasks">Tasks</h2>
 <ul>
-<li>Install nginx on the <code>web1</code> instance</li>
+<li>Install nginx on the <code>web1</code> instance
+<div class="highlight"><pre><span></span><code>sudo dnf install nginx
+</code></pre></div></li>
+<li>Start the nginx service:
+<div class="highlight"><pre><span></span><code>sudo systemctl start nginx
+</code></pre></div></li>
+<li>Create a simple HTML page:
+<div class="highlight"><pre><span></span><code>sudo vim /usr/share/nginx/html/index.html
+</code></pre></div>
+Nginx has a default <code>index.html</code>, proceed to delete the content and replace it with code such as the one provided below, feel free to customize your code.</li>
 </ul>
-<pre><code>sudo dnf install nginx
-</code></pre>
-<ul>
-<li>Start the nginx service:</li>
-</ul>
-<pre><code>sudo systemctl start nginx
-</code></pre>
-<ul>
-<li>Create a simple HTML page:</li>
-</ul>
-<pre><code>sudo vim /usr/share/nginx/html/index.html
-</code></pre>
-<p>Nginx has a default <code>index.html</code>, proceed to delete the content and replace it with code such as the one provided below, feel free to customize your code.</p>
-<pre><code>&lt;!DOCTYPE html&gt;
+<div class="highlight"><pre><span></span><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;body&gt;
 
@@ -5290,7 +5286,7 @@
 
 &lt;/body&gt;
 &lt;/html&gt;
-</code></pre>
+</code></pre></div>
 <ol>
 <li>Open a web browser and visit your host <name>.a1t-inf-ds-web1.acad.opswerks.net</li>
 </ol>

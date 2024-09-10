@@ -5353,7 +5353,7 @@
 <ol>
 <li>In the search bar, enter the following search query:</li>
 </ol>
-<pre><code>index=tutorial VendorID=* | eval VendorGroup=case(
+<div class="highlight"><pre><span></span><code>index=tutorial VendorID=* | eval VendorGroup=case(
     VendorID &gt;= 1000 AND VendorID &lt;= 1009, &quot;Group A&quot;,
     VendorID &gt;= 1010 AND VendorID &lt;= 1019, &quot;Group B&quot;,
     VendorID &gt;= 1020 AND VendorID &lt;= 1029, &quot;Group C&quot;,
@@ -5366,7 +5366,7 @@
     VendorID &gt;= 1090 AND VendorID &lt;= 1099, &quot;Group J&quot;,
     1=1, &quot;Others&quot;
 ) | table VendorID, VendorGroup
-</code></pre>
+</code></pre></div>
 <p>This query groups events by Vendor ID into predefined ranges and assigns corresponding group names.</p>
 <h2 id="step-4-run-the-search">Step 4: Run the Search</h2>
 <ol>

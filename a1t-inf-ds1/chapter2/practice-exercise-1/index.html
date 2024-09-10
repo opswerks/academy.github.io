@@ -5265,18 +5265,16 @@
 <p>Familiarize yourself with the environment that we will use for the <code>a1t-inf-ds</code> course.</p>
 <h2 id="tasks">Tasks</h2>
 <ul>
-<li>SSH into your instance, connect to the <code>bastion</code> server then use the command below:</li>
+<li>SSH into your instance, connect to the <code>bastion</code> server then use the command below:
+<div class="highlight"><pre><span></span><code>ssh &lt;NAME&gt;-a1t-inf-ds-web1.acad.opswerks.net
+</code></pre></div></li>
+<li>Alternatively you can also use the command below:
+<div class="highlight"><pre><span></span><code> ssh -J &lt;NAME&gt;@bastion-1.acad.opswerks.net &lt;NAME&gt;@&lt;NAME&gt;-a1t-inf-ds-db2.acad.opswerks.net
+</code></pre></div></li>
 </ul>
-<pre><code>ssh &lt;NAME&gt;-a1t-inf-ds-web1.acad.opswerks.net
-</code></pre>
-<ul>
-<li>Alternatively you can also use the command below:</li>
-</ul>
-<pre><code> ssh -J &lt;NAME&gt;@bastion-1.acad.opswerks.net &lt;NAME&gt;@&lt;NAME&gt;-a1t-inf-ds-db2.acad.opswerks.net
-</code></pre>
-<p>When you use the <code>-J</code> flag, your SSH client first connects to the jump host, and from there, it establishes a connection to the destination host.</p>
-<pre><code>ssh -J &lt;jump_host&gt; &lt;destination_host&gt;
-</code></pre>
+<p>When you use the <code>-J</code> flag, your SSH client first connects to the jump host, and from there, it establishes a connection to the destination host.
+<div class="highlight"><pre><span></span><code>ssh -J &lt;jump_host&gt; &lt;destination_host&gt;
+</code></pre></div></p>
 <h2 id="conclusion">Conclusion</h2>
 <p>You have now familiarized yourself with the environment with a refresher on common commands keep in mind on how to use SSH as this is an important command that we will be using throughout this course.</p>
 

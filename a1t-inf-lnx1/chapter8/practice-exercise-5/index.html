@@ -5341,11 +5341,10 @@
 <li>Explain the importance of securing the boot process in Linux.</li>
 <li>Discuss potential vulnerabilities during the boot phase.</li>
 <li>Describe methods to protect the boot loader and boot configuration.</li>
-<li>Demonstrate how to set a boot loader password to prevent unauthorized changes.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ sudo cat /etc/default/grub 
+<li>Demonstrate how to set a boot loader password to prevent unauthorized changes.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ sudo cat /etc/default/grub 
 GRUB_TIMEOUT=5
-GRUB_DISTRIBUTOR=&quot;$(sed 's, release .*$,,g' /etc/system-release)&quot;
+GRUB_DISTRIBUTOR=&quot;$(sed &#39;s, release .*$,,g&#39; /etc/system-release)&quot;
 GRUB_DEFAULT=0
 GRUB_DISABLE_SUBMENU=true
 GRUB_TERMINAL_OUTPUT=&quot;console&quot;
@@ -5357,19 +5356,14 @@ GRUB_DISABLE_OS_PROBER=true
 GRUB_SERIAL_COMMAND=&quot;serial --speed=19200 --unit=0 --word=8 --parity=no --stop=1&quot;
 GRUB_DISABLE_UUID=true
 GRUB_GFXPAYLOAD_LINUX=text
-</code></pre>
-<ul>
-<li>Setting up grub password may differ depending on the Linux distro you're using. Here's how to do it on CentOS:</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ sudo grub2-setpassword
+</code></pre></div></li>
+<li>Setting up grub password may differ depending on the Linux distro you're using. Here's how to do it on CentOS:
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ sudo grub2-setpassword
 [intern@intern-a1t-inf-lnx1 ~]$ sudo grub2-mkconfig -o /boot/grub2/grub.cfg
-</code></pre>
-<ul>
-<li>To check if the password was set you can see it in <code>/boot/grub2/user.cfg</code></li>
-</ul>
-<pre><code>GRUB2_PASSWORD=grub.pbkdf2.sha512.10000.&lt;redacted&gt;
-</code></pre>
-<ul>
+</code></pre></div></li>
+<li>To check if the password was set you can see it in <code>/boot/grub2/user.cfg</code>
+<div class="highlight"><pre><span></span><code>GRUB2_PASSWORD=grub.pbkdf2.sha512.10000.&lt;redacted&gt;
+</code></pre></div></li>
 <li>To remove the grub password protect simply remove/delete the <code>/boot/grub2/user.cfg</code> file.</li>
 </ul>
 <h3 id="task-2-kernel-security">Task 2: Kernel Security</h3>
@@ -5377,9 +5371,8 @@ GRUB_GFXPAYLOAD_LINUX=text
 <li>Explore kernel security features and their significance.</li>
 <li>Discuss techniques for restricting kernel parameters using boot options.</li>
 <li>Explain how to limit kernel module loading and set module loading parameters.</li>
-<li>Demonstrate how to configure kernel security settings.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ sudo sysctl -a | grep kernel | tail
+<li>Demonstrate how to configure kernel security settings.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ sudo sysctl -a | grep kernel | tail
 kernel.unprivileged_bpf_disabled = 2
 kernel.unprivileged_userns_clone = 1
 kernel.usermodehelper.bset = 4294967295 511
@@ -5398,11 +5391,9 @@ kernel.randomize_va_space = 2
 kernel.randomize_va_space = 4
 [intern@intern-a1t-inf-lnx1 ~]$ sudo sysctl -a | grep randomize
 kernel.randomize_va_space = 4
-</code></pre>
-<ul>
-<li>To make changes persist between reboot, edit the <code>/etc/sysctl.conf</code> and add the <code>kernel.randomize_va_space = 4</code> line:</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ sudo vim /etc/sysctl.conf
+</code></pre></div></li>
+<li>To make changes persist between reboot, edit the <code>/etc/sysctl.conf</code> and add the <code>kernel.randomize_va_space = 4</code> line:
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ sudo vim /etc/sysctl.conf
 ...
 &lt;edit output redacted&gt;
 ...
@@ -5419,18 +5410,15 @@ kernel.randomize_va_space = 4
 #
 # For more information, see sysctl.conf(5) and sysctl.d(5).
 kernel.randomize_va_space = 4
-</code></pre>
-<ul>
-<li>Reboot the host</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ sudo reboot
-</code></pre>
-<ul>
-<li>Once the host is up again, check if the <code>kernel.randomize_va_space</code> parameter has been retained</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ sudo sysctl -a | grep kernel.randomize_va_space
+</code></pre></div></li>
+<li>Reboot the host
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ sudo reboot
+</code></pre></div></li>
+<li>Once the host is up again, check if the <code>kernel.randomize_va_space</code> parameter has been retained
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ sudo sysctl -a | grep kernel.randomize_va_space
 kernel.randomize_va_space = 4
-</code></pre>
+</code></pre></div></li>
+</ul>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
 <p>Securing the boot process and hardware resources is fundamental to maintaining the security of a Linux system. In this exercise, you've learned about securing the boot loader, kernel, hardware resources, BIOS/UEFI firmware, and hardware access control. By implementing these practices and following local security best practices, you can enhance the overall security of your Linux systems and protect against unauthorized access.</p>

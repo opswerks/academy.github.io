@@ -572,6 +572,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#internintern-a1t-inf-lnx1-ls-txt-natxt-file2txt-notebooks-datatxt-test2txt-amp_workspacestxt-file3txt-outputtxt-test3txt-config-difftxt-intern_testing_filetxt-test-ldaptxt-usmsc30ctxt-envtxt-less_than11txt-test-sedtxt-file1txt-lmstxt-test1txt-internintern-a1t-inf-lnx1-ls-filetxt-file1txt-file2txt-file3txt" class="md-nav__link">
+    <span class="md-ellipsis">
+      [intern@intern-a1t-inf-lnx1 ~]$ ls *.txt NA.txt file2.txt notebooks-data.txt test2.txt amp_workspaces.txt file3.txt output.txt test3.txt config-diff.txt intern_testing_file.txt test-ldap.txt usmsc30c.txt env.txt less_than11.txt test-sed.txt file1.txt lms.txt test1.txt [intern@intern-a1t-inf-lnx1 ~]$ ls file?.txt file1.txt file2.txt file3.txt
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#conclusion" class="md-nav__link">
     <span class="md-ellipsis">
       Conclusion
@@ -5357,6 +5366,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#internintern-a1t-inf-lnx1-ls-txt-natxt-file2txt-notebooks-datatxt-test2txt-amp_workspacestxt-file3txt-outputtxt-test3txt-config-difftxt-intern_testing_filetxt-test-ldaptxt-usmsc30ctxt-envtxt-less_than11txt-test-sedtxt-file1txt-lmstxt-test1txt-internintern-a1t-inf-lnx1-ls-filetxt-file1txt-file2txt-file3txt" class="md-nav__link">
+    <span class="md-ellipsis">
+      [intern@intern-a1t-inf-lnx1 ~]$ ls *.txt NA.txt file2.txt notebooks-data.txt test2.txt amp_workspaces.txt file3.txt output.txt test3.txt config-diff.txt intern_testing_file.txt test-ldap.txt usmsc30c.txt env.txt less_than11.txt test-sed.txt file1.txt lms.txt test1.txt [intern@intern-a1t-inf-lnx1 ~]$ ls file?.txt file1.txt file2.txt file3.txt
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#conclusion" class="md-nav__link">
     <span class="md-ellipsis">
       Conclusion
@@ -5394,9 +5412,8 @@
 <ul>
 <li>Create two text files, <code>file1.txt</code> and <code>file2.txt</code>, with some sample text in each.</li>
 <li>Use the <code>diff</code> command to compare the contents of <code>file1.txt</code> and <code>file2.txt</code>.</li>
-<li>Note any differences displayed by <code>diff</code>.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ cat file1.txt
+<li>Note any differences displayed by <code>diff</code>.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ cat file1.txt
 This line is similar
 This line is different 49KditpKMhuOTQ==
 [intern@intern-a1t-inf-lnx1 ~]$ cat file2.txt
@@ -5407,8 +5424,7 @@ This line is different i2BP9aUkUZ8NLg==
 &lt; This line is different 49KditpKMhuOTQ==
 ---
 &gt; This line is different i2BP9aUkUZ8NLg==
-</code></pre>
-<ul>
+</code></pre></div></li>
 <li>As you can see it didn't output the similar line</li>
 </ul>
 <h3 id="task-2-identifying-file-types">Task 2: Identifying File Types</h3>
@@ -5416,9 +5432,8 @@ This line is different i2BP9aUkUZ8NLg==
 <li>List the contents of a directory on your Linux system.</li>
 <li>Identify at least five different types of files (e.g., text files, directories, executables, symbolic links, etc.) within the directory.</li>
 <li>Use the <code>file</code> command to confirm the file types you identified.</li>
-<li>Make a list of the identified file types and their descriptions.</li>
-</ul>
-<pre><code># Create smaple empty file and directory
+<li>Make a list of the identified file types and their descriptions.
+<div class="highlight"><pre><span></span><code># Create smaple empty file and directory
 [intern@intern-a1t-inf-lnx1 ~]$ touch file1
 [intern@intern-a1t-inf-lnx1 ~]$ mkdir dir1
 [intern@intern-a1t-inf-lnx1 ~]$ file file1
@@ -5451,7 +5466,8 @@ brw-rw---- 1 root disk 8, 16 Oct 16 04:19 /dev/sdb
 brw-rw---- 1 root disk 8, 32 Oct 16 04:19 /dev/sdc
 [intern@intern-a1t-inf-lnx1 ~]$ file /dev/sda
 /dev/sda: block special (8/0)
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h3 id="task-3-comparing-binary-files">Task 3: Comparing Binary Files</h3>
 <ul>
 <li>Create two binary files, <code>binary1.bin</code> and <code>binary2.bin</code>, by copying a binary executable (e.g., <code>/bin/ls</code>) to two different names.</li>
@@ -5460,7 +5476,7 @@ brw-rw---- 1 root disk 8, 32 Oct 16 04:19 /dev/sdc
 <li>Try to compare the binaries <code>/bin/sh</code> and <code>/bin/bash</code></li>
 <li>Note if there are any differences</li>
 </ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ cp /bin/ls binary1.bin
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ cp /bin/ls binary1.bin
 [intern@intern-a1t-inf-lnx1 ~]$ cp /bin/ls binary2.bin
 [intern@intern-a1t-inf-lnx1 ~]$ cmp binary1.bin binary2.bin
 [intern@intern-a1t-inf-lnx1 ~]$
@@ -5468,25 +5484,25 @@ brw-rw---- 1 root disk 8, 32 Oct 16 04:19 /dev/sdc
 [intern@intern-a1t-inf-lnx1 ~]$ cp /bin/bash bash.bin
 [intern@intern-a1t-inf-lnx1 ~]$ cmp sh.bin bash.bin
 sh.bin bash.bin differ: char 22, line 1
-</code></pre>
+</code></pre></div>
 <h3 id="task-4-identifying-unknown-files">Task 4: Identifying Unknown Files</h3>
 <ul>
 <li>Locate an unknown file (e.g., a file without a file extension or with an unfamiliar extension) on your system.</li>
 <li>Use the <code>file</code> command to identify the file type.</li>
 <li>Research the identified file type to understand its purpose or use.</li>
 </ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ file binary1.bin
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ file binary1.bin
 binary1.bin: Mach-O universal binary with 2 architectures: [x86_64:Mach-O 64-bit executable x86_64] [arm64e:Mach-O 64-bit executable arm64e]
 binary1.bin (for architecture x86_64):  Mach-O 64-bit executable x86_64
 binary1.bin (for architecture arm64e):  Mach-O 64-bit executable arm64e
-</code></pre>
+</code></pre></div>
 <h3 id="task-5-using-wildcards">Task 5: Using Wildcards</h3>
 <ul>
 <li>Create a directory with several files of different types, including text files, executables, and directories.</li>
 <li>Use wildcards (e.g., <code>*</code> or <code>?</code>) with commands like <code>ls</code> or <code>file</code> to identify specific types of files within the directory.</li>
 <li>List all text files, executables, and directories separately using wildcards.</li>
 </ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ ls *.txt
+<h2 id="internintern-a1t-inf-lnx1-ls-txt-natxt-file2txt-notebooks-datatxt-test2txt-amp_workspacestxt-file3txt-outputtxt-test3txt-config-difftxt-intern_testing_filetxt-test-ldaptxt-usmsc30ctxt-envtxt-less_than11txt-test-sedtxt-file1txt-lmstxt-test1txt-internintern-a1t-inf-lnx1-ls-filetxt-file1txt-file2txt-file3txt"><div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ ls *.txt
 NA.txt                  file2.txt               notebooks-data.txt      test2.txt
 amp_workspaces.txt      file3.txt               output.txt              test3.txt
 config-diff.txt         intern_testing_file.txt test-ldap.txt           usmsc30c.txt
@@ -5494,8 +5510,7 @@ env.txt                 less_than11.txt         test-sed.txt
 file1.txt               lms.txt                 test1.txt
 [intern@intern-a1t-inf-lnx1 ~]$ ls file?.txt
 file1.txt file2.txt file3.txt
-</code></pre>
-<hr />
+</code></pre></div></h2>
 <h2 id="conclusion">Conclusion</h2>
 <p>This practice exercise has allowed you to practice comparing text and binary files to find differences and identifying various file types on a Linux system. You've used essential commands like <code>diff</code>, <code>file</code>, and <code>cmp</code> to perform these tasks. Understanding how to compare files and recognize their types is essential for efficient file management and system administration in Linux.</p>
 

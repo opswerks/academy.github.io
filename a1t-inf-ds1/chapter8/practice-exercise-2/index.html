@@ -5287,12 +5287,12 @@
 <ul>
 <li><code>db1</code> = <code>master</code></li>
 <li><code>db2</code> = <code>slave</code></li>
-<li>Use the command below while running <code>mysql</code> on the slave:</li>
+<li>Use the command below while running <code>mysql</code> on the slave:
+<div class="highlight"><pre><span></span><code>SHOW REPLICA STATUS\G
+</code></pre></div>
+Here you can see the configuration of the slave.
+Look for the <code>Seconds_Behind_Master</code> value, which indicates the replication lag in seconds. This value should ideally be close to 0. Any positive value suggests lag.</li>
 </ul>
-<pre><code>SHOW REPLICA STATUS\G
-</code></pre>
-<p>Here you can see the configuration of the slave.
-Look for the <code>Seconds_Behind_Master</code> value, which indicates the replication lag in seconds. This value should ideally be close to 0. Any positive value suggests lag.</p>
 <h2 id="conclusion">Conclusion</h2>
 <p>To understand replication, you need to know it's crucial for building fault-tolerant and scalable database systems. Replication offers data redundancy and allows you to offload read operations to the slave server while keeping your data consistent. It's important to monitor replication lag to make sure your system is running smoothly and to help you identify and resolve potential issues.</p>
 

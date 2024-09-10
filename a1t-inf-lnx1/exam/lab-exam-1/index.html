@@ -5383,17 +5383,14 @@ Lab Setup Requirements:
 </ol>
 <h3 id="task-2-bash-scripting">Task 2: BASH Scripting</h3>
 <ol>
-<li>(10 pts) Write a BASH script named <code>/root/counter.sh</code> that accepts a text file as an argument. The BASH script must count the number of instances of the characters <code>:</code>, <code>0</code>, and <code>a</code>, in this order. Here's a sample output:</li>
-</ol>
-<pre><code>$ ./counter.sh /etc/group
+<li>(10 pts) Write a BASH script named <code>/root/counter.sh</code> that accepts a text file as an argument. The BASH script must count the number of instances of the characters <code>:</code>, <code>0</code>, and <code>a</code>, in this order. Here's a sample output:
+<div class="highlight"><pre><span></span><code>$ ./counter.sh /etc/group
 174
 36
 55
-</code></pre>
-<ol>
-<li>(15 pts) Write a BASH script named <code>/root/user-verify.sh</code> that will ask the user to enter an existing user's username. The script should have a prompt for a user to enter the user name. If the user entered is non-existent, the script should print "<code>User non-existent!</code>". If the user is existent, it should do 2 things: it should 1) check if the user is a sudoer ("<code>User is a sudoer</code>" / "<code>User is not a sudoer</code>"), and 2) check if the user's home folder is within or not within <code>/home/</code> then give an output accordingly ("<code>User belongs in /home/</code>" / "<code>User does not belong in /home/</code>"). Here's a sample output:</li>
-</ol>
-<pre><code>$ ./user-verify.sh
+</code></pre></div></li>
+<li>(15 pts) Write a BASH script named <code>/root/user-verify.sh</code> that will ask the user to enter an existing user's username. The script should have a prompt for a user to enter the user name. If the user entered is non-existent, the script should print "<code>User non-existent!</code>". If the user is existent, it should do 2 things: it should 1) check if the user is a sudoer ("<code>User is a sudoer</code>" / "<code>User is not a sudoer</code>"), and 2) check if the user's home folder is within or not within <code>/home/</code> then give an output accordingly ("<code>User belongs in /home/</code>" / "<code>User does not belong in /home/</code>"). Here's a sample output:
+<div class="highlight"><pre><span></span><code>$ ./user-verify.sh
 Enter user: hanna
 User non-existent!
 
@@ -5406,18 +5403,17 @@ $ ./user-verify.sh
 Enter user: mike
 User is not a sudoer
 User does not belong in /home/
-</code></pre>
-<ol>
-<li>(15 pts) Write a BASH script named <code>/root/file-checker.sh</code> that accepts a file or a directory. The script must traverse the directory and check each file's filetype. The format output should be <code>&lt;file/dir name&gt; - &lt;file type&gt;</code></li>
-</ol>
-<pre><code>$ ./file-checker.sh /etc/selinux/
+</code></pre></div></li>
+<li>(15 pts) Write a BASH script named <code>/root/file-checker.sh</code> that accepts a file or a directory. The script must traverse the directory and check each file's filetype. The format output should be <code>&lt;file/dir name&gt; - &lt;file type&gt;</code>
+<div class="highlight"><pre><span></span><code>$ ./file-checker.sh /etc/selinux/
 config - /etc/selinux/config: ASCII text
 semanage.conf - /etc/selinux/semanage.conf: ASCII text
 targeted - /etc/selinux/targeted: directory
 
 $ ./file-checker.sh /etc/yum.conf
 /etc/yum.conf - /etc/yum.conf: symbolic link to dnf/dnf.conf
-</code></pre>
+</code></pre></div></li>
+</ol>
 <h3 id="task-3-file-compression">Task 3: File Compression</h3>
 <ol>
 <li>(10 pts) Make a copy of <code>/etc/resolv.conf</code> and name the copy <code>resolv_backup</code>. Compress the <code>resolv_backup</code> to a gzip archive named <code>/root/gzbackups/resolv_copy.gz</code></li>

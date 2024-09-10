@@ -5320,11 +5320,11 @@
 <h2 id="tasks">Tasks</h2>
 <p><strong>Part 1: Creating Docker Images Using Dockerfiles</strong></p>
 <p>Task 1. Create a directory for your Docker project:</p>
-<pre><code>mkdir docker_lab
+<div class="highlight"><pre><span></span><code>mkdir docker_lab
 cd docker_lab
-</code></pre>
+</code></pre></div>
 <p>Task 2. Inside the <code>docker_lab</code> directory, create a Dockerfile for a simple web application. You can use a basic Python Flask application as an example. </p>
-<pre><code>#  Use an official Python runtime as a parent image
+<div class="highlight"><pre><span></span><code>#  Use an official Python runtime as a parent image
 FROM python:3.12
 
 # Set the working directory inside the container
@@ -5344,30 +5344,28 @@ EXPOSE 5000
 
 # Command to run the Flask application
 CMD [&quot;python&quot;, &quot;app.py&quot;]
-
-</code></pre>
+</code></pre></div>
 <p>Task 3. Create an <code>app.py</code> file and a <code>requirements.txt</code> file in the same directory with some simple Python code and dependencies.</p>
 <pre><code>  See sample `app.py` and  `requirement.txt` file below:
 </code></pre>
-<pre><code>#app.py 
+<p><div class="highlight"><pre><span></span><code>#app.py 
 
 from flask import Flask
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route(&#39;/&#39;)
 def hello_world():
-    return 'Hello, World!'
+    return &#39;Hello, World!&#39;
 
-if __name__ == '__main__':
+if __name__ == &#39;__main__&#39;:
     app.run(debug=True)
-
-</code></pre>
-<pre><code>#requirements.txt 
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>#requirements.txt 
 
       Flask==2.1.1
       Werkzeug==2.2.2
-</code></pre>
+</code></pre></div></p>
 <p>Task 4. Build the Docker image using the Dockerfile:</p>
 <pre><code>  docker build -t mywebapp .
 </code></pre>

@@ -5345,7 +5345,7 @@
 <li>Save your changes and exit insert mode by pressing <code>Esc</code> and then typing <code>:wq</code> to save and quit.</li>
 <li>Verify that the file <code>vi_notes.txt</code> was created and contains your journal entry.</li>
 </ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ vi vi_notes.txt
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ vi vi_notes.txt
 # After pressing `i` you will see this in the bottom
 -- INSERT --
 # Write anything and then pres ESC
@@ -5353,52 +5353,44 @@
 :wq
 [intern@intern-a1t-inf-lnx1 ~]$ cat vi_notes.txt
 This is a vi notes
-</code></pre>
+</code></pre></div>
 <h2 id="task-2-exploring-advanced-editing-with-emacs">Task 2: Exploring Advanced Editing with emacs</h2>
 <ul>
 <li>Open the <code>emacs</code> text editor using your system's application launcher or by running <code>emacs</code> in the terminal.</li>
 <li>Create a new text file named <code>emacs_code.c</code>.</li>
 <li>Write a simple C program (e.g., "Hello, Linux!") in the file.</li>
-<li>Use <code>emacs</code> features like syntax highlighting and indentation to format your code.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ emacs emacs_code.c
+<li>Use <code>emacs</code> features like syntax highlighting and indentation to format your code.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ emacs emacs_code.c
 File Edit Options Buffers Tools C Help
 
 -UU-:----F1  emacs_code.c   All L1     (C/*l Abbrev) --------
-</code></pre>
-<ul>
-<li>Type the following code inside</li>
-</ul>
-<pre><code>#include &lt;stdio.h&gt;
+</code></pre></div></li>
+<li>Type the following code inside
+<div class="highlight"><pre><span></span><code>#include &lt;stdio.h&gt;
 
 int main() {
     printf(&quot;Hello, World!\n&quot;);
     return 0;
 }
-</code></pre>
-<ul>
-<li>Press <code>ctrl + x</code> and <code>ctrl + c</code> to exit. If you have unsaved changes it will ask you if you want to save it</li>
-</ul>
-<pre><code>Save file /home/intern/emacs_code.c? (y, n, !, ., q, C-r, C-f, d or C-h)
+</code></pre></div></li>
+<li>Press <code>ctrl + x</code> and <code>ctrl + c</code> to exit. If you have unsaved changes it will ask you if you want to save it
+<div class="highlight"><pre><span></span><code>Save file /home/intern/emacs_code.c? (y, n, !, ., q, C-r, C-f, d or C-h)
 # Press enter
 Modified buffers exist; exit anyway? (yes or no)
 # Type yes to save your changes
-</code></pre>
-<ul>
-<li>Compile the code and run the program</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ gcc -o hello_world emacs_code.c
+</code></pre></div></li>
+<li>Compile the code and run the program
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ gcc -o hello_world emacs_code.c
 [intern@intern-a1t-inf-lnx1 ~]$ ./hello_world
 Hello, World!
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h2 id="task-3-advanced-editing-with-vi">Task 3: Advanced Editing with vi</h2>
 <ul>
 <li>Use <code>vi</code> to open/create the <code>vi_journal.txt</code> file created.</li>
-<li>And paste this paragraph</li>
-</ul>
-<pre><code>emacs, a powerful and versatile text editor, is renowned for its efficient search and replace functionality. With emacs, you can effortlessly locate specific words or phrases within your document using its robust search feature, and then replace them seamlessly with new content using the replace command. Whether you're editing code, configuring files, or crafting documents, emacs's search and replace capabilities empower you to make precise and rapid changes, enhancing your productiemacsty and control over your text editing tasks.
-</code></pre>
-<ul>
+<li>And paste this paragraph
+<div class="highlight"><pre><span></span><code>emacs, a powerful and versatile text editor, is renowned for its efficient search and replace functionality. With emacs, you can effortlessly locate specific words or phrases within your document using its robust search feature, and then replace them seamlessly with new content using the replace command. Whether you&#39;re editing code, configuring files, or crafting documents, emacs&#39;s search and replace capabilities empower you to make precise and rapid changes, enhancing your productiemacsty and control over your text editing tasks.
+</code></pre></div></li>
 <li>Locate a specific word or phrase within your journal entry using <code>/</code> followed by the search term (e.g., <code>/emacs</code>).</li>
 <li>Navigate to the next occurrence of the search term using <code>n</code>.</li>
 <li>Replace a word in your journal entry using the <code>:s</code> command (e.g., <code>:s/emacs/vi/g</code> to replace "emacs" with "vi").</li>
@@ -5411,9 +5403,8 @@ Hello, World!
 <li>Modify your C program by adding comments and additional code lines.</li>
 <li>Utilize <code>emacs</code> keyboard shortcuts for copying, cutting, and pasting text within your code.</li>
 <li>Save the changes.</li>
-<li>Close <code>emacs</code>.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ emacs emacs_code.c
+<li>Close <code>emacs</code>.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ emacs emacs_code.c
 File Edit Options Buffers Tools C Help
 #include &lt;stdio.h&gt;
 
@@ -5424,25 +5415,22 @@ int main() {
 
 -UU-:----F1  emacs_code.c   All L1     (C/*l Abbrev) ---------------------------------------------
 emacs_code.c has auto save data; consider M-x recover-this-file
-</code></pre>
-<ul>
+</code></pre></div></li>
 <li>After opening the file add the following comment</li>
 <li><code># This is a c code that prints "Hello, World!"</code></li>
-<li>For example</li>
-</ul>
-<pre><code>#include &lt;stdio.h&gt;
+<li>For example
+<div class="highlight"><pre><span></span><code>#include &lt;stdio.h&gt;
 
 # This is a c code that prints &quot;Hello, World!&quot;
 int main() {
   printf(&quot;Hello, World!\n&quot;);
   return 0;
 }
-</code></pre>
-<ul>
-<li>Then press <code>ctrl + x</code> and <code>ctrl + c</code> and when asked to save file type y</li>
+</code></pre></div></li>
+<li>Then press <code>ctrl + x</code> and <code>ctrl + c</code> and when asked to save file type y
+<div class="highlight"><pre><span></span><code>Save file /home/intern/emacs_code.c? (y, n, !, ., q, C-r, C-f, d or C-h)
+</code></pre></div></li>
 </ul>
-<pre><code>Save file /home/intern/emacs_code.c? (y, n, !, ., q, C-r, C-f, d or C-h)
-</code></pre>
 <h2 id="task-5-comparing-vi-and-emacs">Task 5: Comparing vi and emacs</h2>
 <ul>
 <li>In your own words, describe the main differences between the <code>vi</code> and <code>emacs</code> text editors in terms of features, interface, and usage.</li>

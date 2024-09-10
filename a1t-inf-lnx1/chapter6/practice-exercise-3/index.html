@@ -5375,9 +5375,8 @@
 <ul>
 <li>Open a terminal.</li>
 <li>Use <code>wget</code> to download a file from a URL. For example: <code>wget https://example.com</code>.</li>
-<li>Observe the download progress and the downloaded file.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ wget https://example.com
+<li>Observe the download progress and the downloaded file.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ wget https://example.com
 --2023-09-19 21:02:24--  https://example.com/
 Resolving example.com (example.com)... 93.184.216.34, 2606:2800:220:1:248:1893:25c8:1946
 Connecting to example.com (example.com)|93.184.216.34|:443... connected.
@@ -5388,13 +5387,13 @@ Saving to: ‘index.html’
 index.html               100%[================================&gt;]   1.23K  --.-KB/s    in 0s
 
 2023-09-19 21:02:25 (51.3 MB/s) - ‘index.html’ saved [1256/1256]
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h3 id="task-2-downloading-files-with-curl">Task 2: Downloading Files with <code>curl</code></h3>
 <ul>
 <li>In the terminal, use <code>curl</code> to download the same file from the previous task. For example: <code>curl -O https://example.com/sample.txt</code>.</li>
-<li>Compare the <code>curl</code> download process to <code>wget</code>.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ curl !$
+<li>Compare the <code>curl</code> download process to <code>wget</code>.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ curl !$
 curl https://example.com
 &lt;!doctype html&gt;
 &lt;html&gt;
@@ -5442,13 +5441,13 @@ curl https://example.com
 &lt;/div&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h3 id="task-3-downloading-a-web-page">Task 3: Downloading a Web Page</h3>
 <ul>
 <li>Use <code>wget</code> to download an entire web page (HTML) and its related assets (e.g., images, stylesheets). For example: <code>wget --recursive --page-requisites https://example.com</code>.</li>
-<li>Explore the downloaded files and folder structure.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ wget --recursive --page-requisites https://example.com
+<li>Explore the downloaded files and folder structure.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ wget --recursive --page-requisites https://example.com
 --2023-09-19 21:03:42--  https://example.com/
 Resolving example.com (example.com)... 93.184.216.34, 2606:2800:220:1:248:1893:25c8:1946
 Connecting to example.com (example.com)|93.184.216.34|:443... connected.
@@ -5465,13 +5464,13 @@ Total wall clock time: 2.7s
 Downloaded: 1 files, 1.2K in 0.001s (2.36 MB/s)
 [intern@intern-a1t-inf-lnx1 ~]$ ls example.com/
 index.html
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h3 id="task-4-exploring-wget-and-curl-options">Task 4: Exploring <code>wget</code> and <code>curl</code> Options</h3>
 <ul>
 <li>Investigate additional options for both <code>wget</code> and <code>curl</code> by running <code>wget --help</code> and <code>curl --help</code>.</li>
-<li>Experiment with different options to customize downloads or requests.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ wget --help | head
+<li>Experiment with different options to customize downloads or requests.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ wget --help | head
 GNU Wget 1.21.2, a non-interactive network retriever.
 Usage: wget [OPTION]... [URL]...
 
@@ -5481,7 +5480,7 @@ Startup:
   -V,  --version                   display the version of Wget and exit
   -h,  --help                      print this help
   -b,  --background                go to background after startup
-  -e,  --execute=COMMAND           execute a `.wgetrc'-style command
+  -e,  --execute=COMMAND           execute a `.wgetrc&#39;-style command
 
 [intern@intern-a1t-inf-lnx1 ~]$ curl --help | head
 Usage: curl [options...] &lt;url&gt;
@@ -5494,7 +5493,8 @@ Usage: curl [options...] &lt;url&gt;
  -s, --silent               Silent mode
  -T, --upload-file &lt;file&gt;   Transfer local FILE to destination
  -u, --user &lt;user:password&gt; Server user and password
-</code></pre>
+</code></pre></div></li>
+</ul>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
 <p>By completing these exercises, you've gained practical experience in using web browsers, <code>wget</code>, and <code>curl</code> for various web-related tasks. These tools are valuable for accessing web content and automating web-related tasks from the command line in a Linux environment.</p>

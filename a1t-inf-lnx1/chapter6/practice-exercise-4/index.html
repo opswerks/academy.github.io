@@ -5375,17 +5375,16 @@
 <ul>
 <li>Open a terminal on your local machine.</li>
 <li>Use <code>scp</code> to copy a file from your local machine to a remote server. For example: <code>scp file.txt user@remote-server:/path/to/destination</code>.</li>
-<li>Observe the file transfer process and ensure it reaches the remote server.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ scp intern@192.168.64.2:/home/projects/my_history projects
+<li>Observe the file transfer process and ensure it reaches the remote server.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ scp intern@192.168.64.2:/home/projects/my_history projects
 my_history                                                      100%   68    57.7KB/s   00:00
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h3 id="task-2-transferring-files-with-rsync">Task 2: Transferring Files with <code>rsync</code></h3>
 <ul>
 <li>In the terminal, use <code>rsync</code> to synchronize a directory from your local machine to a remote server. For example: <code>rsync -avz /local/directory/ user@remote-server:/path/to/destination/</code>.</li>
-<li>Verify that the contents of the local directory are synchronized with the remote server.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ rsync -avz intern@192.168.64.2:/home/projects/ projects/
+<li>Verify that the contents of the local directory are synchronized with the remote server.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ rsync -avz intern@192.168.64.2:/home/projects/ projects/
 receiving file list ... done
 ./
 myscript.sh
@@ -5395,15 +5394,15 @@ sent 66 bytes  received 338 bytes  808.00 bytes/sec
 total size is 136  speedup is 0.34
 [intern@intern-a1t-inf-lnx1 ~]$ ls projects
 my_history       myscript.sh      project_plan.txt
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h3 id="task-3-transferring-files-with-ftp">Task 3: Transferring Files with <code>ftp</code></h3>
 <ul>
 <li>Open a terminal on a different machine.</li>
 <li>Use an FTP client like <code>ftp</code> or <code>lftp</code> to connect to the FTP server. For example: <code>ftp ftp://user@remote-server</code>.</li>
 <li>Upload and download files to and from the FTP server.</li>
-<li>Using <code>lftp</code> I can now access the filesystem of the remote server</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$   lftp intern@192.168.64.2
+<li>Using <code>lftp</code> I can now access the filesystem of the remote server
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$   lftp intern@192.168.64.2
 Password:
 lftp intern@192.168.64.2:~&gt;
 lftp intern@192.168.64.2:~&gt; ls /home/projects/
@@ -5411,17 +5410,18 @@ lftp intern@192.168.64.2:~&gt; ls /home/projects/
 -rwsrwxr-x    1 1000     1000           68 Sep 19 12:42 myscript.sh
 -rw-rw-r--    1 1000     1000            0 Sep 19 09:28 project_plan.txt
 lftp intern@192.168.64.2:~&gt; bye
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h3 id="task-4-secure-file-transfer-with-sftp">Task 4: Secure File Transfer with <code>sftp</code></h3>
 <ul>
 <li>Use <code>sftp</code> (SSH File Transfer Protocol) to securely transfer files between your local machine and a remote server. For example: <code>sftp user@remote-server</code>.</li>
-<li>Upload and download files securely using <code>sftp</code>.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ sftp intern@192.168.64.2
+<li>Upload and download files securely using <code>sftp</code>.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ sftp intern@192.168.64.2
 sftp&gt; ls /home/projects
 /home/projects/my_history                        /home/projects/myscript.sh
 /home/projects/project_plan.txt
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h2 id="conclusion">Conclusion</h2>
 <p>By completing these exercises, you've gained practical experience in transferring files between systems using tools like <code>scp</code>, <code>rsync</code>, <code>ftp</code>, and <code>sftp</code>. These tools are essential for managing files across different machines in a Linux environment.</p>
 

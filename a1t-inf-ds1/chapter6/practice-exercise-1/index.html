@@ -5290,47 +5290,49 @@
 <h2 id="tasks">Tasks</h2>
 <ul>
 <li>Connect to the <code>web2</code> instance</li>
-<li>Create a directory for your app and navigate into it:</li>
-</ul>
-<pre><code>mkdir my_flask_app
+<li>
+<p>Create a directory for your app and navigate into it:
+<div class="highlight"><pre><span></span><code>mkdir my_flask_app
 cd my_flask_app
-</code></pre>
-<ul>
-<li>Create a virtual environment</li>
-</ul>
-<pre><code>python3 -m venv flask_env
-</code></pre>
-<ul>
-<li>Activate the virtual environment</li>
-</ul>
-<pre><code>source flask_env/bin/activate
-</code></pre>
-<ul>
-<li>Install Flask in the virtual environment:</li>
-</ul>
-<pre><code>pip install flask
-</code></pre>
-<ul>
-<li>Create a Python file for your Flask app <code>app.py</code> ensure you can differentiate it from your previous flask app like below:</li>
-</ul>
-<pre><code>from flask import Flask
+</code></pre></div></p>
+</li>
+<li>
+<p>Create a virtual environment
+<div class="highlight"><pre><span></span><code>python3 -m venv flask_env
+</code></pre></div></p>
+</li>
+<li>
+<p>Activate the virtual environment
+<div class="highlight"><pre><span></span><code>source flask_env/bin/activate
+</code></pre></div></p>
+</li>
+<li>
+<p>Install Flask in the virtual environment:
+<div class="highlight"><pre><span></span><code>pip install flask
+</code></pre></div></p>
+</li>
+<li>
+<p>Create a Python file for your Flask app <code>app.py</code> ensure you can differentiate it from your previous flask app like below:
+<div class="highlight"><pre><span></span><code>from flask import Flask
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route(&#39;/&#39;)
 def hello():
-    return 'Hello, and welcome to my second Flask app!'
+    return &#39;Hello, and welcome to my second Flask app!&#39;
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=80)
-</code></pre>
-<ul>
-<li>Start the flask app:</li>
-</ul>
-<pre><code>sudo flask_env/bin/python3 app.py
-</code></pre>
-<ul>
-<li>Ensure that the flask app from <strong>Module 3 - Activity 6</strong>  is also running on <code>web1</code> and that the <code>nginx</code> service is not</li>
+if __name__ == &#39;__main__&#39;:
+    app.run(host=&#39;0.0.0.0&#39;, port=80)
+</code></pre></div></p>
+</li>
+<li>
+<p>Start the flask app:
+<div class="highlight"><pre><span></span><code>sudo flask_env/bin/python3 app.py
+</code></pre></div></p>
+</li>
+<li>
+<p>Ensure that the flask app from <strong>Module 3 - Activity 6</strong>  is also running on <code>web1</code> and that the <code>nginx</code> service is not</p>
+</li>
 <li>Visit the link <code>&lt;YOUR_NAME&gt;-a1t-inf-ds-lb.acad.opswerks.net</code></li>
 <li>Stop the <code>flask</code> app on either of the <code>web</code> instances.
   <br>You should see the changes reflect when you revisit the <code>lb</code> url as the site would still be up.</br>

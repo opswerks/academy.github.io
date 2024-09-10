@@ -5291,56 +5291,44 @@
 <h2 id="tasks">Tasks</h2>
 <ul>
 <li>On the <code>web1</code> instance, make a directory named <code>ch8</code> and navigate to it</li>
-<li>Create a virtual environment</li>
-</ul>
-<pre><code>python -m venv chapter8
-</code></pre>
-<ul>
-<li>Activate your virtual environment</li>
-</ul>
-<pre><code>source chapter8/bin/activate
-</code></pre>
-<ul>
-<li>Download the file below and save it as <code>requirements.txt</code> in the current directory</li>
-</ul>
-<pre><code>a1t-inf-ds-files.acad.opswerks.net/requirements.txt
-</code></pre>
-<ul>
-<li>Run the command to install the dependencies for the modified Flask app</li>
-</ul>
-<pre><code>pip install -r requirements.txt
-</code></pre>
-<ul>
-<li>Download the file below and save it as <code>flask_v2.py</code></li>
-</ul>
-<pre><code>a1t-inf-ds-files.acad.opswerks.net/flask_v2.py
-</code></pre>
-<ul>
-<li>Create a folder named <code>templates</code> in your current directory and save the file there as <code>table.html</code>:</li>
-</ul>
-<pre><code>a1t-inf-ds-files.acad.opswerks.net/table.html
-</code></pre>
-<ul>
-<li>Set the environment variable <code>DB_USER</code></li>
-</ul>
-<pre><code>export DB_USER=&lt;NAME&gt;
-</code></pre>
-<ul>
-<li>On the <code>db1</code> instance run the command:</li>
-</ul>
-<pre><code>mysql -u &lt;USERNAME&gt; -p -e &quot;SHOW MASTER STATUS&quot;
-</code></pre>
-<p>Your username is the same as your Linux username and the password is <code>Acad_student-&lt;USERNAME&gt;</code>.
+<li>Create a virtual environment
+<div class="highlight"><pre><span></span><code>python -m venv chapter8
+</code></pre></div></li>
+<li>Activate your virtual environment
+<div class="highlight"><pre><span></span><code>source chapter8/bin/activate
+</code></pre></div></li>
+<li>Download the file below and save it as <code>requirements.txt</code> in the current directory
+<div class="highlight"><pre><span></span><code>a1t-inf-ds-files.acad.opswerks.net/requirements.txt
+</code></pre></div></li>
+<li>Run the command to install the dependencies for the modified Flask app
+<div class="highlight"><pre><span></span><code>pip install -r requirements.txt
+</code></pre></div></li>
+<li>Download the file below and save it as <code>flask_v2.py</code>
+<div class="highlight"><pre><span></span><code>a1t-inf-ds-files.acad.opswerks.net/flask_v2.py
+</code></pre></div></li>
+<li>Create a folder named <code>templates</code> in your current directory and save the file there as <code>table.html</code>:
+<div class="highlight"><pre><span></span><code>a1t-inf-ds-files.acad.opswerks.net/table.html
+</code></pre></div></li>
+<li>Set the environment variable <code>DB_USER</code>
+<div class="highlight"><pre><span></span><code>export DB_USER=&lt;NAME&gt;
+</code></pre></div></li>
+<li>
+<p>On the <code>db1</code> instance run the command:
+<div class="highlight"><pre><span></span><code>mysql -u &lt;USERNAME&gt; -p -e &quot;SHOW MASTER STATUS&quot;
+</code></pre></div>
+Your username is the same as your Linux username and the password is <code>Acad_student-&lt;USERNAME&gt;</code>.
 Take note of the <code>Position</code> from the output</p>
-<ul>
-<li>On the <code>db2</code> instance run the command:</li>
+</li>
+<li>
+<p>On the <code>db2</code> instance run the command:
+<div class="highlight"><pre><span></span><code>mysql -u &lt;USERNAME&gt; -p -e &quot;CHANGE MASTER TO MASTER_HOST=&#39;&lt;DB1_HOSTNAME&gt;&#39;, MASTER_USER=&#39;&lt;YOUR_USERNAME&gt;&#39;, MASTER_PASSWORD=&#39;&lt;YOUR_PASSWORD&gt;&#39;, MASTER_LOG_FILE=&#39;mysql-bin.000001&#39;, MASTER_LOG_POS=&lt;LOG_POSITION&gt;; START SLAVE;&quot;
+</code></pre></div></p>
+</li>
 </ul>
-<pre><code>mysql -u &lt;USERNAME&gt; -p -e &quot;CHANGE MASTER TO MASTER_HOST='&lt;DB1_HOSTNAME&gt;', MASTER_USER='&lt;YOUR_USERNAME&gt;', MASTER_PASSWORD='&lt;YOUR_PASSWORD&gt;', MASTER_LOG_FILE='mysql-bin.000001', MASTER_LOG_POS=&lt;LOG_POSITION&gt;; START SLAVE;&quot;
-</code></pre>
 <p>Fill in the command with the proper values, the <code>MASTER_LOG_POSITION</code> is taken from the output of <code>SHOW MASTER STATUS</code>
-- Run your app</p>
-<pre><code>python flask_v2.py
-</code></pre>
+- Run your app
+<div class="highlight"><pre><span></span><code>python flask_v2.py
+</code></pre></div></p>
 <ul>
 <li>Visit your application at <code>&lt;YOUR_NAME&gt;-a1t-inf-ds-lb.acad.opswerks.net</code>, your application should display a table</li>
 <li>Stop the <code>mysqld</code> service on the <code>db1</code> instance and revisit your application's website, it should be still running despite <code>db1</code> being down.</li>

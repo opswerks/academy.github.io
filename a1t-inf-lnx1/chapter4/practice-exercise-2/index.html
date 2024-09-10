@@ -5321,95 +5321,83 @@
 <ul>
 <li>Open a terminal window.</li>
 <li>Use the <code>env</code> command to display a list of all environment variables currently set on your system.</li>
-<li>Identify common environment variables like <code>PATH</code>, <code>HOME</code>, <code>USER</code>, and <code>SHELL</code>. Take note of their values.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ env
+<li>Identify common environment variables like <code>PATH</code>, <code>HOME</code>, <code>USER</code>, and <code>SHELL</code>. Take note of their values.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ env
 SHELL=/bin/bash
 PWD=/home/intern
 LOGNAME=intern
 XDG_SESSION_TYPE=tty
 MOTD_SHOWN=pam
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h2 id="task-2-creating-custom-environment-variables">Task 2: Creating Custom Environment Variables</h2>
 <ul>
 <li>Create a new environment variable named <code>MY_VARIABLE</code> and set it to your name or any custom value using the <code>export</code> command.</li>
-<li>Use the <code>env</code> command again to verify that your new environment variable <code>MY_VARIABLE</code> has been added to the list.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ export MY_VARIABLE=variable_value
+<li>Use the <code>env</code> command again to verify that your new environment variable <code>MY_VARIABLE</code> has been added to the list.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ export MY_VARIABLE=variable_value
 [intern@intern-a1t-inf-lnx1 ~]$ env | grep MY_VARIABLE
 MY_VARIABLE=variable_value
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h2 id="task-3-modifying-environment-variables">Task 3: Modifying Environment Variables</h2>
 <ul>
 <li>Change the value of the <code>MY_VARIABLE</code> environment variable to something else using the <code>export</code> command.</li>
 <li>Verify that the value of <code>MY_VARIABLE</code> has been updated using the <code>env</code> command.</li>
-<li>Try modifying one of the common environment variables, such as <code>PATH</code> or <code>PS1</code>, temporarily and observe the changes.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ export MY_VARIABLE=variable_value2
+<li>Try modifying one of the common environment variables, such as <code>PATH</code> or <code>PS1</code>, temporarily and observe the changes.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ export MY_VARIABLE=variable_value2
 [intern@intern-a1t-inf-lnx1 ~]$ env | grep MY_VARIABLE
 MY_VARIABLE=variable_value2
 [intern@intern-a1t-inf-lnx1 ~]$ export PATH=/home/projects
 [intern@intern-a1t-inf-lnx1 ~]$ env | grep PATH
-Command 'grep' is available in the following places
+Command &#39;grep&#39; is available in the following places
  * /bin/grep
  * /usr/bin/grep
-The command could not be located because '/usr/bin:/bin' is not included in the PATH environment variable.
+The command could not be located because &#39;/usr/bin:/bin&#39; is not included in the PATH environment variable.
 grep: command not found
-Command 'env' is available in the following places
+Command &#39;env&#39; is available in the following places
  * /bin/env
  * /usr/bin/env
-The command could not be located because '/bin:/usr/bin' is not included in the PATH environment variable.
+The command could not be located because &#39;/bin:/usr/bin&#39; is not included in the PATH environment variable.
 env: command not found
-</code></pre>
-<ul>
+</code></pre></div></li>
 <li>As you can see by changing the PATH value the command env and grep can't be located</li>
-<li>The easiest way I can think of to fix it is to simply logout and login again.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ env | grep PATH
+<li>The easiest way I can think of to fix it is to simply logout and login again.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ env | grep PATH
 PATH=/home/intern/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
-</code></pre>
-<ul>
+</code></pre></div></li>
 <li>Of course this login and logout will also result in your MY_VARIABLE not persisting</li>
-<li>Verify that <code>MY_VARIABLE</code> has been removed from the list of environment variables.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ env | grep MY_VARIABLE
-</code></pre>
-<ul>
-<li>You can remove a environment variable as well by simply using the command unset</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ export MY_VARIABLE=variable_value
+<li>Verify that <code>MY_VARIABLE</code> has been removed from the list of environment variables.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ env | grep MY_VARIABLE
+</code></pre></div></li>
+<li>You can remove a environment variable as well by simply using the command unset
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ export MY_VARIABLE=variable_value
 [intern@intern-a1t-inf-lnx1 ~]$ env | grep MY_VARIABLE
 MY_VARIABLE=variable_value
 [intern@intern-a1t-inf-lnx1 ~]$ unset MY_VARIABLE
 [intern@intern-a1t-inf-lnx1 ~]$ env | grep MY_VARIABLE
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h2 id="task-4-using-environment-variables">Task 4: Using Environment Variables</h2>
 <ul>
-<li>Use the <code>echo</code> command to display the value of the <code>HOME</code> environment variable.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ echo $HOME
+<li>Use the <code>echo</code> command to display the value of the <code>HOME</code> environment variable.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ echo $HOME
 /home/intern
-</code></pre>
-<ul>
+</code></pre></div></li>
 <li>Yes, to expand variables in linux you need the <code>$</code></li>
-<li>Create a simple shell script that utilizes environment variables to print a customized greeting message based on the <code>USER</code> environment variable.</li>
-</ul>
-<pre><code># You can use your preffered editor
+<li>Create a simple shell script that utilizes environment variables to print a customized greeting message based on the <code>USER</code> environment variable.
+<div class="highlight"><pre><span></span><code># You can use your preffered editor
 [intern@intern-a1t-inf-lnx1 ~]$ vi user.sh
-</code></pre>
-<ul>
-<li>With the following content</li>
-</ul>
-<pre><code>#!/bin/bash
+</code></pre></div></li>
+<li>With the following content
+<div class="highlight"><pre><span></span><code>#!/bin/bash
 echo &quot;Hello $USER&quot;
-</code></pre>
-<ul>
+</code></pre></div></li>
 <li>Don't worry if you don't understand some part of the script yet as we will discuss it in the shell scripting chapter</li>
-<li>Execute the script and take note of the output</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ /bin/bash user.sh
+<li>Execute the script and take note of the output
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ /bin/bash user.sh
 Hello intern
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h2 id="conclusion">Conclusion:</h2>
 <p>In this lab exercise, you've gained practical experience with environment variables in a Linux environment. You've learned how to display, create, modify, and use environment variables both in the terminal and within shell scripts. Understanding environment variables is essential for configuring and customizing your Linux system.</p>
 

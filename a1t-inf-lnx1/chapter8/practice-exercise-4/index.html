@@ -5342,23 +5342,22 @@
 <li>Explore methods for managing user passwords in Linux.</li>
 <li>Explain how passwords are stored and encrypted in the <code>/etc/shadow</code> file.</li>
 <li>Demonstrate how to change a user's password using the <code>passwd</code> command.</li>
-<li>Emphasize the importance of password privacy and confidentiality.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ passwd
+<li>Emphasize the importance of password privacy and confidentiality.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ passwd
 Changing password for intern.
 Current password:
 New password:
 Retype new password:
 passwd: password updated successfully
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h3 id="task-2-password-aging-and-expiry">Task 2: Password Aging and Expiry</h3>
 <ul>
 <li>Discuss the concept of password aging and expiry.</li>
 <li>Explain how password aging policies can enhance security.</li>
 <li>Demonstrate how to set password aging parameters using the <code>chage</code> command.</li>
-<li>Provide examples of configuring password expiration for user accounts.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ chage -l intern
+<li>Provide examples of configuring password expiration for user accounts.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ chage -l intern
 Last password change                    : Sep 20, 2023
 Password expires                    : never
 Password inactive                   : never
@@ -5406,7 +5405,8 @@ Account expires                     : never
 Minimum number of days between password change      : 0
 Maximum number of days between password change      : 99999
 Number of days of warning before password expires   : 7
-</code></pre>
+</code></pre></div></li>
+</ul>
 <hr />
 <h2 id="conclusion">Conclusion:</h2>
 <p>Effective password management and user authentication are essential for maintaining Linux system security. In this exercise, you've learned about strong password policies, secure password management, password aging, and two-factor authentication. By implementing these practices and following security best practices, you can significantly enhance the security of your Linux systems and protect against unauthorized access.</p>

@@ -5321,22 +5321,21 @@
 <ul>
 <li>Open a terminal window.</li>
 <li>Use the <code>seq</code> command to generate numbers from 1 to 100,000, and redirect the output to a file named <code>large_file.txt</code>.</li>
-<li>Check the size of the <code>large_file.txt</code> using the <code>ls</code> or <code>du</code> command.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ seq 1 100000 &gt; large_file.txt
+<li>Check the size of the <code>large_file.txt</code> using the <code>ls</code> or <code>du</code> command.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ seq 1 100000 &gt; large_file.txt
 [intern@intern-a1t-inf-lnx1 ~]$ du -h large_file.txt
 576K    large_file.txt
 [intern@intern-a1t-inf-lnx1 ~]$ ls -lh large_file.txt
 -rw-rw-r-- 1 intern intern 576K Sep 19 15:35 large_file.txt
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h2 id="task-2-viewing-large-files">Task 2: Viewing Large Files</h2>
 <ul>
 <li>Attempt to view the entire <code>large_file.txt</code> using the <code>cat</code> command.</li>
 <li>Observe the challenges of viewing such a large file.</li>
 <li>Use the <code>head</code> command to display the first 10 lines of <code>large_file.txt</code>.</li>
-<li>Use the <code>tail</code> command to display the last 10 lines of <code>large_file.txt</code>.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ cat large_file.txt
+<li>Use the <code>tail</code> command to display the last 10 lines of <code>large_file.txt</code>.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ cat large_file.txt
 .....
 99997
 99998
@@ -5364,27 +5363,27 @@
 99998
 99999
 100000
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h2 id="task-3-compressing-and-decompressing-files">Task 3: Compressing and Decompressing Files</h2>
 <ul>
 <li>Compress the <code>large_file.txt</code> using the <code>gzip</code> command, creating a file named <code>large_file.txt.gz</code>.</li>
 <li>Verify the size reduction of the compressed file compared to the original.</li>
-<li>Decompress <code>large_file.txt.gz</code> to its original state using the <code>gunzip</code> command.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ gzip large_file.txt
+<li>Decompress <code>large_file.txt.gz</code> to its original state using the <code>gunzip</code> command.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ gzip large_file.txt
 [intern@intern-a1t-inf-lnx1 ~]$ ls -lh large_file.txt.gz
 -rw-rw-r-- 1 intern intern 211K Sep 19 15:35 large_file.txt.gz
 [intern@intern-a1t-inf-lnx1 ~]$ gunzip large_file.txt.gz
 [intern@intern-a1t-inf-lnx1 ~]$ ls -lh large_file.txt
 -rw-rw-r-- 1 intern intern 576K Sep 19 15:35 large_file.txt
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h2 id="task-4-working-with-compressed-files">Task 4: Working with Compressed Files</h2>
 <ul>
 <li>Compress the <code>large_file.txt</code> again.</li>
 <li>Use the <code>zcat</code> command to view the contents of <code>large_file.txt.gz</code> without decompressing it.</li>
-<li>Extract the contents of <code>large_file.txt.gz</code> using the <code>zcat</code> command into a new file named <code>extracted.txt</code>.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ gzip large_file.txt
+<li>Extract the contents of <code>large_file.txt.gz</code> using the <code>zcat</code> command into a new file named <code>extracted.txt</code>.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ gzip large_file.txt
 [intern@intern-a1t-inf-lnx1 ~]$ zcat large_file.txt.gz  | tail
 99991
 99992
@@ -5399,7 +5398,8 @@
 [intern@intern-a1t-inf-lnx1 ~]$ zcat large_file.txt.gz  &gt; extracted.txt
 [intern@intern-a1t-inf-lnx1 ~]$ ls -lh extracted.txt
 -rw-rw-r-- 1 intern intern 576K Sep 19 15:49 extracted.txt
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h2 id="conclusion">Conclusion</h2>
 <p>In this lab exercise, you've gained hands-on experience in working with large text files and compressed files in a Linux environment. You've learned how to generate large text files, view the contents of large files efficiently using <code>head</code> and <code>tail</code>, compress and decompress files using <code>gzip</code> and <code>gunzip</code>, and work with compressed files using <code>zcat</code>. These skills are valuable for handling large datasets and efficiently managing disk space.</p>
 

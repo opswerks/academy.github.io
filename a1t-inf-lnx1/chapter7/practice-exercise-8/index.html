@@ -5379,9 +5379,8 @@
 <li>Write a loop to iterate through the array and display each fruit's name.</li>
 <li>Implement an array operation to add a new fruit to the list.</li>
 <li>Modify the script to remove a specific fruit from the array.</li>
-<li>Test the array operations and ensure they work correctly.</li>
-</ul>
-<pre><code>#!/bin/bash
+<li>Test the array operations and ensure they work correctly.
+<div class="highlight"><pre><span></span><code>#!/bin/bash
 
 # Define an array of favorite fruits
 fruits=(&quot;Apple&quot; &quot;Banana&quot; &quot;Cherry&quot; &quot;Grape&quot; &quot;Orange&quot;)
@@ -5428,9 +5427,8 @@ remove_fruit &quot;Cherry&quot;
 
 # Display the final list of fruits
 display_fruits
-
-</code></pre>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ chmod +x array_operations.sh
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ chmod +x array_operations.sh
 [intern@intern-a1t-inf-lnx1 ~]$ ./array_operations.sh
 My favorite fruits are:
 - Apple
@@ -5453,16 +5451,16 @@ My favorite fruits are:
 - Grape
 - Orange
 - Mango
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h3 id="task-2-implementing-functions">Task 2: Implementing Functions</h3>
 <ul>
 <li>Create a Bash script named <code>math_functions.sh</code>.</li>
 <li>Write a Bash function that calculates the square of a given number.</li>
 <li>Implement another function that finds the factorial of a positive integer.</li>
 <li>Call these functions with different input values and display the results.</li>
-<li>Document your functions and their usage within the script.</li>
-</ul>
-<pre><code>#!/bin/bash
+<li>Document your functions and their usage within the script.
+<div class="highlight"><pre><span></span><code>#!/bin/bash
 
 # Function to calculate the square of a number
 calculate_square() {
@@ -5495,25 +5493,24 @@ calculate_square 7
 calculate_factorial 5
 calculate_factorial 0
 calculate_factorial -3
-
-</code></pre>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ chmod +x math_functions.sh
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ chmod +x math_functions.sh
 [intern@intern-a1t-inf-lnx1 ~]$ ./math_functions.sh
 The square of 5 is: 25
 The square of 7 is: 49
 The factorial of 5 is: 120
 The factorial of 0 is: 1
 Factorial is not defined for negative numbers.
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h3 id="task-3-command-line-arguments">Task 3: Command-Line Arguments</h3>
 <ul>
 <li>Create a Bash script named <code>command_line_args.sh</code>.</li>
 <li>Write a script that accepts command-line arguments.</li>
 <li>Use positional parameters to capture and display the arguments.</li>
 <li>Implement error handling to check if the correct number of arguments is provided.</li>
-<li>Provide a usage message when incorrect usage is detected.</li>
-</ul>
-<pre><code>#!/bin/bash
+<li>Provide a usage message when incorrect usage is detected.
+<div class="highlight"><pre><span></span><code>#!/bin/bash
 
 # Check the number of command-line arguments
 if [ $# -eq 0 ]; then
@@ -5528,25 +5525,24 @@ echo &quot;You provided the following arguments:&quot;
 for arg in &quot;$@&quot;; do
     echo &quot;$arg&quot;
 done
-
-</code></pre>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ chmod +x command_line_args.sh
+</code></pre></div></li>
+</ul>
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ chmod +x command_line_args.sh
 [intern@intern-a1t-inf-lnx1 ~]$ ./command_line_args.sh
 Usage: ./command_line_args.sh &lt;arg1&gt; &lt;arg2&gt; ...
 [intern@intern-a1t-inf-lnx1 ~]$ ./command_line_args.sh echo gg
 You provided the following arguments:
 echo
 gg
-</code></pre>
+</code></pre></div>
 <h3 id="task-4-combining-techniques">Task 4: Combining Techniques</h3>
 <ul>
 <li>Create a Bash script named <code>advanced_script.sh</code>.</li>
 <li>Combine the techniques you've learned in previous tasks to create a comprehensive script.</li>
 <li>Use arrays to store data, functions to perform calculations, and command-line arguments for customization.</li>
 <li>Implement error handling to deal with potential issues.</li>
-<li>Test the script with various inputs to ensure it works as expected.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ cat advance_script.sh
+<li>Test the script with various inputs to ensure it works as expected.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ cat advance_script.sh
 #!/bin/bash
 
 # Function to calculate the square of a number
@@ -5595,9 +5591,8 @@ case &quot;$operation&quot; in
         exit 1
         ;;
 esac
-
-</code></pre>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$   chmod +x advance_script.sh
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$   chmod +x advance_script.sh
 [intern@intern-a1t-inf-lnx1 ~]$ ./advance_script.sh
 Usage: ./advance_script.sh &lt;square|factorial&gt; &lt;value&gt;
 [intern@intern-a1t-inf-lnx1 ~]$ ./advance_script.sh asdf 3
@@ -5608,7 +5603,8 @@ Error: Factorial is undefined for negative numbers.
 The factorial of 4 is 24
 [intern@intern-a1t-inf-lnx1 ~]$ ./advance_script.sh square -2
 The square of -2 is 4
-</code></pre>
+</code></pre></div></li>
+</ul>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
 <p>In this exercise, you've explored advanced Bash shell scripting techniques, including arrays, functions, command-line arguments, and error handling. These skills are essential for creating complex and reliable Bash scripts to solve real-world problems. Continue to practice and refine your scripting abilities for more advanced tasks.</p>

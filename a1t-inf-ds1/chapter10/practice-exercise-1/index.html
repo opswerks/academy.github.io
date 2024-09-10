@@ -5331,44 +5331,44 @@
 <blockquote>
 <p>Hint: You can easily time the execution of a Linux by prepending the <code>time</code> command at the start of the whole command block. </p>
 </blockquote>
-<p>Oregon:</p>
-<pre><code>$ time curl http://ds-bucket-uw2.s3-website-us-west-2.amazonaws.com
-&lt;h1&gt; &lt;p style=&quot;font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif&quot;&gt;Hi! I'm a Website running in Oregon, USA! &lt;/h1&gt;
+<p>Oregon:
+<div class="highlight"><pre><span></span><code>$ time curl http://ds-bucket-uw2.s3-website-us-west-2.amazonaws.com
+&lt;h1&gt; &lt;p style=&quot;font-family:system-ui, -apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, Oxygen, Ubuntu, Cantarell, &#39;Open Sans&#39;, &#39;Helvetica Neue&#39;, sans-serif&quot;&gt;Hi! I&#39;m a Website running in Oregon, USA! &lt;/h1&gt;
 &lt;/p&gt;
 real    0m0.130s
 user    0m0.007s
 sys     0m0.000s
-</code></pre>
-<p>Singapore:</p>
-<pre><code>$ time curl http://ds-bucket-sg.s3-website-ap-southeast-1.amazonaws.com
-&lt;h1&gt; &lt;p style=&quot;font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif&quot;&gt;Hi! I'm a Website running in Singapore! &lt;/h1&gt;
+</code></pre></div></p>
+<p>Singapore:
+<div class="highlight"><pre><span></span><code>$ time curl http://ds-bucket-sg.s3-website-ap-southeast-1.amazonaws.com
+&lt;h1&gt; &lt;p style=&quot;font-family:system-ui, -apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, Oxygen, Ubuntu, Cantarell, &#39;Open Sans&#39;, &#39;Helvetica Neue&#39;, sans-serif&quot;&gt;Hi! I&#39;m a Website running in Singapore! &lt;/h1&gt;
 &lt;/p&gt;
 real    0m0.453s
 user    0m0.005s
 sys     0m0.005s
-</code></pre>
+</code></pre></div></p>
 <p>You will see the time it took to process the curl request. Note the loading time for both the US West and Singapore websites.</p>
 <p><strong>Step 3:</strong> Now let's try accessing the website through the hosted CDN distribution endpoint. The endpoint is normally called the "edge". </p>
-<pre><code>time curl https://ds-edge.sandbox.opswerks.net
-&lt;h1&gt; &lt;p style=&quot;font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif&quot;&gt;Hi! I'm a Website running in Oregon, USA! &lt;/h1&gt;
+<div class="highlight"><pre><span></span><code>time curl https://ds-edge.sandbox.opswerks.net
+&lt;h1&gt; &lt;p style=&quot;font-family:system-ui, -apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, Oxygen, Ubuntu, Cantarell, &#39;Open Sans&#39;, &#39;Helvetica Neue&#39;, sans-serif&quot;&gt;Hi! I&#39;m a Website running in Oregon, USA! &lt;/h1&gt;
 &lt;/p&gt;
 real    0m0.073s
 user    0m0.038s
 sys     0m0.007s
-</code></pre>
+</code></pre></div>
 <p><strong>Step 4:</strong> Take note of the site loading time through the CDN. Also take note of the output of the HTML page. It will say where it's running. On your test, where is it running?</p>
 <p><strong>Step 5:</strong> Try hitting the CDN edge again a couple of times. Did the load time improve? What was the output of the webpage that you got, is it the Oregon (US West) or the Singapore one?</p>
 <h2 id="exercise-2-downloading-a-big-file">Exercise 2: Downloading a Big File</h2>
 <p><strong>Step 6:</strong> Now let's test again by timing the download of a slightly larger file. This is an image worth 8.5MB.</p>
-<p>Oregon:</p>
-<pre><code>time wget http://ds-bucket-uw2.s3-website-us-west-2.amazonaws.com/BigFileSample.png
-</code></pre>
-<p>Singapore:</p>
-<pre><code>time wget http://ds-bucket-sg.s3-website-ap-southeast-1.amazonaws.com/BigFileSample.png
-</code></pre>
+<p>Oregon:
+<div class="highlight"><pre><span></span><code>time wget http://ds-bucket-uw2.s3-website-us-west-2.amazonaws.com/BigFileSample.png
+</code></pre></div></p>
+<p>Singapore:
+<div class="highlight"><pre><span></span><code>time wget http://ds-bucket-sg.s3-website-ap-southeast-1.amazonaws.com/BigFileSample.png
+</code></pre></div></p>
 <p><strong>Step 7:</strong> Now, let's try downloading it from the CDN endpoint:</p>
-<pre><code>time wget https://ds-edge.sandbox.opswerks.net/BigFileSample.png
-</code></pre>
+<div class="highlight"><pre><span></span><code>time wget https://ds-edge.sandbox.opswerks.net/BigFileSample.png
+</code></pre></div>
 <p><strong>Step 8:</strong> Take note of the time of the initial download. Now, hit the download again multiple times. Take note of the download time.</p>
 <h2 id="conclusion">Conclusion</h2>
 <p>From your testing, you will notice that accessing a website through a CDN endpoint is much faster than accessing the actua web server itself. From your comparison you normally would save <code>50-75%</code> of the time in loading a site through CDNs.</p>

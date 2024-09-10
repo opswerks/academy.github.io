@@ -433,6 +433,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#internintern-a1t-inf-lnx1-kill-9-24406-1-24407-killed-while-do-echo-running-sleep-1-done" class="md-nav__link">
+    <span class="md-ellipsis">
+      [intern@intern-a1t-inf-lnx1 ~]$ kill -9 24406 [1] + 24407 killed while :; do; echo &quot;Running...&quot;; sleep 1; done
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#conclusion" class="md-nav__link">
     <span class="md-ellipsis">
       Conclusion
@@ -5375,6 +5384,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#internintern-a1t-inf-lnx1-kill-9-24406-1-24407-killed-while-do-echo-running-sleep-1-done" class="md-nav__link">
+    <span class="md-ellipsis">
+      [intern@intern-a1t-inf-lnx1 ~]$ kill -9 24406 [1] + 24407 killed while :; do; echo &quot;Running...&quot;; sleep 1; done
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#conclusion" class="md-nav__link">
     <span class="md-ellipsis">
       Conclusion
@@ -5419,7 +5437,7 @@
 <li>Run <code>ps</code> with the option to sort the process from the highest CPU usage to the lowest</li>
 <li>Run <code>ps</code> with the option to sort the process from the highest Memory usage to the lowest</li>
 </ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ ps aux --sort=-%cpu
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ ps aux --sort=-%cpu
 USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
 root         616  1.3  4.4 1429108 90400 ?       Ssl  14:36   0:15 /usr/bin/kubelet --bootstrap-kubeconfig=/etc/kubernetes/bootstrap-kubelet.conf --kubeconfig=/etc/kubernetes/kubelet.conf --config=/var/lib/kubelet/config.yaml --container-runtime-endpoint=/var/run/cri-dockerd.sock --pod-infra-container-image=registry.k8s.io/pause:3.9
 root         711  0.5  3.1 1363056 63752 ?       Ssl  14:36   0:06 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
@@ -5434,46 +5452,40 @@ root         711  0.5  3.1 1363056 62752 ?       Ssl  14:36   0:07 /usr/bin/dock
 root         910  0.5  1.9 1185632 38928 ?       Ssl  14:36   0:06 /usr/local/bin/cri-dockerd --container-runtime-endpoint fd://
 root         640  0.3  1.8 1113832 36520 ?       Ssl  14:36   0:04 /usr/bin/containerd
 root        2121  0.2  1.3 1244544 28008 ?       Ssl  14:41   0:01 /usr/lib/snapd/snapd
-</code></pre>
+</code></pre></div>
 <h3 id="task-2-gathering-detailed-process-information">Task 2: Gathering Detailed Process Information</h3>
 <ul>
 <li>Choose a process from the list generated in Task 1 and note its PID.</li>
 <li>Use the <code>pidstat</code> command followed by the PID to gather detailed statistics about the selected process (e.g., <code>pidstat -p &lt;PID&gt;</code>).</li>
 <li>Observe metrics such as CPU usage, memory usage, and I/O statistics in real-time.</li>
 </ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ pidstat -p 310
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ pidstat -p 310
 Linux 6.2.9-x86_64-linode160 (intern-a1t-inf-lnx1)  10/03/2023  _x86_64_    (1 CPU)
 
 05:56:01 AM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command
 05:56:01 AM     0       310    0.00    0.00    0.00    0.00    0.00     0  sshd
-</code></pre>
+</code></pre></div>
 <h3 id="task-3-adjusting-process-priority">Task 3: Adjusting Process Priority</h3>
 <ul>
 <li>Use the <code>nice</code> command to adjust the process's priority level (e.g., <code>nice -n 19 command</code>).</li>
 <li>Monitor the process's behavior and resource utilization after changing its priority.</li>
-<li>By running the command using the default niceness</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ tar -cvzf applications.tar /usr/ &gt; /dev/null 2&gt;&amp;1 &amp; 
-</code></pre>
-<ul>
-<li>And by running <code>top</code> in another tab you can see its niceness <code>NI</code> set to 0</li>
-</ul>
-<pre><code>    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+<li>By running the command using the default niceness
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ tar -cvzf applications.tar /usr/ &gt; /dev/null 2&gt;&amp;1 &amp; 
+</code></pre></div></li>
+<li>And by running <code>top</code> in another tab you can see its niceness <code>NI</code> set to 0
+<div class="highlight"><pre><span></span><code>    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
   13339 intern      20   0    3372   1812   1228 R  93.3   0.2   0:25.59 gzip
   13338 intern      20   0    7440   3304   2780 S   4.0   0.3   0:01.49 tar
-</code></pre>
-<ul>
-<li>By running the command using a user defined niceness</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ nice -n 19 tar -cvzf applications.tar /usr/ &gt; /dev/null 2&gt;&amp;1 &amp; 
-</code></pre>
-<ul>
-<li>Run the <code>top</code> again and see its niceness being changed</li>
-</ul>
-<pre><code>    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+</code></pre></div></li>
+<li>By running the command using a user defined niceness
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ nice -n 19 tar -cvzf applications.tar /usr/ &gt; /dev/null 2&gt;&amp;1 &amp; 
+</code></pre></div></li>
+<li>Run the <code>top</code> again and see its niceness being changed
+<div class="highlight"><pre><span></span><code>    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
   13378 intern      39  19    3372   1824   1240 R  96.7   0.2   0:04.07 gzip
   13377 intern      39  19    7148   3004   2788 S   2.0   0.3   0:00.09 tar
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h3 id="task-4-controlling-process-execution">Task 4: Controlling Process Execution</h3>
 <ul>
 <li>Launch a sample command that runs indefinitely in the terminal (e.g., <code>while :; do echo "Running..."; sleep 1; done</code>).</li>
@@ -5482,7 +5494,7 @@ Linux 6.2.9-x86_64-linode160 (intern-a1t-inf-lnx1)  10/03/2023  _x86_64_    (1 C
 <li>Use the <code>jobs</code> command to view background jobs.</li>
 <li>Bring the background process to the foreground using the <code>fg</code> command.</li>
 </ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ while :; do echo &quot;Running...&quot;; sleep 1; done
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ while :; do echo &quot;Running...&quot;; sleep 1; done
 Running...
 # Press ctrl + z
 ^Z[1]  + 24406 suspended  sleep 1
@@ -5494,17 +5506,16 @@ Running...
 
 [intern@intern-a1t-inf-lnx1 ~]$  fg
 [1]  + 24409 running    while :; do; echo &quot;Running...&quot;; sleep 1; done
-</code></pre>
+</code></pre></div>
 <h3 id="task-5-sending-signals-to-processes">Task 5: Sending Signals to Processes</h3>
 <ul>
 <li>Identify a process from the task 4 and note its PID.</li>
 <li>Use the <code>kill</code> command to send different signals to the selected process (e.g., <code>kill -9 &lt;PID&gt;</code> to forcefully terminate it).</li>
 <li>Observe the effects of different signals on the process.</li>
 </ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ kill -9 24406
+<h2 id="internintern-a1t-inf-lnx1-kill-9-24406-1-24407-killed-while-do-echo-running-sleep-1-done"><div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ kill -9 24406
 [1]  + 24407 killed     while :; do; echo &quot;Running...&quot;; sleep 1; done
-</code></pre>
-<hr />
+</code></pre></div></h2>
 <h2 id="conclusion">Conclusion</h2>
 <p>This practice exercise has provided you with practical experience in working with process metrics, resource utilization, and process control on a Linux system. You've learned how to monitor running processes, gather detailed process information, adjust process priorities, control process execution, and send signals to processes. These skills are valuable for optimizing system performance and managing processes effectively.</p>
 

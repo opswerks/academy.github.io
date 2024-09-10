@@ -5290,31 +5290,31 @@
 <p>Step 1: Connect to your Machine</p>
 <p>Step 2. View the Current Timezone
 - To view the current timezone on your machine, use the timedatectl command:</p>
-<pre><code>timedatectl
-</code></pre>
+<div class="highlight"><pre><span></span><code>timedatectl
+</code></pre></div>
 <p>Step 3: Change the Timezone</p>
 <ul>
-<li>Change the timezone to a different one. For example, to set the timezone to New York (Eastern Time), use the following command:</li>
+<li>Change the timezone to a different one. For example, to set the timezone to New York (Eastern Time), use the following command:
+<div class="highlight"><pre><span></span><code>sudo timedatectl set-timezone America/New_York
+</code></pre></div></li>
 </ul>
-<pre><code>sudo timedatectl set-timezone America/New_York
-</code></pre>
 <p>Replace <code>America/New_York</code> with the timezone of your choice. You can find a list of valid timezones in the <code>/usr/share/zoneinfo/ directory</code>.</p>
 <p>Step 4: Verify the Timezone Change</p>
 <ul>
 <li>Run timedatectl again to verify that the timezone has been changed.</li>
 </ul>
-<pre><code>timedatectl
-</code></pre>
+<div class="highlight"><pre><span></span><code>timedatectl
+</code></pre></div>
 <p>Step 5: Set Another Timezone</p>
 <ul>
 <li>Repeat the process to set a different timezone, such as Los Angeles (Pacific Time):</li>
 </ul>
-<pre><code>sudo timedatectl set-timezone America/Los_Angeles
-</code></pre>
+<div class="highlight"><pre><span></span><code>sudo timedatectl set-timezone America/Los_Angeles
+</code></pre></div>
 <p>Step 6: Verify the Second Timezone Change
-- Run timedatectl one more time to verify that the second timezone change has taken effect.</p>
-<pre><code>timedatectl
-</code></pre>
+- Run timedatectl one more time to verify that the second timezone change has taken effect.
+<div class="highlight"><pre><span></span><code>timedatectl
+</code></pre></div></p>
 <h2 id="conclusion">Conclusion</h2>
 <p>This lab exercise helps you understand how to set and verify timezones a fundamental skill for server management. It also demonstrates the significance of time settings in a server's configuration.</p>
 

@@ -5322,9 +5322,8 @@
 <li>Open a terminal window.</li>
 <li>Create a sample text file named <code>sample.txt</code> with several lines of text containing different words and phrases.</li>
 <li>Use the <code>grep</code> command to search for a specific word or phrase within <code>sample.txt</code>. For example, find all occurrences of the word "Linux."</li>
-<li>Experiment with different <code>grep</code> options such as case-insensitive search and displaying line numbers.</li>
-</ul>
-<pre><code># Create a sample text file named sample.txt with several lines of text
+<li>Experiment with different <code>grep</code> options such as case-insensitive search and displaying line numbers.
+<div class="highlight"><pre><span></span><code># Create a sample text file named sample.txt with several lines of text
 [intern@intern-a1t-inf-lnx1 ~]$ cat &gt; sample.txt &lt;&lt;EOF
 Linux is an open-source operating system.
 Linux commands are powerful.
@@ -5356,13 +5355,13 @@ Linux is fun to learn.
 3:You can learn Linux.
 4:Linux is case-sensitive.
 5:Linux is fun to learn.
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h2 id="task-2-recursive-search-with-grep">Task 2: Recursive Search with <code>grep</code></h2>
 <ul>
 <li>Create a directory named <code>text_files</code> and populate it with multiple text files.</li>
-<li>Use the <code>grep</code> command with the <code>-r</code> or <code>-R</code> option to perform a recursive search for a specific text pattern within the <code>text_files</code> directory.</li>
-</ul>
-<pre><code># Create a directory named text_files
+<li>Use the <code>grep</code> command with the <code>-r</code> or <code>-R</code> option to perform a recursive search for a specific text pattern within the <code>text_files</code> directory.
+<div class="highlight"><pre><span></span><code># Create a directory named text_files
 [intern@intern-a1t-inf-lnx1 ~]$ mkdir text_files
 
 # Change to the text_files directory
@@ -5384,15 +5383,14 @@ text_files/file2.txt:Sample content in file 2.
 text_files/file5.txt:File 5 contains sample text.
 text_files/file3.txt:Another file with sample text.
 text_files/file1.txt:This is a sample file 1.
-
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h2 id="task-3-extracting-text-from-binary-files-with-strings">Task 3: Extracting Text from Binary Files with <code>strings</code></h2>
 <ul>
 <li>Create a binary file named <code>binary_data.bin</code>. Simply copy and linux binary file</li>
 <li>Use the <code>strings</code> command to extract readable text from the <code>binary_data.bin</code> file.</li>
-<li>Observe how <code>strings</code> extracts human-readable text from a binary source.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ cp $(which cp) binary_data.bin
+<li>Observe how <code>strings</code> extracts human-readable text from a binary source.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ cp $(which cp) binary_data.bin
 
 [intern@intern-a1t-inf-lnx1 ~]$ strings binary_data.bin | head
 /lib64/ld-linux-x86-64.so.2
@@ -5405,20 +5403,20 @@ mode_to_security_class
 getcon
 is_selinux_enabled
 context_type_set
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h2 id="task-4-combining-grep-and-strings">Task 4: Combining <code>grep</code> and <code>strings</code></h2>
 <ul>
 <li>Use the copy of <code>cp</code> bin named <code>binary_data.bin</code></li>
-<li>Use <code>grep</code> in conjunction with <code>strings</code> to search for a specific text pattern within <code>binary_text.bin</code>.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ strings binary_data.bin | grep -i usage -A30
+<li>Use <code>grep</code> in conjunction with <code>strings</code> to search for a specific text pattern within <code>binary_text.bin</code>.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ strings binary_data.bin | grep -i usage -A30
 Usage: %s [OPTION]... [-T] SOURCE DEST
   or:  %s [OPTION]... SOURCE... DIRECTORY
   or:  %s [OPTION]... -t DIRECTORY SOURCE...
 Copy SOURCE to DEST, or multiple SOURCE(s) to DIRECTORY.
 Mandatory arguments to long options are mandatory for short options too.
   -a, --archive                same as -dR --preserve=all
-      --attributes-only        don't copy the file data, just the attributes
+      --attributes-only        don&#39;t copy the file data, just the attributes
       --backup[=CONTROL]       make a backup of each existing destination file
   -b                           like --backup but does not accept an argument
       --copy-contents          copy contents of special files when recursive
@@ -5440,10 +5438,11 @@ Mandatory arguments to long options are mandatory for short options too.
                                  additional attributes: context, links, xattr,
                                  all
   -c                           deprecated, same as --preserve=context
-      --no-preserve=ATTR_LIST  don't preserve the specified attributes
+      --no-preserve=ATTR_LIST  don&#39;t preserve the specified attributes
       --parents                use full source file name under DIRECTORY
   -R, -r, --recursive          copy directories recursively
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h2 id="conclusion">Conclusion</h2>
 <p>In this lab exercise, you've practiced text manipulation in Linux using the <code>grep</code> and <code>strings</code> commands. You've learned how to search for text patterns in text files, perform recursive searches within directories, and extract readable text from binary files. These skills are valuable for tasks such as log analysis, data extraction, and examining binary files in a Linux environment.</p>
 

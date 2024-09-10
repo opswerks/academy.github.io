@@ -430,6 +430,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#internintern-a1t-inf-lnx1-nice-n-10-echo-academy-academy" class="md-nav__link">
+    <span class="md-ellipsis">
+      [intern@intern-a1t-inf-lnx1 ~]$ nice -n 10 echo Academy! Academy!
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#conclusion" class="md-nav__link">
     <span class="md-ellipsis">
       Conclusion
@@ -5411,6 +5420,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#internintern-a1t-inf-lnx1-nice-n-10-echo-academy-academy" class="md-nav__link">
+    <span class="md-ellipsis">
+      [intern@intern-a1t-inf-lnx1 ~]$ nice -n 10 echo Academy! Academy!
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#conclusion" class="md-nav__link">
     <span class="md-ellipsis">
       Conclusion
@@ -5453,9 +5471,9 @@
 <li>Pay attention to the columns that show the process ID (PID), the name or command associated with each process, and the status.</li>
 <li>Look for the process with the PID of 1 and take note of the process.(e.g. <code>/sbin/launchd</code>)</li>
 </ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ ps aux
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ ps aux
 root                 1   0.1  0.1 408975104  15616   ??  Ss   20Jul23 267:59.47 /sbin/launchd
-</code></pre>
+</code></pre></div>
 <h3 id="task-2-identifying-parent-and-child-processes">Task 2: Identifying Parent and Child Processes</h3>
 <ul>
 <li>Identify a process from the list generated in Task 1 and note its PID.</li>
@@ -5463,31 +5481,31 @@ root                 1   0.1  0.1 408975104  15616   ??  Ss   20Jul23 267:59.47 
 <li>Verify that the child processes have a different PID but the same parent PID as the selected process.</li>
 <li>Can you share what command you ran?</li>
 </ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ pgrep -P 1
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ pgrep -P 1
 309
 311
 313
 314
 315
 .....
-</code></pre>
+</code></pre></div>
 <h3 id="task-3-viewing-detailed-process-information">Task 3: Viewing Detailed Process Information</h3>
 <ul>
 <li>Choose a process from the list generated in Task 2 and note its PID.</li>
 <li>Use the <code>ps</code> command with the <code>-p</code> option followed by the PID (e.g., <code>ps -p 12345</code>) to display detailed information about that specific process.</li>
 <li>Observe the various attributes, including the process status, CPU and memory usage, and more. Take note that you will need to add another parameter and value to show the resource usage</li>
 </ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ ps -p 309 -o pid,stat,%cpu,%mem
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ ps -p 309 -o pid,stat,%cpu,%mem
   PID STAT  %CPU %MEM
   309 Ss     0.3  0.1
-</code></pre>
+</code></pre></div>
 <h3 id="task-4-monitoring-process-resource-usage">Task 4: Monitoring Process Resource Usage</h3>
 <ul>
 <li>Use the <code>top</code> command to open the real-time system monitoring tool.</li>
 <li>Observe the list of processes, their resource usage (CPU and memory), and the overall system statistics.</li>
 <li>Pay attention to the dynamic updating of data and the interactive features of the <code>top</code> command.</li>
 </ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ top
+<p><div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ top
 Processes: 478 total, 7 running, 471 sleeping, 3524 threads            07:39:50
 Load Avg: 2.20, 2.58, 2.45  CPU usage: 7.89% user, 5.50% sys, 86.59% idle
 SharedLibs: 442M resident, 88M data, 27M linkedit.
@@ -5503,11 +5521,9 @@ PID    COMMAND      %CPU TIME     #TH    #WQ  #PORT MEM    PURG   CMPRS  PGRP
 54864  iTerm2       9.6  94:03.37 7      4    308   124M   0B     67M-   54864
 399    coreaudiod   9.5  47:59:24 11     4    3641  116M   0B     94M-   399
 9487   QEMULauncher 8.4  00:38.76 11     1    37    1727M  0B     1497M- 9487
-</code></pre>
-<ul>
-<li>Note that top is an interactive command</li>
-<li>Press q to exit</li>
-</ul>
+</code></pre></div>
+- Note that top is an interactive command
+- Press q to exit</p>
 <h3 id="task-5-sending-signals-to-processes">Task 5: Sending Signals to Processes</h3>
 <ul>
 <li>Identify a process from the list generated in Task 1 and note its PID.</li>
@@ -5515,12 +5531,12 @@ PID    COMMAND      %CPU TIME     #TH    #WQ  #PORT MEM    PURG   CMPRS  PGRP
 <li>Confirm that the process has been terminated.</li>
 <li>Say run <code>sleep 3600&amp;</code> and then kill it afterwards</li>
 </ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ sleep 3600 &amp;
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ sleep 3600 &amp;
 [1] 25783
 [intern@intern-a1t-inf-lnx1 ~]$ kill -15 25783
 [intern@intern-a1t-inf-lnx1 ~]$
 [1]+  Terminated              sleep 3600
-</code></pre>
+</code></pre></div>
 <h3 id="task-6-background-and-foreground-processes">Task 6: Background and Foreground Processes</h3>
 <ul>
 <li>Launch a simple command in the foreground (e.g., <code>ping www.google.com</code>) that continuously runs in the terminal.</li>
@@ -5528,7 +5544,7 @@ PID    COMMAND      %CPU TIME     #TH    #WQ  #PORT MEM    PURG   CMPRS  PGRP
 <li>Use the <code>bg</code> command to send the suspended process to the background.</li>
 <li>Verify that the process is running in the background using the <code>jobs</code> command.</li>
 </ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ ping www.google.com
+<p><div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ ping www.google.com
 PING www.google.com (142.251.220.164): 56 data bytes
 64 bytes from 142.251.220.164: icmp_seq=0 ttl=119 time=25.553 ms
 64 bytes from 142.251.220.164: icmp_seq=1 ttl=119 time=23.553 ms
@@ -5537,25 +5553,22 @@ PING www.google.com (142.251.220.164): 56 data bytes
 [intern@intern-a1t-inf-lnx1 ~]$ bg
 [1]  + 10142 continued  ping www.google.com
 64 bytes from 142.251.220.164: icmp_seq=2 ttl=119 time=22.471 ms
-</code></pre>
-<ul>
-<li>Note that after running <code>bg</code> your stdout will be bombarded by the pings output just continue running the next commands</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ jobs
+</code></pre></div>
+- Note that after running <code>bg</code> your stdout will be bombarded by the pings output just continue running the next commands</p>
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ jobs
 [1]  + running    ping www.google.com
 [intern@intern-a1t-inf-lnx1 ~]$   kill %1
 [1]  + 10142 terminated  ping www.google.com
-</code></pre>
+</code></pre></div>
 <h3 id="task-7-managing-process-priorities">Task 7: Managing Process Priorities</h3>
 <ul>
 <li>Use the <code>nice</code> command to launch a new process with a different priority level (e.g., <code>nice -n 10 command</code>).</li>
 <li>Observe how the process priority affects its resource allocation.</li>
 <li>Experiment with different priority levels to see their impact.</li>
 </ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ nice -n 10 echo Academy!
+<h2 id="internintern-a1t-inf-lnx1-nice-n-10-echo-academy-academy"><div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ nice -n 10 echo Academy!
 Academy!
-</code></pre>
-<hr />
+</code></pre></div></h2>
 <h2 id="conclusion">Conclusion</h2>
 <p>This practice exercise has provided you with practical experience in understanding and working with processes in a Linux environment. You've learned how to view running processes, identify parent and child processes, inspect process attributes, monitor resource usage, send signals to processes, manage background and foreground processes, and adjust process priorities. These skills are crucial for effective Linux system administration and troubleshooting.</p>
 

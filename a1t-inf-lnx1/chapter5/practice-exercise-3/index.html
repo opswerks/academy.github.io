@@ -5320,26 +5320,23 @@
 <h2 id="task-1-introduction-to-sed">Task 1: Introduction to <code>sed</code></h2>
 <ul>
 <li>Open a terminal window.</li>
-<li>Let's use the <code>vi_journal.txt</code> file created earlier with the content.</li>
-</ul>
-<pre><code>vi, a powerful and versatile text editor, is renowned for its efficient search and replace functionality. With vi, you can effortlessly locate specific words or phrases within your document using its robust search feature, and then replace them seamlessly with new content using the replace command. Whether you're editing code, configuring files, or crafting documents, vi's search and replace capabilities empower you to make precise and rapid changes, enhancing your productivity and control over your text editing tasks.
-</code></pre>
-<ul>
-<li>Use <code>sed</code> to replace a word or phrase in the <code>vi_journal.txt</code> file with another word. Save the result as <code>modified.txt</code>.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ sed 's/vi/emacs/g' vi_journal.txt &gt; modified.txt
+<li>Let's use the <code>vi_journal.txt</code> file created earlier with the content.
+<div class="highlight"><pre><span></span><code>vi, a powerful and versatile text editor, is renowned for its efficient search and replace functionality. With vi, you can effortlessly locate specific words or phrases within your document using its robust search feature, and then replace them seamlessly with new content using the replace command. Whether you&#39;re editing code, configuring files, or crafting documents, vi&#39;s search and replace capabilities empower you to make precise and rapid changes, enhancing your productivity and control over your text editing tasks.
+</code></pre></div></li>
+<li>Use <code>sed</code> to replace a word or phrase in the <code>vi_journal.txt</code> file with another word. Save the result as <code>modified.txt</code>.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ sed &#39;s/vi/emacs/g&#39; vi_journal.txt &gt; modified.txt
 [intern@intern-a1t-inf-lnx1 ~]$ cat modified.txt
-emacs, a powerful and versatile text editor, is renowned for its efficient search and replace functionality. With emacs, you can effortlessly locate specific words or phrases within your document using its robust search feature, and then replace them seamlessly with new content using the replace command. Whether you're editing code, configuring files, or crafting documents, emacs's search and replace capabilities empower you to make precise and rapid changes, enhancing your productiemacsty and control over your text editing tasks.
-</code></pre>
+emacs, a powerful and versatile text editor, is renowned for its efficient search and replace functionality. With emacs, you can effortlessly locate specific words or phrases within your document using its robust search feature, and then replace them seamlessly with new content using the replace command. Whether you&#39;re editing code, configuring files, or crafting documents, emacs&#39;s search and replace capabilities empower you to make precise and rapid changes, enhancing your productiemacsty and control over your text editing tasks.
+</code></pre></div></li>
+</ul>
 <h2 id="task-2-advanced-sed-usage">Task 2: Advanced <code>sed</code> Usage</h2>
 <ul>
 <li>Create a new text file named <code>data.txt</code> with several lines of data.</li>
 <li>Use <code>sed</code> to perform the following tasks:</li>
 <li>Delete specific lines containing a certain pattern from <code>data.txt</code>.</li>
 <li>Replace text in <code>data.txt</code> using regular expressions.</li>
-<li>Append new text to the end of lines in <code>data.txt</code>.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ cat data.txt
+<li>Append new text to the end of lines in <code>data.txt</code>.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ cat data.txt
 This is line 1.
 This is line 2 with some patterns.
 This is line 3.
@@ -5347,7 +5344,7 @@ Pattern ABC should be removed from this line.
 This is line 5 with another pattern.
 Replace XYZ with ZZZ in this line.
 This is line 7.
-[intern@intern-a1t-inf-lnx1 ~]$ sed '/ABC/d' data.txt &gt; data2.txt
+[intern@intern-a1t-inf-lnx1 ~]$ sed &#39;/ABC/d&#39; data.txt &gt; data2.txt
 [intern@intern-a1t-inf-lnx1 ~]$ cat data2.txt
 This is line 1.
 This is line 2 with some patterns.
@@ -5355,7 +5352,7 @@ This is line 3.
 This is line 5 with another pattern.
 Replace XYZ with ZZZ in this line.
 This is line 7.
-[intern@intern-a1t-inf-lnx1 ~]$ sed 's/XYZ/ZZZ/g' data2.txt &gt; data3.txt
+[intern@intern-a1t-inf-lnx1 ~]$ sed &#39;s/XYZ/ZZZ/g&#39; data2.txt &gt; data3.txt
 [intern@intern-a1t-inf-lnx1 ~]$ cat data3.txt
 This is line 1.
 This is line 2 with some patterns.
@@ -5363,7 +5360,7 @@ This is line 3.
 This is line 5 with another pattern.
 Replace ZZZ with ZZZ in this line.
 This is line 7
-[intern@intern-a1t-inf-lnx1 ~]$ echo 'Appending a new line' | sed '$a\' &gt;&gt; data3.txt
+[intern@intern-a1t-inf-lnx1 ~]$ echo &#39;Appending a new line&#39; | sed &#39;$a\&#39; &gt;&gt; data3.txt
 [intern@intern-a1t-inf-lnx1 ~]$ cat data3.txt
 This is line 1.
 This is line 2 with some patterns.
@@ -5372,15 +5369,15 @@ This is line 5 with another pattern.
 Replace ZZZ with ZZZ in this line.
 This is line 7.
 Appending a new line
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h2 id="task-3-introduction-to-awk">Task 3: Introduction to <code>awk</code></h2>
 <ul>
 <li>Create a sample CSV file named <code>sales.csv</code> with some sample sales data (e.g., product, quantity, price).</li>
 <li>Use <code>awk</code> to:</li>
 <li>Calculate the total sales for each product.</li>
-<li>Find the product with the highest sales.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ cat sales.csv
+<li>Find the product with the highest sales.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ cat sales.csv
 Device,Quantity,Price
 Smartphone-A,10,599.99
 Tablet,12,399.99
@@ -5388,24 +5385,22 @@ Smartphone-B,8,599.99
 Laptop,6,999.99
 Headphones-A,3,199.99
 Headphones-B,7,159.99
-[intern@intern-a1t-inf-lnx1 ~]$ awk -F',' 'NR &gt; 1 {sales[$1] += $2 * $3} END {for (product in sales) print product, sales[product]}' sales.csv
+[intern@intern-a1t-inf-lnx1 ~]$ awk -F&#39;,&#39; &#39;NR &gt; 1 {sales[$1] += $2 * $3} END {for (product in sales) print product, sales[product]}&#39; sales.csv
 Tablet 4799.88
 Smartphone-A 5999.9
 Smartphone-B 4799.92
 Headphones-A 599.97
 Headphones-B 1119.93
 Laptop 5999.94
-</code></pre>
-<ul>
+</code></pre></div></li>
 <li>The command above might needs a little bit of explanation</li>
 <li>The <code>-F','</code> sets the delimiter to be <code>,</code> instead of the default space</li>
 <li>The <code>NR &gt; 1</code> makes it so that we skip the header</li>
 <li>The <code>{sales[$1] += $2 * $3}</code> multiplies the quantity and price then saves it to the sales array with the product as key</li>
 <li>Basically sales[Tablet] += Quantity * Price</li>
 <li>We used <code>+=</code> incase that there are product that have been listed twice. But in this case since we don't have duplicate product in the data <code>=</code> will also do.</li>
-<li>END means to only do the succeeding command when all the lines have been processed. In this casee loop through the array and print it</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ awk -F ',' 'NR &gt; 1 {sales[$1] += $2 * $3} END {max_sales = 0; max_product = &quot;&quot;;
+<li>END means to only do the succeeding command when all the lines have been processed. In this casee loop through the array and print it
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ awk -F &#39;,&#39; &#39;NR &gt; 1 {sales[$1] += $2 * $3} END {max_sales = 0; max_product = &quot;&quot;;
 for (product in sales) {
   if (sales[product] &gt; max_sales) {
     max_sales = sales[product];
@@ -5413,10 +5408,9 @@ for (product in sales) {
   }
 }
 print &quot;Product with the highest sales:&quot;, max_product, &quot;Total Sales:&quot;, max_sales
-}' sales.csv
+}&#39; sales.csv
 Product with the highest sales: Laptop Total Sales: 5999.94
-</code></pre>
-<ul>
+</code></pre></div></li>
 <li>The only difference of this command from the previous one is the last command. This times it loops through the array and store the <code>max</code> to a variable and compare it to the next one and store whichever is higher.</li>
 </ul>
 <h2 id="task-4-advanced-awk-usage">Task 4: Advanced <code>awk</code> Usage</h2>
@@ -5425,9 +5419,8 @@ Product with the highest sales: Laptop Total Sales: 5999.94
 <li>Use <code>awk</code> to:</li>
 <li>Calculate the average grade.</li>
 <li>Find students who scored below a certain grade.</li>
-<li>Display the student with the highest grade.</li>
-</ul>
-<pre><code># Create the grades.txt file with student names and grades
+<li>Display the student with the highest grade.
+<div class="highlight"><pre><span></span><code># Create the grades.txt file with student names and grades
 [intern@intern-a1t-inf-lnx1 ~]$ cat grades.txt
 Alice 92
 Bob 85
@@ -5441,14 +5434,15 @@ Ivy 90
 Jack 89
 
 # Calculate the average grade using awk
-[intern@intern-a1t-inf-lnx1 ~]$ awk '{ total += $2 } END { average = total / NR; print &quot;Average Grade:&quot;, average }' grades.txt
+[intern@intern-a1t-inf-lnx1 ~]$ awk &#39;{ total += $2 } END { average = total / NR; print &quot;Average Grade:&quot;, average }&#39; grades.txt
 
 # Find students who scored below a certain grade (e.g., below 80)
-[intern@intern-a1t-inf-lnx1 ~]$ awk '$2 &lt; 80 { print $1, &quot;Scored Below 80&quot; }' grades.txt
+[intern@intern-a1t-inf-lnx1 ~]$ awk &#39;$2 &lt; 80 { print $1, &quot;Scored Below 80&quot; }&#39; grades.txt
 
 # Display the student with the highest grade
-[intern@intern-a1t-inf-lnx1 ~]$ awk 'NR == 1 { max_grade = $2; top_student = $1 } $2 &gt; max_grade { max_grade = $2; top_student = $1 } END { print &quot;Top Student:&quot;, top_student, &quot;Grade:&quot;, max_grade }' grades.txt
-</code></pre>
+[intern@intern-a1t-inf-lnx1 ~]$ awk &#39;NR == 1 { max_grade = $2; top_student = $1 } $2 &gt; max_grade { max_grade = $2; top_student = $1 } END { print &quot;Top Student:&quot;, top_student, &quot;Grade:&quot;, max_grade }&#39; grades.txt
+</code></pre></div></li>
+</ul>
 <h2 id="conclusion">Conclusion</h2>
 <p>In this lab exercise, you've practiced text manipulation using the <code>sed</code> and <code>awk</code> commands in a Linux environment. These commands are powerful tools for processing and transforming text data. You've learned how to perform basic and advanced tasks such as find and replace, pattern matching, and data analysis. These skills are valuable for tasks like log file processing, data cleaning, and data analysis in a Linux environment.</p>
 

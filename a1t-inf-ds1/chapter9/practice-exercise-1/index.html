@@ -5305,27 +5305,21 @@
 <ul>
 <li>Connect to the <code>web2</code> instance</li>
 <li>Ensure that your Flask app is not running</li>
-<li>Pull the <code>nginx</code> Docker image</li>
-</ul>
-<pre><code>docker pull nginx
-</code></pre>
-<ul>
-<li>Run a Docker container based on the image you pulled:</li>
-</ul>
-<pre><code>docker run -d -p 80:80 nginx
-</code></pre>
-<ul>
+<li>Pull the <code>nginx</code> Docker image
+<div class="highlight"><pre><span></span><code>docker pull nginx
+</code></pre></div></li>
+<li>Run a Docker container based on the image you pulled:
+<div class="highlight"><pre><span></span><code>docker run -d -p 80:80 nginx
+</code></pre></div></li>
 <li>Access the service by visiting <code>&lt;NAME&gt;-a1t-inf-ds-web2.acad.opswerks.net</code>, you should see the default nginx web page.</li>
-<li>List all containers:</li>
-</ul>
-<pre><code>docker ps -a
-</code></pre>
-<ul>
-<li>Stop and delete the container:</li>
-</ul>
-<pre><code>docker stop &lt;container_id&gt;
+<li>List all containers:
+<div class="highlight"><pre><span></span><code>docker ps -a
+</code></pre></div></li>
+<li>Stop and delete the container:
+<div class="highlight"><pre><span></span><code>docker stop &lt;container_id&gt;
 docker rm &lt;container_id&gt;
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h2 id="bonus-points">Bonus points</h2>
 <ul>
 <li>Create a Docker container using a custom solution

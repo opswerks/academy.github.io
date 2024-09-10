@@ -5285,24 +5285,24 @@
 <p>You are on an instance (<code>web1</code>) and want to connect to another instance (<code>db1</code>)</p>
 <h2 id="tasks">Tasks</h2>
 <ul>
-<li>Enable the <code>telnet</code> service on <code>db1</code> by using the command below:</li>
-</ul>
-<pre><code>sudo systemctl start telnet.socket --now
-</code></pre>
-<ul>
-<li>While connected to the <code>web1</code> instance use the following command to connect to the <code>db1</code> that will act as a telnet server.</li>
-</ul>
-<pre><code>telnet &lt;name&gt;-a1t-inf-ds-db1.acad.opswerks.net 23
-</code></pre>
-<ul>
+<li>
+<p>Enable the <code>telnet</code> service on <code>db1</code> by using the command below:
+<div class="highlight"><pre><span></span><code>sudo systemctl start telnet.socket --now
+</code></pre></div></p>
+</li>
+<li>
+<p>While connected to the <code>web1</code> instance use the following command to connect to the <code>db1</code> that will act as a telnet server.
+<div class="highlight"><pre><span></span><code>telnet &lt;name&gt;-a1t-inf-ds-db1.acad.opswerks.net 23
+</code></pre></div></p>
+</li>
 <li>It will then ask for your login credentials. Use your usual username and password for Linux.</li>
 </ul>
 <p><em>Note: Ensure port 23 is open</em></p>
 <ul>
-<li>Disable telnet afterwards, ensure that the port is closed</li>
+<li>Disable telnet afterwards, ensure that the port is closed
+<div class="highlight"><pre><span></span><code>sudo systemctl stop telnet.socket --now
+</code></pre></div></li>
 </ul>
-<pre><code>sudo systemctl stop telnet.socket --now
-</code></pre>
 <h2 id="conclusion">Conclusion</h2>
 <p>Telnet is an old but still widely used network protocol that allows remote access and control of computers and devices.</p>
 

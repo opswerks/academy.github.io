@@ -5310,10 +5310,10 @@
 <pre><code>FROM ubuntu
 </code></pre>
 <p>&emsp; 2.2.  Install Nginx package from the official page using <code>apt</code></p>
-<pre><code>RUN apt-get -y update &amp;&amp; apt-get -y install nginx
-</code></pre>
+<div class="highlight"><pre><span></span><code>RUN apt-get -y update &amp;&amp; apt-get -y install nginx
+</code></pre></div>
 <p>&emsp; 2.3.  Create your own default configuration file</p>
-<pre><code>server { listen 80 default_server;
+<p><div class="highlight"><pre><span></span><code>server { listen 80 default_server;
     listen [::]:80 default_server;
 
     root /usr/share/nginx/html;
@@ -5324,17 +5324,16 @@
         try_files $uri $uri/ =404;
     }
 }
-</code></pre>
-<p>&emsp; 2.4. Add entry in the Dockerfile for copying our configuration file</p>
-<pre><code>COPY default /etc/nginx/sites-available/default
-</code></pre>
-<p>&emsp; 2.5. Expose the port on which we’ll access our server</p>
-<pre><code>EXPOSE 8090/tcp
-</code></pre>
-<p>&emsp; 2.6. Run Nginx whenever Docker images launches</p>
-<pre><code>CMD [&quot;/usr/sbin/nginx&quot;, &quot;-g&quot;, &quot;daemon off;&quot;]
-
-</code></pre>
+</code></pre></div>
+&emsp; 2.4. Add entry in the Dockerfile for copying our configuration file
+<div class="highlight"><pre><span></span><code>COPY default /etc/nginx/sites-available/default
+</code></pre></div>
+&emsp; 2.5. Expose the port on which we’ll access our server</p>
+<div class="highlight"><pre><span></span><code>EXPOSE 8090/tcp
+</code></pre></div>
+<p>&emsp; 2.6. Run Nginx whenever Docker images launches
+<div class="highlight"><pre><span></span><code>CMD [&quot;/usr/sbin/nginx&quot;, &quot;-g&quot;, &quot;daemon off;&quot;]
+</code></pre></div></p>
 <p><strong>Task 3: Build the image</strong></p>
 <ul>
 <li>Using the Dockerfile on task 2, build the image and use image tag <code>nginx-web</code>.</li>

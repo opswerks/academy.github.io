@@ -5340,9 +5340,8 @@
 <li>Open a terminal window.</li>
 <li>Create a new text file named <code>sample.txt</code> using a text editor (e.g., <code>nano</code> or <code>vim</code>) and add some text to it.</li>
 <li>Use the <code>cat</code> command to view the contents of the <code>sample.txt</code> file.</li>
-<li>Experiment with options like <code>-n</code> to display line numbers and <code>-b</code> to number non-empty lines only.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ vim sample.txt
+<li>Experiment with options like <code>-n</code> to display line numbers and <code>-b</code> to number non-empty lines only.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ vim sample.txt
 [intern@intern-a1t-inf-lnx1 ~]$ cat sample.txt
 This is not an empty line
 
@@ -5357,14 +5356,14 @@ Another not empty line
      1  This is not an empty line
 
      2  Another not empty line
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h2 id="task-2-creating-and-appending-to-text-files-with-cat">Task 2: Creating and Appending to Text Files with <code>cat</code></h2>
 <ul>
 <li>Create a new text file named <code>mynotes.txt</code> using the <code>cat</code> command and add some notes to it directly (e.g., <code>cat &gt; mynotes.txt</code>).</li>
 <li>Append additional text to the <code>mynotes.txt</code> file using the <code>cat</code> command and the <code>&gt;&gt;</code> operator.</li>
-<li>Use <code>cat</code> to display the updated contents of the <code>mynotes.txt</code> file.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ cat &gt; mynotest.txt
+<li>Use <code>cat</code> to display the updated contents of the <code>mynotes.txt</code> file.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ cat &gt; mynotest.txt
 This is a test
 Another line
 # Press ctrl + d to exit
@@ -5378,15 +5377,15 @@ Appending another text
 This is a test
 Another line
 Appending another text
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h2 id="task-3-using-echo-for-simple-text-output">Task 3: Using <code>echo</code> for Simple Text Output</h2>
 <ul>
 <li>Open a terminal.</li>
 <li>Use <code>echo</code> to print a simple message to the screen (e.g., <code>echo "Hello, Linux!"</code>).</li>
 <li>Experiment with escape sequences, such as <code>\n</code> for a new line and <code>\t</code> for a tab.</li>
-<li>Redirect the output of <code>echo</code> to create a new text file named <code>greeting.txt</code>.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ echo &quot;Hello, Linux!&quot;
+<li>Redirect the output of <code>echo</code> to create a new text file named <code>greeting.txt</code>.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ echo &quot;Hello, Linux!&quot;
 Hello, Linux!
 [intern@intern-a1t-inf-lnx1 ~]$ echo -e &quot;Hello, Linux! \n&quot;
 Hello, Linux!
@@ -5397,17 +5396,15 @@ Hello, Linux!
 [intern@intern-a1t-inf-lnx1 ~]$ echo -e &quot;\tHello, Linux! \n&quot; &gt; greeting.txt
 [intern@intern-a1t-inf-lnx1 ~]$ cat greeting.txt
     Hello, Linux!
-
-
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h2 id="task-4-combining-echo-and-cat">Task 4: Combining <code>echo</code> and <code>cat</code></h2>
 <ul>
 <li>Use <code>echo</code> to generate some text (e.g., a list of numbers or names).</li>
 <li>Pipe the output of <code>echo</code> into a new text file (e.g., <code>echo "1\n2\n3\n4" &gt; numbers.txt</code>).</li>
 <li>Use <code>cat</code> to view the contents of the <code>numbers.txt</code> file.</li>
-<li>Practice appending additional text to the same file using <code>echo</code> and the <code>&gt;&gt;</code> operator.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ echo -e &quot;1\n2\n3\n4&quot; &gt; numbers.txt
+<li>Practice appending additional text to the same file using <code>echo</code> and the <code>&gt;&gt;</code> operator.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ echo -e &quot;1\n2\n3\n4&quot; &gt; numbers.txt
 [intern@intern-a1t-inf-lnx1 ~]$ cat numbers.txt
 1
 2
@@ -5420,16 +5417,15 @@ Hello, Linux!
 4
 
 5
-
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h2 id="task-5-creating-and-using-shell-scripts">Task 5: Creating and Using Shell Scripts</h2>
 <ul>
 <li>Create a new shell script file named <code>greet.sh</code> using a text editor.</li>
 <li>Inside the script, use <code>echo</code> to print a personalized greeting to the screen.</li>
 <li>Save the script and make it executable using the <code>chmod</code> command.</li>
-<li>Execute the script to see your custom greeting.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ vim greet.sh
+<li>Execute the script to see your custom greeting.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ vim greet.sh
 [intern@intern-a1t-inf-lnx1 ~]$ cat greet.sh
 #!/bin/bash
 
@@ -5437,7 +5433,8 @@ echo &quot;Hello $USER!&quot;
 [intern@intern-a1t-inf-lnx1 ~]$ chmod +x greet.sh
 [intern@intern-a1t-inf-lnx1 ~]$ ./greet.sh
 Hello intern!
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h2 id="conclusion">Conclusion</h2>
 <p>In this lab exercise, you've learned how to manipulate text using the <code>cat</code> and <code>echo</code> commands. You've viewed file contents, created and appended text to files, used <code>echo</code> for basic text output, combined <code>echo</code> and <code>cat</code> to create text files, and even created and executed a simple shell script. These skills are fundamental for working with text data in Linux and shell scripting.</p>
 

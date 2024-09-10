@@ -5340,9 +5340,8 @@
 <li>Open a terminal window.</li>
 <li>Execute a few simple commands in the terminal.</li>
 <li>Use the <code>history</code> command to display a list of recently executed commands, along with their corresponding numbers.</li>
-<li>Use the <code>!n</code> command, where <code>n</code> is the command number from the <code>history</code> list, to quickly rerun a specific command.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ history
+<li>Use the <code>!n</code> command, where <code>n</code> is the command number from the <code>history</code> list, to quickly rerun a specific command.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ history
     1  ip a
     2  man apt
     3  unminimize
@@ -5356,15 +5355,15 @@ ip a
        valid_lft forever preferred_lft forever
     inet6 ::1/128 scope host
        valid_lft forever preferred_lft forever
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h2 id="task-2-command-history-expansion">Task 2: Command History Expansion</h2>
 <ul>
 <li>Execute several commands that involve file operations, like creating, moving, or deleting files.</li>
 <li>Use the <code>!!</code> command to rerun the last command executed.</li>
 <li>Utilize the <code>!$</code> and <code>!*</code> shortcuts to access the last argument or all arguments from the previous command.</li>
-<li>Experiment with the <code>!string</code> syntax to rerun a command that starts with a specific string.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ cd /home/projects
+<li>Experiment with the <code>!string</code> syntax to rerun a command that starts with a specific string.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ cd /home/projects
 [intern@intern-a1t-inf-lnx1 ~]$ !!
 cd /home/projects
 [intern@intern-a1t-inf-lnx1 ~]$ ls !$
@@ -5375,7 +5374,7 @@ project_plan.txt
 [intern@intern-a1t-inf-lnx1 ~]$ ls !*
 ls /home/projects /home/intern
 /home/intern:
-'#emacs_code.c#'   emacs_code.c~   incremental.snar             incremental_backup2.tar.gz
+&#39;#emacs_code.c#&#39;   emacs_code.c~   incremental.snar             incremental_backup2.tar.gz
  bin               go              incremental_backup           installer_linux
  cri-dockerd       hello.txt       incremental_backup.tar.gz    user.sh
  emacs_code.c      hello_world     incremental_backup1.tar.gz
@@ -5385,27 +5384,27 @@ project_plan.txt
 [intern@intern-a1t-inf-lnx1 ~]$ !e
 echo /home/projects /home/intern
 /home/projects /home/intern
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h2 id="task-3-searching-command-history">Task 3: Searching Command History</h2>
 <ul>
 <li>Execute various commands with descriptive keywords in them.</li>
 <li>Use the <code>Ctrl + R</code> keyboard shortcut to initiate a reverse search in the command history.</li>
 <li>Start typing a keyword, and the terminal will display the most recent command containing that keyword.</li>
 <li>Continue pressing <code>Ctrl + R</code> to cycle through matching commands.</li>
-<li>Modify and rerun a command found during the search.</li>
+<li>Modify and rerun a command found during the search.
+<div class="highlight"><pre><span></span><code>(reverse-i-search)`cd&#39;: cd /home/projects
+(reverse-i-search)`cd&#39;: cd
+</code></pre></div></li>
 </ul>
-<pre><code>(reverse-i-search)`cd': cd /home/projects
-(reverse-i-search)`cd': cd
-</code></pre>
 <h2 id="task-4-command-history-management">Task 4: Command History Management</h2>
 <ul>
 <li>Use the <code>history -c</code> command to clear the entire command history.</li>
 <li>Execute a few more commands to populate the history again.</li>
 <li>Limit the number of commands stored in the history by setting the <code>HISTSIZE</code> environment variable.</li>
 <li>Check the size of your history using <code>echo $HISTSIZE</code>.</li>
-<li>Test if new commands are added when the history size is reached.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ history -c
+<li>Test if new commands are added when the history size is reached.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ history -c
 [intern@intern-a1t-inf-lnx1 ~]$ history
     1  history
 [intern@intern-a1t-inf-lnx1 ~]$ echo $HISTSIZE
@@ -5429,26 +5428,24 @@ GG6
     8  echo &quot;GG5&quot;
     9  echo &quot;GG6&quot;
    10  history
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h2 id="task-5-saving-and-exporting-command-history">Task 5: Saving and Exporting Command History</h2>
 <ul>
 <li>Use the <code>history -w</code> command to write the current command history to a file, such as <code>my_history.txt</code>.</li>
 <li>Open the saved history file using a text editor and inspect its contents.</li>
 <li>Export the command history to a new terminal session using the <code>history -r</code> command.</li>
-<li>Verify that your previous commands are available in the new session.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ history -w my_history
+<li>Verify that your previous commands are available in the new session.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ history -w my_history
 [intern@intern-a1t-inf-lnx1 ~]$ cat my_history
 echo &quot;GG6&quot;
 history
 man history
 history --help
 history -w my_history
-</code></pre>
-<ul>
-<li>Open a new terminal session</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ history
+</code></pre></div></li>
+<li>Open a new terminal session
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ history
     1  ip a
     2  man apt
     3  unminimize
@@ -5463,7 +5460,8 @@ history -w my_history
   249  history --help
   250  history -w my_history
   251  history
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h2 id="conclusion">Conclusion</h2>
 <p>In this lab exercise, you've delved into the world of command line history and recall in a Linux environment. You've learned essential techniques for navigating, searching, and managing your command history, which can significantly enhance your efficiency and productivity when working with the command line.</p>
 

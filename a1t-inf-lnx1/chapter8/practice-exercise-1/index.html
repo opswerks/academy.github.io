@@ -5378,9 +5378,8 @@
 <li>Use the <code>ls</code> command with the <code>-l</code> option to display the file permissions for the directory and files.</li>
 <li>Explain the meaning of the various fields in the file permissions display.</li>
 <li>Demonstrate how to change file permissions using the <code>chmod</code> command.</li>
-<li>Set specific permissions to restrict or allow access to files and directories.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ ls -lh *.sh
+<li>Set specific permissions to restrict or allow access to files and directories.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ ls -lh *.sh
 -rwxr-xr-x  1 intern  intern   994B Sep 20 07:53 advance_script.sh
 -rwxr-xr-x  1 intern  intern   1.1K Sep 20 06:48 advanced_case.sh
 -rwxr-xr-x  1 intern  intern   643B Sep 20 07:00 advanced_looping.sh
@@ -5415,15 +5414,15 @@ total 16
 [intern@intern-a1t-inf-lnx1 ~]$ chmod o= advance_script.sh
 [intern@intern-a1t-inf-lnx1 ~]$ ls -l advance_script.sh
 -rw-r-----  1 intern  intern  994 Sep 20 07:53 advance_script.sh
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h3 id="task-2-managing-users-and-groups">Task 2: Managing Users and Groups</h3>
 <ul>
 <li>List the users currently present on your Linux system.</li>
 <li>Create a new user account using the <code>useradd</code> command.</li>
 <li>Assign the new user to a specific group using the <code>usermod</code> command.</li>
-<li>Demonstrate how to switch between user accounts using the <code>su</code> command.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ cut -d: -f1 /etc/passwd
+<li>Demonstrate how to switch between user accounts using the <code>su</code> command.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ cut -d: -f1 /etc/passwd
 
 ##
 # User Database
@@ -5445,15 +5444,15 @@ daemon
 
 [intern@intern-a1t-inf-lnx1 ~]$ groups new_user
 new_user : new_user another_group
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h3 id="task-3-password-policies-and-authentication">Task 3: Password Policies and Authentication</h3>
 <ul>
 <li>Discuss the importance of strong password policies in Linux security.</li>
 <li>Review the <code>/etc/passwd</code> and <code>/etc/shadow</code> files to understand how user authentication works.</li>
 <li>Use the <code>passwd</code> command to change your own password and enforce password policies.</li>
-<li>Explore authentication methods such as SSH keys and their advantages.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ ls -l /etc/passwd /etc/shadow
+<li>Explore authentication methods such as SSH keys and their advantages.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ ls -l /etc/passwd /etc/shadow
 -rw-r--r-- 1 root root   1724 Sep 20 15:04 /etc/passwd
 -rw-r----- 1 root shadow  993 Sep 20 15:04 /etc/shadow
 
@@ -5487,15 +5486,15 @@ Current password:
 New password:
 Retype new password:
 passwd: password updated successfully
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h3 id="task-4-security-auditing-and-monitoring">Task 4: Security Auditing and Monitoring</h3>
 <ul>
 <li>Describe the concept of security auditing and monitoring.</li>
 <li>Explore tools like <code>auditd</code> and <code>rsyslog</code> for monitoring system activities and logs.</li>
 <li>Set up basic auditing rules to track specific events on your system.</li>
-<li>Analyze system logs to identify potential security issues or anomalies.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ sudo auditctl -w /etc -p wa
+<li>Analyze system logs to identify potential security issues or anomalies.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ sudo auditctl -w /etc -p wa
 [intern@intern-a1t-inf-lnx1 ~]$ sudo auditctl -l
 -w /etc -p wa
 
@@ -5514,7 +5513,8 @@ cron-20230827      lastlog              sa                 wtmp
 cron-20230926      maillog              secure
 cron-20231003      maillog-20230820     secure-20230820
 dnf.librepo.log    maillog-20230827     secure-20230827
-</code></pre>
+</code></pre></div></li>
+</ul>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
 <p>In this exercise, you've delved into the fundamental principles of Linux security. You've learned about security layers, file permissions, user and group management, password policies, security best practices, and security auditing. Understanding these principles is essential for safeguarding Linux systems and data from potential threats.</p>

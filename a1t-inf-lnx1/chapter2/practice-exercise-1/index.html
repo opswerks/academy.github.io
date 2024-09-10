@@ -539,15 +539,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#-no-meaningful-output-here-since-the-filesystem-is-healthy-and-theres-nothing-to-be-repaired" class="md-nav__link">
-    <span class="md-ellipsis">
-      - No meaningful output here since the filesystem is healthy and there's nothing to be repaired
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#conclusion" class="md-nav__link">
     <span class="md-ellipsis">
       Conclusion
@@ -5384,15 +5375,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#-no-meaningful-output-here-since-the-filesystem-is-healthy-and-theres-nothing-to-be-repaired" class="md-nav__link">
-    <span class="md-ellipsis">
-      - No meaningful output here since the filesystem is healthy and there's nothing to be repaired
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#conclusion" class="md-nav__link">
     <span class="md-ellipsis">
       Conclusion
@@ -5437,7 +5419,7 @@
 <li>Use the <code>df</code> command to display information about the currently mounted filesystems.</li>
 <li>Identify the root filesystem and note down its size, used space, and available space.</li>
 </ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ df
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ df
 Filesystem     1K-blocks    Used Available Use% Mounted on
 /dev/root       20568532 5187056  14316552  27% /
 devtmpfs          480788       0    480788   0% /dev
@@ -5450,7 +5432,7 @@ tmpfs              96908       0     96908   0% /run/user/1001
 [intern@intern-a1t-inf-lnx1 ~]$ df -h /
 Filesystem      Size  Used Avail Use% Mounted on
 /dev/root        20G  5.0G   14G  27% /
-</code></pre>
+</code></pre></div>
 <h3 id="task-3-creating-and-mounting-a-filesystem">Task 3: Creating and Mounting a Filesystem</h3>
 <ul>
 <li>Create a new ext4 filesystem on a spare storage device <code>/dev/sdb</code>. You can use the <code>mkfs.ext4</code> command.</li>
@@ -5460,7 +5442,7 @@ Filesystem      Size  Used Avail Use% Mounted on
 <li>Mount the new disk using <code>mount</code></li>
 <li>Confirm that it is now mounted using <code>df</code></li>
 </ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ lsblk
+<p><div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ lsblk
 NAME MAJ:MIN RM  SIZE RO TYPE MOUNTPOINTS
 sda    8:0    0   20G  0 disk /
 sdb    8:16   0    1G  0 disk 
@@ -5490,61 +5472,56 @@ tmpfs             197352    5412    191940   3% /run
 /dev/sda        20568532 1244472  18259148   7% /
 tmpfs              98672       0     98672   0% /run/user/1000
 /dev/sdb          996780      24    927944   1% /mnt/new_drive
-</code></pre>
-<ul>
-<li>As you can see the <code>/dev/sdb</code> is now mounted in <code>/mnt/new_drive</code></li>
-<li>Create a test file within your new filesystem:</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ touch /mnt/new_drive/testfile
+</code></pre></div>
+- As you can see the <code>/dev/sdb</code> is now mounted in <code>/mnt/new_drive</code>
+- Create a test file within your new filesystem:
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ touch /mnt/new_drive/testfile
 [intern@intern-a1t-inf-lnx1 ~]$ ls -lrt /mnt/new_drive/
 total 16
 drwx------. 2 root root 16384 Oct  1 23:22 lost+found
 -rw-r--r--. 1 root root     0 Oct  1 23:24 testfile
-</code></pre>
+</code></pre></div></p>
 <h3 id="task-4-modifying-filesystem-properties">Task 4: Modifying Filesystem Properties</h3>
 <ul>
 <li>Experiment with changing the properties of your mounted filesystem. You can try changing the filesystem label or resizing it (if it's on a loopback device).</li>
 </ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ sudo tune2fs -L &quot;New Filesystem&quot; /dev/sdb
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ sudo tune2fs -L &quot;New Filesystem&quot; /dev/sdb
 [sudo] password for intern:
 tune2fs 1.46.5 (30-Dec-2021)
 [intern@intern-a1t-inf-lnx1 ~]$ sudo e2label /dev/sdb
 New Filesystem
-</code></pre>
+</code></pre></div>
 <h3 id="task-5-unmounting-and-removing-a-filesystem">Task 5: Unmounting and Removing a Filesystem</h3>
 <ul>
 <li>Unmount the filesystem you created in Task 3 using the <code>umount</code> command.</li>
 <li>Verify that the filesystem is no longer mounted using <code>df</code>.</li>
-<li>If it was a loopback device, you can remove it using the <code>losetup -d</code> command.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ sudo umount /mnt/new_drive
-</code></pre>
-<ul>
-<li>Run <code>df</code> to see if it was properly unmounted</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ df
+<li>If it was a loopback device, you can remove it using the <code>losetup -d</code> command.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ sudo umount /mnt/new_drive
+</code></pre></div></li>
+<li>Run <code>df</code> to see if it was properly unmounted
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ df
 Filesystem     1K-blocks    Used Available Use% Mounted on
 devtmpfs            4096       0      4096   0% /dev
 tmpfs             493376       0    493376   0% /dev/shm
 tmpfs             197352    5412    191940   3% /run
 /dev/sda        20568532 1244484  18259136   7% /
 tmpfs              98672       0     98672   0% /run/user/1000
-</code></pre>
-<ul>
-<li>Check the test file you've created. Now that you have unmounted the filesystem, it should be gone, unless the filesystem will be remounted:</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ ls -l /mnt/new_drive/
+</code></pre></div></li>
+<li>Check the test file you've created. Now that you have unmounted the filesystem, it should be gone, unless the filesystem will be remounted:
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ ls -l /mnt/new_drive/
 total 0
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h3 id="task-6-checking-and-repairing-filesystems">Task 6: Checking and Repairing Filesystems</h3>
 <ul>
 <li>Use the <code>fsck</code> command to check the integrity of a filesystem (e.g., <code>fsck /dev/sdb</code> where <code>/dev/sdb</code> is your filesystem device).</li>
-<li>Make sure that the device you are trying to check is unmounted</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ sudo fsck /dev/sdb
+<li>Make sure that the device you are trying to check is unmounted
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ sudo fsck /dev/sdb
 fsck from util-linux 2.37.4
-</code></pre>
-<h2 id="-no-meaningful-output-here-since-the-filesystem-is-healthy-and-theres-nothing-to-be-repaired">- No meaningful output here since the filesystem is healthy and there's nothing to be repaired</h2>
+</code></pre></div></li>
+<li>No meaningful output here since the filesystem is healthy and there's nothing to be repaired</li>
+</ul>
+<hr />
 <h2 id="conclusion">Conclusion</h2>
 <p>By completing this exercise, you've gained valuable insights into Linux filesystems, including their types, creation, modification, and maintenance. Understanding filesystems is crucial for managing data effectively on your Linux system.</p>
 

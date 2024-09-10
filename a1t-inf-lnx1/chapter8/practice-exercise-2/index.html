@@ -5359,22 +5359,21 @@
 <li>Demonstrate how to use the <code>sudo</code> command to execute a command with superuser privileges.</li>
 <li>Use <code>sudo</code> to edit a system configuration file (e.g., <code>/etc/hostname</code>) that is normally restricted to root.</li>
 <li>Explain the benefits of using <code>sudo</code> for temporary superuser access rather than logging in as the root user.</li>
-<li>Emphasize the importance of using <code>sudo</code> carefully to avoid mistakes or unintended changes.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ sudo ls /
+<li>Emphasize the importance of using <code>sudo</code> carefully to avoid mistakes or unintended changes.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ sudo ls /
 bin   dev  home  lost+found  mnt         opt   root  sbin  srv   sys  usr
 boot  etc  lib   media       myrootfile.txt  proc  run   snap  swap.img  tmp  var
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h3 id="task-2-securing-sudo-configuration">Task 2: Securing <code>sudo</code> Configuration</h3>
 <ul>
 <li>Explore the <code>sudoers</code> file located at <code>/etc/sudoers</code>.</li>
 <li>Discuss how the <code>sudoers</code> file defines who can use <code>sudo</code> and what commands they can run.</li>
 <li>Explain how to add a user to the <code>sudo</code> group to grant them sudo privileges.</li>
-<li>Highlight the need to secure the <code>sudoers</code> file to prevent unauthorized access.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ sudo cat /etc/sudoers
+<li>Highlight the need to secure the <code>sudoers</code> file to prevent unauthorized access.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ sudo cat /etc/sudoers
 #
-# This file MUST be edited with the 'visudo' command as root.
+# This file MUST be edited with the &#39;visudo&#39; command as root.
 #
 # Please consider adding local content in /etc/sudoers.d/ instead of
 # directly modifying this file.
@@ -5397,10 +5396,10 @@ Defaults    use_pty
 # Completely harmless preservation of a user preference.
 #Defaults:%sudo env_keep += &quot;GREP_COLOR&quot;
 
-# While you shouldn't normally run git as root, you need to with etckeeper
+# While you shouldn&#39;t normally run git as root, you need to with etckeeper
 #Defaults:%sudo env_keep += &quot;GIT_AUTHOR_* GIT_COMMITTER_*&quot;
 
-# Per-user preferences; root won't have sensible values for them.
+# Per-user preferences; root won&#39;t have sensible values for them.
 #Defaults:%sudo env_keep += &quot;EMAIL DEBEMAIL DEBFULLNAME&quot;
 
 # &quot;sudo scp&quot; or &quot;sudo rsync&quot; should be able to use your SSH agent.
@@ -5429,8 +5428,7 @@ root    ALL=(ALL:ALL) ALL
 @includedir /etc/sudoers.d
 
 [intern@intern-a1t-inf-lnx1 ~]$ sudo visudo
-</code></pre>
-<ul>
+</code></pre></div></li>
 <li>Note to always use sudo visudo when editing the sudoers file to prevent you from making changes that will lock you out of the machine</li>
 </ul>
 <h3 id="task-3-examples-of-sudo-usage">Task 3: Examples of <code>sudo</code> Usage</h3>
@@ -5439,14 +5437,14 @@ root    ALL=(ALL:ALL) ALL
 <li>Installing software packages.</li>
 <li>Modifying system configuration files.</li>
 <li>Creating or deleting system users.</li>
-<li>Explain the benefits of using <code>sudo</code> in each scenario and the potential risks of not doing so.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ sudo yum install auditd
+<li>Explain the benefits of using <code>sudo</code> in each scenario and the potential risks of not doing so.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ sudo yum install auditd
 
 [intern@intern-a1t-inf-lnx1 ~]$ sudo vim /etc/hosts
 
 [intern@intern-a1t-inf-lnx1 ~]$ sudo userdel new_user
-</code></pre>
+</code></pre></div></li>
+</ul>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
 <p>Understanding when and why root privileges are required in Linux is crucial for system administrators and users. In this exercise, you've explored the concept of root privileges, identified scenarios where they are necessary, and practiced using the <code>sudo</code> command to execute commands as the superuser. By using <code>sudo</code> judiciously, you can enhance the security and stability of your Linux system while minimizing the risks associated with superuser access.</p>

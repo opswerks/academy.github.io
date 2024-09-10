@@ -5369,55 +5369,53 @@
 <li>In the request body, select "Raw" and choose "JSON (application/json)" as the format.</li>
 <li>Provide a JSON object representing a new user.</li>
 </ul>
-<pre><code>{
+<p><div class="highlight"><pre><span></span><code>{
     &quot;name&quot;: &quot;John Doe&quot;,
     &quot;username&quot;: &quot;johndoe&quot;,
     &quot;email&quot;: &quot;johndoe@example.com&quot;
 }
-</code></pre>
-<ul>
-<li>Click the "Send" button to create a new user.</li>
-</ul>
+</code></pre></div>
+- Click the "Send" button to create a new user.</p>
 <p>cURL:
 - Open your terminal.
-- Run the following cURL command to create a new user:</p>
-<pre><code>curl -X POST -H &quot;Content-Type: application/json&quot; -d '{
+- Run the following cURL command to create a new user:
+<div class="highlight"><pre><span></span><code>curl -X POST -H &quot;Content-Type: application/json&quot; -d &#39;{
     &quot;name&quot;: &quot;John Doe&quot;,
     &quot;username&quot;: &quot;johndoe&quot;,
     &quot;email&quot;: &quot;johndoe@example.com&quot;
-}' https://jsonplaceholder.typicode.com/users
-</code></pre>
+}&#39; https://jsonplaceholder.typicode.com/users
+</code></pre></div></p>
 <h2 id="exercise-2-read-get">Exercise 2: READ (GET)</h2>
 <p>Postman:
 - Create a new request in Postman and set the request type to GET.
 - Set the request URL to https://jsonplaceholder.typicode.com/users.
 - Click the "Send" button to retrieve a list of users.</p>
 <p>cURL:
-- Run the following cURL command to retrieve a list of users:</p>
-<pre><code>curl https://jsonplaceholder.typicode.com/users
-</code></pre>
+- Run the following cURL command to retrieve a list of users:
+<div class="highlight"><pre><span></span><code>curl https://jsonplaceholder.typicode.com/users
+</code></pre></div></p>
 <h2 id="exercise-3-update-put">Exercise 3: Update (PUT)</h2>
 <p>Postman:
 - Create a new request in Postman and set the request type to PUT.
 - Set the request URL to https://jsonplaceholder.typicode.com/users/1 to update the user with ID 1.
 - In the request body, select "Raw" and choose "JSON (application/json)" as the format.
 - Provide the updated user data.</p>
-<pre><code>{
+<div class="highlight"><pre><span></span><code>{
     &quot;name&quot;: &quot;Updated John Doe&quot;,
     &quot;username&quot;: &quot;updatedjohndoe&quot;,
     &quot;email&quot;: &quot;updatedjohndoe@example.com&quot;
 }
-</code></pre>
+</code></pre></div>
 <p>cURL:</p>
 <ul>
-<li>Run the following cURL command to update the user with ID 1:</li>
-</ul>
-<pre><code>curl -X PUT -H &quot;Content-Type: application/json&quot; -d '{
+<li>Run the following cURL command to update the user with ID 1:
+<div class="highlight"><pre><span></span><code>curl -X PUT -H &quot;Content-Type: application/json&quot; -d &#39;{
     &quot;name&quot;: &quot;Updated John Doe&quot;,
     &quot;username&quot;: &quot;updatedjohndoe&quot;,
     &quot;email&quot;: &quot;updatedjohndoe@example.com&quot;
-}' https://jsonplaceholder.typicode.com/users/1
-</code></pre>
+}&#39; https://jsonplaceholder.typicode.com/users/1
+</code></pre></div></li>
+</ul>
 <h2 id="exercise-4-delete-delete">Exercise 4: Delete (DELETE)</h2>
 <p>Postman:</p>
 <ul>
@@ -5427,10 +5425,10 @@
 </ul>
 <p>cURL:</p>
 <ul>
-<li>Run the following cURL command to delete the user with ID 1:</li>
+<li>Run the following cURL command to delete the user with ID 1:
+<div class="highlight"><pre><span></span><code>curl -X DELETE https://jsonplaceholder.typicode.com/users/1
+</code></pre></div></li>
 </ul>
-<pre><code>curl -X DELETE https://jsonplaceholder.typicode.com/users/1
-</code></pre>
 <h2 id="conclusion">Conclusion</h2>
 <p>These exercises will help you practice basic CRUD operations using Postman and cURL with the JSONPlaceholder API. You can adapt them to other APIs as well.</p>
 

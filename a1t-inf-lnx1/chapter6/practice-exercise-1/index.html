@@ -5357,9 +5357,8 @@
 <ul>
 <li>Open a terminal window.</li>
 <li>Use the <code>ifconfig</code> or <code>ip addr</code> command to display the IP addresses assigned to your network interfaces.</li>
-<li>Identify your system's IP address, subnet mask, and gateway address.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ ip a
+<li>Identify your system's IP address, subnet mask, and gateway address.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ ip a
 1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
     inet 127.0.0.1/8 scope host lo
@@ -5378,14 +5377,14 @@
     link/ether 02:42:d8:29:4d:a9 brd ff:ff:ff:ff:ff:ff
     inet 172.17.0.1/16 brd 172.17.255.255 scope global docker0
        valid_lft forever preferred_lft forever
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h2 id="task-2-resolving-domain-names-with-nslookup">Task 2: Resolving Domain Names with <code>nslookup</code></h2>
 <ul>
 <li>Run the <code>nslookup</code> command followed by a domain name (e.g., <code>nslookup www.example.com</code>).</li>
 <li>Observe how <code>nslookup</code> provides the IP address associated with the given domain name.</li>
-<li>Try resolving the IP address of different domain names.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ nslookup www.example.com
+<li>Try resolving the IP address of different domain names.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ nslookup www.example.com
 Server:     17.7.7.7
 Address:    17.7.7.7#53
 
@@ -5401,14 +5400,14 @@ Non-authoritative answer:
 8.8.8.8.in-addr.arpa    name = dns.google.
 
 Authoritative answers can be found from:
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h2 id="task-3-checking-dns-resolution-with-ping">Task 3: Checking DNS Resolution with <code>ping</code></h2>
 <ul>
 <li>Use the <code>ping</code> command followed by a domain name (e.g., <code>ping www.google.com</code>).</li>
 <li>Confirm that you can reach the domain's IP address and receive responses.</li>
-<li>Experiment with different domain names and observe the responses.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ ping www.google.com
+<li>Experiment with different domain names and observe the responses.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ ping www.google.com
 PING www.google.com (142.250.189.228): 56 data bytes
 64 bytes from 142.250.189.228: icmp_seq=0 ttl=118 time=238.259 ms
 64 bytes from 142.250.189.228: icmp_seq=1 ttl=118 time=359.562 ms
@@ -5417,15 +5416,15 @@ PING www.google.com (142.250.189.228): 56 data bytes
 --- www.google.com ping statistics ---
 3 packets transmitted, 3 packets received, 0.0% packet loss
 round-trip min/avg/max/stddev = 238.259/326.386/381.336/62.946 ms
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h2 id="task-4-editing-the-hosts-file">Task 4: Editing the Hosts File</h2>
 <ul>
 <li>Open the <code>/etc/hosts</code> file in a text editor with administrative privileges (e.g., <code>sudo nano /etc/hosts</code>).</li>
 <li>Add an entry that maps a custom hostname to a specific IP address.</li>
 <li>Save the file and exit.</li>
-<li>Test DNS resolution for the custom hostname using <code>ping</code>.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ sudo vim /etc/hosts
+<li>Test DNS resolution for the custom hostname using <code>ping</code>.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ sudo vim /etc/hosts
 Password:
 ##
 # Host Database
@@ -5461,19 +5460,19 @@ PING itsm (170.187.198.132): 56 data bytes
 --- itsm ping statistics ---
 3 packets transmitted, 3 packets received, 0.0% packet loss
 round-trip min/avg/max/stddev = 394.493/527.892/663.426/109.802 ms
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h2 id="task-5-configuring-dns-servers">Task 5: Configuring DNS Servers</h2>
 <ul>
 <li>Open the <code>/etc/resolv.conf</code> file in a text editor with administrative privileges.</li>
 <li>Add DNS server IP addresses using the <code>nameserver</code> directive (e.g., <code>nameserver 8.8.8.8</code>).</li>
 <li>Save the file and exit.</li>
-<li>Use <code>nslookup</code> to resolve domain names with the newly configured DNS servers.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ cat /etc/resolv.conf
+<li>Use <code>nslookup</code> to resolve domain names with the newly configured DNS servers.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ cat /etc/resolv.conf
 # This is /run/systemd/resolve/stub-resolv.conf managed by man:systemd-resolved(8).
 # Do not edit.
 #
-# This file might be symlinked as /etc/resolv.conf. If you're looking at
+# This file might be symlinked as /etc/resolv.conf. If you&#39;re looking at
 # /etc/resolv.conf and seeing this text, you have followed the symlink.
 #
 # This is a dynamic resolv.conf file for connecting local clients to the
@@ -5511,14 +5510,14 @@ Name:   www.example.com
 Address: 93.184.216.34
 Name:   www.example.com
 Address: 2606:2800:220:1:248:1893:25c8:1946
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h2 id="task-6-investigating-domain-ownership-with-dig">Task 6: Investigating Domain Ownership with <code>dig</code></h2>
 <ul>
 <li>Run the <code>dig</code> command followed by a domain name (e.g., <code>dig example.com</code>).</li>
 <li>Examine the information provided, including domain registrar and contact details.</li>
-<li>Try <code>dig</code> with different domain names.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ dig www.example.com
+<li>Try <code>dig</code> with different domain names.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ dig www.example.com
 
 ; &lt;&lt;&gt;&gt; DiG 9.11.36-RedHat-9.11.36-9.el8 &lt;&lt;&gt;&gt; www.example.com
 ;; global options: +cmd
@@ -5564,7 +5563,8 @@ www.google.com.     213 IN  A   142.250.4.106
 ;; SERVER: 139.162.10.8#53(139.162.10.8)
 ;; WHEN: Tue Oct 03 05:58:01 UTC 2023
 ;; MSG SIZE  rcvd: 139
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h2 id="conclusion">Conclusion</h2>
 <p>In this lab exercise, you've explored network addresses, DNS resolution, and related commands in Linux. You've learned how to view your system's IP configuration, resolve domain names to IP addresses using <code>nslookup</code>, verify DNS resolution with <code>ping</code>, manually map hostnames to IP addresses in the <code>/etc/hosts</code> file, configure DNS servers, and investigate domain ownership using <code>dig</code>. Understanding these network operations is crucial for effective Linux system administration.</p>
 

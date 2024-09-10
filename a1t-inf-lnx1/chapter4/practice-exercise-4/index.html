@@ -5340,25 +5340,24 @@
 <li>Open a terminal window.</li>
 <li>Use the <code>ls -l</code> command to list files and directories in your current location.</li>
 <li>Examine the output to understand the file permission format and what each part represents (e.g., <code>-rwxr-xr--</code>).</li>
-<li>Identify the owner, group, and other permissions for various files and directories in the listing.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ ls -l
+<li>Identify the owner, group, and other permissions for various files and directories in the listing.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ ls -l
 total 5124
--rw-rw-r--  1 intern intern     131 Sep 18 14:53 '#emacs_code.c#'
+-rw-rw-r--  1 intern intern     131 Sep 18 14:53 &#39;#emacs_code.c#&#39;
 drwxr-xr-x  2 root   root      4096 Dec 30  2022  bin
 drwxrwxr-x 18 intern intern    4096 Dec 30  2022  cri-dockerd
 -rw-rw-r--  1 intern intern     123 Sep 18 14:07  emacs_code.c
 -rw-rw-r--  1 intern intern      76 Sep 18 06:52  emacs_code.c~
 drwxrwxr-x  3 intern intern    4096 Dec 30  2022  go
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h2 id="task-2-changing-file-permissions">Task 2: Changing File Permissions</h2>
 <ul>
 <li>Create a new directory using the <code>mkdir</code> command.</li>
 <li>Use the <code>touch</code> command to create a few text files inside the directory.</li>
 <li>Use the <code>chmod</code> command with symbolic notation to change the permissions of one of the files (e.g., make it read-only for all users).</li>
-<li>Use the <code>chmod</code> command with numeric notation to change the permissions of another file (e.g., give read and write permissions to the owner).</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ mkdir new_directory
+<li>Use the <code>chmod</code> command with numeric notation to change the permissions of another file (e.g., give read and write permissions to the owner).
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ mkdir new_directory
 [intern@intern-a1t-inf-lnx1 ~]$ touch new_directory/new_text.txt
 [intern@intern-a1t-inf-lnx1 ~]$ chmod o=r new_directory/new_text.txt
 [intern@intern-a1t-inf-lnx1 ~]$ ls -l new_directory/new_text.txt
@@ -5367,7 +5366,8 @@ drwxrwxr-x  3 intern intern    4096 Dec 30  2022  go
 [intern@intern-a1t-inf-lnx1 ~]$ chmod 600 new_directory/new_text2.txt
 [intern@intern-a1t-inf-lnx1 ~]$ ls -l new_directory/new_text2.txt
 -rw------- 1 intern intern 0 Sep 19 11:27 new_directory/new_text2.txt
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h2 id="task-3-managing-file-ownership">Task 3: Managing File Ownership</h2>
 <ul>
 <li>First let's create another user</li>
@@ -5375,9 +5375,8 @@ drwxrwxr-x  3 intern intern    4096 Dec 30  2022  go
 <li>Use the <code>chown</code> command to change the owner of the file to another user (e.g., <code>sudo chown user: user myfile.txt</code>).</li>
 <li>Let's also add another group</li>
 <li>Use the <code>chgrp</code> command to change the group of the file to a different group.</li>
-<li>Verify the changes by listing the file's details with <code>ls -l</code>.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ sudo useradd another_user
+<li>Verify the changes by listing the file's details with <code>ls -l</code>.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ sudo useradd another_user
 [intern@intern-a1t-inf-lnx1 ~]$ touch new_directory/new_text3.txt
 [intern@intern-a1t-inf-lnx1 ~]$ sudo chown another_user: new_directory/new_text3.txt
 [intern@intern-a1t-inf-lnx1 ~]$ ls -l new_directory/new_text3.txt
@@ -5386,19 +5385,17 @@ drwxrwxr-x  3 intern intern    4096 Dec 30  2022  go
 [intern@intern-a1t-inf-lnx1 ~]$ sudo chown :another_group new_directory/new_text3.txt
 [intern@intern-a1t-inf-lnx1 ~]$ ls -l new_directory/new_text3.txt
 -rw-rw-r-- 1 another_user another_group 0 Sep 19 11:29 new_directory/new_text3.txt
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h2 id="task-4-special-permissions-and-setuidsetgid">Task 4: Special Permissions and SetUID/SetGID</h2>
 <ul>
-<li>Try listing the permission of <code>/usr/bin/passwd</code></li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ ls -l /usr/bin/passwd
+<li>Try listing the permission of <code>/usr/bin/passwd</code>
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ ls -l /usr/bin/passwd
 -rwsr-xr-x 1 root root 55544 Nov 24  2022 /usr/bin/passwd
-</code></pre>
-<ul>
+</code></pre></div></li>
 <li>As you can see you have <code>s</code> rather than <code>x</code> in the owner permission</li>
-<li>And by running <code>passwd</code> you can modify the <code>/etc/passwd</code> file even though you only have read privileges in it.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ ls -l /etc/passwd
+<li>And by running <code>passwd</code> you can modify the <code>/etc/passwd</code> file even though you only have read privileges in it.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ ls -l /etc/passwd
 -rw-r--r-- 1 root root 1624 Sep 19 11:31 /etc/passwd
 [intern@intern-a1t-inf-lnx1 ~]$ passwd
 New password:
@@ -5406,8 +5403,7 @@ Retype new password:
 passwd: password updated successfully
 [intern@intern-a1t-inf-lnx1 ~]$ ls -l /etc/passwd
 -rw-r--r-- 1 root root 1624 Sep 19 11:31 /etc/passwd
-</code></pre>
-<ul>
+</code></pre></div></li>
 <li>Experiment with the SetGID bit by creating a new directory and setting the SetGID bit on it.</li>
 </ul>
 <h2 id="task-5-permission-denials-and-sudo">Task 5: Permission Denials and sudo</h2>
@@ -5415,16 +5411,15 @@ passwd: password updated successfully
 <li>Try to create a file in the root directory (e.g., <code>sudo touch /myrootfile.txt</code>).</li>
 <li>Understand the permission denial message.</li>
 <li>Use the <code>sudo</code> command to create the file successfully.</li>
-<li>Explore the <code>/etc/sudoers</code> file and understand how it controls <code>sudo</code> access for users.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ touch /myrootfile.txt
-touch: cannot touch '/myrootfile.txt': Permission denied
+<li>Explore the <code>/etc/sudoers</code> file and understand how it controls <code>sudo</code> access for users.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ touch /myrootfile.txt
+touch: cannot touch &#39;/myrootfile.txt&#39;: Permission denied
 [intern@intern-a1t-inf-lnx1 ~]$ sudo touch /myrootfile.txt
 [intern@intern-a1t-inf-lnx1 ~]$ ls -l /myrootfile.txt
 -rw-r--r-- 1 root root 0 Sep 19 13:08 /myrootfile.txt
 [intern@intern-a1t-inf-lnx1 ~]$ sudo cat /etc/sudoers
 #
-# This file MUST be edited with the 'visudo' command as root.
+# This file MUST be edited with the &#39;visudo&#39; command as root.
 #
 # Please consider adding local content in /etc/sudoers.d/ instead of
 # directly modifying this file.
@@ -5447,10 +5442,10 @@ Defaults    use_pty
 # Completely harmless preservation of a user preference.
 #Defaults:%sudo env_keep += &quot;GREP_COLOR&quot;
 
-# While you shouldn't normally run git as root, you need to with etckeeper
+# While you shouldn&#39;t normally run git as root, you need to with etckeeper
 #Defaults:%sudo env_keep += &quot;GIT_AUTHOR_* GIT_COMMITTER_*&quot;
 
-# Per-user preferences; root won't have sensible values for them.
+# Per-user preferences; root won&#39;t have sensible values for them.
 #Defaults:%sudo env_keep += &quot;EMAIL DEBEMAIL DEBFULLNAME&quot;
 
 # &quot;sudo scp&quot; or &quot;sudo rsync&quot; should be able to use your SSH agent.
@@ -5477,7 +5472,8 @@ root    ALL=(ALL:ALL) ALL
 # See sudoers(5) for more information on &quot;@include&quot; directives:
 
 @includedir /etc/sudoers.d
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h2 id="conclusion">Conclusion</h2>
 <p>In this lab exercise, you've delved into the world of Linux file permissions. You've learned how to view and interpret permissions, change file permissions and ownership, work with special permissions, and use <code>sudo</code> to manage permissions effectively. Understanding file permissions is crucial for maintaining security and access control in a Linux environment.</p>
 

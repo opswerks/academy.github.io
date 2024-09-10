@@ -5344,15 +5344,14 @@
 <li>Based on the user input, displays a message indicating whether it's a weekday or a weekend day.</li>
 <li>Account for variations in user input (e.g., case-insensitive).</li>
 <li>Test your script with different day inputs to ensure it works as expected.</li>
-<li>Include comments in your script to explain the <code>case</code> statement's structure and how it handles user input.</li>
-</ul>
-<pre><code>#!/bin/bash
+<li>Include comments in your script to explain the <code>case</code> statement's structure and how it handles user input.
+<div class="highlight"><pre><span></span><code>#!/bin/bash
 
 # Prompt the user to enter a day of the week
 read -p &quot;Enter a day of the week: &quot; day
 
 # Convert the input to lowercase for case-insensitive matching
-day_lower=$(echo &quot;$day&quot; | tr '[:upper:]' '[:lower:]')
+day_lower=$(echo &quot;$day&quot; | tr &#39;[:upper:]&#39; &#39;[:lower:]&#39;)
 
 # Use a case statement to check the day
 case &quot;$day_lower&quot; in
@@ -5366,12 +5365,9 @@ case &quot;$day_lower&quot; in
     echo &quot;Invalid input. Please enter a valid day of the week.&quot;
     ;;
 esac
-
-</code></pre>
-<ul>
-<li>Test and run</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ chmod +x basic_case.sh
+</code></pre></div></li>
+<li>Test and run
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ chmod +x basic_case.sh
 [intern@intern-a1t-inf-lnx1 ~]$ ./basic_case.sh
 Enter a day of the week: monday
 monday is a weekday.
@@ -5381,7 +5377,8 @@ sunday is a weekend day.
 [intern@intern-a1t-inf-lnx1 ~]$ ./basic_case.sh
 Enter a day of the week: notvalid
 Invalid input. Please enter a valid day of the week.
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h3 id="task-2-advanced-case-statement">Task 2: Advanced Case Statement</h3>
 <ul>
 <li>Create a Bash script named <code>advanced_case.sh</code>.</li>
@@ -5391,15 +5388,14 @@ Invalid input. Please enter a valid day of the week.
 <li>Performs the selected action (e.g., display a message with the chosen action and filename).</li>
 <li>Handles various actions and variations in user input.</li>
 <li>Test your script thoroughly to ensure it handles different actions and filenames correctly.</li>
-<li>Include detailed comments to explain the logic of your advanced <code>case</code> statement.</li>
-</ul>
-<pre><code>#!/bin/bash
+<li>Include detailed comments to explain the logic of your advanced <code>case</code> statement.
+<div class="highlight"><pre><span></span><code>#!/bin/bash
 
 # Prompt the user to select an action
 read -p &quot;Select an action (open, edit, delete): &quot; action
 
 # Convert the action input to lowercase for case-insensitive matching
-action_lower=$(echo &quot;$action&quot; | tr '[:upper:]' '[:lower:]')
+action_lower=$(echo &quot;$action&quot; | tr &#39;[:upper:]&#39; &#39;[:lower:]&#39;)
 
 # Use a case statement to handle different actions
 case &quot;$action_lower&quot; in
@@ -5426,17 +5422,15 @@ case &quot;$action_lower&quot; in
     echo &quot;Invalid action. Please select from open, edit, or delete.&quot;
     ;;
 esac
-
-</code></pre>
-<ul>
-<li>Test and run</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$   chmod +x advanced_case.sh
+</code></pre></div></li>
+<li>Test and run
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$   chmod +x advanced_case.sh
 [intern@intern-a1t-inf-lnx1 ~]$   ./advanced_case.sh
 Select an action (open, edit, delete): edit
 Enter the filename to edit: employees.csv
 Editing file: employees.csv
-</code></pre>
+</code></pre></div></li>
+</ul>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
 <p>In this exercise, you've explored the Bash <code>case</code> statement for conditional branching in scripts. You've practiced using <code>case</code> to make decisions and perform various actions based on user input. Understanding how to implement <code>case</code> statements will help you create more versatile and user-friendly Bash scripts.</p>

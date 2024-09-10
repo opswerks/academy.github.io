@@ -1312,15 +1312,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#-ran-each-bash-x-and-bash-n-whenever-you-uncomment-and-fix-errors-in-the-script" class="md-nav__link">
-    <span class="md-ellipsis">
-      - Ran each bash -x and bash -n whenever you uncomment and fix errors in the script
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#conclusion" class="md-nav__link">
     <span class="md-ellipsis">
       Conclusion
@@ -5366,15 +5357,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#-ran-each-bash-x-and-bash-n-whenever-you-uncomment-and-fix-errors-in-the-script" class="md-nav__link">
-    <span class="md-ellipsis">
-      - Ran each bash -x and bash -n whenever you uncomment and fix errors in the script
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#conclusion" class="md-nav__link">
     <span class="md-ellipsis">
       Conclusion
@@ -5416,23 +5398,20 @@
 <li>Use basic debugging techniques like adding <code>echo</code> statements to identify the issues.</li>
 <li>Debug the script step by step until it runs without errors.</li>
 <li>Document the debugging process and the changes made to the script.</li>
-<li>Let's go back to the sales.csv</li>
-</ul>
-<pre><code>Device,Quantity,Price
+<li>Let's go back to the sales.csv
+<div class="highlight"><pre><span></span><code>Device,Quantity,Price
 Smartphone-A,10,599.99
 Tablet,12,399.99
 Smartphone-B,8,599.99
 Laptop,6,999.99
 Headphones-A,3,199.99
 Headphones-B,7,159.99
-</code></pre>
-<ul>
-<li>Let's make a script that calculates the total sales of each product</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ cat basic_debugging.sh
+</code></pre></div></li>
+<li>Let's make a script that calculates the total sales of each product
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ cat basic_debugging.sh
 #!/bin/bash
 
-awk -F',' 'NR &gt; 1 {sales[$3] += $2 * $1} END {for (product in sales) print &quot;Product Name:&quot;, product, &quot;Sales:&quot;, sales[product]}' sales.csv
+awk -F&#39;,&#39; &#39;NR &gt; 1 {sales[$3] += $2 * $1} END {for (product in sales) print &quot;Product Name:&quot;, product, &quot;Sales:&quot;, sales[product]}&#39; sales.csv
 
 [intern@intern-a1t-inf-lnx1 ~]$ chmod +x basic_debugging.sh
 [intern@intern-a1t-inf-lnx1 ~]$ ./basic_debugging.sh
@@ -5441,15 +5420,13 @@ Product Name: 399.99 Sales: 0
 Product Name: 599.99 Sales: 0
 Product Name: 999.99 Sales: 0
 Product Name: 159.99 Sales: 0
-</code></pre>
-<ul>
+</code></pre></div></li>
 <li>As you can see if you look at the csv file closely the sales shouldn't be zero</li>
-<li>What you can do is echo the parameters to see if you have it in the correct order</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ cat basic_debugging.sh
+<li>What you can do is echo the parameters to see if you have it in the correct order
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ cat basic_debugging.sh
 #!/bin/bash
 
-awk -F',' 'NR &gt; 1 {print $1&quot; &quot;$2&quot; &quot;$3&quot; &quot;} {sales[$3] += $2 * $1} END {for (product in sales) print &quot;Product Name:&quot;, product, &quot;Sales:&quot;, sales[product]}' sales.csv
+awk -F&#39;,&#39; &#39;NR &gt; 1 {print $1&quot; &quot;$2&quot; &quot;$3&quot; &quot;} {sales[$3] += $2 * $1} END {for (product in sales) print &quot;Product Name:&quot;, product, &quot;Sales:&quot;, sales[product]}&#39; sales.csv
 [intern@intern-a1t-inf-lnx1 ~]$ ./basic_debugging.sh
 Smartphone-A 10 599.99
 Tablet 12 399.99
@@ -5463,16 +5440,14 @@ Product Name: 599.99 Sales: 0
 Product Name: 999.99 Sales: 0
 Product Name: 159.99 Sales: 0
 Product Name: Price Sales: 0
-</code></pre>
-<ul>
+</code></pre></div></li>
 <li>You can see here that the <code>$1</code> is the Product name, <code>$2</code> is the quantity and <code>$3</code> is the price</li>
-<li>So we just need to swap the positions of our parameters</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ cat basic_debugging.sh
+<li>So we just need to swap the positions of our parameters
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ cat basic_debugging.sh
 #!/bin/bash
 
 # {print $1&quot; &quot;$2&quot; &quot;$3&quot; &quot;}
-awk -F',' 'NR &gt; 1 {sales[$1] += $2 * $3} END {for (product in sales) print &quot;Product Name:&quot;, product, &quot;Sales:&quot;, sales[product]}' sales.csv
+awk -F&#39;,&#39; &#39;NR &gt; 1 {sales[$1] += $2 * $3} END {for (product in sales) print &quot;Product Name:&quot;, product, &quot;Sales:&quot;, sales[product]}&#39; sales.csv
 
 [intern@intern-a1t-inf-lnx1 ~]$ ./basic_debugging.sh
 Product Name: Tablet Sales: 4799.88
@@ -5481,7 +5456,8 @@ Product Name: Smartphone-B Sales: 4799.92
 Product Name: Headphones-A Sales: 599.97
 Product Name: Headphones-B Sales: 1119.93
 Product Name: Laptop Sales: 5999.94
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h3 id="task-2-debugging-with-set-x">Task 2: Debugging with <code>set -x</code></h3>
 <ul>
 <li>Create a Bash script named <code>debugging_setx.sh</code>.</li>
@@ -5489,9 +5465,8 @@ Product Name: Laptop Sales: 5999.94
 <li>Use the <code>set -x</code> option at the beginning of the script to enable debugging mode.</li>
 <li>Run the script and observe how it displays each executed command and its output.</li>
 <li>Analyze the debugging output to identify any issues or unexpected behavior.</li>
-<li>Make necessary adjustments to the script to resolve any problems.</li>
-</ul>
-<pre><code>#!/bin/bash
+<li>Make necessary adjustments to the script to resolve any problems.
+<div class="highlight"><pre><span></span><code>#!/bin/bash
 
 # Enable debugging mode
 set -x
@@ -5518,23 +5493,24 @@ set +x
 
 # Continue with the rest of the script
 echo &quot;Script execution completed.&quot;
-</code></pre>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ chmod +x debugging_setx.sh
+</code></pre></div></li>
+</ul>
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ chmod +x debugging_setx.sh
 [intern@intern-a1t-inf-lnx1 ~]$ ./debugging_setx.sh
 + result=15
-+ echo 'Result of 5 * 3 is: 15'
++ echo &#39;Result of 5 * 3 is: 15&#39;
 Result of 5 * 3 is: 15
 + name=John
-+ greeting='Hello, John!'
-+ echo Hello, 'John!'
++ greeting=&#39;Hello, John!&#39;
++ echo Hello, &#39;John!&#39;
 Hello, John!
 + ls /nonexistentfolder
 ls: /nonexistentfolder: No such file or directory
-+ echo 'The value of an undefined variable is: '
++ echo &#39;The value of an undefined variable is: &#39;
 The value of an undefined variable is:
 + set +x
 Script execution completed.
-</code></pre>
+</code></pre></div>
 <h3 id="task-3-debugging-with-set-e">Task 3: Debugging with <code>set -e</code></h3>
 <ul>
 <li>Create a Bash script named <code>debugging_sete.sh</code>.</li>
@@ -5542,9 +5518,8 @@ Script execution completed.
 <li>Use the <code>set -e</code> option at the beginning of the script to enable immediate exit on error.</li>
 <li>Introduce intentional errors within the script (e.g., using a command that should fail).</li>
 <li>Run the script and observe how it terminates immediately upon encountering an error.</li>
-<li>Debug the script to handle errors gracefully without exiting.</li>
-</ul>
-<pre><code>#!/bin/bash
+<li>Debug the script to handle errors gracefully without exiting.
+<div class="highlight"><pre><span></span><code>#!/bin/bash
 
 # Enable immediate exit on error
 set -e
@@ -5558,20 +5533,20 @@ echo &quot;This is a valid command.&quot;
 ls /nonexistentfolder
 
 # Example 3: This command will not be executed due to the error above.
-echo &quot;This command won't run because of the error.&quot;
+echo &quot;This command won&#39;t run because of the error.&quot;
 
 # Disable immediate exit on error for the remaining part of the script
 set +e
 
 # Continue with the rest of the script
 echo &quot;Script execution completed.&quot;
-
-</code></pre>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ chmod +x debugging_sete.sh
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ chmod +x debugging_sete.sh
 [intern@intern-a1t-inf-lnx1 ~]$ ./debugging_sete.sh
 This is a valid command.
 ls: /nonexistentfolder: No such file or directory
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h3 id="task-4-using-trap-for-error-handling">Task 4: Using <code>trap</code> for Error Handling</h3>
 <ul>
 <li>Create a Bash script named <code>debugging_trap.sh</code>.</li>
@@ -5579,12 +5554,11 @@ ls: /nonexistentfolder: No such file or directory
 <li>Implement a <code>trap</code> command to capture errors or signals (e.g., SIGINT) within the script.</li>
 <li>Trigger an error condition (e.g., sending SIGINT with Ctrl+C) while the script is running.</li>
 <li>Observe how the <code>trap</code> command handles the error or signal.</li>
-<li>Modify the script to perform custom error handling and clean-up actions.</li>
-</ul>
-<pre><code>#!/bin/bash
+<li>Modify the script to perform custom error handling and clean-up actions.
+<div class="highlight"><pre><span></span><code>#!/bin/bash
 
 
-trap &quot;{ echo 'There was an error, aborting...'; exit 255; }&quot; ERR SIGINT SIGTERM
+trap &quot;{ echo &#39;There was an error, aborting...&#39;; exit 255; }&quot; ERR SIGINT SIGTERM
 
 # This script performs a specific task.
 echo &quot;Starting the task...&quot;
@@ -5592,8 +5566,8 @@ echo &quot;Starting the task...&quot;
 # Simulate an error condition (e.g., dividing by zero)
 ls /notexistingdirectory
 
-# This command won't be executed due to the error above.
-echo &quot;This command won't run because of the error.&quot;
+# This command won&#39;t be executed due to the error above.
+echo &quot;This command won&#39;t run because of the error.&quot;
 
 # The script will terminate immediately upon encountering the error.
 
@@ -5602,13 +5576,14 @@ echo &quot;This line will never be reached.&quot;
 
 # Continue with the rest of the script (if the custom error handler allows it).
 echo &quot;Script execution completed.&quot;
-</code></pre>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$   chmod +x debugging_trap.sh
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$   chmod +x debugging_trap.sh
 [intern@intern-a1t-inf-lnx1 ~]$ ./debugging_trap.sh
 Starting the task...
 ls: /notexistingdirectory: No such file or directory
 There was an error, aborting...
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h3 id="task-5-debugging-with-bash-n-and-bash-x">Task 5: Debugging with <code>bash -n</code> and <code>bash -x</code></h3>
 <ul>
 <li>Create a Bash script named <code>debugging_bash_n_x.sh</code>.</li>
@@ -5616,16 +5591,15 @@ There was an error, aborting...
 <li>Use <code>bash -n</code> to perform a syntax check on the script without executing it.</li>
 <li>Use <code>bash -x</code> to run the script in debug mode to identify issues.</li>
 <li>Document the errors found and fix them in the script.</li>
-<li>Run the script again to ensure it executes without errors.</li>
-</ul>
-<pre><code>#!/bin/bash
+<li>Run the script again to ensure it executes without errors.
+<div class="highlight"><pre><span></span><code>#!/bin/bash
 
 # This is a Bash script with potential errors for debugging practice
 
 # Uncomment the line below to introduce a syntax error (unmatched quotes)
 # echo &quot;This line has a missing closing quote.
 
-# Uncomment the line below to introduce a missing 'fi' in a conditional statement
+# Uncomment the line below to introduce a missing &#39;fi&#39; in a conditional statement
 # if [ 1 -eq 1
 # then
 #   echo &quot;This line should not run.&quot;
@@ -5649,12 +5623,13 @@ There was an error, aborting...
 # then
 #   echo &quot;This line will run.&quot;
 # fi
-
-</code></pre>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ bash -x debugging_bash_n_x.sh
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ bash -x debugging_bash_n_x.sh
 [intern@intern-a1t-inf-lnx1 ~]$ bash -n debugging_bash_n_x.sh
-</code></pre>
-<h2 id="-ran-each-bash-x-and-bash-n-whenever-you-uncomment-and-fix-errors-in-the-script">- Ran each <code>bash -x</code> and <code>bash -n</code> whenever you uncomment and fix errors in the script</h2>
+</code></pre></div></li>
+<li>Ran each <code>bash -x</code> and <code>bash -n</code> whenever you uncomment and fix errors in the script</li>
+</ul>
+<hr />
 <h2 id="conclusion">Conclusion</h2>
 <p>In this exercise, you've practiced various debugging techniques for Bash shell scripting. Debugging is an essential skill for resolving scripting errors efficiently. Understanding how to use debugging tools and strategies will help you write more reliable Bash scripts.</p>
 

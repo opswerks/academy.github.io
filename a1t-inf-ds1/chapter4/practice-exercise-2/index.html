@@ -5494,30 +5494,28 @@
 <li>In the request body, select "Raw" and choose "JSON (application/json)" as the format.</li>
 <li>Provide a JSON object representing a new user.</li>
 </ul>
-<pre><code>{
+<p><div class="highlight"><pre><span></span><code>{
     &quot;name&quot;: &quot;John Doe&quot;,
     &quot;username&quot;: &quot;johndoe&quot;,
     &quot;email&quot;: &quot;johndoe@example.com&quot;
 }
-</code></pre>
-<ul>
-<li>Click the "Send" button to create a new user.</li>
-</ul>
+</code></pre></div>
+- Click the "Send" button to create a new user.</p>
 <p>cURL:</p>
 <ul>
 <li>
 <p>Open your terminal.</p>
 </li>
 <li>
-<p>Run the following cURL command to create a new user:</p>
-</li>
-</ul>
-<pre><code>curl -X POST -H &quot;Content-Type: application/json&quot; -d '{
+<p>Run the following cURL command to create a new user:
+<div class="highlight"><pre><span></span><code>curl -X POST -H &quot;Content-Type: application/json&quot; -d &#39;{
     &quot;name&quot;: &quot;John Doe&quot;,
     &quot;username&quot;: &quot;johndoe&quot;,
     &quot;email&quot;: &quot;johndoe@example.com&quot;
-}' https://jsonplaceholder.typicode.com/users
-</code></pre>
+}&#39; https://jsonplaceholder.typicode.com/users
+</code></pre></div></p>
+</li>
+</ul>
 <h4 id="observations">Observations:</h4>
 <p>If the request is successful, you should receive a response with a status code (e.g., 201 Created).</p>
 <p>The response will often include the newly created resource's details, such as an ID or other attributes.</p>
@@ -5530,10 +5528,10 @@
 </ul>
 <p>cURL:</p>
 <ul>
-<li>Run the following cURL command to retrieve a list of users:</li>
+<li>Run the following cURL command to retrieve a list of users:
+<div class="highlight"><pre><span></span><code>curl -X GET https://jsonplaceholder.typicode.com/users
+</code></pre></div></li>
 </ul>
-<pre><code>curl -X GET https://jsonplaceholder.typicode.com/users
-</code></pre>
 <h4 id="observation">Observation:</h4>
 <p>If successful, you will receive a response with a status code (e.g., 200 OK) and the requested data in the response body.</p>
 <h2 id="exercise-3-update-put">Exercise 3: Update (PUT)</h2>
@@ -5544,22 +5542,22 @@
 <li>In the request body, select "Raw" and choose "JSON (application/json)" as the format.</li>
 <li>Provide the updated user data.</li>
 </ul>
-<pre><code>{
+<div class="highlight"><pre><span></span><code>{
     &quot;name&quot;: &quot;Updated John Doe&quot;,
     &quot;username&quot;: &quot;updatedjohndoe&quot;,
     &quot;email&quot;: &quot;updatedjohndoe@example.com&quot;
 }
-</code></pre>
+</code></pre></div>
 <p>cURL:</p>
 <ul>
-<li>Run the following cURL command to update the user with ID 1:</li>
-</ul>
-<pre><code>curl -X PUT -H &quot;Content-Type: application/json&quot; -d '{
+<li>Run the following cURL command to update the user with ID 1:
+<div class="highlight"><pre><span></span><code>curl -X PUT -H &quot;Content-Type: application/json&quot; -d &#39;{
     &quot;name&quot;: &quot;Updated John Doe&quot;,
     &quot;username&quot;: &quot;updatedjohndoe&quot;,
     &quot;email&quot;: &quot;updatedjohndoe@example.com&quot;
-}' https://jsonplaceholder.typicode.com/users/1
-</code></pre>
+}&#39; https://jsonplaceholder.typicode.com/users/1
+</code></pre></div></li>
+</ul>
 <h4 id="observation_1">Observation:</h4>
 <p>If successful, you will receive a response with a status code (e.g., 200 OK) and the updated resource's details</p>
 <h2 id="exercise-4-delete-delete">Exercise 4: Delete (DELETE)</h2>
@@ -5571,10 +5569,10 @@
 </ul>
 <p>cURL:</p>
 <ul>
-<li>Run the following cURL command to delete the user with ID 1:</li>
+<li>Run the following cURL command to delete the user with ID 1:
+<div class="highlight"><pre><span></span><code>curl -X DELETE https://jsonplaceholder.typicode.com/users/1
+</code></pre></div></li>
 </ul>
-<pre><code>curl -X DELETE https://jsonplaceholder.typicode.com/users/1
-</code></pre>
 <h4 id="observation_2">Observation:</h4>
 <p>If successful, you will receive a response with a status code (e.g., 204 No Content) indicating that the resource has been deleted.</p>
 <h2 id="conclusion">Conclusion</h2>

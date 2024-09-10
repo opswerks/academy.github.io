@@ -466,6 +466,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#internintern-a1t-inf-lnx1-cat-etccrontab-etccrontab-system-wide-crontab-unlike-any-other-crontab-you-dont-have-to-run-the-crontab-command-to-install-the-new-version-when-you-edit-this-file-and-files-in-etccrond-these-files-also-have-username-fields-that-none-of-the-other-crontabs-do-shellbinsh-you-can-also-override-path-but-by-default-newer-versions-inherit-it-from-the-environment-pathusrlocalsbinusrlocalbinsbinbinusrsbinusrbin-example-of-job-definition-minute-0-59-hour-0-23-day-of-month-1-31-month-1-12-or-janfebmarapr-day-of-week-0-6-sunday0-or-7-or-sunmontuewedthufrisat-user-name-command-to-be-executed-17-root-cd-run-parts-report-etccronhourly-25-6-root-test-x-usrsbinanacron-cd-run-parts-report-etccrondaily-47-6-7-root-test-x-usrsbinanacron-cd-run-parts-report-etccronweekly-52-6-1-root-test-x-usrsbinanacron-cd-run-parts-report-etccronmonthly" class="md-nav__link">
+    <span class="md-ellipsis">
+      [intern@intern-a1t-inf-lnx1 ~]$ cat /etc/crontab # /etc/crontab: system-wide crontab # Unlike any other crontab you don&#39;t have to run the `crontab&#39; # command to install the new version when you edit this file # and files in /etc/cron.d. These files also have username fields, # that none of the other crontabs do. SHELL=/bin/sh # You can also override PATH, but by default, newer versions inherit it from the environment #PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin # Example of job definition: # .---------------- minute (0 - 59) # | .------------- hour (0 - 23) # | | .---------- day of month (1 - 31) # | | | .------- month (1 - 12) OR jan,feb,mar,apr ... # | | | | .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat # | | | | | # * * * * * user-name command to be executed 17 * * * * root cd / &amp;&amp; run-parts --report /etc/cron.hourly 25 6 * * * root test -x /usr/sbin/anacron || ( cd / &amp;&amp; run-parts --report /etc/cron.daily ) 47 6 * * 7 root test -x /usr/sbin/anacron || ( cd / &amp;&amp; run-parts --report /etc/cron.weekly ) 52 6 1 * * root test -x /usr/sbin/anacron || ( cd / &amp;&amp; run-parts --report /etc/cron.monthly ) #
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#conclusion" class="md-nav__link">
     <span class="md-ellipsis">
       Conclusion
@@ -5357,6 +5366,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#internintern-a1t-inf-lnx1-cat-etccrontab-etccrontab-system-wide-crontab-unlike-any-other-crontab-you-dont-have-to-run-the-crontab-command-to-install-the-new-version-when-you-edit-this-file-and-files-in-etccrond-these-files-also-have-username-fields-that-none-of-the-other-crontabs-do-shellbinsh-you-can-also-override-path-but-by-default-newer-versions-inherit-it-from-the-environment-pathusrlocalsbinusrlocalbinsbinbinusrsbinusrbin-example-of-job-definition-minute-0-59-hour-0-23-day-of-month-1-31-month-1-12-or-janfebmarapr-day-of-week-0-6-sunday0-or-7-or-sunmontuewedthufrisat-user-name-command-to-be-executed-17-root-cd-run-parts-report-etccronhourly-25-6-root-test-x-usrsbinanacron-cd-run-parts-report-etccrondaily-47-6-7-root-test-x-usrsbinanacron-cd-run-parts-report-etccronweekly-52-6-1-root-test-x-usrsbinanacron-cd-run-parts-report-etccronmonthly" class="md-nav__link">
+    <span class="md-ellipsis">
+      [intern@intern-a1t-inf-lnx1 ~]$ cat /etc/crontab # /etc/crontab: system-wide crontab # Unlike any other crontab you don&#39;t have to run the `crontab&#39; # command to install the new version when you edit this file # and files in /etc/cron.d. These files also have username fields, # that none of the other crontabs do. SHELL=/bin/sh # You can also override PATH, but by default, newer versions inherit it from the environment #PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin # Example of job definition: # .---------------- minute (0 - 59) # | .------------- hour (0 - 23) # | | .---------- day of month (1 - 31) # | | | .------- month (1 - 12) OR jan,feb,mar,apr ... # | | | | .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat # | | | | | # * * * * * user-name command to be executed 17 * * * * root cd / &amp;&amp; run-parts --report /etc/cron.hourly 25 6 * * * root test -x /usr/sbin/anacron || ( cd / &amp;&amp; run-parts --report /etc/cron.daily ) 47 6 * * 7 root test -x /usr/sbin/anacron || ( cd / &amp;&amp; run-parts --report /etc/cron.weekly ) 52 6 1 * * root test -x /usr/sbin/anacron || ( cd / &amp;&amp; run-parts --report /etc/cron.monthly ) #
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#conclusion" class="md-nav__link">
     <span class="md-ellipsis">
       Conclusion
@@ -5402,7 +5420,7 @@
 <li>Verify that the task is scheduled using the <code>atq</code> command.</li>
 <li>Wait for the specified time, and observe the task execution.</li>
 </ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ at now + 2 minutes
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ at now + 2 minutes
 warning: commands will be executed using /bin/sh
 at Mon Sep 18 00:47:00 2023
 at&gt; echo &quot;Hello world! $(date)&quot; &gt; ~/hello.txt
@@ -5413,7 +5431,7 @@ job 2 at Mon Sep 18 00:47:00 2023
 2   Mon Sep 18 00:47:00 2023 a intern
 [intern@intern-a1t-inf-lnx1 ~]$ cat ~/hello.txt
 Hello world! Mon Sep 18 00:44:20 UTC 202
-</code></pre>
+</code></pre></div>
 <h3 id="task-2-using-cron-to-schedule-recurring-tasks">Task 2: Using <code>cron</code> to Schedule Recurring Tasks</h3>
 <ul>
 <li>Use the <code>crontab -e</code> command to open your user's crontab file for editing.</li>
@@ -5423,22 +5441,20 @@ Hello world! Mon Sep 18 00:44:20 UTC 202
 <li>Wait for the scheduled time, and observe the recurring task execution.</li>
 <li>Optionally, you can edit the crontab file to schedule different tasks at specific intervals.</li>
 </ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ crontab -e
+<p><div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ crontab -e
 no crontab for intern - using an empty one
 
-Select an editor.  To change later, run 'select-editor'.
+Select an editor.  To change later, run &#39;select-editor&#39;.
   1. /bin/nano        &lt;---- easiest
   2. /usr/bin/vim.basic
   3. /usr/bin/vim.tiny
   4. /bin/ed
 
 Choose 1-4 [1]: 2
-</code></pre>
-<ul>
-<li>If you haven't change your default editor yet you will receive this from the output. Select the editor you are most comfortable with.</li>
-<li>After selecting an editor you can now edit the crontab file</li>
-</ul>
-<pre><code># Edit this file to introduce tasks to be run by cron.
+</code></pre></div>
+- If you haven't change your default editor yet you will receive this from the output. Select the editor you are most comfortable with.
+- After selecting an editor you can now edit the crontab file
+<div class="highlight"><pre><span></span><code># Edit this file to introduce tasks to be run by cron.
 #
 # Each task to run has to be defined through a single line
 # indicating with different fields when the task will be run
@@ -5446,10 +5462,10 @@ Choose 1-4 [1]: 2
 #
 # To define the time you can provide concrete values for
 # minute (m), hour (h), day of month (dom), month (mon),
-# and day of week (dow) or use '*' in these fields (for 'any').
+# and day of week (dow) or use &#39;*&#39; in these fields (for &#39;any&#39;).
 #
-# Notice that tasks will be started based on the cron's system
-# daemon's notion of time and timezones.
+# Notice that tasks will be started based on the cron&#39;s system
+# daemon&#39;s notion of time and timezones.
 #
 # Output of the crontab jobs (including errors) is sent through
 # email to the user the crontab file belongs to (unless redirected).
@@ -5464,15 +5480,13 @@ Choose 1-4 [1]: 2
 0 3 * * * /usr/bin/backup-script.sh
 ~
 &quot;/tmp/crontab.CgJXDF/crontab&quot; 23L, 889B
-</code></pre>
-<ul>
-<li>Save the update and exit</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ crontab -e
+</code></pre></div>
+- Save the update and exit
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ crontab -e
 no crontab for intern - using an empty one
 crontab: installing new crontab
-</code></pre>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ crontab -l
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ crontab -l
 # Edit this file to introduce tasks to be run by cron.
 #
 # Each task to run has to be defined through a single line
@@ -5481,10 +5495,10 @@ crontab: installing new crontab
 #
 # To define the time you can provide concrete values for
 # minute (m), hour (h), day of month (dom), month (mon),
-# and day of week (dow) or use '*' in these fields (for 'any').
+# and day of week (dow) or use &#39;*&#39; in these fields (for &#39;any&#39;).
 #
-# Notice that tasks will be started based on the cron's system
-# daemon's notion of time and timezones.
+# Notice that tasks will be started based on the cron&#39;s system
+# daemon&#39;s notion of time and timezones.
 #
 # Output of the crontab jobs (including errors) is sent through
 # email to the user the crontab file belongs to (unless redirected).
@@ -5497,7 +5511,7 @@ crontab: installing new crontab
 #
 # m h  dom mon dow   command
 0 3 * * * /usr/bin/backup-script.sh
-</code></pre>
+</code></pre></div></p>
 <h3 id="task-3-managing-cron-jobs">Task 3: Managing Cron Jobs</h3>
 <ul>
 <li>Use the <code>crontab -e</code> command to open your user's crontab file for editing.</li>
@@ -5506,7 +5520,7 @@ crontab: installing new crontab
 <li>Verify that the removed or commented-out cron job is no longer active by running <code>crontab -l</code>.</li>
 <li>Check the crontab file inside /etc</li>
 </ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ crontab -e
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ crontab -e
 crontab: installing new crontab
 .....
 # 0 3 * * * /usr/bin/backup-script.sh
@@ -5520,7 +5534,7 @@ cron.hourly
 cron.monthly
 cron.weekly
 crontab
-</code></pre>
+</code></pre></div>
 <h3 id="task-4-exploring-at-and-cron-configuration-files">Task 4: Exploring <code>at</code> and <code>cron</code> Configuration Files</h3>
 <ul>
 <li>Explore the <code>/etc/crontab</code> file to see system-wide cron jobs.</li>
@@ -5528,9 +5542,9 @@ crontab
 <li>Similarly, explore the <code>/etc/at.deny</code> and <code>/etc/cron.deny</code> files, if they exist, to see denied access rules.</li>
 <li>Understand the format of cron job entries in the <code>/etc/crontab</code> file.</li>
 </ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ cat /etc/crontab
+<h2 id="internintern-a1t-inf-lnx1-cat-etccrontab-etccrontab-system-wide-crontab-unlike-any-other-crontab-you-dont-have-to-run-the-crontab-command-to-install-the-new-version-when-you-edit-this-file-and-files-in-etccrond-these-files-also-have-username-fields-that-none-of-the-other-crontabs-do-shellbinsh-you-can-also-override-path-but-by-default-newer-versions-inherit-it-from-the-environment-pathusrlocalsbinusrlocalbinsbinbinusrsbinusrbin-example-of-job-definition-minute-0-59-hour-0-23-day-of-month-1-31-month-1-12-or-janfebmarapr-day-of-week-0-6-sunday0-or-7-or-sunmontuewedthufrisat-user-name-command-to-be-executed-17-root-cd-run-parts-report-etccronhourly-25-6-root-test-x-usrsbinanacron-cd-run-parts-report-etccrondaily-47-6-7-root-test-x-usrsbinanacron-cd-run-parts-report-etccronweekly-52-6-1-root-test-x-usrsbinanacron-cd-run-parts-report-etccronmonthly"><div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ cat /etc/crontab
 # /etc/crontab: system-wide crontab
-# Unlike any other crontab you don't have to run the `crontab'
+# Unlike any other crontab you don&#39;t have to run the `crontab&#39;
 # command to install the new version when you edit this file
 # and files in /etc/cron.d. These files also have username fields,
 # that none of the other crontabs do.
@@ -5552,8 +5566,7 @@ SHELL=/bin/sh
 47 6    * * 7   root    test -x /usr/sbin/anacron || ( cd / &amp;&amp; run-parts --report /etc/cron.weekly )
 52 6    1 * *   root    test -x /usr/sbin/anacron || ( cd / &amp;&amp; run-parts --report /etc/cron.monthly )
 #
-</code></pre>
-<hr />
+</code></pre></div></h2>
 <h2 id="conclusion">Conclusion</h2>
 <p>This practice exercise has provided you with practical experience in scheduling and starting processes in the future using the <code>at</code> and <code>cron</code> tools on a Linux system. You've learned how to schedule one-time tasks with <code>at</code> and recurring tasks with <code>cron</code>. Additionally, you've explored the configuration files and access control mechanisms associated with these tools. Automation through <code>at</code> and <code>cron</code> is essential for efficiently managing system tasks and maintenance.</p>
 

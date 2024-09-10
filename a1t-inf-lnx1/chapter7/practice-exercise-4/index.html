@@ -5399,9 +5399,8 @@
 <li>Extract the last word from the sentence.</li>
 <li>Extract a specific word from the sentence by its position (e.g., the third word).</li>
 <li>Display the extracted substrings.</li>
-<li>Comment your script to explain the extraction process.</li>
-</ul>
-<pre><code>#!/bin/bash
+<li>Comment your script to explain the extraction process.
+<div class="highlight"><pre><span></span><code>#!/bin/bash
 
 # Declare a string variable containing a sentence
 sentence=&quot;The quick brown fox jumps over the lazy dog.&quot;
@@ -5410,7 +5409,7 @@ sentence=&quot;The quick brown fox jumps over the lazy dog.&quot;
 first_word=${sentence%% *}
 
 # Extract the last word from the sentence
-last_word=$(echo $sentence | awk '{print $NF}')
+last_word=$(echo $sentence | awk &#39;{print $NF}&#39;)
 
 
 # Display the extracted substrings
@@ -5421,22 +5420,20 @@ echo &quot;Last word: $last_word&quot;
 # Ask the user for the position of the word to extract
 read -p &quot;Enter the position of the word to extract (e.g., 1 for the first word): &quot; position
 
-# Extract the word based on the user's input
-word=$(echo $sentence | cut -d ' ' -f $position)
+# Extract the word based on the user&#39;s input
+word=$(echo $sentence | cut -d &#39; &#39; -f $position)
 echo &quot;$position word: $word&quot;
-
-</code></pre>
-<ul>
-<li>To test and run your script</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$   chmod +x substring_extraction.sh
+</code></pre></div></li>
+<li>To test and run your script
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$   chmod +x substring_extraction.sh
 [intern@intern-a1t-inf-lnx1 ~]$ ./substring_extraction.sh
 Original sentence: The quick brown fox jumps over the lazy dog.
 First word: The
 Last word: dog.
 Enter the position of the word to extract (e.g., 1 for the first word): 5
 5 word: jumps
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h3 id="task-2-replacing-substrings">Task 2: Replacing Substrings</h3>
 <ul>
 <li>Create a Bash script named <code>substring_replacement.sh</code>.</li>
@@ -5444,9 +5441,8 @@ Enter the position of the word to extract (e.g., 1 for the first word): 5
 <li>Use string manipulation techniques to:</li>
 <li>Replace a specific word in the sentence with another word of your choice.</li>
 <li>Display the modified sentence.</li>
-<li>Comment your script to explain the replacement process.</li>
-</ul>
-<pre><code>#!/bin/bash
+<li>Comment your script to explain the replacement process.
+<div class="highlight"><pre><span></span><code>#!/bin/bash
 
 # Declare a string variable containing a sentence
 sentence=&quot;The quick brown fox jumps over the lazy dog.&quot;
@@ -5461,26 +5457,24 @@ modified_sentence=&quot;${sentence/$word_to_replace/$replacement_word}&quot;
 # Display the modified sentence
 echo &quot;Original sentence: $sentence&quot;
 echo &quot;Modified sentence: $modified_sentence&quot;
-</code></pre>
-<ul>
-<li>To run and test the script</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$   chmod +x substring_replacement.sh
+</code></pre></div></li>
+<li>To run and test the script
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$   chmod +x substring_replacement.sh
 [intern@intern-a1t-inf-lnx1 ~]$ ./substring_replacement.sh
 Enter the word to replace: fox
 Enter the replacement word: chicken
 Original sentence: The quick brown fox jumps over the lazy dog.
 Modified sentence: The quick brown chicken jumps over the lazy dog.
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h3 id="task-3-checking-string-length">Task 3: Checking String Length</h3>
 <ul>
 <li>Create a Bash script named <code>string_length.sh</code>.</li>
 <li>Declare a string variable containing a sentence.</li>
 <li>Use string manipulation techniques to:</li>
 <li>Calculate and display the length (number of characters) of the sentence.</li>
-<li>Comment your script to explain how string length is calculated.</li>
-</ul>
-<pre><code>#!/bin/bash
+<li>Comment your script to explain how string length is calculated.
+<div class="highlight"><pre><span></span><code>#!/bin/bash
 
 # Declare a string variable containing a sentence
 sentence=&quot;This is a sample sentence for string length calculation.&quot;
@@ -5490,15 +5484,13 @@ length=${#sentence}
 
 # Display the result
 echo &quot;The length of the sentence is: $length characters.&quot;
-
-</code></pre>
-<ul>
-<li>To run and test the script</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ chmod +x string_length.sh
+</code></pre></div></li>
+<li>To run and test the script
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ chmod +x string_length.sh
 [intern@intern-a1t-inf-lnx1 ~]$ ./string_length.sh
 The length of the sentence is: 56 characters.
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h3 id="task-4-string-concatenation">Task 4: String Concatenation</h3>
 <ul>
 <li>Create a Bash script named <code>string_concatenation.sh</code>.</li>
@@ -5506,9 +5498,8 @@ The length of the sentence is: 56 characters.
 <li>Use string manipulation techniques to:</li>
 <li>Concatenate the two strings to form your full name.</li>
 <li>Display your full name.</li>
-<li>Comment your script to explain the concatenation process.</li>
-</ul>
-<pre><code>#!/bin/bash
+<li>Comment your script to explain the concatenation process.
+<div class="highlight"><pre><span></span><code>#!/bin/bash
 
 # Declare string variables for first name and last name
 first_name=&quot;John&quot;
@@ -5519,33 +5510,28 @@ full_name=&quot;$first_name $last_name&quot;
 
 # Display the full name
 echo &quot;Full Name: $full_name&quot;
-
-</code></pre>
-<ul>
-<li>To run and test the script</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ ./string_concatenation.sh
+</code></pre></div></li>
+<li>To run and test the script
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ ./string_concatenation.sh
 Full Name: John Doe
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h3 id="task-5-advanced-string-manipulation">Task 5: Advanced String Manipulation</h3>
 <ul>
 <li>Create a Bash script named <code>advanced_string_manipulation.sh</code>.</li>
 <li>Implement a more complex string manipulation task of your choice, such as:</li>
 <li>Parsing a CSV file and extracting specific fields.</li>
-<li>Let's use the <code>employee.csv</code> we created in the previous chapters</li>
-</ul>
-<pre><code>Employee ID,Name,Department
+<li>Let's use the <code>employee.csv</code> we created in the previous chapters
+<div class="highlight"><pre><span></span><code>Employee ID,Name,Department
 101,John,HR
 102,Emily,Finance
 103,Michael,IT
 104,Susan,HR
-</code></pre>
-<ul>
+</code></pre></div></li>
 <li>Manipulating a date string (e.g., changing the format).</li>
 <li>Processing log entries to extract specific information.</li>
-<li>Document your script with comments to explain the chosen task and the string manipulation techniques applied.</li>
-</ul>
-<pre><code>#!/bin/bash
+<li>Document your script with comments to explain the chosen task and the string manipulation techniques applied.
+<div class="highlight"><pre><span></span><code>#!/bin/bash
 
 # Define the CSV file path
 csv_file=&quot;employees.csv&quot;
@@ -5555,17 +5541,15 @@ if [ -e &quot;$csv_file&quot; ]; then
     echo &quot;Parsing data from $csv_file...&quot;
 
     # Use awk to skip the header line, then extract the Name (column 2) and Department (column 3) fields
-    awk -F',' 'NR&gt;1 {print &quot;Name: &quot; $2, &quot;Department: &quot; $3}' &quot;$csv_file&quot;
+    awk -F&#39;,&#39; &#39;NR&gt;1 {print &quot;Name: &quot; $2, &quot;Department: &quot; $3}&#39; &quot;$csv_file&quot;
 
     echo &quot;Data extraction complete.&quot;
 else
     echo &quot;CSV file $csv_file not found.&quot;
 fi
-</code></pre>
-<ul>
-<li>To run and test</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$   chmod +x advanced_string_manipulation.sh
+</code></pre></div></li>
+<li>To run and test
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$   chmod +x advanced_string_manipulation.sh
 [intern@intern-a1t-inf-lnx1 ~]$ ./advanced_string_manipulation.sh
 Parsing data from employees.csv...
 Name: John Department: HR
@@ -5573,7 +5557,8 @@ Name: Emily Department: Finance
 Name: Michael Department: IT
 Name: Susan Department: HR
 Data extraction complete.
-</code></pre>
+</code></pre></div></li>
+</ul>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
 <p>In this exercise, you've explored advanced string manipulation techniques in Bash scripting. These techniques are valuable for processing and manipulating text data efficiently within your scripts. By completing these tasks, you've gained a deeper understanding of how to work with strings in Bash.</p>

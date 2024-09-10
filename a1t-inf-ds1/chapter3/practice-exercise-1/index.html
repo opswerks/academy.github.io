@@ -5289,18 +5289,20 @@
 </ul>
 <h2 id="tasks">Tasks</h2>
 <ul>
-<li>SSH into the db1 instance and enter the command below:</li>
-</ul>
-<pre><code class="language-server.sh">nc -l -p 12345 &gt; file_received
-</code></pre>
-<p>The flags <code>-l</code> is listen mode and <code>-p</code> indicates the port <code>netcat</code> will listen on, then pipe what is received through <code>netcat</code> to a file named <code>file_received</code></p>
-<ul>
-<li>SSH into the web1 instance and enter the commands below:</li>
-</ul>
-<pre><code class="language-client.sh">echo &quot;Mekus mekus, tornado&quot; &gt; file_to_send
+<li>
+<p>SSH into the db1 instance and enter the command below:
+<div class="highlight"><pre><span></span><code>nc -l -p 12345 &gt; file_received
+</code></pre></div>
+The flags <code>-l</code> is listen mode and <code>-p</code> indicates the port <code>netcat</code> will listen on, then pipe what is received through <code>netcat</code> to a file named <code>file_received</code></p>
+</li>
+<li>
+<p>SSH into the web1 instance and enter the commands below:
+<div class="highlight"><pre><span></span><code>echo &quot;Mekus mekus, tornado&quot; &gt; file_to_send
 nc &lt;name&gt;-a1t-inf-ds-db1.acad.opswerks.net 12345 &lt; file_to_send
-</code></pre>
-<p>The first command creates a file named <code>file_to_send</code> and then sends the file using <code>netcat</code> to the hostname indicated.</p>
+</code></pre></div>
+The first command creates a file named <code>file_to_send</code> and then sends the file using <code>netcat</code> to the hostname indicated.</p>
+</li>
+</ul>
 <h2 id="conclusion">Conclusion</h2>
 <p>This practice exercise helps you understand and differentiate between TCP and UDP and how they are used in implementation of different systems</p>
 

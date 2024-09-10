@@ -5340,9 +5340,8 @@
 <li>Explain the purpose of the <code>sudo</code> command in Linux.</li>
 <li>Demonstrate how to execute a command with elevated privileges using <code>sudo</code>.</li>
 <li>Create a new user and grant them <code>sudo</code> privileges for specific commands.</li>
-<li>Emphasize the significance of using <code>sudo</code> to limit superuser access and maintain security.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ sudo useradd new_user
+<li>Emphasize the significance of using <code>sudo</code> to limit superuser access and maintain security.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ sudo useradd new_user
 [intern@intern-a1t-inf-lnx1 ~]$ sudo passwd new_user
 Changing password for user new_user.
 New password: 
@@ -5368,47 +5367,40 @@ new_user is not in the sudoers file.  This incident will be reported.
 # Add sudo privileges to new_user using the command ls
 new_user       ALL=(ALL:ALL)   NOPASSWD:       /usr/bin/ls
 ...
-
-</code></pre>
-<ul>
-<li>The following lines were appended to the file:</li>
-</ul>
-<pre><code># Add sudo privileges to new_user using the command ls
+</code></pre></div></li>
+<li>The following lines were appended to the file:
+<div class="highlight"><pre><span></span><code># Add sudo privileges to new_user using the command ls
 new_user ALL=(ALL) NOPASSWD: /usr/bin/ls
-</code></pre>
-<ul>
-<li>Now <code>new_user</code> can list restricted folders</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ su -l new_user
+</code></pre></div></li>
+<li>Now <code>new_user</code> can list restricted folders
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ su -l new_user
 Password: 
 Last login: Wed Sep 27 03:17:33 UTC 2023 on pts/0
 [intern@intern-a1t-inf-lnx1 ~]$ sudo ls /root
 check.sh             node_exporter-1.6.1.linux-amd64.tar.gz         submit.sh
 node_exporter-1.6.1.linux-amd64  splunkforwarder-9.1.0.1-77f73c9edb85-Linux-x86_64.tgz
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h3 id="task-2-keeping-systems-current">Task 2: Keeping Systems Current</h3>
 <ul>
 <li>Stress the importance of keeping Linux systems up-to-date with security patches.</li>
 <li>Explain how package managers, such as <code>apt</code> or <code>yum</code>, can be used to update software packages.</li>
 <li>Demonstrate how to check for system updates and apply them to ensure system security.</li>
-<li>Discuss the risks associated with running outdated software.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ sudo yum update
+<li>Discuss the risks associated with running outdated software.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ sudo yum update
 Last metadata expiration check: 3:11:33 ago on Wed 27 Sep 2023 12:15:01 AM UTC.
 Error: 
  Problem: cannot install the best update candidate for package libidn2-2.2.0-1.el8.x86_64
   - nothing provides libunistring.so.0()(64bit) needed by libidn2-2.3.4-1.el7.x86_64
-(try to add '--skip-broken' to skip uninstallable packages or '--nobest' to use not only best candidate packages)
-</code></pre>
-<ul>
-<li>When encountering error while updating it usually suggest course of action. For this one let's try the <code>--skip-broken</code> and if that doesn't work let's try the <code>--nobest</code></li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ sudo yum update --skip-broken
+(try to add &#39;--skip-broken&#39; to skip uninstallable packages or &#39;--nobest&#39; to use not only best candidate packages)
+</code></pre></div></li>
+<li>When encountering error while updating it usually suggest course of action. For this one let's try the <code>--skip-broken</code> and if that doesn't work let's try the <code>--nobest</code>
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ sudo yum update --skip-broken
 Last metadata expiration check: 3:12:58 ago on Wed 27 Sep 2023 12:15:01 AM UTC.
 Error: 
  Problem: cannot install the best update candidate for package libidn2-2.2.0-1.el8.x86_64
   - nothing provides libunistring.so.0()(64bit) needed by libidn2-2.3.4-1.el7.x86_64
-(try to add '--nobest' to use not only best candidate packages)
+(try to add &#39;--nobest&#39; to use not only best candidate packages)
 [intern@intern-a1t-inf-lnx1 ~]$ sudo yum update --nobest
 Last metadata expiration check: 3:13:25 ago on Wed 27 Sep 2023 12:15:01 AM UTC.
 Dependencies resolved.
@@ -5570,7 +5562,8 @@ Skip       1 Package
 
 Total download size: 516 M
 Is this ok [y/N]: 
-</code></pre>
+</code></pre></div></li>
+</ul>
 <hr />
 <h2 id="conclusion">Conclusion</h2>
 <p>Local security is a critical aspect of Linux system administration. In this exercise, you've learned about <code>sudo</code> for controlled command execution, the concept of process isolation, methods for limiting hardware access, and the significance of keeping Linux systems current with security updates. By following these security principles and best practices, you can help protect your Linux systems from potential threats and vulnerabilities.</p>

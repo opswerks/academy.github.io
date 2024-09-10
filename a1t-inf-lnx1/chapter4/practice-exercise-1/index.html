@@ -5327,9 +5327,8 @@
 <li>As a sudo user you can change another users password</li>
 <li>Switch to the <code>newuser</code> account using the <code>su</code> command.</li>
 <li>Display the current user and verify that you are now the <code>newuser</code>.</li>
-<li>Exit the <code>newuser</code> account using the <code>exit</code> command.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ whoami
+<li>Exit the <code>newuser</code> account using the <code>exit</code> command.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ whoami
 intern
 [intern@intern-a1t-inf-lnx1 ~]$ sudo useradd newuser
 [sudo] password for intern:
@@ -5343,7 +5342,8 @@ Password:
 newuser
 [intern@intern-a1t-inf-lnx1 ~]$ exit
 [intern@intern-a1t-inf-lnx1 ~]$ 
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h2 id="task-2-user-groups">Task 2: User Groups</h2>
 <ul>
 <li>List all existing user groups on your system using the <code>cat /etc/group</code> command.</li>
@@ -5351,9 +5351,8 @@ newuser
 <li>Similar to useradd groupadd require sudo privileges as well</li>
 <li>Add your <code>newuser</code> user account to the <code>developers</code> group using the <code>usermod</code> command.</li>
 <li>Verify that your user is now part of the <code>developers</code> group.</li>
-<li>Display the group memberships of both your user account and <code>newuser</code>.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ cat /etc/group
+<li>Display the group memberships of both your user account and <code>newuser</code>.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ cat /etc/group
 root:x:0:
 daemon:x:1:
 bin:x:2:
@@ -5366,7 +5365,8 @@ newuser : newuser developers
 [intern@intern-a1t-inf-lnx1 ~]$ groups newuser intern
 newuser : newuser developers
 intern : intern adm cdrom sudo dip plugdev lxd
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h2 id="task-3-user-home-directories">Task 3: User Home Directories</h2>
 <ul>
 <li>Navigate to the <code>/home</code> directory.</li>
@@ -5377,9 +5377,8 @@ intern : intern adm cdrom sudo dip plugdev lxd
 <li>Create a text file named <code>project_plan.txt</code> inside the <code>projects</code> directory.</li>
 <li>Check the ownership and permissions of the new text file.</li>
 <li>Switch to the <code>newuser</code> account using the <code>su</code> command.</li>
-<li>Attempt to access the <code>projects</code> directory and <code>project_plan.txt</code>. Note any access restrictions.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ ls /home
+<li>Attempt to access the <code>projects</code> directory and <code>project_plan.txt</code>. Note any access restrictions.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ ls /home
 intern
 [intern@intern-a1t-inf-lnx1 ~]$ sudo mkdir /home/projects
 [sudo] password for intern:
@@ -5395,13 +5394,12 @@ drwxr-xr-x  2 intern developers 4096 Sep 19 09:26 projects
 Password:
 [newuser@intern-a1t-inf-lnx1 ~]$ cd /home/projects
 [newuser@intern-a1t-inf-lnx1 ~]$ touch test.txt
-touch: cannot touch 'test.txt': Permission denied
+touch: cannot touch &#39;test.txt&#39;: Permission denied
 [newuser@intern-a1t-inf-lnx1 ~]$ ls -l /home
 total 8
 drwxr-x--- 10 intern intern     4096 Sep 18 14:53 intern
 drwxr-xr-x  2 intern developers 4096 Sep 19 09:28 projects
-</code></pre>
-<ul>
+</code></pre></div></li>
 <li>As you can see even though we are part of the group developers that own the directory we can't still write since the group only has read and execute access.</li>
 <li>If you don't know how to read the file permission yet we will discuss it in the next topics</li>
 </ul>
@@ -5410,9 +5408,8 @@ drwxr-xr-x  2 intern developers 4096 Sep 19 09:28 projects
 <li>Remove the user <code>newuser</code> from the system using the <code>userdel</code> command.</li>
 <li>Verify that <code>newuser</code> is no longer listed in <code>/etc/passwd</code>.</li>
 <li>Remove the <code>developers</code> group from the system using the <code>groupdel</code> command.</li>
-<li>Verify that the <code>developers</code> group is no longer listed in <code>/etc/group</code>.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ cat /etc/passwd | grep newuser
+<li>Verify that the <code>developers</code> group is no longer listed in <code>/etc/group</code>.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ cat /etc/passwd | grep newuser
 newuser:x:1001:1001::/home/newuser:/bin/sh
 [intern@intern-a1t-inf-lnx1 ~]$ sudo userdel newuser
 [intern@intern-a1t-inf-lnx1 ~]$ cat /etc/passwd | grep newuser
@@ -5420,7 +5417,8 @@ newuser:x:1001:1001::/home/newuser:/bin/sh
 developers:x:1002:
 [intern@intern-a1t-inf-lnx1 ~]$ sudo groupdel developers
 [intern@intern-a1t-inf-lnx1 ~]$ cat /etc/group | grep developers
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h2 id="conclusion">Conclusion:</h2>
 <p>In this lab exercise, you've gained hands-on experience with managing user accounts, creating new users, working with user groups, and configuring user home directories in a Linux environment. Understanding user management is essential for system administration and security.</p>
 

@@ -5340,19 +5340,18 @@
 <li>Open a terminal window.</li>
 <li>Create a sample text file named <code>original.txt</code> with a sentence or phrase.</li>
 <li>Use the <code>rev</code> command to reverse the characters in the <code>original.txt</code> file.</li>
-<li>Observe the reversed output.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ echo &quot;Hello, world!&quot; &gt; original.txt
+<li>Observe the reversed output.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ echo &quot;Hello, world!&quot; &gt; original.txt
 [intern@intern-a1t-inf-lnx1 ~]$ rev original.txt
 !dlrow ,olleH
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h2 id="task-2-counting-words-and-characters-with-wc">Task 2: Counting Words and Characters with <code>wc</code></h2>
 <ul>
 <li>Create a new text file named <code>word_count.txt</code> with several lines of text.</li>
 <li>Use the <code>wc</code> command to count the number of words, lines, and characters in the <code>word_count.txt</code> file.</li>
-<li>Experiment with different options to display specific counts.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ echo &quot;This is a sample text file.&quot; &gt; word_count.txt
+<li>Experiment with different options to display specific counts.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ echo &quot;This is a sample text file.&quot; &gt; word_count.txt
 [intern@intern-a1t-inf-lnx1 ~]$ echo &quot;It contains multiple lines.&quot; &gt;&gt; word_count.txt
 [intern@intern-a1t-inf-lnx1 ~]$ echo &quot;Counting words and characters.&quot; &gt;&gt; word_count.txt
 
@@ -5361,14 +5360,14 @@
 
 [intern@intern-a1t-inf-lnx1 ~]$ wc -l word_count.txt
 3 word_count.txt
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h2 id="task-3-sorting-text-with-sort">Task 3: Sorting Text with <code>sort</code></h2>
 <ul>
 <li>Create a text file named <code>unsorted.txt</code> with multiple lines of unsorted text.</li>
 <li>Use the <code>sort</code> command to alphabetically sort the lines in the <code>unsorted.txt</code> file.</li>
-<li>Try sorting the text in reverse order and in numerical order.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ echo &quot;zebra
+<li>Try sorting the text in reverse order and in numerical order.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ echo &quot;zebra
 apple
 banana
 grape&quot; &gt; unsorted.txt
@@ -5397,13 +5396,13 @@ zebra
 3
 5
 42
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h2 id="task-4-removing-duplicate-lines-with-uniq">Task 4: Removing Duplicate Lines with <code>uniq</code></h2>
 <ul>
 <li>Create a text file named <code>duplicates.txt</code> with some duplicate lines.</li>
-<li>Use the <code>uniq</code> command to remove duplicate lines and save the result in a new file called <code>unique_lines.txt</code>.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ echo &quot;apple
+<li>Use the <code>uniq</code> command to remove duplicate lines and save the result in a new file called <code>unique_lines.txt</code>.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ echo &quot;apple
 banana
 apple
 orange&quot; &gt; duplicates.txt
@@ -5416,26 +5415,25 @@ orange
 apple
 banana
 orange
-</code></pre>
-<ul>
+</code></pre></div></li>
 <li>uniq is often used with sort</li>
 </ul>
 <h2 id="task-5-formatting-text-with-fmt">Task 5: Formatting Text with <code>fmt</code></h2>
 <ul>
 <li>Create a text file named <code>long_paragraph.txt</code> with a lengthy paragraph of text.</li>
 <li>Use the <code>fmt</code> command to format the text, specifying a maximum line width.</li>
-<li>Observe how <code>fmt</code> wraps and formats the text.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ echo &quot;This is a very long paragraph of text that needs formatting. It goes on and on, with no line breaks, making it difficult to read. Let's use the fmt command to format this text and wrap it to a specified line width.&quot; &gt; long_paragraph.txt
+<li>Observe how <code>fmt</code> wraps and formats the text.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ echo &quot;This is a very long paragraph of text that needs formatting. It goes on and on, with no line breaks, making it difficult to read. Let&#39;s use the fmt command to format this text and wrap it to a specified line width.&quot; &gt; long_paragraph.txt
 
 [intern@intern-a1t-inf-lnx1 ~]$ fmt -w 40 long_paragraph.txt
 This is a very long paragraph of text
 that needs formatting. It goes on and
 on, with no line breaks, making it
-difficult to read. Let's use the fmt
+difficult to read. Let&#39;s use the fmt
 command to format this text and wrap
 it to a specified line width.
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h2 id="conclusion">Conclusion</h2>
 <p>In this lab exercise, you've explored various miscellaneous text manipulation utilities in Linux, including reversing text with <code>rev</code>, counting words and characters with <code>wc</code>, sorting text with <code>sort</code>, removing duplicate lines with <code>uniq</code>, extracting text columns with <code>cut</code>, and formatting text with <code>fmt</code>. These utilities are valuable for various text processing tasks in a Linux environment.</p>
 

@@ -5289,27 +5289,27 @@
 <h2 id="exercises">Exercises</h2>
 <p>Syncing Clock to NTP</p>
 <p>Step 1. Connect to your machine via SSH.</p>
-<p>Step 2. Install Chrony if it's not already installed:</p>
-<pre><code>sudo yum install chrony
-</code></pre>
-<p>Step 3. Start and enable the Chrony service:</p>
-<pre><code>sudo systemctl start chronyd
+<p>Step 2. Install Chrony if it's not already installed:
+<div class="highlight"><pre><span></span><code>sudo yum install chrony
+</code></pre></div>
+Step 3. Start and enable the Chrony service:
+<div class="highlight"><pre><span></span><code>sudo systemctl start chronyd
 sudo systemctl enable chronyd
-</code></pre>
-<p>Step 4. Edit the Chrony configuration file</p>
-<pre><code>sudo nano /etc/chrony.conf
-</code></pre>
-<p>Add NTP server sources to the configuration file. For example, add the following lines to use the NTP pool servers:</p>
-<pre><code>server 0.centos.pool.ntp.org iburst
+</code></pre></div>
+Step 4. Edit the Chrony configuration file
+<div class="highlight"><pre><span></span><code>sudo nano /etc/chrony.conf
+</code></pre></div>
+Add NTP server sources to the configuration file. For example, add the following lines to use the NTP pool servers:</p>
+<p><div class="highlight"><pre><span></span><code>server 0.centos.pool.ntp.org iburst
 server 1.centos.pool.ntp.org iburst
 server 2.centos.pool.ntp.org iburst
 server 3.centos.pool.ntp.org iburst
-</code></pre>
-<p>Step 5. Save and close the configuration file.</p>
-<p>Step 6. Check the status of the Chrony service to verify that it's running:</p>
-<pre><code>chronyc tracking
-</code></pre>
-<p>This command will display information about the system's clock and how well it is synchronized with the NTP server.
+</code></pre></div>
+Step 5. Save and close the configuration file.</p>
+<p>Step 6. Check the status of the Chrony service to verify that it's running:
+<div class="highlight"><pre><span></span><code>chronyc tracking
+</code></pre></div>
+This command will display information about the system's clock and how well it is synchronized with the NTP server.
 &nbsp;</p>
 <p>Here's a breakdown of the information provided from the above command:</p>
 <p><strong>Reference ID</strong>: The IP address or hostname of the NTP server to which the system is synchronized.</p>

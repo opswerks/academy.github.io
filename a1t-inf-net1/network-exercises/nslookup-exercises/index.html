@@ -5504,64 +5504,64 @@
 <ul>
 <li>Open a terminal on your Linux server.</li>
 <li>Run the following command to check the DNS configuration:
-     <code>bash
-     nslookup google.com</code></li>
+     <div class="highlight"><pre><span></span><code>nslookup<span class="w"> </span>google.com
+</code></pre></div></li>
 <li>Note down the IP address of the DNS server used.</li>
 </ul>
 <h3 id="task-2-test-dns-resolution">Task 2: Test DNS Resolution</h3>
 <ul>
 <li>Use <code>nslookup</code> to resolve the IP address of google.com:
-     <code>bash
-     nslookup google.com</code></li>
+     <div class="highlight"><pre><span></span><code>nslookup<span class="w"> </span>google.com
+</code></pre></div></li>
 <li>Ensure that the IP address matches the one you noted in Step 1.</li>
 </ul>
 <h3 id="task-3-test-reverse-dns-lookup">Task 3: Test Reverse DNS Lookup</h3>
 <ul>
 <li>Perform a reverse DNS lookup for an IP address:
-     <code>bash
-     nslookup 8.8.8.8</code></li>
+     <div class="highlight"><pre><span></span><code>nslookup<span class="w"> </span><span class="m">8</span>.8.8.8
+</code></pre></div></li>
 <li>Verify that it resolves to a meaningful hostname.</li>
 </ul>
 <h3 id="task-4-query-specific-dns-server">Task 4: Query Specific DNS Server</h3>
 <ul>
 <li>Query a specific DNS server (e.g., 8.8.4.4) for a domain name:
-     <code>bash
-     nslookup google.com 8.8.4.4</code></li>
+     <div class="highlight"><pre><span></span><code>nslookup<span class="w"> </span>google.com<span class="w"> </span><span class="m">8</span>.8.4.4
+</code></pre></div></li>
 <li>Compare the results with the default DNS server.</li>
 </ul>
 <h3 id="task-5-query-a-non-existent-domain">Task 5: Query a Non-Existent Domain</h3>
 <ul>
 <li>Try to resolve a non-existent domain:
-     <code>bash
-     nslookup nonexistentsite123.com</code></li>
+     <div class="highlight"><pre><span></span><code>nslookup<span class="w"> </span>nonexistentsite123.com
+</code></pre></div></li>
 <li>Analyze the error message.</li>
 </ul>
 <h3 id="task-6-diagnose-dns-timeout">Task 6: Diagnose DNS Timeout</h3>
 <ul>
 <li>Test DNS resolution for a site known to be slow or unavailable:
-     <code>bash
-     nslookup slowwebsite.com</code></li>
+     <div class="highlight"><pre><span></span><code>nslookup<span class="w"> </span>slowwebsite.com
+</code></pre></div></li>
 <li>Analyze the timeout message.</li>
 </ul>
 <h3 id="task-7-debug-dns-with-verbose-output">Task 7: Debug DNS with Verbose Output</h3>
 <ul>
 <li>Use verbose mode to get detailed information about DNS queries:
-     <code>bash
-     nslookup -debug google.com</code></li>
+     <div class="highlight"><pre><span></span><code>nslookup<span class="w"> </span>-debug<span class="w"> </span>google.com
+</code></pre></div></li>
 <li>Examine the verbose output for additional insights.</li>
 </ul>
 <h3 id="task-8-check-dns-cache">Task 8: Check DNS Cache</h3>
 <ul>
 <li>Check the local DNS cache for cached records:
-     <code>bash
-     nslookup -querytype=any google.com</code></li>
+     <div class="highlight"><pre><span></span><code>nslookup<span class="w"> </span>-querytype<span class="o">=</span>any<span class="w"> </span>google.com
+</code></pre></div></li>
 <li>Note any cached records and their TTL (Time To Live).</li>
 </ul>
 <h3 id="task-9-perform-dnssec-validation">Task 9: Perform DNSSEC Validation</h3>
 <ul>
 <li>Test DNSSEC validation for a secure domain:
-     <code>bash
-     nslookup +dnssec isc.org</code></li>
+     <div class="highlight"><pre><span></span><code>nslookup<span class="w"> </span>+dnssec<span class="w"> </span>isc.org
+</code></pre></div></li>
 <li>Check if DNSSEC validation was successful.</li>
 </ul>
 <h3 id="task-10-troubleshooting-dns-with-dig">Task 10: Troubleshooting DNS with <code>dig</code></h3>

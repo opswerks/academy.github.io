@@ -5392,18 +5392,17 @@
 <h3 id="task-1-display-arp-cache">Task 1: Display ARP Cache</h3>
 <ul>
 <li>Use the <code>arp</code> command to display the ARP cache table.</li>
-<li>Identify the MAC addresses associated with IP addresses in the cache.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ arp
+<li>Identify the MAC addresses associated with IP addresses in the cache.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ arp
 Address                  HWtype  HWaddress           Flags Mask            Iface
 gw-li2013.linode.com     ether   00:00:0c:9f:f0:08   C                     eth0
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h3 id="task-2-trace-route-to-a-host">Task 2: Trace Route to a Host</h3>
 <ul>
 <li>Use the <code>traceroute</code> command to trace the route to a remote host, e.g., <code>traceroute linux.org</code>.</li>
-<li>Examine the list of hops between your system and the remote host.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ traceroute linux.org
+<li>Examine the list of hops between your system and the remote host.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ traceroute linux.org
 traceroute to linux.org (172.67.73.26), 30 hops max, 60 byte packets
  1  10.209.3.88 (10.209.3.88)  0.256 ms  0.241 ms  0.238 ms
  2  10.209.35.54 (10.209.35.54)  0.232 ms  0.227 ms  0.220 ms
@@ -5414,14 +5413,14 @@ traceroute to linux.org (172.67.73.26), 30 hops max, 60 byte packets
  7  93.186.133.94 (93.186.133.94)  0.716 ms cloudflare-ic-350354.ip.twelve99-cust.net (62.115.181.151)  1.270 ms 93.186.133.94 (93.186.133.94)  0.687 ms
  8  93.186.133.17 (93.186.133.17)  1.139 ms 93.186.133.93 (93.186.133.93)  1.223 ms *
  9  172.67.73.26 (172.67.73.26)  1.254 ms *  0.946 ms
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h3 id="task-3-check-listening-ports">Task 3: Check Listening Ports</h3>
 <ul>
 <li>Use the <code>netstat</code> or <code>ss</code> command to display a list of listening ports on your system.</li>
 <li>Identify which services are listening on specific ports.</li>
-<li>Note any suspicious or unexpected ports.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ netstat -ln
+<li>Note any suspicious or unexpected ports.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ netstat -ln
 Active Internet connections (only servers)
 Proto Recv-Q Send-Q Local Address           Foreign Address         State
 tcp        0      0 127.0.0.53:53           0.0.0.0:*               LISTEN
@@ -5449,13 +5448,13 @@ u_dgr ESTAB    0      0                                    * 19657              
 u_str ESTAB    0      0                                    * 18285                * 18424
 u_str ESTAB    0      0          /run/dbus/system_bus_socket 20643                * 20320
 u_str ESTAB    0      0          /run/systemd/journal/stdout 20389                * 20382
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h3 id="task-4-test-dns-resolution">Task 4: Test DNS Resolution</h3>
 <ul>
 <li>Use the <code>nslookup</code> or <code>dig</code> command to test DNS resolution for a domain name, e.g., <code>nslookup linuxfoundation.org</code>.</li>
-<li>Observe the DNS server's response.</li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ nslookup linuxfoundation.org
+<li>Observe the DNS server's response.
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ nslookup linuxfoundation.org
 Server:     127.0.0.53
 Address:    127.0.0.53#53
 
@@ -5484,15 +5483,15 @@ linuxfoundation.org.    596 IN  A   3.13.31.214
 ;; SERVER: 139.162.10.8#53(139.162.10.8)
 ;; WHEN: Tue Oct 03 05:58:45 UTC 2023
 ;; MSG SIZE  rcvd: 64
-</code></pre>
+</code></pre></div></li>
+</ul>
 <h3 id="task-5-configure-a-static-ip-address">Task 5: Configure a Static IP Address</h3>
 <ul>
 <li>If you have a spare virtual machine or test system, try configuring a static IP address for one of its network interfaces.</li>
 <li>Use the <code>ifconfig</code> or <code>ip</code> command to set the IP address, subnet mask, and gateway.</li>
 <li>Check for your network interface</li>
-<li>In my case I'll be updating the network interface <code>enp0s1</code></li>
-</ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ ip a
+<li>In my case I'll be updating the network interface <code>enp0s1</code>
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ ip a
 1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
     inet 127.0.0.1/8 scope host lo
@@ -5525,8 +5524,7 @@ linuxfoundation.org.    596 IN  A   3.13.31.214
        valid_lft 2591914sec preferred_lft 604714sec
     inet6 fe80::f0d0:95ff:fe0d:2004/64 scope link
        valid_lft forever preferred_lft forever
-</code></pre>
-<ul>
+</code></pre></div></li>
 <li>Note that this changes won't persist between reboots</li>
 </ul>
 <hr />

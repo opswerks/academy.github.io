@@ -454,6 +454,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#run-sleep-in-the-background-internintern-a1t-inf-lnx1-sleep-1000000-internintern-a1t-inf-lnx1-ps-aux-grep-sleep-intern-22512-00-01-217088-1792-pts1-s-0649-000-sleep-1000000-intern-22513-00-02-221944-2304-pts1-r-0648-000-grep-colorauto-sleep-kill-the-sleep-process-forcefully-using-the-sigkill-9-signal-internintern-a1t-inf-lnx1-kill-9-22512-internintern-a1t-inf-lnx1-1-killed-sleep-1000000" class="md-nav__link">
+    <span class="md-ellipsis">
+      # Run sleep in the background [intern@intern-a1t-inf-lnx1 ~]$ sleep 1000000 &amp; [intern@intern-a1t-inf-lnx1 ~]$ ps aux | grep sleep intern 22512 0.0 0.1 217088 1792 pts/1 S 06:49 0:00 sleep 1000000 intern 22513 0.0 0.2 221944 2304 pts/1 R+ 06:48 0:00 grep --color=auto sleep # Kill the sleep process forcefully using the SIGKILL (-9) signal [intern@intern-a1t-inf-lnx1 ~]$ kill -9 22512 [intern@intern-a1t-inf-lnx1 ~]$ [1]+ Killed sleep 1000000
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#conclusion" class="md-nav__link">
     <span class="md-ellipsis">
       Conclusion
@@ -5375,6 +5384,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#run-sleep-in-the-background-internintern-a1t-inf-lnx1-sleep-1000000-internintern-a1t-inf-lnx1-ps-aux-grep-sleep-intern-22512-00-01-217088-1792-pts1-s-0649-000-sleep-1000000-intern-22513-00-02-221944-2304-pts1-r-0648-000-grep-colorauto-sleep-kill-the-sleep-process-forcefully-using-the-sigkill-9-signal-internintern-a1t-inf-lnx1-kill-9-22512-internintern-a1t-inf-lnx1-1-killed-sleep-1000000" class="md-nav__link">
+    <span class="md-ellipsis">
+      # Run sleep in the background [intern@intern-a1t-inf-lnx1 ~]$ sleep 1000000 &amp; [intern@intern-a1t-inf-lnx1 ~]$ ps aux | grep sleep intern 22512 0.0 0.1 217088 1792 pts/1 S 06:49 0:00 sleep 1000000 intern 22513 0.0 0.2 221944 2304 pts/1 R+ 06:48 0:00 grep --color=auto sleep # Kill the sleep process forcefully using the SIGKILL (-9) signal [intern@intern-a1t-inf-lnx1 ~]$ kill -9 22512 [intern@intern-a1t-inf-lnx1 ~]$ [1]+ Killed sleep 1000000
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#conclusion" class="md-nav__link">
     <span class="md-ellipsis">
       Conclusion
@@ -5417,7 +5435,7 @@
 <li>Explore various options and arguments of the <code>ps</code> command to customize the process listing (e.g., <code>ps aux</code> or <code>ps -ef</code> for a more detailed list).</li>
 <li>What are the three options that ps accepts?</li>
 </ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ ps
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ ps
   PID TTY           TIME CMD
     PID TTY          TIME CMD
   22462 pts/1    00:00:00 bash
@@ -5443,8 +5461,8 @@ root       22496  0.0  0.0      0     0 ?        R    06:30   0:00 [kworker/u2:0
 root       22501  0.0  0.0      0     0 ?        I    06:40   0:00 [kworker/0:2-cgroup_pidlist_destroy]
 root       22502  0.0  0.0      0     0 ?        I    06:40   0:00 [kworker/0:3-events]
 intern       22506  0.0  0.3 257436  3840 pts/1    R+   06:45   0:00 ps aux
-</code></pre>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ ps -ef
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ ps -ef
 UID          PID    PPID  C STIME TTY          TIME CMD
 root           1       0  0 Oct11 ?        00:00:05 /sbin/init
 root           2       0  0 Oct11 ?        00:00:00 [kthreadd]
@@ -5462,7 +5480,7 @@ intern       22462   22461  0 06:30 pts/1    00:00:00 -bash
 root       22496       2  0 06:30 ?        00:00:00 [kworker/u2:0-events_unbound]
 root       22502       2  0 06:40 ?        00:00:00 [kworker/0:3-mm_percpu_wq]
 intern       22507   22462  0 06:46 pts/1    00:00:00 ps -ef
-</code></pre>
+</code></pre></div>
 <h3 id="task-2-viewing-process-hierarchy">Task 2: Viewing Process Hierarchy</h3>
 <ul>
 <li>Use the <code>ps</code> command to display processes in a hierarchical tree structure.</li>
@@ -5470,7 +5488,7 @@ intern       22507   22462  0 06:46 pts/1    00:00:00 ps -ef
 <li>Identify the parent-child relationships between processes.</li>
 <li>Note the PPID (Parent Process ID) column to understand which process spawned other processes.</li>
 </ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ pstree
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ pstree
 systemd─┬─NetworkManager───2*[{NetworkManager}]
         ├─2*[agetty]
         ├─atd
@@ -5512,7 +5530,7 @@ root       20370  0.0 13.9 311256 135576 ?       Ssl  Oct12   1:11 splunkd --und
 root       20404  0.0  2.1 133352 21272 ?        Ss   Oct12   0:00  \_ [splunkd pid=20370] splunkd --under-systemd --systemd-delegate=yes -p 8
 intern       22452  0.0  1.1  89464 11116 ?        Ss   06:30   0:00 /usr/lib/systemd/systemd --user
 intern       22455  0.0  0.8 232196  8124 ?        S    06:30   0:00  \_ (sd-pam)
-</code></pre>
+</code></pre></div>
 <h3 id="task-3-monitoring-processes-with-top">Task 3: Monitoring Processes with <code>top</code></h3>
 <ul>
 <li>Launch the <code>top</code> command in your terminal.</li>
@@ -5520,7 +5538,7 @@ intern       22455  0.0  0.8 232196  8124 ?        S    06:30   0:00  \_ (sd-pam
 <li>Pay attention to CPU usage, memory usage, load averages, and the list of running processes.</li>
 <li>Use the <code>q</code> key to exit <code>top</code> when you're done.</li>
 </ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ top
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ top
 top - 03:19:22 up 5 days,  1:45,  1 user,  load average: 0.00, 0.00, 0.00
 Tasks: 160 total,   1 running, 159 sleeping,   0 stopped,   0 zombie
 %Cpu(s):  0.3 us,  0.3 sy,  0.0 ni, 99.0 id,  0.0 wa,  0.0 hi,  0.3 si,  0.0 st
@@ -5535,7 +5553,7 @@ MiB Swap:      0.0 total,      0.0 free,      0.0 used.    472.1 avail Mem
       5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 slub_flushwq
       6 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 netns
       8 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/0:0H-events_highpri
-</code></pre>
+</code></pre></div>
 <h3 id="task-4-sorting-and-filtering-processes-in-top">Task 4: Sorting and Filtering Processes in <code>top</code></h3>
 <ul>
 <li>Start <code>top</code> again.</li>
@@ -5543,8 +5561,8 @@ MiB Swap:      0.0 total,      0.0 free,      0.0 used.    472.1 avail Mem
 <li>Use the <code>o</code> key to apply filters. For example, press <code>o</code> and enter a filter like <code>USER eq &lt;username&gt;</code> to display processes for a specific user.</li>
 <li>Explore other sorting and filtering options available in <code>top</code>.</li>
 </ul>
-<pre><code>[intern@intern-a1t-inf-lnx1 ~]$ top
-</code></pre>
+<div class="highlight"><pre><span></span><code>[intern@intern-a1t-inf-lnx1 ~]$ top
+</code></pre></div>
 <h3 id="task-5-sending-signals-to-processes">Task 5: Sending Signals to Processes</h3>
 <ul>
 <li>Identify a process from the <code>ps</code> or <code>top</code> list that you want to interact with.</li>
@@ -5552,7 +5570,7 @@ MiB Swap:      0.0 total,      0.0 free,      0.0 used.    472.1 avail Mem
 <li>Use the <code>kill</code> command to send a signal to the selected process (e.g., <code>kill &lt;PID&gt;</code> to gracefully terminate it).</li>
 <li>Observe how the process responds to different signals.</li>
 </ul>
-<pre><code># Run sleep in the background
+<h2 id="run-sleep-in-the-background-internintern-a1t-inf-lnx1-sleep-1000000-internintern-a1t-inf-lnx1-ps-aux-grep-sleep-intern-22512-00-01-217088-1792-pts1-s-0649-000-sleep-1000000-intern-22513-00-02-221944-2304-pts1-r-0648-000-grep-colorauto-sleep-kill-the-sleep-process-forcefully-using-the-sigkill-9-signal-internintern-a1t-inf-lnx1-kill-9-22512-internintern-a1t-inf-lnx1-1-killed-sleep-1000000"><div class="highlight"><pre><span></span><code># Run sleep in the background
 [intern@intern-a1t-inf-lnx1 ~]$ sleep 1000000 &amp;
 
 [intern@intern-a1t-inf-lnx1 ~]$ ps aux | grep sleep
@@ -5563,8 +5581,7 @@ intern       22513  0.0  0.2 221944  2304 pts/1    R+   06:48   0:00 grep --colo
 [intern@intern-a1t-inf-lnx1 ~]$ kill -9 22512
 [intern@intern-a1t-inf-lnx1 ~]$
 [1]+  Killed              sleep 1000000
-</code></pre>
-<hr />
+</code></pre></div></h2>
 <h2 id="conclusion">Conclusion</h2>
 <p>This practice exercise has provided you with practical experience in listing and monitoring processes using the <code>ps</code> and <code>top</code> commands on a Linux system. You've learned how to customize process listings, view process hierarchies, monitor system statistics, sort and filter processes, and send signals to control processes. These skills are essential for system administrators to efficiently manage processes and troubleshoot system performance.</p>
 

@@ -5265,26 +5265,28 @@
 <p>Understand and utilize <code>curl</code> with various switches for different functionalities.</p>
 <h2 id="tasks">Tasks</h2>
 <ul>
-<li>Use the following command to download files using curl:</li>
+<li>
+<p>Use the following command to download files using curl:
+<div class="highlight"><pre><span></span><code>curl -o download.txt a1t-inf-ds-files.acad.opswerks.net/requirements.txt
+</code></pre></div>
+The <code>-o</code> flag specifies an output file where the downloaded content will be saved. In this case, it will save the file as <code>download.txt</code> in your current directory.</p>
+</li>
+<li>
+<p>Make an HTTP POST request:
+<div class="highlight"><pre><span></span><code>curl -X POST -d &quot;name=&lt;YOUR_FIRST_NAME&gt;&amp;age=&lt;YOUR_AGE&gt;&quot; https://jsonplaceholder.typicode.com/users
+</code></pre></div></p>
+</li>
+<li>
+<p>Make an HTTP GET request:
+<div class="highlight"><pre><span></span><code>curl https://jsonplaceholder.typicode.com/users
+</code></pre></div></p>
+</li>
+<li>
+<p>Use the following command to retrieve the content of a specific webpage:
+<div class="highlight"><pre><span></span><code>curl https://opswerks.com
+</code></pre></div></p>
+</li>
 </ul>
-<pre><code>curl -o download.txt a1t-inf-ds-files.acad.opswerks.net/requirements.txt
-</code></pre>
-<p>The <code>-o</code> flag specifies an output file where the downloaded content will be saved. In this case, it will save the file as <code>download.txt</code> in your current directory.</p>
-<ul>
-<li>Make an HTTP POST request:</li>
-</ul>
-<pre><code>curl -X POST -d &quot;name=&lt;YOUR_FIRST_NAME&gt;&amp;age=&lt;YOUR_AGE&gt;&quot; https://jsonplaceholder.typicode.com/users
-</code></pre>
-<ul>
-<li>Make an HTTP GET request:</li>
-</ul>
-<pre><code>curl https://jsonplaceholder.typicode.com/users
-</code></pre>
-<ul>
-<li>Use the following command to retrieve the content of a specific webpage:</li>
-</ul>
-<pre><code>curl https://opswerks.com
-</code></pre>
 <h2 id="conclusion">Conclusion</h2>
 <p>In summary, <code>curl</code> is a powerful and flexible tool for transferring data over various network protocols, and it's particularly important in the Linux ecosystem because it simplifies tasks that involve web interactions, making it a handy utility for both everyday users and system administrators</p>
 
