@@ -5144,6 +5144,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#before-you-begin" class="md-nav__link">
+    <span class="md-ellipsis">
+      Before you begin...
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#hosts" class="md-nav__link">
     <span class="md-ellipsis">
       Hosts
@@ -5228,6 +5237,11 @@
 
 
 <h1 id="kubernetes-assessment">Kubernetes Assessment</h1>
+<h2 id="before-you-begin">Before you begin...</h2>
+<ul>
+<li>Ensure with your instructor that your instance has been reset</li>
+<li>Make sure you can login to your instance using your account and password (<a href="https://academy-lab.opswerks.net/a1t-inf-lnx1/lab/environment">see here for reference</a>)</li>
+</ul>
 <h2 id="hosts">Hosts</h2>
 <ul>
 <li>&lt;username&gt;-a2t-pe-kub1-1a.acad.opswerks.net - Control Plane</li>
@@ -5238,20 +5252,20 @@
 <ol>
 <li>
 <p>Namespace</p>
-<p>Task: Create a new namespace called <code>pathways</code>.</p>
+<p>Task: Create a new namespace called <code>opswerks</code>.</p>
 </li>
 <li>
 <p>Deploy a Pod.</p>
-<p>Task: Create a pod in the <code>pathways</code> namespace with the following specifications:</p>
-<pre><code>Pod name: nginx-pod
+<p>Task: Create a pod in the <code>opswerks</code> namespace with the following specifications:</p>
+<pre><code>Pod name: nginx-pod-1
 
 Image: nginx:latest
 </code></pre>
 </li>
 <li>
 <p>Create a Deployment</p>
-<p>Task: Create a deployment in the <code>pathways</code> namespace with the following specifications:</p>
-<pre><code>Deployment name: nginx-deployment
+<p>Task: Create a deployment in the <code>opswerks</code> namespace with the following specifications:</p>
+<pre><code>Deployment name: nginx-deployment-1
 
 Replicas: 3
 
@@ -5260,7 +5274,7 @@ Image: nginx:latest
 </li>
 <li>
 <p>Expose the Deployment</p>
-<p>Task: Expose the <code>nginx-deployment</code> as a service with the following specifications:</p>
+<p>Task: Expose the <code>nginx-deployment-1</code> as a service with the following specifications:</p>
 <pre><code>Service name: nginx-service
 
 Type: ClusterIP
@@ -5274,24 +5288,24 @@ Port: 80
 <ol>
 <li>
 <p>Create a ConfigMap</p>
-<p>Task: Create a <code>ConfigMap</code> in the <code>pathways</code> namespace with the following data:</p>
+<p>Task: Create a <code>ConfigMap</code> in the <code>opswerks</code> namespace with the following data:</p>
 <p>ConfigMap name: app-config</p>
 <pre><code>Data: app.properties: "key1=value1\nkey2=value2"
 </code></pre>
 </li>
 <li>
 <p>Create a Secret</p>
-<p>Task: Create a <code>Secret</code> in the <code>pathways</code> namespace with the following data:</p>
+<p>Task: Create a <code>Secret</code> in the <code>opswerks</code> namespace with the following data:</p>
 <pre><code>Secret name: app-secret
 
 Data: username=admin
 
-Data: password=pathways2024
+Data: password=opswerks2024
 </code></pre>
 </li>
 <li>
 <p>Deploy a Pod with <code>ConfigMap</code> and <code>Secret</code></p>
-<p>Task1: Create a <code>pod</code> in the <code>pathways</code> namespace with the following specifications:</p>
+<p>Task1: Create a <code>pod</code> in the <code>opswerks</code> namespace with the following specifications:</p>
 <pre><code>Pod name: app-pod
 
 Image: nginx:latest
@@ -5305,7 +5319,7 @@ ENV_PASSWORD from password
 </li>
 <li>
 <p>Create a Multi-Container Pod</p>
-<p>Task:Create a pod in the <code>pathways</code> namespace with the following specifications:</p>
+<p>Task:Create a pod in the <code>opswerks</code> namespace with the following specifications:</p>
 <pre><code>Pod name: multi-pod
 
 First container:
@@ -5350,7 +5364,7 @@ Verify that the ConfigMap, Secret, and pods have been created and are functionin
 <li>
 <p>Use Taints and Tolerations</p>
 <p>Tasks:</p>
-<p>Taint a <code>node</code> with the key dedicated, value <code>frontend</code>, and effect <code>NoSchedule</code>.</p>
+<p>Taint the <code>CP</code> <code>node</code> with the key <code>dedicated</code>, value <code>frontend</code>, and effect <code>NoSchedule</code>.</p>
 <p>Deploy a <code>pod</code> that <code>tolerates the taint</code> applied to the node.</p>
 </li>
 </ol>
@@ -5380,7 +5394,7 @@ Expose: port 80
 <p>Tasks: Create a ConfigMap named nginx-config in <code>opswerks</code> namespace with the following configuration:</p>
 <pre><code>Key: index.html
 
-Value: A custom HTML content (e.g., Hello from OpsWerks! Pathways!)
+Value: A custom HTML content (e.g., Hello from OpsWerks! opswerks!)
 
 Update the nginx-deployment to use the nginx-config ConfigMap.
 
