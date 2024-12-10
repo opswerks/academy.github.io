@@ -12,15 +12,15 @@
       
       
       <link rel="icon" href="../../../images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.48">
     
     
       
-        <title>Uhhh... - OpsWerks Academy</title>
+        <title>Lab exam - OpsWerks Academy</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.0253249f.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6f8fc17f.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#uhhh" class="md-skip">
+        <a href="#linux-fundamentals-practical-assessment" class="md-skip">
           Skip to content
         </a>
       
@@ -103,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Uhhh...
+              Lab exam
             
           </span>
         </div>
@@ -5137,6 +5137,65 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#before-you-begin" class="md-nav__link">
+    <span class="md-ellipsis">
+      Before you begin...
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tasks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#task-1-linux-core-concepts-security-and-file-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Task 1: Linux Core Concepts + Security and File Permissions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-2-bash-scripting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Task 2: BASH Scripting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-3-networking-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Task 3: Networking + Storage
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -5150,8 +5209,59 @@
                   
 
 
-<h1 id="uhhh">Uhhh...</h1>
-<p>I don't think you should be here...yet 😏 spend more time to review and do hands-on practices for now. We'll open this one soon!</p>
+<!---
+Lab Setup Requirements:
+- additional disk for /dev/sdc
+- install and run atd
+-->
+
+<h1 id="linux-fundamentals-practical-assessment">Linux Fundamentals Practical Assessment</h1>
+<h2 id="before-you-begin">Before you begin...</h2>
+<ul>
+<li>Make sure you can login to your instance using your account and password (see here for reference) </li>
+<li><strong>Note: Your instances will be rebooted after you have taken your exam</strong></li>
+</ul>
+<h2 id="tasks">Tasks</h2>
+<h3 id="task-1-linux-core-concepts-security-and-file-permissions">Task 1: Linux Core Concepts + Security and File Permissions</h3>
+<ol>
+<li>(5 pts) Create a new user <code>rendon</code> with the home directory <code>/home/rendon</code>. </li>
+<li>(5 pts) Create a new directory named <code>/root/secure_data/</code>. Set the permissions so that the <code>owner</code> can read, write, and execute, while the group and others have no permissions. </li>
+<li>(5 pts) List all files (including the hidden files) in <code>/boot</code>. Your output should only show the <code>filenames</code>, with one filename per line. Store the output of your command in <code>/root/list_files-1.txt</code>. </li>
+<li>(5 pts) Create a copy of <code>/etc/dnf/dnf.conf</code>  and place it inside <code>/this/is/a/copy/dir/of/things/i/want/</code>. Create the directories if they’re not existing. </li>
+<li>(5 pts) Show the contents of <code>/etc/passwd</code>, excluding all lines that contain <code>rendon</code>, sort its content alphabetically, then store the overall output in <code>/root/my_users.txt</code>. </li>
+<li>(5 pts) Ensure that the <code>dig</code> command is installed and is usable in your machine. </li>
+<li>(5 pts) Get the <code>kernel release</code> of your machine and put it in <code>/root/my_kernel.txt</code>. </li>
+<li>(5 pts) Get the <code>alphabetic time zone abbreviation</code> of your machine and put it in <code>/root/my_timezone.txt</code>. </li>
+</ol>
+<h3 id="task-2-bash-scripting">Task 2: BASH Scripting</h3>
+<ol>
+<li>(10 pts) Write a <code>BASH script</code> named <code>/root/counter.sh</code> that accepts a text file as an argument. The BASH script must show the number of <code>lines</code>, <code>characters</code>, and <code>words</code>, in this order. Here's a sample output: 
+<div class="highlight"><pre><span></span><code>$ ./counter.sh /etc/passwd 
+39 
+1828 
+58 
+</code></pre></div></li>
+<li>(15 pts) Write a <code>BASH script</code> named <code>/root/num-guesser.sh</code>. Generate a random number between 1 and 100 and store it in a variable (Hint: use <code>(( $RANDOM % 100 + 1 ))</code> to do this). Ask the user to guess the number and allow them to keep guessing until they guess the correct number. Provide feedback to the user if their guess is too high or too low. Lastly, when the user guesses the correct number, display a congratulatory message and the number of attempts it took them. Ensure that your script strictly follows the expected output, as shown below: 
+<div class="highlight"><pre><span></span><code>$ ./num-guesser.sh 
+Guess the number: 8 
+Your guess was too low. Try again 
+Guess the number: 34 
+Your guess was too high. Try again 
+Guess the number: 23 
+Your guess was too low. Try again 
+Guess the number: 25 
+Your guess was too high. Try again 
+Guess the number: 24 
+Congratulations! It took you 5 attempts to guess the number 
+</code></pre></div></li>
+</ol>
+<h3 id="task-3-networking-storage">Task 3: Networking + Storage</h3>
+<ol>
+<li>(5 pts) Ensure that the <code>DNS</code> server <code>8.8.8.8</code> is added to your machine. </li>
+<li>(5 pts) Get your machine’s <code>ip address</code> (excluding the subnet mask) and put it in <code>/root/my_ip.txt</code>.  </li>
+<li>(10 pts) Create a partition in <code>/dev/sdb</code> with a size of 128MB.Format <code>/dev/sdb1</code> to ext4 and mount it to <code>/mnt/data</code>. Ensure that the mount is persistent and will be mounted during system bootup. </li>
+<li>(15 pts) Create one more partition in <code>/dev/sdb</code> with a size of <code>256MB</code>. Ensure that partition <code>/dev/sdb2</code> is using the <code>Linux LVM partition</code> type. Create a physical volume out of it, then create volume group called <code>vgsdb</code> out of the physical volume. Then, create a <code>100MB</code> logical volume named <code>lvsdb</code> from <code>vgsdb</code>. Lastly, format the logical volume to <code>xfs</code> and mount it to <code>/mnt/lvm</code>. Ensure that the mount is persistent and will be mounted during system bootup. </li>
+</ol>
 
 
 
