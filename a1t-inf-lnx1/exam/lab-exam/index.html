@@ -16,7 +16,7 @@
     
     
       
-        <title>Uhhh... - OpsWerks Academy</title>
+        <title>Lab exam - OpsWerks Academy</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#uhhh" class="md-skip">
+        <a href="#linux-fundamentals-practical-assessment" class="md-skip">
           Skip to content
         </a>
       
@@ -103,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Uhhh...
+              Lab exam
             
           </span>
         </div>
@@ -5547,6 +5547,65 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#before-you-begin" class="md-nav__link">
+    <span class="md-ellipsis">
+      Before you begin...
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tasks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#task-1-linux-core-concepts-security-and-file-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Task 1: Linux Core Concepts + Security and File Permissions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-2-networking-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Task 2: Networking + Storage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-3-bash-scripting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Task 3: BASH Scripting
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -5563,8 +5622,67 @@
 
 
 
-<h1 id="uhhh">Uhhh...</h1>
-<p>I don't think you should be here...yet 😏 spend more time to review and do hands-on practices for now. We'll open this one soon!</p>
+<!---
+Lab Setup Requirements:
+- additional disk for /dev/sdc
+- install and run atd
+-->
+
+<h1 id="linux-fundamentals-practical-assessment">Linux Fundamentals Practical Assessment</h1>
+<h2 id="before-you-begin">Before you begin...</h2>
+<ul>
+<li>Make sure you can login to your instance using your account and password (see here for reference) </li>
+<li><strong>Note: Your instances will be rebooted after you have taken your exam</strong></li>
+</ul>
+<h2 id="tasks">Tasks</h2>
+<h3 id="task-1-linux-core-concepts-security-and-file-permissions">Task 1: Linux Core Concepts + Security and File Permissions</h3>
+<ol>
+<li>(5 pts) Create a new user <code>rendon</code> with the home directory <code>/home/rendon</code>. </li>
+<li>(5 pts) Create a new directory named <code>/root/secure_data/</code>. Set the permissions so that the <code>owner</code> can read, write, and execute, while the group and others have no permissions. </li>
+<li>(5 pts) List all files (including the hidden files) in <code>/boot</code>. Your output should only show the <code>filenames</code>, with one filename per line. Store the output of your command in <code>/root/list_files-1.txt</code>. </li>
+<li>(5 pts) Create a copy of <code>/etc/dnf/dnf.conf</code>  and place it inside <code>/this/is/a/copy/dir/of/things/i/want/dnf.conf</code>. Create the directories if they’re not existing. </li>
+<li>(5 pts) Show the contents of <code>/etc/passwd</code>, excluding all lines that contain <code>rendon</code>, sort its content alphabetically, then store the overall output in <code>/root/my_users.txt</code>. </li>
+<li>(5 pts) Ensure that the <code>dig</code> command is installed and is usable in your machine. </li>
+<li>(5 pts) Get the <code>kernel release</code> of your machine and put it in <code>/root/my_kernel.txt</code>. </li>
+<li>(5 pts) List all the <code>timezones</code> of your machine and put it in <code>/root/my_timezone.txt</code>. </li>
+</ol>
+<h3 id="task-2-networking-storage">Task 2: Networking + Storage</h3>
+<ol>
+<li>(5 pts) Ensure that the <code>DNS</code> server <code>8.8.8.8</code> is added to your machine.</li>
+<li>(5 pts) Get your machine’s <code>ip address</code> (excluding the subnet mask) and put it in <code>/root/my_ip.txt</code>.  </li>
+<li>(10 pts) Create a partition in <code>/dev/sdb</code> with a size of 128MB.Format <code>/dev/sdb1</code> to ext4 and mount it to <code>/mnt/data</code>. Ensure that the mount is persistent and will be mounted during system bootup. </li>
+<li>(5 pts) Create one more partition in <code>/dev/sdb</code> with a size of <code>256MB</code>. Ensure that partition <code>/dev/sdb2</code> is using the <code>Linux LVM partition</code> type. </li>
+<li>(5 pts) Create a physical volume out <code>/dev/sdb2</code>, then create volume group called <code>vgsdb</code> out of the physical volume. </li>
+<li>(5 pts) Create a <code>100MB</code> logical volume named <code>lvsdb</code> from volume group <code>vgsdb</code>. </li>
+<li>(5 pts) Format the logical volume <code>lvsdb</code> to <code>xfs</code> and mount it to <code>/mnt/lvm</code>. Ensure that the mount is persistent and will be mounted during system bootup. </li>
+</ol>
+<h3 id="task-3-bash-scripting">Task 3: BASH Scripting</h3>
+<ol>
+<li>
+<p>(10 pts) Write a <code>BASH script</code> named <code>/root/counter.sh</code> that accepts a text file as an argument. The BASH script must show the number of <code>lines</code>, <code>characters</code>, and <code>words</code>, in this order (Use <code>/etc/default/grub</code> as file input) output the result in <code>/root/counter.txt</code>. Here's a sample output: 
+<div class="highlight"><pre><span></span><code>$ ./counter.sh /etc/default/grub
+39
+1828 
+58
+</code></pre></div></p>
+</li>
+<li>
+<p>(15 pts) Write a <code>Bash script</code> named <code>/root/int_to_roman.sh</code> that accepts <code>number input</code> in the range of <code>1 to 100</code> and <code>converts</code> it to the corresponding <code>Roman numeral representation</code>. The script should also validate if the input is an integer not within the specified range <code>(Invalid-Range)</code> or if the input is invalid <code>(Invalid-Input)</code> then display the appropriate error message. Run the script using the specified input (<code>101</code>, <code>50</code>, <code>99</code>, <code>abc</code>) and append the result of each run to <code>/root/int2roman.txt</code>.</p>
+</li>
+</ol>
+<p>Sample input and output:
+Input: wow, 25, 420, 69
+<div class="highlight"><pre><span></span><code>&gt; sh int2roman.sh wow
+&gt; sh int2roman.sh 25 
+&gt; sh int2roman.sh 420 
+&gt; sh int2roman.sh 69
+
+&gt; cat /root/int2roman
+Invalid-Input
+XXV
+Invalid-Range
+LXIX
+</code></pre></div></p>
 
 
 
