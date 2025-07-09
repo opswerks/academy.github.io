@@ -5662,7 +5662,7 @@ Lab Setup Requirements:
 </ul>
 </li>
 <li>
-<p>(10 pts) Search for all files with a filename ending with <code>.conf</code> in the <code>/etc</code> directory and save the list of these files to<code>/home/student/conf_files.txt</code>. Then, find all occurrences of the word <code>"network"</code> in these files and save the results to <code>/home/student/network_mentions.txt</code>. </p>
+<p>(5 pts) Search for all files with a filename ending with <code>.crt</code> in the <code>/etc</code> directory and save the list of these files to<code>/home/student/crt_files.txt</code>.</p>
 </li>
 </ol>
 <h2 id="task-2-bash-scripting">Task 2: BASH Scripting</h2>
@@ -5678,9 +5678,7 @@ Lab Setup Requirements:
 </code></pre></div></li>
 </ul>
 </li>
-<li>
-<p>(15 pts) Create a shell script named <code>/home/student/user_check.sh</code> that checks if a given username <code>(passed as an argument)</code> exists on the system. The script should: </p>
-<ul>
+<li>(15 pts) Create a shell script named <code>/home/student/user_check.sh</code> that checks if a given username <code>(passed as an argument)</code> exists on the system. The script should: <ul>
 <li>Print a message indicating whether the user exists or not: <code>“User exists”</code> / <code>“User does not exist”</code> </li>
 <li>The script’s exit status must be <code>0</code> if the user exists, and the exit status must be <code>127</code> if the user does not exist </li>
 <li>Here’s how it should look like when executed: 
@@ -5693,14 +5691,6 @@ User does not exist
 $ echo $? 
 127 
 </code></pre></div></li>
-</ul>
-</li>
-<li>
-<p>(15 pts) Write a shell script named <code>/home/student/disk_usage.sh</code> that processes disk usage information of the <code>/boot</code> directory. The script should: </p>
-<ul>
-<li>Print the disk usage of each subdirectory within <code>/boot</code> in <code>human-readable</code> format </li>
-<li>Sort the output ascendingly by directory size, starting from the directory with the smallest disk usage up to the directory with the largest disk usage </li>
-<li>Lastly, the script must save the output of the disk usage information to a file named <code>/home/student/disk_usage_report.txt</code> </li>
 </ul>
 </li>
 </ol>
