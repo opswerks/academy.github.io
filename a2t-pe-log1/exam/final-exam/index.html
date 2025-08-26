@@ -12,7 +12,7 @@
       
       
       <link rel="icon" href="../../../images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
     
     
       
@@ -5556,11 +5556,11 @@
         <li class="md-nav__item">
   <a href="#directions" class="md-nav__link">
     <span class="md-ellipsis">
-      Directions:
+      Directions
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Directions:">
+    <nav class="md-nav" aria-label="Directions">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -5728,14 +5728,25 @@
 <ul>
 <li>Welcome to your Splunk Practical Assessment. Follow the instructions below to complete the assessment and submit your work.</li>
 </ul>
-<h2 id="directions">Directions:</h2>
+<h2 id="directions">Directions</h2>
 <h3 id="log-in-to-the-splunk-instance">Log in to the Splunk Instance</h3>
 <ul>
 <li>Access the Splunk instance at the following URL: <strong><a href="#" onClick="SplunkWindow=window.open('https://splunk.pave.opswerks.net:8000','SplunkWindow','width=1200,height=800'); return false;">Splunk Practical Assessment</a></strong>. Username and password will be provided by the proctor.</li>
 </ul>
 <h2 id="dashboard-creation">Dashboard Creation</h2>
 <ul>
-<li>Create a dashboard using Splunk Dashboard Studio with an absolute layout. You can use any dashboard name. </li>
+<li>Create a dashboard using Splunk Dashboard Studio with an absolute layout.</li>
+<li>Make sure that your "Dashboard Title" has the naming convention final_exam_<strong>Splunk Username</strong>. (E.g. <strong>final_exam_jdelacruz</strong>)</li>
+<li>Ensure your panels contain the Splunk query used to visualize events. Reports and saved searches are not considered.</li>
+<li><strong>DO NOT</strong> rename the fields after a transforming command. Refer to the below example.</li>
+<li><strong>INCORRECT</strong>: <blockquote>
+<p>index=test sourcetype=test | stats count <strong>as Hostname</strong> by host</p>
+</blockquote>
+</li>
+<li><strong>CORRECT</strong>:<blockquote>
+<p>index=test sourcetype=test | stats count by host</p>
+</blockquote>
+</li>
 <li>Replicate the provided dashboard image by utilizing your Splunk queries to obtain the same results.</li>
 <li>The data you will use is from the following:<blockquote>
 <p>index: nba_main &amp; sourcetype: nba_stats</p>
@@ -5769,7 +5780,7 @@
 <p>Show the average assists per game for each player using the <strong>Column Chart</strong> visualization.</p>
 </blockquote>
 <h3 id="output">OUTPUT</h3>
-<h2 id="_1"><img alt="" src="../pathways-splunk-files/Final_Output.png" /></h2>
+<h2 id="_1"><img alt="" src="../../pave-splunk-files/Final_Output.png" /></h2>
 <h4 id="the-final-output-is-already-provided-you-can-compare-your-answers-to-the-provided-image-above">The final output is already provided. You can compare your answers to the provided image above.</h4>
 <h2 id="final-step">Final Step:</h2>
 <p>Once you have completed all requirements in the Dashboard Studio, export your final output as a JSON file. Copy the JSON file content from the code tab within the Dashboard Studio and <strong>create a separate .json file</strong> on the instance that will be provided to you. This json file will serve as your final output. The filename should be <strong>surname_final.json</strong></p>
@@ -5826,10 +5837,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.instant.prefetch"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.instant.prefetch"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.50899def.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.92b07e13.min.js"></script>
       
     
   </body>
